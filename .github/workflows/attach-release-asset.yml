@@ -1,0 +1,50 @@
+name: Attach release asset
+
+# 为什么用 Actions 而不是本地 gh/git:
+# 本机 uploads.github.com 被 DNS 污染 (解析到 bit.ly 的 IP), 走不通。
+# 把上传放到 GitHub 自己的 runner 上执行就完全绕开了这个问题, 而且以后发版只要打个 tag。
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要附加到哪个 release (tag 名)'
+        required: true
+        default: 'v1.0'
+      asset:
+        description: '要附加的文件 (仓库内的路径)'
+        required: true
+        default: 'BTHanHua-mod.zip'
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 创建/更新 release 并附加压缩包
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+          ASSET: ${{ inputs.asset || 'BTHanHua-mod.zip' }}
+        run: |
+          set -euo pipefail
+          echo "tag=$TAG  asset=$ASSET"
+          ls -l "$ASSET"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "release $TAG 已存在, 直接上传资源"
+          else
+            echo "release $TAG 不存在, 创建它"
+            gh release create "$TAG" --title "$TAG" --generate-notes
+          fi
+          gh release upload "$TAG" "$ASSET" --clobber
+          echo "--- 当前 release 资源 ---"
+          gh release view "$TAG" --json name,tagName,assets \
+            --jq '"release: \(.name)  tag: \(.tagName)", (.assets[] | "  \(.name)  \(.size) 字节")'
