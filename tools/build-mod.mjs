@@ -49,27 +49,42 @@ const MOD_NAME = 'BTHanHua';
 const modJson = {
   Name: MOD_NAME,
   Enabled: true,
-  Version: '0.2.0',
-  Description: '个人自用简体中文汉化 - 通过官方 ModLoader 注入, 不修改游戏原文件',
-  Author: 'personal',
-  Website: 'https://github.com/cxwithyxy/BATTLETECH_zhcn',
+  Version: '1.0.0',
+  Description: '简体中文汉化 - 通过官方 ModLoader 注入, 不修改游戏原文件 (GitHub: VelvetCthulhuRiot/BATTLETECH-zh-CN)',
+  Author: 'VelvetCthulhuRiot',
+  Website: 'https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN',
   Manifest: [{ Type: 'CSV', Path: 'strings_zh-CN.csv' }],
 };
 // 备用形式: 有些 ModLoader 版本需要路径带上目录层级, 失败时可一键切换
 const modJsonAlt = { ...modJson, Manifest: [{ Type: 'CSV', Path: 'data/localization/strings_zh-CN.csv' }] };
 
 const readme = [
-  'BATTLETECH 个人自用汉化 (通过官方 ModLoader 注入, 不修改游戏原文件)',
+  'BATTLETECH 简体中文汉化 (通过官方 ModLoader 注入, 不修改游戏原文件)',
+  '项目主页: https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN',
   '',
-  '安装: 本文件夹整体放在 Documents\\My Games\\BattleTech\\mods\\ 下即可, 游戏目录零改动。',
-  '卸载: 删除本文件夹。Steam 校验游戏完整性不受影响 (它只校验 depot 清单内文件, 不删未知文件)。',
+  '安装:',
+  '  1. 把 mods 里的 BTHanHua 和 BTHanHuaFont 两个文件夹放到',
+  '     Documents\\My Games\\BattleTech\\mods\\ 下 (游戏目录零改动)',
+  '  2. 启动游戏 -> MODS -> 勾选右上角「模组启用」-> 保存 -> 完全重启游戏',
+  '  3. 重启后 -> 设置 -> LANGUAGE -> 中文',
+  '',
+  '  注意: 第一次进 MODS 界面可能提示「检测不到模组」, 这是正常的 ——',
+  '  模组功能默认关闭, 且首次运行要建模组索引, 勾选启用后重启即可。',
+  '',
+  '卸载: 删除这两个文件夹。Steam 校验游戏完整性不受影响。',
   '',
   '内容:',
   '  mod.json          ModLoader 描述文件, Manifest 把 strings_zh-CN.csv 注入版本清单',
-  '  strings_zh-CN.csv 中文文本包 (由社区译文合并而成)',
+  '  strings_zh-CN.csv 中文文本包 (21,505 条, 覆盖率 100%)',
   '  mod.alt.json      备用描述文件 (若 mod 加载失败, 用它替换 mod.json 再试)',
   '',
-  '文本来源: cxwithyxy/BATTLETECH_zhcn (Paratranz 人工译文 + 社区旧汉化 + 德语机翻兜底)',
+  '出问题:',
+  '  * 文字变方框/不显示 -> 删掉 BTHanHuaFont 文件夹, 文本汉化不受影响',
+  '  * 界面还是英文 -> 设置里选「中文」; 下拉框没有「中文」说明 mod.json 没加载成功',
+  '  * 某个词读起来怪怪的 (如「眼毛」) -> 字体字表限制, 不是错译, 见 README',
+  '',
+  '译文语料改编自 cxwithyxy/BATTLETECH_zhcn (MIT, (c) 2022 cx2889)。',
+  '字体包 font 是微软雅黑的 SDF 图集, 字体授权提示见项目 THIRDPARTY.md。',
 ].join('\r\n');
 
 // 游戏实测确认使用 "My Games" (带空格) 这个路径 (见 modloader 日志 "Using default Mods path")
