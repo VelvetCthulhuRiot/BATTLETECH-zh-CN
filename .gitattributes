@@ -1,0 +1,14 @@
+# 文本文件统一用 LF 存进仓库。
+# strings_zh-CN.csv 尤其重要: 游戏解析器按行读, CRLF 会污染值。
+* text=auto eol=lf
+
+# 二进制, 不要做任何换行/编码转换
+*.dll  binary
+*.zip  binary
+font   binary
+*.exe  binary
+
+# 让 GitHub 正确识别
+*.cs   linguist-language=C#
+*.mjs  linguist-language=JavaScript
+*.csv  linguist-language=CSV

@@ -1,0 +1,14 @@
+{
+    "Name": "BTHanHua",
+    "Enabled": true,
+    "Version": "0.2.0",
+    "Description": "个人自用简体中文汉化 - 通过官方 ModLoader 注入, 不修改游戏原文件",
+    "Author": "personal",
+    "Website": "https://github.com/cxwithyxy/BATTLETECH_zhcn",
+    "Manifest": [
+        {
+            "Type": "CSV",
+            "Path": "strings_zh-CN.csv"
+        }
+    ]
+}

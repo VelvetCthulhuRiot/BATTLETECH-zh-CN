@@ -1,0 +1,11 @@
+BATTLETECH 个人自用汉化 (通过官方 ModLoader 注入, 不修改游戏原文件)
+
+安装: 本文件夹整体放在 Documents\My Games\BattleTech\mods\ 下即可, 游戏目录零改动。
+卸载: 删除本文件夹。Steam 校验游戏完整性不受影响 (它只校验 depot 清单内文件, 不删未知文件)。
+
+内容:
+  mod.json          ModLoader 描述文件, Manifest 把 strings_zh-CN.csv 注入版本清单
+  strings_zh-CN.csv 中文文本包 (由社区译文合并而成)
+  mod.alt.json      备用描述文件 (若 mod 加载失败, 用它替换 mod.json 再试)
+
+文本来源: cxwithyxy/BATTLETECH_zhcn (Paratranz 人工译文 + 社区旧汉化 + 德语机翻兜底)
