@@ -1,6 +1,6 @@
 # BATTLETECH 简体中文汉化 (BTHanHua)
 
-[![repo](https://img.shields.io/badge/GitHub-VelvetCthulhuRiot%2FBATTLETECH-zh-CN-blue)](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN)
+[![release](https://img.shields.io/github/v/release/VelvetCthulhuRiot/BATTLETECH-zh-CN?label=release&color=blue)](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN/releases/latest) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE) ![game](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-1.9.1%20%28686R%29-orange)
 
 给 **BATTLETECH (2018, Harebrained Schemes)** 做的简体中文汉化，通过游戏**官方 ModLoader** 注入，
 **不修改游戏安装目录里的任何文件**。
@@ -11,6 +11,21 @@
 
 > 游戏版本要求：**1.9.1 (build 686R)**，Steam AppID `637090`。
 > `BTHanHuaFont.dll` 是针对该版本的游戏程序集编译的，换版本需要重新编译。
+
+---
+
+## 界面预览
+
+| | |
+|---|---|
+| ![主菜单](docs/screenshots/main-menu.jpg)<br>主菜单 | ![语言设置](docs/screenshots/settings-language.jpg)<br>设置 → 语言 → **中文** |
+| ![模组管理](docs/screenshots/mods-menu.jpg)<br>MODS 里两个模组**已启用** | ![生涯模式](docs/screenshots/career-main.jpg)<br>生涯模式主界面（阿尔戈号） |
+| ![任务列表](docs/screenshots/career-contracts.jpg)<br>可用合约列表 | ![角色出身](docs/screenshots/career-origin.jpg)<br>角色出身与背景属性 |
+| ![机甲库](docs/screenshots/skirmish-mechbay.jpg)<br>遭遇战机甲库 / 自定义小队 | ![战斗](docs/screenshots/skirmish-battle.jpg)<br>遭遇战战斗界面 |
+
+> 主菜单右下角的 **Season Pass 横幅仍是英文** —— 那串文字不经过游戏的本地化系统
+> （它由外部注入，`LocalizeKey` 根本看不到），CSV 汉化覆盖不到，属于已知限制。
+> 除此之外截图里的界面文字都是中文。
 
 ---
 
@@ -26,7 +41,12 @@
 
    （`mods` 目录不存在就自己新建。注意 `My Games` 里有空格）
 3. 启动游戏 → 主菜单左下角 **MODS** → 勾选右上角 **「模组启用」** → 点 **SAVE**
+
+   ![模组管理](docs/screenshots/mods-menu.jpg)
+
 4. **重启游戏** → **设置 → LANGUAGE → 中文**
+
+   ![语言设置](docs/screenshots/settings-language.jpg)
 
 第 3、4 步不能省：模组启用开关和语言选择存在**游戏自己的设置**里，不在 mod 文件夹内，
 所以换电脑时要重新做一次。
@@ -61,6 +81,7 @@ mods\BTHanHuaFont\      字体注入 (System Mod)
 
 src\                    注入程序源码
 tools\                  构建与自检脚本
+docs\screenshots\       界面截图
 BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说明)
 ```
 

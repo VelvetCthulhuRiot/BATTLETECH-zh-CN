@@ -57,3 +57,13 @@ TextMeshPro 的 SDF 字形图集后的**衍生作品**，而不是原始的 TTF�
 - `src/` 里的注入程序在**编译时**需要引用你本机的 `Assembly-CSharp.dll`，
   但仓库不随附该文件——请自备正版游戏
 - 官方 mod 支持（HBS ModLoader、`0Harmony.dll`）由游戏随包提供，同样不随本仓库分发
+
+### 关于 `docs/screenshots/`
+
+`docs/screenshots/` 里是**游戏运行截图**（游戏画面与 UI 的版权属于
+Harebrained Schemes / Paradox Interactive），仅用于说明本汉化的实际效果，
+按常规同人作品的做法作为示例展示。截图已从 3200×2000 压缩到 1600×1000 以控制仓库体积。
+
+截图里出现的飞行员名 / 部队名（如 `Polecat`、`Ada Fujiwara`）是游玩时自拟的虚构名称，
+与现实身份无关。如果其中有你不想公开的内容，删掉对应文件即可，README 里的图片链接会变成裂图，
+把那一行也删掉就行。
