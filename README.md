@@ -1,4 +1,4 @@
-﻿# BATTLETECH 简体中文汉化 (BTHanHua)
+# BATTLETECH 简体中文汉化 (BTHanHua)
 
 [![repo](https://img.shields.io/badge/GitHub-VelvetCthulhuRiot%2FBATTLETECH-zh-CN-blue)](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN)
 
@@ -16,7 +16,8 @@
 
 ## 安装
 
-1. 下载 **[`BTHanHua-mod.zip`](BTHanHua-mod.zip)**（或直接克隆本仓库）
+1. 到 **[Releases](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN/releases/latest)** 下载 **`BTHanHua-mod.zip`**
+   （仓库根目录也放了一份内容完全相同的 `BTHanHua-mod.zip`，或者直接克隆本仓库）
 2. 把 `mods` 里的**两个文件夹**整体复制到：
 
    ```
@@ -178,6 +179,29 @@ $csc = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 
 数据管线的完整工具链（合并各来源、术语统一、专名汉化、字形安全网等）也在 `tools\` 里，
 其中 `merge-final.mjs` 需要自行准备上游语料后才能运行（见脚本内的路径常量）。
+
+---
+
+## 发布新版本
+
+发版不用手动传文件，打个 tag 就行：
+
+```powershell
+cd repo
+node tools\verify-csv.mjs                 # 先自检, 退出码 0 才继续
+powershell -File tools\pack-mod.ps1       # 重新生成 dist\BTHanHua-mod.zip
+copy dist\BTHanHua-mod.zip .              # 同步仓库根目录那份
+git add -A; git commit -m "v1.1: ..."; git push
+git tag -a v1.1 -m "v1.1"; git push origin v1.1
+```
+
+推 tag 会触发 [`.github/workflows/attach-release-asset.yml`](.github/workflows/attach-release-asset.yml)，
+在 GitHub 的 runner 上自动创建 Release 并把 `BTHanHua-mod.zip` 挂上去。
+
+> 为什么用 Actions 而不是本地 `gh release upload`：本机 `uploads.github.com` 被 DNS 污染
+> （解析到 bit.ly 的 IP），直传走不通。放到 runner 上执行就绕开了。
+>
+> 也可以手动补挂：Actions → **Attach release asset** → Run workflow，填 tag 和文件名。
 
 ---
 
