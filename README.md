@@ -219,8 +219,13 @@ node tools\verify-csv.mjs
 ### 想彻底解决？
 
 **换字体图集就行，译文里的替换可以全部回滚。** 用 [思源黑体](https://github.com/adobe-fonts/source-han-sans)
-或 [Noto Sans CJK](https://github.com/notofonts/noto-cjk)（都是开源可再分发的）生成一份覆盖常用汉字的
-TextMeshPro SDF 图集替换掉 `mods/BTHanHuaFont/font`，再把 `眉/鸣/鸦` 这些字写回去即可。
+或 [Noto Sans CJK](https://github.com/notofonts/noto-cjk)（都是 SIL OFL 开源授权、可再分发）生成一份覆盖
+常用汉字的图集替换掉 `mods/BTHanHuaFont/font`，再把 `眉/鸣/鸦` 这些字写回去即可。
+
+**完整的可行性分析、实测数据和三条实现路线的取舍已经写在
+[`docs/FONT-ATLAS.md`](docs/FONT-ATLAS.md)** —— 里面有一张 4096² 图集能装多少字的容量测算
+（结论：可以一次性做到覆盖整个通用规范汉字表，不只是补上现在缺的 801 个字），
+以及哪些坑已经踩过（运行时建图集为什么走不通）。
 
 这也是顺带解决下面那条**字体授权提示**的正路（微软雅黑的再分发授权是不明确的）。
 
