@@ -2,10 +2,15 @@
 // 用法: node tools/verify-csv.mjs
 // 逐条检查所有"一旦违反就会在游戏里出问题"的硬性约束, 全部通过才打印 OK。
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const PROJ = 'C:/Users/lxp_0/Documents/BTHanHua';
-const GAME = 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH/BattleTech_Data/StreamingAssets/data/localization';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// 游戏本地化目录: 可用环境变量 BT_GAME 覆盖 (指向游戏根目录), 省得改脚本
+const GAME = (process.env.BT_GAME || 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH')
+  + '/BattleTech_Data/StreamingAssets/data/localization';
 const CSV = path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
 const US = '\u001f';
 

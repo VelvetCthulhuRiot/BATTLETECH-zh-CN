@@ -2,9 +2,12 @@
 // 用法: node build-mod.mjs          -> 带 ASCII 探针 (验证注入链路)
 //       node build-mod.mjs --clean  -> 去除探针, 输出正式汉化
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const PROJ = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
 const CLEAN = process.argv.includes('--clean');
 

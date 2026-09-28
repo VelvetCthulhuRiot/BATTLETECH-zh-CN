@@ -9,9 +9,12 @@
 //
 // 用法: node tools/gen-role-zh.mjs [--write]
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const root = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mf = path.join(root, 'tools', 'merge-final.mjs');
 const tsv = path.join(root, 'corpus', 'stock-role-zh.tsv');
 const lit = (x) => String(x).replace(/\\/g, '\\\\').replace(/'/g, "\\'");

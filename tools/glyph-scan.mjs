@@ -1,8 +1,11 @@
 // 用字体图集的真实覆盖表, 离线扫描全部译文里会变方框的字符
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const PROJ = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const GLYPHS = path.join(process.env.USERPROFILE, 'Documents', 'My Games', 'BattleTech', 'mods', 'BTHanHuaFont', 'BTHanHuaFont.glyphs.txt');
 const CSV = path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
 

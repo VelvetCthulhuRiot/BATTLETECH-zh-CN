@@ -1,10 +1,13 @@
 // 部署字体 mod (DLL + 离线字形图集 + OFL 许可) 到游戏 mods 目录。
 // 用法: node tools/deploy-font.mjs
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-const PROJ = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ATLAS_SRC = path.join(PROJ, 'corpus', 'font-atlas', 'out');
 const FONT_DIR = path.join(PROJ, 'corpus', 'font-atlas', 'font');
 const MOD_SRC = path.join(PROJ, 'mod-src');

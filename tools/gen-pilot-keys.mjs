@@ -4,8 +4,11 @@
 // 与机甲那套同机制: 游戏按"英文字符串规范化"查 CSV, 查不到就显示英文。
 // 自动跳过与机甲表冲突的 key (同一个 key 只能有一个译名, 机甲名可见度高得多, 让机甲赢)。
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-const root = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // JS 字符串字面量转义: 译文里可能出现单引号或反斜杠 (实测有 "娜塔莎\" 这种),
 // 直接拼进 '...' 会生成语法错误的 merge-final.mjs —— 已经因此坏过一次。
 const lit = (x) => String(x).replace(/\\/g, '\\\\').replace(/'/g, "\\'");

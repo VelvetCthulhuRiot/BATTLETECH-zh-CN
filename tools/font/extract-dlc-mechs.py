@@ -10,9 +10,12 @@
 import os, json
 import UnityPy
 
-GAME = r'D:\MyDownload\Things\Steam\steamapps\common\BATTLETECH'
+# 游戏安装路径: 可用环境变量 BT_GAME 覆盖, 省得改脚本
+GAME = os.environ.get('BT_GAME', r'D:\MyDownload\Things\Steam\steamapps\common\BATTLETECH')
 AB = os.path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'assetbundles')
-OUT = r'C:\Users\lxp_0\Documents\BTHanHua\corpus\font-atlas'
+# 输出目录 = 本脚本所在目录。工作区里它在 corpus/font-atlas/ (gen-mech-keys.mjs 从这里读),
+# 公开仓库里它在 tools/font/ —— 两种布局都成立, 且不含开发机路径。
+OUT = os.path.dirname(os.path.abspath(__file__))
 BUNDLES = ['flashpoint', 'heavymetal', 'urbanwarfare', 'shadowhawkdlc']
 
 mechs, roles = {}, {}

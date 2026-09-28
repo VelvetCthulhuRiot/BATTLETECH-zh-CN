@@ -1,4 +1,4 @@
-﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
+﻿﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
 # 用法: powershell -ExecutionPolicy Bypass -File pack-mod.ps1
 #
 # 注意: 本文件必须带 UTF-8 BOM。Windows PowerShell 5.1 读 .ps1 需要 BOM,
@@ -6,7 +6,8 @@
 #       -> "The string is missing the terminator"。
 $ErrorActionPreference = 'Stop'
 $mods = Join-Path $env:USERPROFILE 'Documents\My Games\BattleTech\mods'
-$dist = 'C:\Users\lxp_0\Documents\BTHanHua\dist'
+# 仓库根目录从脚本自身位置推导 (脚本位于 <root>/tools/), 克隆下来即可用
+$dist = Join-Path $PSScriptRoot '..\dist'
 $stage = Join-Path $dist 'stage'
 $zip = Join-Path $dist 'BTHanHua-mod.zip'
 

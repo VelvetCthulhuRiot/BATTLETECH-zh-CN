@@ -3,9 +3,13 @@
 //   MECH-MODELS   —— 哪些英文名是"机甲型号", 在正文里出现时要加双引号 ("海盗旗")
 // 用法: node tools/gen-mech-keys.mjs [--write]
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-const root = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
-const GAME = 'D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// 游戏安装路径: 可用环境变量 BT_GAME 覆盖, 省得改脚本
+const GAME = process.env.BT_GAME || 'D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH';
 const SA = path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data');
 // JS 字符串字面量转义: 译文里可能出现单引号或反斜杠 (实测有 "娜塔莎\" 这种),
 // 直接拼进 '...' 会生成语法错误的 merge-final.mjs —— 已经因此坏过一次。

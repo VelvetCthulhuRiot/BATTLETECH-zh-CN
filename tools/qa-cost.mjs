@@ -1,5 +1,8 @@
 import fs from 'node:fs';
-const P = 'C:/Users/lxp_0/Documents/BTHanHua';
+import { fileURLToPath } from 'node:url';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const P = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const G = 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH/BattleTech_Data/StreamingAssets/data/localization';
 function load(f) {
   const m = new Map();

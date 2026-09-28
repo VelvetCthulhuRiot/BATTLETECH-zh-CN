@@ -10,10 +10,48 @@ tools/
 ├── pack-mod.ps1          打包便携 zip
 ├── merge-final.mjs       数据管线 (需要自备上游语料)
 ├── make-overrides.mjs    生成人工裁决表
+├── gen-mech-keys.mjs     机甲名 / 变体全名 / 常备角色的 key
+├── gen-glossary-names.mjs  正文里专名 (英文->中文) 的替换表
+├── gen-pilot-keys.mjs    飞行员呼号与姓名的 key
+├── gen-role-zh.mjs       机甲"常备角色"译名 (读 corpus/stock-role-zh.tsv)
 ├── glyph-scan.mjs        字形覆盖检查
+├── glyph-verify.mjs      图集与字符集的一致性校验
 ├── qa-*.mjs              对比官方文件的一次性分析
 └── font/                 字形图集的生成与自检 (见该目录下的 README)
 ```
+
+## 路径约定
+
+**脚本里没有任何写死的开发机路径。** 仓库根目录一律从脚本自身位置推导：
+
+```js
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+```
+
+克隆到任何目录都能直接跑。唯一要按自己环境调整的是**游戏安装路径** —— 用环境变量即可，
+不必改代码：
+
+```powershell
+$env:BT_GAME = "D:\Steam\steamapps\common\BATTLETECH"
+```
+
+## 重建译文的顺序
+
+`merge-final.mjs` 与四个 key 生成器需要**自备上游语料**（语料不入库）。
+要重整份 CSV 时按这个顺序跑（生成器读的是第一遍产出的 `.tmp/prename.csv` 基线）：
+
+```powershell
+node tools\merge-final.mjs --natural        # 第一遍: 合并来源 + 写基线快照
+node tools\gen-mech-keys.mjs     --write
+node tools\gen-glossary-names.mjs --write
+node tools\gen-pilot-keys.mjs    --write
+node tools\gen-role-zh.mjs       --write
+node tools\make-overrides.mjs               # 应用人工裁决
+node tools\merge-final.mjs --natural        # 第二遍: 正式产出
+node tools\verify-csv.mjs                   # 硬约束自检
+```
+
+> 安装 mod 的普通用户**不需要**上面任何一步：下载 zip、解压、放进 `mods\` 就行。
 
 ---
 

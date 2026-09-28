@@ -1,12 +1,16 @@
 // 最终合并: 官方KEY + 多源中文译文 -> 游戏可用 strings_zh-CN.csv
 // 关键修正: repo CSV 必须按"行内第一个逗号"解析 (官方格式保证 KEY 内无半角逗号, 且文件含未配对引号)
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const GAME = process.env.BT_GAME || 'D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH';
 const LOC = path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'localization');
-const GH = 'C:\\Users\\lxp_0\\Documents\\BTHanHua\\incoming\\gh';
-const PROJ = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const GH = path.join(PROJ, 'incoming', 'gh');
 // --natural: 不做"字形约束"替换(逐字替换/整词修正/界面串重写), 用自然措辞;
 //            适用于全字库成功、字体不再缺字的情况
 const NATURAL = process.argv.includes('--natural');
@@ -242,7 +246,6 @@ else {
   }
   console.log(`界面串整句重写: ${fixRw} 条`);
 }
-
 
 // ---- 一致性修正 ----
 // 官方 de-DE 的 [[...]] 用 U+001F 作 ref/display 分隔符 (实测 1082 处), 缺失/写错会让游戏显示错误标记

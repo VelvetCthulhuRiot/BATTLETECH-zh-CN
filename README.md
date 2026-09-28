@@ -283,8 +283,36 @@ $csc = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 字体出处与 SHA256 见 [`tools/font/README.md`](tools/font/README.md) 与
 [`docs/FONT-ATLAS.md`](docs/FONT-ATLAS.md)。
 
-数据管线的完整工具链（合并各来源、术语统一、专名汉化、字形安全网等）也在 `tools\` 里，
-其中 `merge-final.mjs` 需要自行准备上游语料后才能运行（见脚本内的路径常量）。
+数据管线的完整工具链（合并各来源、术语统一、专名汉化、字形安全网等）也在 `tools\` 里。
+
+### 关于路径：克隆下来即可用，不需要改代码
+
+`tools\` 与 `tools\font\` 里的脚本**不含任何写死的开发机路径**。
+仓库根目录由脚本自身位置推导：
+
+```js
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+```
+
+所以仓库克隆到任何目录都能直接运行，也不会有谁的 Windows 用户名出现在脚本里。
+
+唯一需要按自己环境调整的是**游戏安装路径**，两种方式任选：
+
+```powershell
+# 方式一（推荐）：设环境变量，不用改代码
+$env:BT_GAME = "D:\Steam\steamapps\common\BATTLETECH"
+node tools\verify-csv.mjs
+
+# 方式二：改脚本顶部的默认值
+#   tools\merge-final.mjs / tools\gen-mech-keys.mjs / tools\verify-csv.mjs
+#   tools\font\extract-dlc-mechs.py  ->  GAME = ...
+```
+
+> ⚠️ `merge-final.mjs` 与几个 key 生成器还需要**自行准备上游语料**才能运行
+> （语料是从游戏原文件提取并整理出来的，不入库；目录约定见脚本内注释）。
+> **这一步只有重建译文时才需要 —— 普通用户安装 mod 完全用不到**：
+> 下载 `BTHanHua-mod.zip`、解压、把两个文件夹放进 `mods\` 即可，不需要 Python、
+> 不需要 Node、不需要语料、不需要跑任何脚本。
 
 ---
 

@@ -8,8 +8,11 @@
 //   2. 中文必须是单一写法 —— 含 （ ( ， , / 、 的一律跳过 (那是"可选译法"列表, 直接替换会写出病句)。
 //   3. 名字必须真的还在可见文本里出现 (引用键与富文本标签不算)。
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-const root = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const US = '\u001f';
 
 const OK_CATS = new Set(['人名', '地名', '机甲', '生物', '日本人姓', '中国人名', '作品', '船名', '国家', '星球']);

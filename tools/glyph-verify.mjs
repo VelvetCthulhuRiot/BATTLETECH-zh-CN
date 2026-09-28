@@ -1,7 +1,10 @@
 // 验证字形扫描: 用截图上确实正常显示的字符串反查; 并统计受影响条目的长度分布
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-const PROJ = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const GLYPHS = path.join(process.env.USERPROFILE, 'Documents', 'My Games', 'BattleTech', 'mods', 'BTHanHuaFont', 'BTHanHuaFont.glyphs.txt');
 const covered = new Set(fs.readFileSync(GLYPHS, 'utf8').replace(/^\uFEFF/, ''));
 

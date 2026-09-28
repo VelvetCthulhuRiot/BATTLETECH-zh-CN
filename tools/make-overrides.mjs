@@ -5,9 +5,12 @@
 // 必须读 .tmp/strings_zh-CN.shipped.csv (旧版备份), 不能读 corpus/strings_zh-CN.csv
 // —— 后者每次 --natural 都会被覆盖, 否则会造成自我引用。
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const root = 'C:\\Users\\lxp_0\\Documents\\BTHanHua';
+// 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
+// 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHIPPED = path.join(root, '.tmp', 'strings_zh-CN.shipped.csv');
 const shipped = new Map();
 for (const L of fs.readFileSync(SHIPPED, 'utf8').replace(/^\uFEFF/, '').split('\n').slice(1)) {
