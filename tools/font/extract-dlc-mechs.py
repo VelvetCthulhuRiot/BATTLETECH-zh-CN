@@ -23,7 +23,8 @@ def _find_game():
         r'D:\SteamLibrary\steamapps\common\BATTLETECH',
         r'E:\Steam\steamapps\common\BATTLETECH',
         r'E:\SteamLibrary\steamapps\common\BATTLETECH',
-        r'D:\MyDownload\Things\Steam\steamapps\common\BATTLETECH',   # 作者开发机
+        r'F:\Steam\steamapps\common\BATTLETECH',
+        r'F:\SteamLibrary\steamapps\common\BATTLETECH',
     ]
     for c in cands:
         if c and os.path.isdir(os.path.join(c, 'BattleTech_Data', 'StreamingAssets', 'data')):

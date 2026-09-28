@@ -29,7 +29,6 @@ const CANDIDATES = [
   'E:/SteamLibrary/steamapps/common/BATTLETECH',
   'F:/Steam/steamapps/common/BATTLETECH',
   'F:/SteamLibrary/steamapps/common/BATTLETECH',
-  'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH',   // 作者开发机
 ].filter(Boolean);
 
 // 判定"这确实是游戏目录": 必须有 BattleTech_Data\StreamingAssets\data

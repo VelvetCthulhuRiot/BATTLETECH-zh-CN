@@ -92,14 +92,10 @@ node tools\verify-csv.mjs
 | 官方 key 全覆盖、无多余、顺序一致 | 与 `strings_de-DE.csv` 对齐 |
 | `[[...]]` 平衡 | 相对官方无额外残缺 |
 
-脚本顶部有路径常量，换机器时改这里：
+脚本不需要改路径：仓库根目录由脚本自身位置推导，游戏目录由 `tools/game-path.mjs`
+按「`BT_GAME` 环境变量 → 常见 Steam 位置」的顺序自动解析（见上面的[路径约定](#路径约定)）。
 
-```js
-const PROJ = 'C:/Users/<你>/Documents/BTHanHua';
-const GAME = 'D:/Steam/steamapps/common/BATTLETECH/...';
-```
-
-找不到官方 `strings_de-DE.csv` 时只会跳过对照项并给出提示，不会报错。
+找不到官方 `strings_de-DE.csv`（或路径不对）时会明确报错并告诉你怎么设，而不是静默给出错误结论。
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## 1. 译文语料
 
-`mods/BTHanHua/strings_zh-CN.csv`（21,505 条）改编自：
+`mods/BTHanHua/strings_zh-CN.csv`（21,875 条）改编自：
 
 | 项目 | 地址 | 授权 |
 |---|---|---|

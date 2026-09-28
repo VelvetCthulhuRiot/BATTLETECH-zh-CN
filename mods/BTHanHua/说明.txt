@@ -15,7 +15,7 @@ BATTLETECH 简体中文汉化 (通过官方 ModLoader 注入, 不修改游戏原
 
 内容:
   mod.json          ModLoader 描述文件, Manifest 把 strings_zh-CN.csv 注入版本清单
-  strings_zh-CN.csv 中文文本包 (21,505 条, 覆盖率 100%)
+  strings_zh-CN.csv 中文文本包 (21,875 条, 覆盖率 100%)
   mod.alt.json      备用描述文件 (若 mod 加载失败, 用它替换 mod.json 再试)
 
 出问题:
