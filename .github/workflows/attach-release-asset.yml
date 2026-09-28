@@ -1,8 +1,8 @@
 name: Attach release asset
 
-# 为什么用 Actions 而不是本地 gh/git:
-# 本机 uploads.github.com 被 DNS 污染 (解析到 bit.ly 的 IP), 走不通。
-# 把上传放到 GitHub 自己的 runner 上执行就完全绕开了这个问题, 而且以后发版只要打个 tag。
+# 为什么用 Actions 而不是本地 gh release upload:
+# 部分网络环境下 uploads.github.com 走不通 (DNS 被污染)。把上传放到 GitHub 自己的
+# runner 上执行就绕开了这类问题, 而且以后发版只要打个 tag 就行。
 
 on:
   workflow_dispatch:

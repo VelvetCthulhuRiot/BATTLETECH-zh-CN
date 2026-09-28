@@ -316,31 +316,6 @@ node tools\verify-csv.mjs
 
 ---
 
-## 发布新版本
-
-发版不用手动传文件，打个 tag 就行：
-
-```powershell
-cd repo
-node tools\verify-csv.mjs                 # 先自检, 退出码 0 才继续
-powershell -File tools\pack-mod.ps1       # 重新生成 dist\BTHanHua-mod.zip
-copy dist\BTHanHua-mod.zip .              # 同步仓库根目录那份
-# 写发版说明: docs\release-notes\v1.2.md (工作流会读它)
-git add -A; git commit -m "v1.2: ..."; git push
-git tag -a v1.2 -m "v1.2"; git push origin v1.2
-```
-
-推 tag 会触发 [`.github/workflows/attach-release-asset.yml`](.github/workflows/attach-release-asset.yml)，
-在 GitHub 的 runner 上自动创建 Release、用 `docs/release-notes/<tag>.md` 作为发版说明，
-并把 `BTHanHua-mod.zip` 挂上去（release 已存在则更新说明并覆盖资源，可安全重跑）。
-
-> 为什么用 Actions 而不是本地 `gh release upload`：本机 `uploads.github.com` 被 DNS 污染
-> （解析到 bit.ly 的 IP），直传走不通。放到 runner 上执行就绕开了。
->
-> 也可以手动补挂：Actions → **Attach release asset** → Run workflow，填 tag 和文件名。
-
----
-
 ## 授权与致谢
 
 - 本项目（注入程序源码、构建脚本、以及在此之上的译文修订）：**MIT**，见 [`LICENSE`](LICENSE)
