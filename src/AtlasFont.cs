@@ -428,7 +428,12 @@ namespace BTHanHua
             SetFieldIfMissing(dst, "normalSpacingOffset", 0f, log);
             SetFieldIfMissing(dst, "boldStyle", 0.75f, log);
             SetFieldIfMissing(dst, "boldSpacing", 7f, log);
-            SetFieldIfMissing(dst, "italicStyle", (byte)35, log);
+            // italicStyle = 0: 图集里的字形是【位图】, TMP 的 <i> 是靠"把字形切变一个角度"实现的空想斜体,
+            // 而中文字形本来就占满字框, 一切变就会溢出去压到相邻的字。
+            // 玩家实测: 剧情里 <i>需要</i> / <i>属于</i> 两个词与旁边的字叠在一起, 很难看。
+            // 中文本来也没有斜体习惯, 直接不切变即可 —— <i> 标签照旧解析, 只是不再变形。
+            // (旧值 35 是从微软雅黑资产 dump 来的, 那套用得上, 我们这套用不上。)
+            SetFieldIfMissing(dst, "italicStyle", (byte)0, log);
             SetFieldIfMissing(dst, "tabSize", (byte)10, log);
 
             // fontAssetType: 现役资产实测值是枚举成员 Bitmap (=2)。按名字取, 取不到再退回 2。

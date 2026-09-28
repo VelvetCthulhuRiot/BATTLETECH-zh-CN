@@ -5,7 +5,7 @@
 给 **BATTLETECH (2018, Harebrained Schemes)** 做的简体中文汉化，通过游戏**官方 ModLoader** 注入，
 **不修改游戏安装目录里的任何文件**。
 
-- 覆盖 **21,505 / 21,505** 条官方本地化键（100%，0 条未翻译）
+- 覆盖 **21,875 / 21,875** 条官方本地化键（100%，0 条未翻译）
 - **8,352 个字形**的离线中文字形图集（Noto Sans SC，SIL OFL 1.1），
   含《通用规范汉字表》全部 BMP 汉字，**无缺字、无字形妥协**
 - 引用键顺序与官方 `strings_de-DE.csv` 完全一致
@@ -20,11 +20,13 @@
 
 | | |
 |---|---|
-| ![主菜单](docs/screenshots/main-menu.jpg)<br>主菜单 | ![语言设置](docs/screenshots/settings-language.jpg)<br>设置 → 语言 → **中文** |
-| ![模组管理](docs/screenshots/mods-menu.jpg)<br>MODS 里两个模组**已启用** | ![生涯模式](docs/screenshots/career-main.jpg)<br>生涯模式主界面（阿尔戈号） |
-| ![任务列表](docs/screenshots/career-contracts.jpg)<br>可用合约列表 | ![角色出身](docs/screenshots/career-origin.jpg)<br>角色出身与背景属性 |
-| ![机甲库](docs/screenshots/skirmish-mechbay.jpg)<br>遭遇战机甲库 / 自定义小队 | ![战斗](docs/screenshots/skirmish-battle.jpg)<br>遭遇战战斗界面 |
+| ![主菜单](docs/screenshots/main-menu.jpg)<br>主菜单 | ![星图](docs/screenshots/career-starmap.jpg)<br>生涯模式 · 星图 |
+| ![合约列表](docs/screenshots/career-contracts.jpg)<br>生涯模式 · 可用合约 | ![角色出身](docs/screenshots/career-origin.jpg)<br>生涯模式 · 角色出身与背景 |
+| ![机甲改装](docs/screenshots/career-refit.jpg)<br>生涯模式 · 机甲改装 | ![机甲库](docs/screenshots/skirmish-mechbay.jpg)<br>遭遇战 · 机甲库 / 自定义小队 |
+| ![战前设置](docs/screenshots/skirmish-setup.jpg)<br>遭遇战 · 战前设置 | ![实战](docs/screenshots/campaign-battle.jpg)<br>剧情战役 · 实战 |
 
+> **MOD 管理界面**与**语言设置界面**的截图放在下面的[安装](#安装)步骤里，这里就不重复贴了。
+>
 > 主菜单右下角的 **Season Pass 横幅仍是英文** —— 那串文字不经过游戏的本地化系统
 > （它由外部注入，`LocalizeKey` 根本看不到），CSV 汉化覆盖不到，属于已知限制。
 > 除此之外截图里的界面文字都是中文。
@@ -88,7 +90,7 @@ mods\BTHanHuaFont\
 mods\BTHanHua\          文本汉化 (Game Mod)
   mod.json              ModLoader 描述文件: Manifest 把 strings_zh-CN.csv 注入版本清单
   mod.alt.json          备用描述文件 (若 mod.json 加载失败, 用它替换再试)
-  strings_zh-CN.csv     中文文本包 (21,505 条, 4.6 MB)
+  strings_zh-CN.csv     中文文本包 (21,875 条, 4.6 MB)
   说明.txt               随包说明
 
 mods\BTHanHuaFont\      字体注入 (System Mod)
@@ -157,7 +159,7 @@ node tools\verify-csv.mjs
 退出码 0 = 全部通过。它检查：
 
 ```
-[1] 编码形态      条目数 21505 · 无 BOM · 仅 LF
+[1] 编码形态      条目数 21875 · 无 BOM · 仅 LF
 [2] 逐行解析      值内无半角逗号 · 每行引号数为偶数 · 引号连续段 ≤ 2
                   每个 [[...]] 恰好 1 个 U+001F 分隔符
                   全部字符都在字形图集内 · 无字面 \r

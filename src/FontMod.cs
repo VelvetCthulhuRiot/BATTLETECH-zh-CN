@@ -29,6 +29,7 @@ namespace BTHanHua
         static readonly Dictionary<int, TMP_FontAsset> s_origFont = new Dictionary<int, TMP_FontAsset>();
         static readonly HashSet<char> s_noGlyph = new HashSet<char>();
         static readonly HashSet<string> s_miss = new HashSet<string>();
+        static HashSet<string> s_csvKeys;          // CSV 全部 key, 用于运行期判定"未翻译"
         static readonly HashSet<string> s_swapped = new HashSet<string>();
         static readonly HashSet<string> s_shortSeen = new HashSet<string>();
 
@@ -100,6 +101,7 @@ namespace BTHanHua
 
                 string csv = FindCsv(path, modDir);
                 Log("CSV = " + (csv ?? "<未找到>"));
+                LoadCsvKeys(csv);
 
                 // v0.8: 优先用离线字形图集 (AtlasFont)。数据源是离线文件, 不依赖任何系统字体。
                 try
@@ -184,6 +186,15 @@ namespace BTHanHua
             TryPatch(h, "BattleTech.UI.TMProWrapper.LocalizableText", "RefreshText", "PostfixAfterRefresh");
             TryPatch(h, typeof(TMP_Text), "LoadFontAsset", "PostfixLoadFontAsset");
             TryPatch(h, "BattleTech.Localization", "LocalizeKey", "PostfixLocalizeKey");
+            // 漏译检测必须挂到"真正的取值路径"上。
+            // 实测: BattleTech.Localization.LocalizeKey 只覆盖极少数调用点 —— 主菜单按钮走的是
+            // Localize.Text / LocalizableText 这条 HBS 自建的路 (dump 里有 Localize.Text、
+            // Localize.InterpolatedText、Localize.NonLocalizableText、LocalizableText.getLocalizableTextValue),
+            // 所以原来只挂 LocalizeKey 的话, MISS 日志形同虚设。
+            TryPatch(h, "BattleTech.UI.TMProWrapper.LocalizableText", "getLocalizableTextValue", "PostfixLocalizedValue");
+            TryPatch(h, "Localize.Text", "ToString", new Type[] { typeof(bool) }, "PostfixLocalizedValue");
+            TryPatch(h, "Localize.InterpolatedText", "ToString", new Type[] { typeof(bool) }, "PostfixLocalizedValue");
+            TryPatch(h, "Localize.NonLocalizableText", "ToString", new Type[] { typeof(bool) }, "PostfixLocalizedValue");
         }
 
         static void TryPatch(HarmonyInstance h, string typeName, string methodName, string postfixName)
@@ -206,9 +217,68 @@ namespace BTHanHua
             catch (Exception ex) { Log("挂钩 " + t.Name + "." + methodName + " 失败: " + ex.Message); }
         }
 
+        // 指定参数类型, 用于方法有重载的情况 (如 ToString() / ToString(Boolean))
+        static void TryPatch(HarmonyInstance h, string typeName, string methodName, Type[] paramTypes, string postfixName)
+        {
+            Type t = FindType(typeName);
+            if (t == null) { Log("警告 未找到类型 " + typeName); return; }
+            try
+            {
+                MethodInfo m = t.GetMethod(methodName,
+                    BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static,
+                    null, paramTypes, null);
+                if (m == null) { Log("警告 未找到方法 " + typeName + "." + methodName); return; }
+                MethodInfo p = typeof(FontMod).GetMethod(postfixName, BindingFlags.Static | BindingFlags.NonPublic);
+                h.Patch(m, null, new HarmonyMethod(p), null);
+                Log("已挂钩 " + t.Name + "." + methodName);
+            }
+            catch (Exception ex) { Log("挂钩 " + typeName + "." + methodName + " 失败: " + ex.Message); }
+        }
+
         // ---------- 补丁实现 ----------
         static void PostfixAfterLocalize(object __instance) { Sync(__instance); }
         static void PostfixAfterRefresh(object __instance) { Sync(__instance); SweepFor(); }
+
+        // 漏译检测: 判据是"最终输出恰好等于 CSV 里的某个 key"。
+        // 比原来那条 __result == localizationKey 更可靠 —— 不依赖调用方把 key 传成什么样。
+        static void PostfixLocalizedValue(ref string __result)
+        {
+            try
+            {
+                if (s_csvKeys == null || __result == null) return;
+                if (s_miss.Count >= 6000) return;
+                int n = __result.Length;
+                if (n < 3 || n > 120) return;
+                // 含中文/空白就一定已经翻译过了; 中文串在这里第 1~3 个字符就会跳出, 开销极小
+                for (int i = 0; i < n; i++)
+                {
+                    char c = __result[i];
+                    if (c <= 32 || c > 126) return;
+                }
+                if (!s_csvKeys.Contains(__result)) return;
+                if (s_miss.Add(__result)) Log("MISS " + __result);
+            }
+            catch { }
+        }
+
+        // 载入 CSV 的全部 key
+        static void LoadCsvKeys(string csvPath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(csvPath) || !File.Exists(csvPath)) return;
+                HashSet<string> set = new HashSet<string>();
+                string[] lines = File.ReadAllLines(csvPath, Encoding.UTF8);
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    int j = lines[i].IndexOf(',');
+                    if (j > 0) set.Add(lines[i].Substring(0, j));
+                }
+                s_csvKeys = set;
+                Log("已载入 CSV key 表: " + set.Count + " 个 (运行期漏译判定用)");
+            }
+            catch (Exception ex) { Log("载入 CSV key 表失败: " + ex.Message); }
+        }
 
         // 主动扫描: 找出含特定字符的文本及其字体 (徽标/图标通常不是 LocalizableText, 挂钩看不到)
         static float s_nextSweep;

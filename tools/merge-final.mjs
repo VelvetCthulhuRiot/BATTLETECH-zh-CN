@@ -418,10 +418,98 @@ for (const [, , s] of suspect) byS[s] = (byS[s] || 0) + 1;
 console.log('  按来源: ' + JSON.stringify(byS));
 for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(0, 55)}  缺 ${m}`);
 
+// ---- 导出"专名汉化之前"的基线快照 ----
+// 为什么需要: tools/gen-glossary-names.mjs 与 tools/gen-pilot-keys.mjs 都要判断
+// "这个名字的英文原名是否还出现在正文里"。若它们扫的是最终 CSV, 名字一旦被替换掉,
+// 下次生成就会把它从名单里删掉 —— 名单每跑一次缩水一次, 最后又变回英文
+// (实测就是这样漏掉了 Dominik)。快照必须在这里导出 (NAMES 阶段之前),
+// 生成器只读快照, 于是可重复、幂等。
+try {
+  const base = ['KEY,zh-CN'];
+  for (const k of keyOrder) {
+    const v = merged.get(k);
+    if (v) base.push(k + ',' + v);
+  }
+  fs.writeFileSync(path.join(PROJ, '.tmp', 'prename.csv'), base.join('\n') + '\n', 'utf8');
+  console.log(`基线快照: .tmp/prename.csv (${base.length - 1} 条, 供专名表生成器使用)`);
+} catch (e) { console.log('基线快照导出失败: ' + e.message); }
+
+// >>> MECH-MODELS BEGIN (由 tools/gen-mech-keys.mjs 生成, 勿手改)
+// 这些是"机甲型号名"; 出现在正文里时按中文习惯加双引号
+const MECH_MODELS = new Set([
+  'Annihilator', 'Archer', 'Assassin', 'Atlas',
+  'Atlas II', 'Awesome', 'Awesome Dragon', 'BIG STEEL CLAW',
+  'Banshee', 'Battlemaster', 'Black Knight', 'Black Widow',
+  'Blackjack', 'Bull Shark', 'Cataphract', 'Catapult',
+  'Centurion', 'Charger', 'Cicada', 'Commando',
+  'Crab', 'Cyclops', 'Dragon', 'Enforcer',
+  'Firestarter', 'Flea', 'Grand Dragon', 'Grasshopper',
+  'Griffin', 'Hatchetman', 'Highlander', 'Hunchback',
+  'JagerMech', 'Javelin', 'Jenner', 'King Crab',
+  'Kingcrab', 'Kintaro', 'Koschei', 'Locust',
+  'Marauder', 'Nightstar', 'Occam\'s Missile', 'Orion',
+  'Panther', 'Phoenix Hawk', 'Quickdraw', 'Raven',
+  'Rhythm Nation', 'Rifleman', 'Shadow Hawk', 'Spider',
+  'Stalker', 'Target Dummy', 'Test Dummy', 'Thunderbolt',
+  'Trebuchet', 'UrbanMech', 'Valkyrie', 'Victor',
+  'Vindicator', 'Vulcan', 'Warhammer', 'Wasp',
+  'Wolverine', 'Zeus',
+]);
+// >>> MECH-MODELS END
+
+// >>> MECH-ZH BEGIN (由 tools/gen-mech-keys.mjs 生成, 勿手改)
+const MECH_ZH = [
+  ['Annihilator', '歼灭者'], ['Archer', '弓箭手'], ['Assassin', '刺客'],
+  ['Atlas', '宇宙神'], ['Atlas II', '宇宙神 II'], ['Awesome', '可畏'],
+  ['Awesome Dragon', '威龙'], ['Banshee', '女妖'], ['Battlemaster', '战将'],
+  ['BIG STEEL CLAW', '巨钢爪'], ['Blackjack', '海盗旗'], ['Black Knight', '黑骑士'],
+  ['Black Widow', '黑寡妇'], ['Bull Shark', '牛鲨'], ['Cataphract', '重甲铁骑'],
+  ['Catapult', '弩炮'], ['catapultk2', '弩炮 K2'], ['Centurion', '百夫长'],
+  ['Charger', '冲锋者'], ['Cicada', '蝉'], ['Commando', '突击者'],
+  ['Crab', '蟹'], ['Cyclops', '独眼巨人'], ['Dragon', '龙'],
+  ['Enforcer', '执法官'], ['Firestarter', '纵火犯'], ['Flea', '跳蚤'],
+  ['Grand Dragon', '巨龙'], ['Grasshopper', '蚱蜢'], ['Griffin', '狮鹫'],
+  ['Hatchetman', '斧王'], ['Highlander', '高地勇士'], ['Hunchback', '驼背'],
+  ['JagerMech', '机甲猎手'], ['Javelin', '标枪'], ['Jenner', '詹纳'],
+  ['King Crab', '帝王蟹'], ['King Crab', '帝王蟹'], ['Kintaro', '金太郎'],
+  ['Koschei', '科西切'], ['Locust', '蝗虫'], ['Marauder', '掠夺者'],
+  ['Nightstar', '暗夜之星'], ['Occam\'s Missile', '奥卡姆导弹'], ['Orion', '猎户座'],
+  ['Panther', '黑豹'], ['Phoenix Hawk', '凤凰'], ['Quickdraw', '闪击'],
+  ['Raven', '渡鸦'], ['Rhythm Nation', '节奏国度'], ['Rifleman', '步枪手'],
+  ['Shadow Hawk', '影鹰'], ['Spider', '蜘蛛'], ['Stalker', '潜行者'],
+  ['Target Dummy', '靶标'], ['Test Dummy', '测试靶标'], ['Thunderbolt', '雷电'],
+  ['Trebuchet', '投石机'], ['UrbanMech', '都市战甲'], ['Valkyrie', '女武神'],
+  ['Victor', '胜利者'], ['Vindicator', '捍卫者'], ['Vulcan', '火神'],
+  ['Warhammer', '战锤'], ['Wasp', '黄蜂'], ['Wolverine', '狼獾'],
+  ['Zeus', '宙斯'],
+];
+// >>> MECH-ZH END
+
+// >>> PILOT-PROSE BEGIN (由 tools/gen-pilot-keys.mjs 生成, 勿手改)
+// 飞行员呼号/名/姓里, 英文原名仍出现在正文中的那些 (专名汉化表要用)
+const PILOT_PROSE = [
+  ['Aleksandr', '亚历山大'], ['Arano', '阿拉诺'], ['Archangel', '大天使'], ['Behemoth', '巨兽'],
+  ['Cheval', '舍瓦尔'], ['Conqueror', '征服者'], ['Dekker', '德克尔'], ['Diana', '黛安娜'],
+  ['Dominik', '多米尼克'], ['Dragon 66', '龙66'], ['Ellis', '埃利斯'], ['Espinosa', '埃斯皮诺萨'],
+  ['Glitch', '故障'], ['Kamea', '卡梅娅'], ['Kerensky', ' 克伦斯基'], ['Lunari', '卢纳里'],
+  ['Marisol', '玛丽索尔'], ['Medusa', '美杜莎'], ['Michael', '迈克尔'], ['Morgan Kell', '摩根·凯尔'],
+  ['Natasha', '娜塔莎\\'], ['Natasha Kerensky', '娜塔莎·克伦斯基'], ['Ombra', '影'], ['Orchid', '奥奇德'],
+  ['Peregrine', '游隼'], ['Phantom', '幽灵'], ['Raju', '拉朱'], ['Simonsen', '西蒙森'],
+  ['Squire', '扈从'], ['Sven', '斯文'], ['T-Bone', 'T骨'], ['Test9', '""测试9号""'],
+  ['Thresher', '长尾鲨'], ['Toraldsen', '托拉尔森'], ['Ulysses', '尤利西斯'], ['Unknown', '不明'],
+  ['Valravn', '灵鸦'], ['Vanguard', '前卫'], ['Victoria', '维多利亚'], ['Viscacha', '兔鼠'],
+  ['Whistler', '口哨'], ['Zhao', '赵'],
+];
+// >>> PILOT-PROSE END
+
 // ---- 专名汉化: 各分片对"拉丁原名 vs 音译"判断不一 (同一文件里 Argo 260 处拉丁 / Sumire 132 处), 按 glossary 收敛 ----
 // 只在 {...} 占位符与 <...> 富文本标签之外替换, 并用词边界, 所以 faction_Davion / LoreArgo / ArgoUpgrade 这类不会被误伤。
 {
   const NAMES = [
+    // 机甲型号名与飞行员名先行: 这两张表由生成器给出 (含 glossary 里没有的 Assassin/Javelin/
+    // Cyclops 以及用户人工翻译的呼号/姓名), 只收"英文原名确实出现在正文里"的那些。
+    ...MECH_ZH,
+    ...PILOT_PROSE,
     // 多词专名要先于单词专名处理 (按长度倒序即可)
     ['Kell Hounds', '凯尔猎犬'], ['Sumire Meyer', '纯丽·梅耶尔'], ['Darius Oliveira', '达吕斯·奥利维拉'],
     ['Kamea Arano', '卡梅娅·阿拉诺'], ['Yang Virtanen', '杨·维尔塔宁'], ['Arano Restoration', '阿拉诺光复运动'],
@@ -435,7 +523,88 @@ for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(
     ['Itrom', '伊特罗姆'], ['Ostergaard', '奥斯特加德'], ['Carlyle', '卡莱尔'], ['Kell', '凯尔'],
     ['Victoria', '维多利亚'], ['Santiago', '圣地亚哥'], ['Smithon', '史密森'], ['Tyrlon', '蒂拉隆'],
     ['Virtanen', '维尔塔宁'], ['Erin', '埃林'], ['Leopard', '豹级'],
+    // 双词优先: "Phantom Mech" 是 BattleTech 里的传说现象, 只译 Phantom 会留下半英半中的
+    // "幽灵 Mech"。列表按长度倒序排, 所以这条会先于 ['Phantom', '幽灵'] 命中。
+    ['Phantom Mech', '幽灵机甲'],
+    // ---- 以下来自 glossary 专名覆盖普查 ----
+    // 起因: 玩家反馈"战斗对白里的 Mastiff 没翻译"。普查发现可见文本里仍有 251 个专名 / 745 条留英文
+    // (glossary 里已给出中文译名的名字, 在译文里仍以拉丁形式出现)。成因是字形受限时期
+    // "缺字就保留拉丁原名"的写法留在了语料里 —— --natural 只跳过替换阶段, 改不动语料本身。
+    // 这里只收"直接替换不会造出病句"的; 需要调语序的见下面的 TITLES 阶段;
+    // 需要按语境判断的 (Commander 呼语、Narc、Paradox 公司名) 不在此列。
+    ['Shugo Yamaguchi', '山口守护'], ['Black Caldera', '黑色火山口'],
+    ['Mastiff', '獒犬'], ['Raven', '渡鸦'], ['Lees', '利斯'], ['Hironaka', '广中'],
+    ['Cheval', '舍瓦尔'], ['Maskirovka', '欺敌局'], ['BattleMech', '战斗机甲'],
+    ['DropShip', '空投艇'], ['Axylus', '阿克西卢斯'], ['Tempest', '暴雨'],
+    ['Damestroir', '达姆斯托瓦尔'], ['Iberia', '伊贝里亚'], ['Stieglitz', '施蒂格利茨'],
+    ['Bradford', '布拉德福德'], ['Yamaguchi', '山口'], ['Chu-i', '中尉'],
+    ['DEST', '天龙精英突击队'], ['SLDF', '星际联盟防卫军'],
+    // >>> GLOSSARY-NAMES BEGIN (由 tools/gen-glossary-names.mjs 从 corpus/glossary.tsv 生成, 勿手改)
+    // 类别: 地名 / 人名 / 机甲 / 生物 / 船名 / 作品 / 日本人姓
+    ['Adrar', '阿德拉尔'], ['Ahlat', '阿赫拉特'], ['Airavata', '埃拉瓦塔'],
+    ['Alban', '阿尔班'], ['Aleksandr Kerensky', '亚历山大·克伦斯基'], ['Alexander', '亚历山大'],
+    ['Alexandra Cunningham', '亚历山德里娅·坎宁安'], ['Allard', '阿拉德'], ['Allison', '艾利森'],
+    ['Alloway', '阿洛韦'], ['Ana Maria', '安娜·玛丽亚'], ['Angus', '安格斯'],
+    ['Appian', '阿庇安'], ['Artru', '阿特鲁'], ['Atlas', '宇宙神'],
+    ['Atreus', '阿特柔斯'], ['Ayasha', '阿亚沙'], ['Balawat', '巴拉瓦特'],
+    ['Bellerophon', '柏勒洛丰'], ['Binton', '宾顿'], ['Bisset', '比塞特'],
+    ['Black Reaper', '黑色收割者'], ['Blackjack', '海盗旗'], ['Bogdan', '博格丹'],
+    ['Brock Armstrong', '布罗克·阿姆斯特朗'], ['Brockway', '布罗克维'], ['Calamar Gigante', '卡拉马尔·吉甘特'],
+    ['Calderon', '卡尔德龙'], ['Capella', '卡佩拉'], ['Cataphract', '重甲铁骑'],
+    ['Catherine', '凯瑟琳'], ['Cavalor', '卡瓦罗尔'], ['Cavanaugh', '卡瓦诺'],
+    ['Centurion', '百夫长'], ['Claybrooke', '克雷布鲁克'], ['Corbu', '科尔布'],
+    ['Crab', '蟹'], ['Crenshaw', '克伦肖'], ['Crowley', '克劳利'],
+    ['Cyclops', '独眼巨人'], ['Decimis', '德希米斯'], ['Delfinas', '德尔菲娜丝号'],
+    ['Dhawan', '达万'], ['Diana Lunari', '黛安娜·卢纳里'], ['Dianthe', '戴安泽'],
+    ['Dobrescu', '多布雷斯库'], ['Dominik Zhao', '多米尼克·赵'], ['Dragon', '龙'],
+    ['Electra', '厄勒克特拉'], ['Elena Marisol-Chaplin', '埃琳娜·玛丽索尔-查普林'], ['Ellen', '埃伦'],
+    ['Ellis', '埃利斯'], ['Fagerholm', '法格霍姆'], ['Firestarter', '纵火犯'],
+    ['Fjaldr', '菲亚德尔'], ['Flintoft', '弗林托夫特'], ['Fringers', '外缘人'],
+    ['Galedon', '盖尔登'], ['Garrilac', '加瑞拉克'], ['Gaucin', '高辛'],
+    ['Gauthier', '高蒂尔'], ['George', '乔治'], ['Graf', '格拉夫'],
+    ['Griffin', '狮鹫'], ['Hachiman', '八幡'], ['Hadley', '哈德利'],
+    ['Hanse Davion', '汉瑟·达维恩'], ['Hassid Ricol', '哈希德·里科尔'], ['Hatchetman', '斧王'],
+    ['Helen', '海伦'], ['Hellespont', '赫勒斯滂'], ['Herotitus', '希罗提多'],
+    ['Horsham', '霍舍姆'], ['Hunchback', '驼背'], ['Independence', '独立'],
+    ['Jesper', '杰斯珀'], ['Justin Allard', '贾斯汀·阿拉德'], ['Khulan', '呼兰'],
+    ['Kittery', '基特里'], ['Koschei', '科西切'], ['Langford', '兰福德'],
+    ['Luthien', '卢希恩'], ['Lyreton', '利勒顿'], ['Lyris', '利瑞斯'],
+    ['Magorian', '马戈里安'], ['Mantharaka', '曼萨拉卡'], ['Mariko', '马里科'],
+    ['Marina', '玛丽娜'], ['Marina Liao', '玛丽娜·廖'], ['Marisol-Chaplin', '玛丽索尔-查普林'],
+    ['Markham', '马卡姆'], ['Matis', '马蒂斯'], ['Megan', '梅甘'],
+    ['Men Lojowen', '米因洛若维因'], ['Mencius Horvat', '门修斯·霍瓦特'], ['Mendham', '门德姆'],
+    ['Miguel', '米盖尔'], ['Minor Major', '未成年少校'], ['Mitchel', '米切尔'],
+    ['Morgan Kell', '摩根·凯尔'], ['Murdoch', '默多克'], ['Nakano', '中野'],
+    ['Natasha Kerensky', '娜塔莎·克伦斯基'], ['New Avalon', '新阿瓦隆'], ['New Vallis', '新瓦利斯'],
+    ['New Vulci', '新武尔奇'], ['Newgrange', '新格兰奇号'], ['Norkus', '诺尔库斯'],
+    ['Notker', '诺特克尔'], ['Oliveira', '奥利维拉'], ['Orchid Zhao', '奥尔基德·赵'],
+    ['Parata', '帕拉塔'], ['Parzival', '帕尔齐伐尔'], ['Patrick Kell', '帕特里克·凯尔'],
+    ['Paula Trevaline', '葆拉·特雷瓦琳'], ['Phil Burdock', '菲尔·伯多克'], ['Pilpala', '皮尔帕拉'],
+    ['Pyrrhus', '皮洛士'], ['Rasalhague', '罗萨利格'], ['Reynauld', '雷诺奥'],
+    ['Rhee', '李'], ['Ricol', '里科尔'], ['Rodigo', '罗迪戈'],
+    ['Rough Riders', '狂野骑士'], ['Royden', '罗伊登'], ['Sarna', '萨尔纳'],
+    ['Shaul Khala', '绍尔哈拉'], ['Shaunavon', '肖纳文'], ['Shivraj', '希夫拉杰'],
+    ['Sian', '希安'], ['Simonsen', '西蒙森'], ['Singh', '辛格'],
+    ['Spider', '蜘蛛'], ['St. Loris', '圣洛里斯'], ['Stalker', '潜行者'],
+    ['Stefan Amaris', '斯特凡·阿马里斯'], ['Stratford', '斯特拉特福'], ['Stratford Narwhal', '斯特拉特福独角鲸'],
+    ['Suiko', '翠子'], ['Tamati', '塔马蒂'], ['Tarragona', '塔拉戈纳'],
+    ['Taurus', '陶鲁斯'], ['Tetsuhara', '哲原'], ['Tharkad', '沙卡德'],
+    ['Thunderbolt', '雷电'], ['Tianyu', '天宇'], ['Tigerfalcon', '虎隼'],
+    ['Tortuga', '托尔图加'], ['Tsubaki', '椿'], ['Tubbs', '塔布斯'],
+    ['Under Cover', '卧底娇娃'], ['UrbanMech', '都市战甲'], ['Verthandi', '薇儿丹蒂'],
+    ['Vindicator', '捍卫者'], ['Viribium', '维里比姆'], ['Volkov', '沃尔科夫'],
+    ['Wallo', '瓦罗'], ['Yance', '扬塞'], ['Yuetu', '月兔'],
+    ['Yuris', '尤里斯'], ['Zapata', '萨帕塔'],
+    // <<< GLOSSARY-NAMES END
   ].sort((a, b) => b[0].length - a[0].length);
+  // 去重: 机甲表/飞行员表/glossary 表可能重名, 同名保留先出现的那个,
+  // 否则同一个名字会被替换两次(第二次找不到), 且命中计数翻倍。
+  {
+    const seen = new Set();
+    for (let i = NAMES.length - 1; i >= 0; i--) {
+      if (seen.has(NAMES[i][0])) NAMES.splice(i, 1); else seen.add(NAMES[i][0]);
+    }
+  }
   const usable = NAMES.filter(([, zh]) => ![...zh].some(c => c.codePointAt(0) >= 128 && !ATLAS.has(c)));
   const dropped = NAMES.filter(([en]) => !usable.some(([e]) => e === en)).map(([en, zh]) => `${en}→${zh}`);
   if (dropped.length) console.log(`  (术语表译名含图集外汉字, 已跳过: ${dropped.join(', ')})`);
@@ -444,18 +613,245 @@ for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(
   for (const [k, v0] of merged) {
     const stash = [];
     // 占位符 {...} 与富文本标签 <...> 原样抽出, 绝不替换其中的内容
-    let v = v0.replace(/\{[\s\S]*?\}|<[^>]*>/g, m => { stash.push(m); return '\u0003' + (stash.length - 1) + '\u0003'; });
+    // 占位符 {...}、富文本标签 <...>、字面转义 \n、以及 [[引用键<U+001F> 一律原样抽出。
+    // 转义要抽出来的原因: 值是 "…暗示。\n\nMastiff 教我…", 那串 \n 是【两个字符】
+    // (反斜杠 + n), 而 n 是单词字符, 于是 \bMastiff\b 的词边界不成立 -> 紧跟在 \n 后的
+    // 专名永远替换不到。实测就是这样漏掉了 Mastiff。
+    // 引用键要抽出来的原因: 词边界挡不住所有情况。faction_Davion 因为 "_" 是单词字符而安全,
+    // 但 DM.WeaponDefs[Weapon_LRM_LRM15_2-Zeus] 里的 "-" 是非单词字符, \bZeus\b 照样命中,
+    // 引用键被换成 Weapon_LRM_LRM15_2-""宙斯"" —— 游戏就查不到那件武器了。实测踩到过。
+    // (分隔符之后是"显示文本", 那部分要保留并翻译, 所以只吃掉 [[ 到 U+001F。)
+    let v = v0.replace(/\{[\s\S]*?\}|<[^>]*>|\\[a-zA-Z]|\[\[[^\u001f]*\u001f/g, m => { stash.push(m); return '\u0003' + (stash.length - 1) + '\u0003'; });
     let ch = false;
+    // 机甲型号名要按中文习惯加双引号 ("海盗旗"); CSV 里的字面双引号写作两个连续引号。
+    // 三种情况都要处理, 顺序不能换:
+    //   a) 语料里存在"中文引号名 + 紧跟英文原名"的冗余写法 (""雷电""Thunderbolt 12,
+    //      UM-R90""小城市机甲""将传统的""城市机甲""UrbanMech R60) —— 直接替换会写出
+    //      ""雷电""""雷电"" 这种 4 连引号, 撞上"引号连续段<=2"的硬检查。这种冗余应该去掉英文那份。
+    //   b) 已经带引号的 ""Blackjack"" -> ""海盗旗""  (否则会变成 4 连)
+    //   c) 裸名 Blackjack -> ""海盗旗""
+    const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     for (const [en, zh] of usable) {
-      const re = new RegExp('\\b' + en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'g');
+      if (!MECH_MODELS.has(en)) continue;
+      const e = escRe(en), z = escRe(zh);
+      const rules = [
+        [new RegExp('""' + z + '""\\s*' + e + '\\b', 'g'), '""' + zh + '""'],
+        [new RegExp('\\b' + e + '\\s*""' + z + '""', 'g'), '""' + zh + '""'],
+        [new RegExp('""' + e + '""', 'g'), '""' + zh + '""'],
+      ];
+      for (const [re, to] of rules) {
+        const c = (v.match(re) || []).length;
+        if (!c) continue;
+        v = v.replace(re, to);
+        hits.set(`${en}→${to}`, (hits.get(`${en}→${to}`) || 0) + c);
+        ch = true;
+      }
+    }
+    for (const [en, zh] of usable) {
+      const re = new RegExp('\\b' + escRe(en) + '\\b', 'g');
       const c = (v.match(re) || []).length;
-      if (c) { v = v.replace(re, zh); hits.set(`${en}→${zh}`, (hits.get(`${en}→${zh}`) || 0) + c); ch = true; }
+      if (!c) continue;
+      const to = MECH_MODELS.has(en) ? '""' + zh + '""' : zh;
+      v = v.replace(re, to);
+      hits.set(`${en}→${to}`, (hits.get(`${en}→${to}`) || 0) + c);
+      ch = true;
     }
     if (ch) { merged.set(k, v.replace(/\u0003(\d+)\u0003/g, (a, i) => stash[+i])); rows++; }
   }
   const total = [...hits.values()].reduce((a, b) => a + b, 0);
   console.log(`专名汉化: ${rows} 行 / ${total} 处`);
   if (total) console.log('   ' + [...hits.entries()].sort((a, b) => b[1] - a[1]).slice(0, 18).map(([k, n]) => `${k}×${n}`).join(', '));
+}
+
+// ---- 头衔前置的专名: 英文写 "Lady Cunningham" / "House Karosas" / "Commodore Ostergaard",
+//      中文要反过来 ("坎宁安女士" / "卡罗萨斯家族" / "奥斯特加德准将")。
+//      纯替换做不到这个语序, 所以单独一步, 用捕获组把名字提到前面。
+//      放在专名汉化之后, 于是 "House Karosas" 先变成 "House 卡罗萨斯" 再变成 "卡罗萨斯家族"。
+//      引用键 (LoreHouseKarosas / LoreRepDavion) 因 \b 词边界不会被误伤。
+{
+  const TITLES = [
+    [/\bLady\s+([^\s\]|]+)/g, '$1女士'],
+    [/\bHouse\s+([^\s\]|]+)/g, '$1家族'],
+    [/\bCommodore\s+([^\s\]|]+)/g, '$1准将'],
+  ];
+  let n = 0;
+  for (const [k, v0] of merged) {
+    let v = v0, ch = false;
+    for (const [re, to] of TITLES) {
+      // 同专名汉化: 先把字面转义 \n 抽出来, 否则紧跟其后的 Lady/House/Commodore 因词边界不成立而漏掉
+      const stash = [];
+      v = v.replace(/\{[^}]*\}|<[^>]*>|\\[a-zA-Z]|\[\[[^\u001f]*\u001f/g, m => { stash.push(m); return '\u0003' + (stash.length - 1) + '\u0003'; });
+      const before = v;
+      v = v.replace(re, to);
+      if (v !== before) ch = true;
+      v = v.replace(/\u0003(\d+)\u0003/g, (a, i) => stash[+i]);
+    }
+    if (ch) { merged.set(k, v); n++; }
+  }
+  console.log(`头衔语序调整 (Lady / House / Commodore): ${n} 条`);
+}
+
+// ---- 汉字之间的多余空格 ----
+// 语料习惯用空格把拉丁词/数字与中文隔开 (如 "在 索拉里斯 上"), 这对拉丁词是对的、要保留;
+// 但专名汉化把拉丁词换成汉字后, 空格就留在了两个汉字之间:
+//     "目光在您和 达吕斯 之间来回移动" / "獒犬 教我"
+// 中文排版里这是错的。实测这类共 631 处, 全部来自这个成因。
+// 只处理"单个半角空格夹在两个汉字之间"这一种形态, 不碰 "汉字 空格 数字/拉丁" 的写法。
+{
+  const re = /([\u4e00-\u9fff]) ([\u4e00-\u9fff])/g;
+  let n = 0, removed = 0;
+  for (const [k, v0] of merged) {
+    const stash = [];
+    let v = v0.replace(/\{[^}]*\}|<[^>]*>|\\[a-zA-Z]/g, m => { stash.push(m); return '\u0003' + (stash.length - 1) + '\u0003'; });
+    const before = v;
+    let prev;
+    do { prev = v; v = v.replace(re, '$1$2'); } while (v !== prev);
+    if (v !== before) {
+      removed += (before.length - v.length);
+      merged.set(k, v.replace(/\u0003(\d+)\u0003/g, (a, i) => stash[+i]));
+      n++;
+    }
+  }
+  console.log(`汉字间多余空格清理: ${n} 条 / ${removed} 处`);
+}
+
+// ---- Brawler: 只改"呼号", 不动"机甲角色标签" ----
+// 曾经在这里把 主战机/缠斗手 全局改成"斗士", 用户否决了 —— 那个词同时是两种东西:
+//   * 飞行员呼号: brawler (pilot_d7_brawler) / elitebrawler ("Elite Brawler", pilot_d10_brawler)
+//     -> 用户裁决译"斗士", 走 overrides.jsonl (brawler / elitebrawler 两条)
+//   * 机甲角色标签: heavybrawler / lightbrawler / brawler&closeassault 等, 以及三处正文里
+//     描述机甲定位的"主战机" -> 保持语料原样, 不做统一。
+// 所以这里不再有任何替换逻辑, 只留这段说明, 免得以后又有人手滑全局替换。
+{
+  const roleKeys = ['heavybrawler', 'lightbrawler', 'brawler&closeassault', 'brawler&generalassault',
+    'brawler&rangedassault', 'brawler&skirmisher', 'brawler&electronicwarfare', 'firesupport&brawler',
+    'heavyskirmisher&brawler', 'skirmisher&brawler', 'sniper&lightbrawler', 'heavybrawler&sniper',
+    'heavybrawler&closeassault'];
+  const hit = roleKeys.filter((k) => merged.has(k));
+  console.log(`Brawler: 呼号走人工裁决; 角色标签 ${hit.length} 个保持语料原样 (按用户要求不做统一)`);
+}
+
+// ---- 机甲名在正文里的异体统一 + 跟随译名变更 ----
+// 两件事合在一起做:
+//  1) glossary 里同一个机甲给了多个中文备选 (Atlas: 擎天神，巨神，宇宙神), 语料不同轮次各挑了不同的,
+//     正文里就混用 —— 玩家会以为"报丧女妖"和"女妖"是两台不同的机甲。这里统一到当前译名。
+//  2) 用户人工精修了机甲名 (corpus/mech-names-zh.tsv), 有些名字换了 (具装骑兵->重甲铁骑 等),
+//     机甲短简介与其它正文里还写着旧名, 必须一起改, 否则同一台机甲两个叫法。
+//     ⚠️ 用户这次把 atlas 定为"宇宙神", 与上一轮相反 —— 所以下面的方向是 擎天神 -> 宇宙神。
+// 注意 "黑杰克" 有两种含义: 机甲 Blackjack(海盗旗) 与 黑杰克战斗学校(the School of Conflict),
+// 所以只改紧跟型号代号的那一处, 学校名必须保留。
+{
+  const ALIAS = [
+    ['擎天神', '宇宙神'],           // Atlas     上一轮统一成了擎天神, 用户这次定为宇宙神
+    ['报丧女妖', '女妖'],           // Banshee
+    ['猎歼机甲', '机甲猎手'],        // JagerMech
+    ['快枪', '闪击'],               // Quickdraw  (旧名"迅击"也一并换掉)
+    ['迅击', '闪击'],               // Quickdraw
+    ['黑杰克BJ', '""海盗旗"" BJ'],    // 祖传机甲那一处; "黑杰克战斗学校" 不动
+    // ---- 用户精修译名带来的改名 ----
+    // Cataphract 被改过两次: 具装骑兵 -> 铁甲骑兵 -> 重甲铁骑。语料里只有"具装骑兵"这一种旧写法
+    // (上一版的"铁甲骑兵"只存在于本文件里, 已随本次改名一起清掉), 所以一条规则就够。
+    ['具装骑兵', '重甲铁骑'],        // Cataphract
+    ['突击队员', '突击者'],          // Commando
+    ['执法者', '执法官'],            // Enforcer
+    ['纵火者', '纵火犯'],            // Firestarter
+    ['蚂蚱', '蚱蜢'],               // Grasshopper
+    ['短斧客', '斧王'],             // Hatchetman
+    ['高地人', '高地勇士'],          // Highlander
+    ['凤凰鹰', '凤凰'],             // Phoenix Hawk
+    ['城市机甲', '都市战甲'],        // UrbanMech
+    ['复仇者', '捍卫者'],            // Vindicator
+    ['可畏龙', '威龙'],             // Awesome Dragon
+    ['大龙', '巨龙'],               // Grand Dragon
+    ['大钢爪', '巨钢爪'],            // BIG STEEL CLAW
+    ['夜星', '暗夜之星'],            // Nightstar
+  ];
+  const cnt = new Map();
+  for (const [k, v0] of merged) {
+    let v = v0;
+    for (const [from, to] of ALIAS) {
+      if (v.indexOf(from) < 0) continue;
+      const n = v.split(from).length - 1;
+      v = v.split(from).join(to);
+      cnt.set(from + '→' + to, (cnt.get(from + '→' + to) || 0) + n);
+    }
+    if (v !== v0) merged.set(k, v);
+  }
+  const total = [...cnt.values()].reduce((a, b) => a + b, 0);
+  console.log(`机甲名统一/改名: ${total} 处  ` + [...cnt.entries()].map(([k, n]) => `${k}×${n}`).join(', '));
+}
+
+// ---- 中文机甲名加引号 ----
+// 上一轮只给【英文】机甲名加了引号 (Blackjack -> ""海盗旗""); 语料里本来就用中文写的地方没加,
+// 于是同一份文本里 ""海盗旗"" 与 海盗旗 混着出现 (用户反馈)。
+//
+// 但不能无脑全加: 大多数机甲名同时也是普通词 —— 蝗虫/蜘蛛/雷电/狼獾/黑豹/掠夺者/复仇者/弩炮…
+// 实测 "如果我没弄错的话, 是一只狼獾"(动物) 、"一种使用纯机械手段抛射弹丸的弹道设备…弩炮"(本义)
+// 都在语料里, 加引号会把句子写坏。所以只在两种明确情形下加:
+//   (a) 名字紧挨着型号代号:  具装骑兵CTF-1X / 独眼巨人10-Q型 / 弩炮 C4
+//   (b) 名字在下面这张"逐条看过上下文、确认不会与普通词混淆"的名单里
+// 已经是 ""名字"" 的不动 (否则会写岀 4 连引号, 撞硬检查)。
+{
+  // MECH_ZH = [[英文名, 中文名], ...], 由 gen-mech-keys.mjs 维护 (见上面 MECH-ZH 区块)
+  const ALL_MECH_NAMES = [...new Set(MECH_ZH.map(([, z]) => z))].filter((z) => z && z.length >= 2);
+  // 逐条看过上下文后才敢放的: 这些中文名在本语料里只当机甲名用, 不会与普通词混淆
+  // (名单里的名字必须是【当前】译名 —— 上面的改名段已先跑过, 这里要对得上)
+  const SAFE_QUOTE = ['海盗旗', '重甲铁骑', '机甲猎手', '斧王', '金太郎', '克拉肯海妖', '帝王蟹',
+    '宇宙神', '高地勇士', '詹纳', '黑骑士', '独眼巨人', '狮鹫', '闪击', '驼背', '影鹰',
+    '可畏', '战锤', '宙斯', '投石机', '胜利者', '猎户座', '百夫长', '蚱蜢'];
+  // 这些同时也是普通词 (蝗虫/蜘蛛/雷电/狼獾/黑豹/掠夺者/捍卫者/弩炮/部件…), 只在
+  // 【紧跟型号代号】时加引号 —— 那种位置一定是机甲名 (重甲铁骑CTF-1X / 弩炮 C4 / 女妖3E)
+  const QUOTE_IF_CODE = ['女妖', '纵火犯', '执法官',
+    '捍卫者', '掠夺者', '潜行者', '突击者', '都市战甲', '弩炮', '蝗虫',
+    '蜘蛛', '雷电', '狼獾', '黑豹', '渡鸦'];
+  // 型号代号: 可选的 1-4 个大写字母 + 数字开头 (BJ-1 / CTF-1X / C4 / 10-Q / 3E)
+  const codeAfter = (v, pos) => /^(?:[A-Z]{1,4}[- ]?)?[0-9][0-9A-Za-z-]*/.test(v.slice(pos, pos + 10));
+
+  let nSafe = 0, nCode = 0, nCurly = 0;
+  for (const [k, v0] of merged) {
+    let v = v0;
+    // 统一的加引号动作: 只处理"前面不是引号"的出现, 避免写出 4 连引号
+    const quoteAll = (s, nm) => {
+      let idx = 0, out = '';
+      while (true) {
+        const at = s.indexOf(nm, idx);
+        if (at < 0) { out += s.slice(idx); break; }
+        if (s.slice(Math.max(0, at - 2), at) === '""') { out += s.slice(idx, at + nm.length); idx = at + nm.length; continue; }
+        out += s.slice(idx, at) + '""' + nm + '""';
+        idx = at + nm.length;
+        nSafe++;
+      }
+      return out;
+    };
+    const quoteOnlyCode = (s, nm) => {
+      let idx = 0, out = '';
+      while (true) {
+        const at = s.indexOf(nm, idx);
+        if (at < 0) { out += s.slice(idx); break; }
+        const already = s.slice(Math.max(0, at - 2), at) === '""';
+        const isCode = codeAfter(s, at + nm.length);
+        if (already || !isCode) { out += s.slice(idx, at + nm.length); idx = at + nm.length; continue; }
+        out += s.slice(idx, at) + '""' + nm + '""';
+        idx = at + nm.length;
+        nCode++;
+      }
+      return out;
+    };
+    // 语料里还有人用中文弯引号 “可畏” 这种写法 (游戏用的是两个 ASCII 引号 "".."", 会渲染成“”),
+    // 同一种东西两种写法看着不统一。凡是“机甲名”这样的整块, 一律换成 ""机甲名""。
+    // 必须先做这一步: 否则后面对"裸露"的名字补引号时会补成 “""可畏""” (弯引号里再套一层)。
+    for (const nm of ALL_MECH_NAMES) {
+      const curly = '“' + nm + '”';
+      if (v.indexOf(curly) < 0) continue;
+      const c = v.split(curly).length - 1;
+      v = v.split(curly).join('""' + nm + '""');
+      nCurly += c;
+    }
+    for (const nm of SAFE_QUOTE) v = quoteAll(v, nm);
+    for (const nm of QUOTE_IF_CODE) v = quoteOnlyCode(v, nm);
+    if (v !== v0) merged.set(k, v);
+  }
+  console.log(`中文机甲名加引号: 名单命中 ${nSafe} 处, 仅紧邻型号代号 ${nCode} 处, 弯引号 “名” 转 ""名"" ${nCurly} 处`);
 }
 
 // ---- 性别变体占位符里的英文/德文分支值: 中文没有动词变位, 这些分支在中文里要么相同要么该删除 ----
@@ -625,6 +1021,263 @@ for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(
   }
   console.log(`星币符号 ¢ 修复: 补 ${fixed} 条, 已本地化为"星币"略过 ${localized} 条`
     + (failed.length ? `  !! 失败 ${failed.length}: ${failed.join(', ')}` : ''));
+}
+
+// ---- 中文标点统一: 半角句号 -> 全角句号 ----
+// 语料里两套混用: 半角 "." 6,997 条 vs 全角 "。" 3,341 条。
+// 成因是官方 de/fr 本身用 "." (6,914 条里官方也以 "." 结尾), 早期译文照搬了源语言习惯,
+// 后来部分精修轮次改用 "。", 于是不一致。
+//
+// 规则刻意保守, 只动"确实是句末标点"的那些:
+//   * 只处理长度 > 8 的条目 —— 短标签挤在窄 UI 里(如 "{0}已死亡." "+ 10 伤害."),
+//     多一个全角字符可能挤爆排版, 且官方 de 在那些位置也是 "."
+//   * {...} 格式串与 <...> 富文本标签整体挖空 —— {0:0.00} 里的小数点绝不能改 (实测 2,098 条含此类)
+//   * "..." 省略号跳过 (352 条)
+//   * 句点前一个"可见字符"必须是宽字符 —— 于是 "2.16M" / "999.999.999" / "AC/20." 都不会被碰
+//   * 句点后不能紧跟数字 —— 兜住 "字.5" 这类
+//   * 句点若是整串最后一个字符, 也一律算句末 (小数不会以句点结尾, {0:0.00} 以 } 结尾)
+{
+  const isWide = (ch) => ch !== undefined && ch.codePointAt(0) >= 0x2000;
+  const prevVisible = (a, i) => { for (let j = i - 1; j >= 0; j--) if (a[j] !== '\u0000') return a[j]; return undefined; };
+  let nChanged = 0;
+  for (const [k, v0] of merged) {
+    if (v0.length <= 8) continue;
+    if (v0.indexOf('.') < 0) continue;
+    const orig = [...v0];                  // 原始字符数组 (只改这里面真正要改的位置)
+    const mask = orig.slice();             // 仅用于分析: 挖空 {...} 与 <...>, 避免误判
+    let depth = 0;
+    for (let i = 0; i < mask.length; i++) {
+      const c = mask[i];
+      if (c === '{') { depth++; mask[i] = '\u0000'; continue; }
+      if (c === '}') { if (depth > 0) depth--; mask[i] = '\u0000'; continue; }
+      if (depth > 0) mask[i] = '\u0000';
+    }
+    const masked = mask.join('').replace(/<[^>]*>/g, (t) => '\u0000'.repeat(t.length));
+    const hits = [];
+    for (let i = 0; i < masked.length; i++) {
+      if (masked[i] !== '.') continue;
+      if (masked[i - 1] === '.' || masked[i + 1] === '.') continue;     // 省略号 / 双点
+      const nx = masked[i + 1];
+      if (nx !== undefined && /[0-9]/.test(nx)) continue;                // 后面不能是数字 (兜住 "字.5")
+      if (!isWide(prevVisible(masked, i)) && i !== masked.length - 1) continue;
+      hits.push(i);
+    }
+    if (!hits.length) continue;
+    for (const i of hits) orig[i] = '。';   // !!! 写回 orig, 不是 mask —— 否则会把占位符抹掉
+    merged.set(k, orig.join(''));
+    nChanged++;
+  }
+  console.log(`中文标点统一 (半角句号 -> 全角): 修改 ${nChanged} 条`);
+}
+
+// ---- 机甲名 / 飞行员名补本地化 key ----
+// 背景: 机甲库里的机甲名一直是英文 (CYCLOPS / ANNIHILATOR ...), 因为名字硬编码在
+//   BattleTech_Data/StreamingAssets/data/mech/mechdef_*.json 的 Description.Name / UIName 里,
+//   官方德语 CSV 里也没有这些 key, 所以一直被当成"游戏不支持"。
+//
+// 但武器名走的是另一条路, 证明可以汉化:
+//   数据文件 Weapon_Autocannon_AC20_0-STOCK.json 的 Name 是 "AC/20"
+//   我们 CSV:      ac20 -> AC20自动炮
+//   官方德语 CSV:  ac20 -> AK/20        <- 官方也这么做
+// 也就是说游戏的本地化查找 = "把英文字符串规范化后当 key" (全小写 + 去掉所有非字母数字):
+//   "AC/20" -> ac20     "SRM-4" -> srm4     "Medium Laser" -> mediumlaser
+// 机甲库实测: 补上 key 后机甲名确实变中文了 —— 这条路走通了。
+// (选中机甲时详情面板最上面那行大写名字仍是英文, 来源不同, 暂不处理。)
+//
+// 飞行员同理: 官方列表里有 183 个呼号的 key (archangel/arbiter/finn ...), 但 49 个没有,
+//   包括主角导师 Raju "Mastiff" Montgomery —— 所以战斗对白的说话人 ID 一直显示英文 Mastiff。
+//   姓名分量也是同一机制。译名由用户人工翻译, 源表见 corpus/pilot-names.tsv。
+//
+// 这些 key 都不在官方列表里, 所以必须同时推进 keyOrder —— 写出阶段是按 keyOrder 走的。
+{
+  const MECH_KEYS = [
+    // >>> MECH-KEYS BEGIN (由 tools/gen-mech-keys.mjs 生成, 勿手改)
+    // 共 183 条: 67 个机甲名 + 123 个变体全名 + 0 个常备角色
+    ['annihilator', '歼灭者'], ['archer', '弓箭手'], ['assassin', '刺客'],
+    ['atlas', '宇宙神'], ['atlasii', '宇宙神 II'], ['awesome', '可畏'],
+    ['awesomedragon', '威龙'], ['banshee', '女妖'], ['battlemaster', '战将'],
+    ['bigsteelclaw', '巨钢爪'], ['blackjack', '海盗旗'], ['blackknight', '黑骑士'],
+    ['blackwidow', '黑寡妇'], ['bullshark', '牛鲨'], ['cataphract', '重甲铁骑'],
+    ['catapult', '弩炮'], ['catapultk2', '弩炮 K2'], ['centurion', '百夫长'],
+    ['charger', '冲锋者'], ['cicada', '蝉'], ['commando', '突击者'],
+    ['crab', '蟹'], ['cyclops', '独眼巨人'], ['dragon', '龙'],
+    ['enforcer', '执法官'], ['firestarter', '纵火犯'], ['flea', '跳蚤'],
+    ['granddragon', '巨龙'], ['grasshopper', '蚱蜢'], ['griffin', '狮鹫'],
+    ['hatchetman', '斧王'], ['highlander', '高地勇士'], ['hunchback', '驼背'],
+    ['jagermech', '机甲猎手'], ['javelin', '标枪'], ['jenner', '詹纳'],
+    ['kingcrab', '帝王蟹'], ['kintaro', '金太郎'], ['koschei', '科西切'],
+    ['locust', '蝗虫'], ['marauder', '掠夺者'], ['nightstar', '暗夜之星'],
+    ['occamsmissile', '奥卡姆导弹'], ['orion', '猎户座'], ['panther', '黑豹'],
+    ['phoenixhawk', '凤凰'], ['quickdraw', '闪击'], ['raven', '渡鸦'],
+    ['rhythmnation', '节奏国度'], ['rifleman', '步枪手'], ['shadowhawk', '影鹰'],
+    ['spider', '蜘蛛'], ['stalker', '潜行者'], ['targetdummy', '靶标'],
+    ['testdummy', '测试靶标'], ['thunderbolt', '雷电'], ['trebuchet', '投石机'],
+    ['urbanmech', '都市战甲'], ['valkyrie', '女武神'], ['victor', '胜利者'],
+    ['vindicator', '捍卫者'], ['vulcan', '火神'], ['warhammer', '战锤'],
+    ['wasp', '黄蜂'], ['wolverine', '狼獾'], ['zeus', '宙斯'],
+    ['annihilatoranh1a', '歼灭者 ANH-1A'], ['annihilatoranhjh', '歼灭者 ANH-JH'], ['archerarc2r', '弓箭手 ARC-2R'],
+    ['archerarc2s', '弓箭手 ARC-2S'], ['archerarcls', '弓箭手 ARC-LS'], ['archerarcxo', '弓箭手 ARC-XO'],
+    ['assassinasn101', '刺客 ASN-101'], ['assassinasn21', '刺客 ASN-21'], ['atlasas7d', '宇宙神 AS7-D'],
+    ['atlasas7gg', '宇宙神 AS7-GG'], ['atlasiias7dht', '宇宙神 II AS7-D-HT'], ['awesomeaws8q', '可畏 AWS-8Q'],
+    ['awesomeaws8t', '可畏 AWS-8T'], ['bansheebnc3e', '女妖 BNC-3E'], ['bansheebnc3m', '女妖 BNC-3M'],
+    ['bansheebnc3s', '女妖 BNC-3S'], ['battlemasterblr1g', '战将 BLR-1G'], ['battlemasterblr1s', '战将 BLR-1S'],
+    ['blackjackbj1', '海盗旗 BJ-1'], ['blackjackbj1db', '海盗旗 BJ-1DB'], ['blackknightbl6bknt', '黑骑士 BL-6B-KNT'],
+    ['blackknightbl6knt', '黑骑士 BL-6-KNT'], ['bullsharkbskm3', '牛鲨 BSK-M3'], ['bullsharkbskmaz', '牛鲨 BSK-MAZ'],
+    ['cataphractctf0x', '重甲铁骑 CTF-0X'], ['cataphractctf1x', '重甲铁骑 CTF-1X'], ['catapultcpltc1', '弩炮 CPLT-C1'],
+    ['catapultcpltc4', '弩炮 CPLT-C4'], ['catapultcpltk2', '弩炮 CPLT-K2'], ['centurioncn9a', '百夫长 CN9-A'],
+    ['centurioncn9al', '百夫长 CN9-AL'], ['cicadacda2a', '蝉 CDA-2A'], ['cicadacda3c', '蝉 CDA-3C'],
+    ['commandocom1b', '突击者 COM-1B'], ['commandocom2d', '突击者 COM-2D'], ['crabcrb20', '蟹 CRB-20'],
+    ['crabcrb27b', '蟹 CRB-27b'], ['cyclopscp10hq', '独眼巨人 CP-10-HQ'], ['cyclopscp10q', '独眼巨人 CP-10-Q'],
+    ['cyclopscp10z', '独眼巨人 CP-10-Z'], ['dragondrg1n', '龙 DRG-1N'], ['enforcerenf4r', '执法官 ENF-4R'],
+    ['firejavelin', '标枪'], ['firejavelinjvn10f', '标枪 JVN-10F'], ['firestarterfs9h', '纵火犯 FS9-H'],
+    ['fleafle15', '跳蚤 FLE-15'], ['fleafle4', '跳蚤 FLE-4'], ['granddragondrg1g', '巨龙 DRG-1G'],
+    ['grasshopperghr5h', '蚱蜢 GHR-5H'], ['griffingrf1n', '狮鹫 GRF-1N'], ['griffingrf1s', '狮鹫 GRF-1S'],
+    ['griffingrf2n', '狮鹫 GRF-2N'], ['hatchetmanhct3f', '斧王 HCT-3F'], ['hatchetmanhct3x', '斧王 HCT-3X'],
+    ['highlanderhgn732b', '高地勇士 HGN-732b'], ['highlanderhgn733', '高地勇士 HGN-733'], ['highlanderhgn733p', '高地勇士 HGN-733P'],
+    ['hunchbackhbk4g', '驼背 HBK-4G'], ['hunchbackhbk4p', '驼背 HBK-4P'], ['jagermechjm6a', '机甲猎手 JM6-A'],
+    ['jagermechjm6s', '机甲猎手 JM6-S'], ['javelinjvn10n', '标枪 JVN-10N'], ['jennerjr7d', '詹纳 JR7-D'],
+    ['kingcrabkgc0000', '帝王蟹 KGC-0000'], ['kingcrabkgcv0000', '帝王蟹'], ['kintarokto18', '金太郎 KTO-18'],
+    ['locustlct1e', '蝗虫 LCT-1E'], ['locustlct1m', '蝗虫 LCT-1M'], ['locustlct1s', '蝗虫 LCT-1S'],
+    ['locustlct1v', '蝗虫 LCT-1V'], ['maraudermad2r', '掠夺者 MAD-2R'], ['maraudermad3d', '掠夺者 MAD-3D'],
+    ['maraudermad3r', '掠夺者 MAD-3R'], ['maraudermadbh', '掠夺者 MAD-BH'], ['maraudermadcm', '掠夺者 MAD-CM'],
+    ['orionon1k', '猎户座 ON1-K'], ['orionon1v', '猎户座 ON1-V'], ['pantherpnt9r', '黑豹 PNT-9R'],
+    ['phoenixhawkpxh1', '凤凰 PXH-1'], ['phoenixhawkpxh1b', '凤凰 PXH-1B'], ['phoenixhawkpxh1k', '凤凰 PXH-1K'],
+    ['quickdrawqkd4g', '闪击 QKD-4G'], ['quickdrawqkd5a', '闪击 QKD-5A'], ['ravenrvn1x', '渡鸦 RVN-1X'],
+    ['ravenrvn3x', '渡鸦 RVN-3X'], ['riflemanrfl3c', '步枪手 RFL-3C'], ['riflemanrfl3n', '步枪手 RFL-3N'],
+    ['riflemanrfl4d', '步枪手 RFL-4D'], ['riflemanrflrip', '步枪手 RFL-RIP'], ['shadowhawkshd2d', '影鹰 SHD-2D'],
+    ['shadowhawkshd2h', '影鹰 SHD-2H'], ['spidersdr5k', '蜘蛛 SDR-5K'], ['spidersdr5v', '蜘蛛 SDR-5V'],
+    ['stalkerstk3f', '潜行者 STK-3F'], ['suburbanmech', '小都市战甲'], ['suburbanmechumr90', '小都市战甲 UM-R90'],
+    ['thunderbolttdr5s', '雷电 TDR-5S'], ['thunderbolttdr5se', '雷电 TDR-5SE'], ['thunderbolttdr5ss', '雷电 TDR-5SS'],
+    ['trebuchettbt5n', '投石机 TBT-5N'], ['trebuchettbt7k', '投石机 TBT-7K'], ['urbanmechumr60', '都市战甲 UM-R60'],
+    ['urbanmechumr60l', '都市战甲 UM-R60L'], ['victorvtr9b', '胜利者 VTR-9B'], ['victorvtr9s', '胜利者 VTR-9S'],
+    ['vindicatorvnd1aa', '捍卫者 VND-1AA'], ['vindicatorvnd1r', '捍卫者 VND-1R'], ['vulcanvl2t', '火神 VL-2T'],
+    ['vulcanvl5t', '火神 VL-5T'], ['warhammerwhm6d', '战锤 WHM-6D'], ['warhammerwhm6r', '战锤 WHM-6R'],
+    ['warhammerwhm7a', '战锤 WHM-7A'], ['wolverinewvr6k', '狼獾 WVR-6K'], ['wolverinewvr6r', '狼獾 WVR-6R'],
+    ['zeuszeu5t', '宙斯 ZEU-5T'], ['zeuszeu6s', '宙斯 ZEU-6S'], ['zeuszeu6t', '宙斯 ZEU-6T'],
+    // >>> MECH-KEYS END
+  ];
+  const PILOT_KEYS = [
+    // >>> PILOT-KEYS BEGIN (由 tools/gen-pilot-keys.mjs 从 corpus/pilot-names.tsv 生成, 勿手改)
+    // 呼号 35 条 + 名/姓 153 条 = 188 条 (人工翻译)
+    // --- 呼号 ---
+    ['apex', '巅峰'], ['arclight', '弧光'], ['behemoth', '巨兽'],
+    ['buckshot', '霰弹'], ['coach', '教练'], ['corsair', '海盗'],
+    ['deadeye', '神射手'], ['dekker', '德克尔'], ['falcon', '猎鹰'],
+    ['flatline', '平线'], ['gargoyle', '石像鬼'], ['glitch', '故障'],
+    ['hammer', '铁锤'], ['jester', '小丑'], ['kraken', '海怪'],
+    ['mastiff', '獒犬'], ['medusa', '美杜莎'], ['mockingbird', '仿声鸟'],
+    ['omega', '欧米茄'], ['ozone', '臭氧'], ['paladin', '圣骑士'],
+    ['paradise', '天堂'], ['pontoon', '浮桥'], ['rook', '车'],
+    ['shoe', '鞋'], ['showboat', '炫耀'], ['strider', '神行者'],
+    ['sumo', '相扑'], ['tbone', 'T骨'], ['thresher', '长尾鲨'],
+    ['trigger', '扳机'], ['whisper', '低语'], ['whistler', '口哨'],
+    ['wildfire', '野火'], ['witness', '见证者'],
+    // --- 名/姓 ---
+    ['aadya', '阿迪娅'], ['aaron', '亚伦'], ['abe', '阿贝'],
+    ['adalwulf', '阿达尔武尔夫'], ['adam', '亚当'], ['aguilera', '阿吉莱拉'],
+    ['ahn', '安'], ['aidan', '艾丹'], ['akashi', '明石'],
+    ['ala', '阿拉'], ['alarcon', '阿拉尔孔'], ['aleksandr', '亚历山大'],
+    ['alioth', '阿利奥斯'], ['alistair', '阿利斯泰尔'], ['aliyev', '阿利耶夫'],
+    ['amanda', '阿曼达'], ['amir', '阿米尔'], ['andaelas', '安代拉斯'],
+    ['anja', '安雅'], ['astraeus', '阿斯特赖俄斯'], ['auri', '奥里'],
+    ['benitez', '贝尼特斯'], ['bennett', '贝内特'], ['bixby', '比克斯比'],
+    ['bjrn', '比约恩'], ['bloodstone', '血石'], ['bodenstedt', '博登施泰特'],
+    ['bono', '博诺'], ['bozeman', '博兹曼'], ['bray', '布雷'],
+    ['brett', '布雷特'], ['bronski', '布朗斯基'], ['carine', '卡琳'],
+    ['castro', '卡斯特罗'], ['chang', '张'], ['chernovskaya', '切尔诺夫斯卡娅'],
+    ['chik', '奇克'], ['christoph', '克里斯托夫'], ['chung', '钟'],
+    ['colin', '科林'], ['cornichon', '科尔尼雄'], ['daksis', '达克西斯'],
+    ['damestoir', '达梅斯图尔'], ['dannen', '丹嫩'], ['dardai', '达尔代'],
+    ['delvillar', '德尔维拉尔'], ['diana', '黛安娜'], ['doochin', '杜钦'],
+    ['doukas', '杜卡斯'], ['dubrovski', '杜布罗夫斯基'], ['duncan', '邓肯'],
+    ['durand', '杜兰德'], ['edward', '爱德华'], ['einar', '埃纳尔'],
+    ['eric', '埃里克'], ['erin', '艾琳'], ['farida', '法里达'],
+    ['fuentes', '富恩特斯'], ['garrat', '加勒特'], ['gerhard', '格哈德'],
+    ['godfrey', '戈弗雷'], ['hadden', '哈登'], ['halder', '哈尔德'],
+    ['hayes', '海斯'], ['heinrici', '海因里希'], ['holmgren', '霍尔姆格伦'],
+    ['hummel', '胡梅尔'], ['huxley', '赫胥黎'], ['james', '詹姆斯'],
+    ['jason', '杰森'], ['jeffrey', '杰弗里'], ['jeremiah', '杰里迈亚'],
+    ['jessica', '杰西卡'], ['john', '约翰'], ['johnson', '约翰逊'],
+    ['josh', '乔什'], ['joshua', '约书亚'], ['juliana', '朱莉安娜'],
+    ['karina', '卡琳娜'], ['kenrik', '肯里克'], ['kowalski', '科瓦尔斯基'],
+    ['krauss', '克劳斯'], ['kyone', '京音'], ['lamb', '兰姆'],
+    ['lantalia', '兰塔利亚'], ['lars', '拉尔斯'], ['liadar', '利亚达尔'],
+    ['llana', '拉娜'], ['lorenzo', '洛伦佐'], ['lunari', '卢纳里'],
+    ['maclaren', '麦克拉伦'], ['marcus', '马库斯'], ['marisol', '玛丽索尔'],
+    ['marsin', '马辛'], ['matthew', '马修'], ['mckinney', '麦金尼'],
+    ['mcrae', '麦克雷'], ['mehra', '梅赫拉'], ['metke', '梅特克'],
+    ['michael', '迈克尔'], ['miranda', '米兰达'], ['mizrahi', '米兹拉希'],
+    ['mohammed', '穆罕默德'], ['morrow', '莫罗'], ['navarro', '纳瓦罗'],
+    ['nick', '尼克'], ['nicolette', '妮可莱特'], ['octavio', '奥克塔维奥'],
+    ['orchid', '奥奇德'], ['osis', '奥西斯'], ['page', '佩奇'],
+    ['paige', '佩吉'], ['peter', '彼得'], ['phaelon', '费隆'],
+    ['popovi', '波波维奇'], ['raldoron', '拉尔多隆'], ['rand', '兰德'],
+    ['reggie', '雷吉'], ['reichenbach', '赖兴巴赫'], ['risenki', '里森基'],
+    ['ryia', '里亚'], ['samson', '萨姆森'], ['sandy', '桑迪'],
+    ['scott', '斯科特'], ['shiseoyen', '希塞奥-延'], ['simonsen', '西蒙森'],
+    ['slipais', '斯利帕伊斯'], ['soren', '索伦'], ['sosa', '索萨'],
+    ['stevenson', '史蒂文森'], ['sven', '斯文'], ['talon', '利爪'],
+    ['tane', '塔内'], ['teo', '特奥'], ['thesteelbeast', '钢铁巨兽'],
+    ['thomas', '托马斯'], ['tilson', '蒂尔森'], ['todd', '托德'],
+    ['tony', '托尼'], ['toraldsen', '托拉尔森'], ['upton', '厄普顿'],
+    ['veisi', '韦西'], ['vincent', '文森特'], ['viona', '维奥娜'],
+    ['vonkaas', '冯·卡斯'], ['voyls', '沃伊尔斯'], ['whitney', '惠特尼'],
+    ['winzar', '温扎'], ['woods', '伍兹'], ['zachary', '扎卡里'],
+    ['zebak', '泽巴克'], ['zhou', '周'], ['zin', '津'],
+    // >>> PILOT-KEYS END
+  ];
+  const added = [];
+  for (const [k, v] of [...MECH_KEYS, ...PILOT_KEYS]) {
+    if (merged.has(k) || keyOrder.indexOf(k) >= 0) continue;
+    merged.set(k, v);
+    keyOrder.push(k);          // 追加在末尾, 官方 key 的相对顺序不受影响
+    added.push(k);
+  }
+  console.log(`机甲/呼号名 key: 补入 ${added.length} 条`);
+}
+
+// ---- 机甲"常备角色"译名 (用户人工翻译, corpus/stock-role-zh.tsv) ----
+// 与机甲名同一个机制: 数据文件里的英文字符串规范化后当 key 查 CSV, 缺 key 就显示英文。
+// 与机甲名的区别: 这些角色 key 有一部分【已经在官方列表里】(值是前几轮的机翻),
+// 所以这里既要覆盖已有的值, 也要追加缺失的 key (例如 juggernaut / direct-firesupport / scout/hunter-killer)。
+{
+  // >>> ROLE-ZH BEGIN (由 tools/gen-role-zh.mjs 生成, 勿手改)
+  // 机甲"常备角色"(chassisdef 的 StockRole) 译名 —— 用户人工翻译, 权威来源 corpus/stock-role-zh.tsv
+  // 注意: 已存在的 key 会被这里的值覆盖; 不在官方列表里的 key 由应用段追加。
+  const ROLE_ZH = [
+    ['brawler', '格斗'], ['brawler&closeassault', '格斗与近距突击'], ['brawler&electronicwarfare', '格斗与电子战'],
+    ['brawler&generalassault', '格斗与通用突击'], ['brawler&rangedassault', '格斗与远程突击'], ['brawler&skirmisher', '格斗与游击'],
+    ['cavalry&firesupport', '骑兵与火力支援'], ['cavalry&scout', '骑兵与侦察'], ['command&firesupport', '指挥与火力支援'],
+    ['direct-firesupport', '直瞄火力支援'], ['extremelyfastscout', '极速侦察'], ['extremelymaneuverablescout', '高机动侦察'],
+    ['faststrikercavalry', '快速突击骑兵'], ['firesupport', '火力支援'], ['firesupport&brawler', '火力支援与格斗'],
+    ['firesupport&rangedassault', '火力支援与远程突击'], ['firesupport&skirmisher', '火力支援与游击'], ['heavybrawler', '重型格斗'],
+    ['heavybrawler&closeassault', '重型格斗与近距突击'], ['heavybrawler&sniper', '重型格斗与狙击'], ['heavycavalry', '重型骑兵'],
+    ['heavycavalry&closeassault', '重型骑兵与近距突击'], ['heavydefender', '重型防御'], ['heavyfiresupport', '重型火力支援'],
+    ['heavyfiresupport&defender', '重型火力支援与防御'], ['heavyskirmisher', '重型游击'], ['heavyskirmisher&brawler', '重型游击与格斗'],
+    ['heavyskirmisher&cavalry', '重型游击与骑兵'], ['heavysniper&defender', '重型狙击与防御'], ['heavystriker&disabler', '重型突击与致瘫'],
+    ['juggernaut', '重装'], ['juggernaut&closeassault', '重装与近距突击'], ['juggernaut&heavycavalry', '重装与重型骑兵'],
+    ['juggernaut&rangedassault', '重装与远程突击'], ['juggernaut^sniper^&heavycavalry', '重装、狙击与重型骑兵'], ['lightfiresupport', '轻型火力支援'],
+    ['lightsniper&scout', '轻型狙击与侦察'], ['lightstriker&scout', '轻型突击与侦察'], ['missileboat', '导弹平台'],
+    ['rangedassault', '远程突击'], ['recon&electronicwarfare', '侦察与电子战'], ['scout&disabler', '侦察与致瘫'],
+    ['scout&harasser', '侦察与袭扰'], ['scout&sniper', '侦察与狙击'], ['scout/hunter-killer', '侦察 / 猎杀'],
+    ['skirmisher', '游击'], ['skirmisher&brawler', '游击与格斗'], ['skirmisher&cavalry', '游击与骑兵'],
+    ['skirmisher&sniper', '游击与狙击'], ['sniper', '狙击'], ['sniper&direct-firesupport', '狙击与直瞄火力支援'],
+    ['sniper&firesupport', '狙击与火力支援'], ['sniper&lightbrawler', '狙击与轻型格斗'], ['striker', '突击'],
+    ['striker&skirmisher', '突击与游击'], ['strikercavalry', '突击骑兵'],
+  ];
+  // >>> ROLE-ZH END
+  let set = 0, add = 0;
+  for (const [k, v] of ROLE_ZH) {
+    const had = merged.has(k) || keyOrder.indexOf(k) >= 0;
+    if (had) {
+      if (merged.get(k) !== v) { merged.set(k, v); set++; }
+    } else {
+      merged.set(k, v);
+      keyOrder.push(k);        // 追加在末尾, 官方 key 的相对顺序不受影响
+      add++;
+    }
+  }
+  console.log(`常备角色译名: 覆盖 ${set} 条, 新增 key ${add} 条 (共 ${ROLE_ZH.length} 条)`);
 }
 
 // ---- 写出 ----

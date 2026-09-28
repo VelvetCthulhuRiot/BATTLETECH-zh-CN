@@ -9,6 +9,19 @@ const GAME = 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH/BattleTech_
 const CSV = path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
 const US = '\u001f';
 
+// 官方德语 (用于多处对照; 文件不存在时相关检查自动降级为"不作跨语言比较")
+const deMap = (() => {
+  try {
+    const p = path.join(GAME, 'strings_de-DE.csv');
+    const m = new Map();
+    for (const L of fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, '').split('\n').slice(1)) {
+      const i = L.indexOf(',');
+      if (i > 0) m.set(L.slice(0, i), L.slice(i + 1).replace(/\r$/, ''));
+    }
+    return m;
+  } catch { return null; }
+})();
+
 const raw = fs.readFileSync(CSV, 'utf8');
 const fails = [];
 const warns = [];
@@ -48,7 +61,8 @@ function needsGlyph(ch) {
 const seen = new Set();
 const order = [];
 let asciiComma = 0, oddQuote = 0, quoteRun = 0, usOutside = 0, usOutsideRows = 0, usInside = 0, spanNoSep = 0, outAtlas = 0, litCR = 0, emptyVal = 0, spanOpen = 0, spanClose = 0, tagLines = 0;
-const badSamples = { asciiComma: [], oddQuote: [], quoteRun: [], spanSep: [], outAtlas: [], litCR: [] };
+let ctrlChar = 0, braceImbalance = 0;
+const badSamples = { asciiComma: [], oddQuote: [], quoteRun: [], spanSep: [], outAtlas: [], litCR: [], ctrlChar: [], braceImbalance: [] };
 const outAtlasChars = new Map();
 
 for (const L of dataLines) {
@@ -99,6 +113,33 @@ for (const L of dataLines) {
   usOutside += strayUS;
   if (strayUS) usOutsideRows++;
 
+  // 控制字符与占位符完整性
+  // 教训: 曾经在"挖空 {...} 与 <...> 做分析"时把掩码写回了结果, 抹掉了占位符,
+  //       而当时的自检查不出来。下面两条就是为那类事故设的闸门。
+  let braces = 0;
+  for (let ci = 0; ci < v.length; ci++) {
+    const c = v[ci];
+    if (c === '{') braces++;
+    else if (c === '}') braces--;
+    const cp = c.codePointAt(0);
+    // CSV 里换行写字面 "\n"(反斜杠+n), 所以除 U+001F 外不该有任何控制字符
+    if (cp < 0x20 && cp !== 0x1f) {
+      ctrlChar++;
+      if (badSamples.ctrlChar.length < 5) badSamples.ctrlChar.push(k + ' -> U+' + cp.toString(16).toUpperCase().padStart(4, '0'));
+    }
+  }
+  if (braces !== 0) {
+    // 官方德语自身也可能不配平 (例如 col[{0={1},col[{0]]={1} 就是官方原样写法),
+    // 所以只在"我们与官方不一致"时才报错 —— 既抓得住自己的 bug, 又不误报官方数据。
+    const deVal = deMap ? deMap.get(k) : undefined;
+    let deBraces = 0;
+    if (deVal !== undefined) for (const c of deVal) { if (c === '{') deBraces++; else if (c === '}') deBraces--; }
+    if (deVal === undefined || deBraces !== braces) {
+      braceImbalance++;
+      if (badSamples.braceImbalance.length < 5) badSamples.braceImbalance.push(k + ' -> ' + (braces > 0 ? '缺 ' + braces + ' 个 }' : '多 ' + (-braces) + ' 个 }'));
+    }
+  }
+
   // 字形白名单
   const badc = new Set();
   for (const ch of v) {
@@ -127,6 +168,10 @@ if (outAtlas === 0) ok('全部字符都在字形图集内 (否则显示为方块
 else bad('全部字符都在字形图集内', `${outAtlas} 行含白名单外字符: ${[...outAtlasChars.entries()].map(([c, n]) => `${c}(${n})`).join(' ')}`);
 if (litCR === 0) ok('无字面 \\r 转义', '与官方 de-DE 一致 (官方 \\n 3425 行 / \\r\\n 仅 4 行)');
 else warn('无字面 \\r 转义', `${litCR} 行: ${badSamples.litCR.join(', ')}`);
+if (ctrlChar === 0) ok('值内无异常控制字符', '只允许 U+001F (官方逗号替身); 换行写字面 \\n');
+else bad('值内无异常控制字符', `${ctrlChar} 处: ${badSamples.ctrlChar.join(' ; ')}`);
+if (braceImbalance === 0) ok('值内 { } 花括号配平', '占位符未被破坏');
+else bad('值内 { } 花括号配平', `${braceImbalance} 行: ${badSamples.braceImbalance.join(' ; ')}`);
 if (spanOpen === spanClose) ok('[[ 与 ]] 数量相等', `${spanOpen} 对`);
 else console.log(`  [INFO] [[ 与 ]] 总数不等 ([[ ${spanOpen} / ]] ${spanClose}) — 逐行判定见下方 [4] 节`);
 if (emptyVal === 0) ok('无空译文');

@@ -40,7 +40,7 @@ BATTLETECH 简体中文汉化 —— 迁移说明
 项目主页: https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN
 
 【包含内容】
-  mods\BTHanHua\        文本汉化   (mod.json + strings_zh-CN.csv 共 21,505 条)
+  mods\BTHanHua\        文本汉化   (mod.json + strings_zh-CN.csv 共 21,875 条)
   mods\BTHanHuaFont\    字体注入   (systemMod.json + BTHanHuaFont.dll + atlas 字形图集)
     atlas\atlas.a8      8192x8192 中文字形位图, 8,352 个字形 (原始 64 MB)
     atlas\atlas.bin     字形记录与字体度量

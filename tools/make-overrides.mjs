@@ -69,6 +69,74 @@ const CUSTOM = [
   ['gun', '枪炮',
     '用户反馈: 小长条只显示"枪"。gun 是 gunner 四项属性的缩写 key (官方 de="WAF." 即 Waffen 的缩写), ' +
     '但同排的驾驶/勇气/战术都是 2 字(tac 官方 de="Tak." 中文也仍是"战术"), 宽度放得下, 没必要单独截短'],
+  // --- 用户反馈 (机甲库) ---
+  ['assassin', '刺客',
+    '用户反馈: 机甲库里 ASN-101 显示"刺杀"。官方 de 这个 key 是 Assassin(机甲型号, 名词), ' +
+    '而"刺杀"对应的是另一个 key assassinate(官方 de=Attentat)。名词应译"刺客"'],
+  // --- 用户反馈 (飞行员呼号, 都是官方已有 key 的"改值") ---
+  ['vonkobra', '冯·科布拉',
+    '用户反馈: 旧值"冯眼镜蛇"把德语贵族前缀 von 与单词 Kobra(眼镜蛇) 拆开直译了。' +
+    '这里是人名 von Kobra, 应整体处理: von 译"冯", Kobra 作姓氏音译"科布拉"'],
+  ['bronzite', '古铜',
+    '用户反馈: 旧值"古铜辉石"是矿物的字典义, 作呼号太长、太像材料名。' +
+    '呼号应简短意译 -> "古铜"'],
+  ['brawler', '斗士',
+    '用户反馈: 旧值"主战机"不是 Brawler 的意思。官方 de=Kämpfer(斗士/战士), ' +
+    'Brawler 亦指标称擅长近身缠斗的机师 -> "斗士"。' +
+    '注意: 这是【飞行员呼号】(pilot_d7_brawler); 同名的机甲角色标签(heavybrawler / brawler&closeassault 等)按用户要求不动'],
+  ['elitebrawler', '精锐格斗',
+    '用户裁决: 这也是【飞行员呼号】("Elite Brawler", pilot_d10_brawler), 应与其同源的 ' +
+    '机甲角色 brawler(格斗, 见 corpus/stock-role-zh.tsv) 保持一致 -> "精锐格斗"。' +
+    '注意 brawler 这一个 key 被呼号与角色共用, 用户定了角色的"格斗"'],
+  // --- 用户反馈 (剧情文本: 译者凭空加的注解 / 断句错误) ---
+  ['thekellhoundsmercenarycommandwasfoundedin3010bypatrickandmorgankell^usingtheinheritancefromthedeathoftheirfather*',
+    '凯尔猎犬佣兵团是在3010年，由帕特里克和摩根·凯尔利用父亲死后的遗产创立的。',
+    '用户反馈: 译文里冒出一对莫名其妙的括号"帕特里克(·马丁·凯尔)"。对照官方 de 与其它的凯尔猎犬词条, ' +
+    'Patrick Kell 没有中间名, "·马丁·凯尔"是译者凭空加的, 已删'],
+  ['[laughing]boldwords^cousinbuttheonlyvictorytheyllbecelebratingismine*youmaybeascendingthethronetoday^butmykagaismorethanamatchforthefamilyheirloomthatyoucallabattlemechandinthearena^ireignsupreme*',
+    '[大笑]说大话呢，表姐……可他们要庆祝的胜利只有一场，那就是我的胜利。也许你今天会登上王座，但我的""加贺""可不比那台被你称作战斗机甲的传家宝逊色……而在竞技场上，唯我独尊。',
+    '用户反馈: 旧译""加贺""Kaga(维公主的K-2型""弩炮"")夹着英文还带一段括号注解, 很不通顺。' +
+    'en 原文只有 "my Kaga is more than a match for the family heirloom that you call a BattleMech", 括号注解系译者自加, 已删'],
+  ['wecallthecataphractafrankenmechbecauseitsgotalittlebitofeverythingstitchedtogetheronit*the1xmodelworkswellatmedium-longtocloserrange^withgoodarmorandweaponry*',
+    '我们管""重甲铁骑""叫""拼装机甲""，因为它身上拼着五花八门的东西。1X 型在中远程到较近距离都表现良好，装甲和武器都不错。',
+    '用户反馈: 旧值把 FrankenMech 留了英文; 另外"东西.1X型"在句号后直接接型号, 断句是错的。' +
+    '⚠️ 人工裁决段跑在"机甲名统一/改名"段【之后】, 所以这里必须写【当前】译名(重甲铁骑); ' +
+    '写旧名(具装骑兵)会把改名覆盖回去 —— 曾因此残留 1 处, 由一致性核查抓出'],
+  ['checkitout^bosswevelandedourselvesafrankenmech!lookslikeacrab^butontheinside^itsatleastaquarterurbiethatswherethenewballisticmountinghardwarecamefrom*imhonestlyamazedthatthisthingevenworks^butitdoes^anditsoursnow!',
+    '快看，老板。我们弄到了一台""拼装机甲""！外形像一台""蟹""，可里面至少有四分之一是""都市战甲""——那些新的弹道挂载硬件就是从它身上来的。说实话，我很惊讶这东西居然还能动，但它确实能动，而且现在是我们的了！',
+    '用户反馈: FrankenMech 应译"拼装机甲"; 顺带把"蟹式"按 glossary 改成机甲名"蟹"并加引号; ' +
+    'UrbanMech 按用户新表定为"都市战甲"'],
+  ['theum-r90suburbanmechadaptsthetraditionalurbanmechr60intoanenergyweaponplatformforhigherperformance*becauseitsweaponsarentlimitedbyammunitionconcerns^ther90isbetter-suitedtolongerengagements*',
+    'UM-R90""小都市战甲""将传统的""都市战甲"" R60改造成能量武器平台，以求更好的表现。由于它的武器不受弹药问题限制，因此R90型更适合长时间的交战。',
+    '旧译在中文名后面还留着英文 "UrbanMech R60", 而机甲英文名的加引号规则把这个残留英文替换成了' +
+    '带引号的中文名, 与前面已有的中文名撞成 4 连引号 (撞了 verify-csv 的"引号连续段不超过 2 个")。' +
+    '对照官方 de 重写本句'],
+  // --- 用户反馈 (机甲部件名) ---
+  ['bscsystem', '弹道攻城补偿系统',
+    '用户反馈: 旧值"BSC星系"是错的。原文是 "BSC System" —— 歼灭者出厂自带的弹道攻城补偿器 ' +
+    '(见该部件自身描述: "歼灭者"内置的弹道攻城补偿器), 而 System 被当成天文"星系"了。' +
+    '官方 de 本地化为 "BBS-System"(BBS 是德语缩写), 说明官方也按"系统"处理'],
+  ['statuseffect-bsc-ballisticboost', '状态效果 BSC 弹道提升',
+    '用户反馈: 旧值"状态效果 BBS 弹道提升"里的 BBS 是【德语】缩写, 被从官方 de 照抄了过来。' +
+    '英文原文是 BSC, 与旁边那条 statuseffect-bsc-maxstabilityboost(状态效果 BSC 最大稳定性提升) 对齐'],
+  // --- 用户反馈: 部件属性标签 "奖励" 改 "效果" ---
+  ['bonuses', '效果',
+    '用户反馈: 机甲部件提示框里那行"奖励:"读着别扭, 更愿意看"效果"。' +
+    '官方 de 是 "Boni"(加成), 语义就是部件的属性加成, 不是任务报酬 -> "效果"'],
+  ['bonuses:', '效果:',
+    '同上 (带冒号的那一条, 部件提示框实际用的就是它; 官方 de="Boni:")。' +
+    '注意 reward / rewards (de=Belohnung) 是【任务报酬】, 仍译"奖励", 两者不要混'],
+  // --- 用户反馈: 部件短简介与新名字对齐 ---
+  ['theintegratedballisticsiegecompensatorsoftheannihilatorturnitintoanindomitablekillingmachine*speciallytunedtothebehemothsstatureandstride^thisequipmentincreasesmaximumstabilityandballisticweaponrydamage*',
+    '""歼灭者""内置的弹道攻城补偿系统使它成为一台不可阻挡的杀戮机器。这套装备专门针对这头巨兽的体型与步幅调校，能提升最大稳定性与弹道武器伤害。',
+    '用户反馈: 部件名已定为"弹道攻城补偿系统", 简介里写的是"补偿器", 用词没对齐; ' +
+    '另外 ""歼灭者"" 后面多了一个空格'],
+  // --- 用户反馈: 副舰长名字前面的破折号 ---
+  ['darius', '达吕斯',
+    '用户反馈: 对话里副舰长的名字显示成" —达吕斯", 名字前面多一个破折号。' +
+    '官方 de 就是光秃秃的 "Darius", 那个 " —" 是我们自己加的 (旧值 " —达吕斯") -> 去掉'],
+  ['kerensky', '克伦斯基',
+    '顺带扫出来的同类脏数据: 旧值 " 克伦斯基" 带一个前导空格 (官方 de="KERENSKY"), 会显示成多一个空格'],
 ];
 
 const out = [];
