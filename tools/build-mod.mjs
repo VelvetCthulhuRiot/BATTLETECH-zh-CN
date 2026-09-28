@@ -49,10 +49,12 @@ const csvText = outLines.join('\n') + '\n';
 for (const L of outLines.slice(1)) { const i = L.indexOf(','); if (L.slice(i + 1).includes(',')) throw new Error('值里有逗号: ' + L.slice(0, 80)); }
 
 const MOD_NAME = 'BTHanHua';
+// 版本号: 发新版时改这里 (会写进 mod.json 与 说明.txt, 并随 sync-repo 同步到仓库)
+const VERSION = '1.2.0';
 const modJson = {
   Name: MOD_NAME,
   Enabled: true,
-  Version: '1.0.0',
+  Version: VERSION,
   Description: '简体中文汉化 - 通过官方 ModLoader 注入, 不修改游戏原文件 (GitHub: VelvetCthulhuRiot/BATTLETECH-zh-CN)',
   Author: 'VelvetCthulhuRiot',
   Website: 'https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN',
@@ -64,6 +66,7 @@ const modJsonAlt = { ...modJson, Manifest: [{ Type: 'CSV', Path: 'data/localizat
 const readme = [
   'BATTLETECH 简体中文汉化 (通过官方 ModLoader 注入, 不修改游戏原文件)',
   '项目主页: https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN',
+  `版本: v${VERSION} (对应游戏 1.9.1 / build 686R)`,
   '',
   '安装:',
   '  1. 把 mods 里的 BTHanHua 和 BTHanHuaFont 两个文件夹放到',
@@ -82,12 +85,14 @@ const readme = [
   '  mod.alt.json      备用描述文件 (若 mod 加载失败, 用它替换 mod.json 再试)',
   '',
   '出问题:',
-  '  * 文字变方框/不显示 -> 删掉 BTHanHuaFont 文件夹, 文本汉化不受影响',
-  '  * 界面还是英文 -> 设置里选「中文」; 下拉框没有「中文」说明 mod.json 没加载成功',
-  '  * 某个词读起来怪怪的 (如「眼毛」) -> 字体字表限制, 不是错译, 见 README',
+  '  * 文字变方框/不显示 -> 删掉 BTHanHuaFont 文件夹, 文本汉化不受影响 (原因见它自己的日志)',
+  '  * 界面还是英文 -> 设置里选「中文」; 下拉框没有「中文」说明 mod.json 没加载成功,',
+  '    可以把 mod.alt.json 复制成 mod.json 再试',
+  '  * 发现错译 / 读不通 -> 欢迎到项目主页提 issue, 附上界面和原文',
   '',
   '译文语料改编自 cxwithyxy/BATTLETECH_zhcn (MIT, (c) 2022 cx2889)。',
-  '字体包 font 是微软雅黑的 SDF 图集, 字体授权提示见项目 THIRDPARTY.md。',
+  '字形来自 Noto Sans SC (SIL OFL 1.1, 可自由再分发), 全文见 BTHanHuaFont\\LICENSE-OFL.txt。',
+  '第三方归属详见项目 THIRDPARTY.md。',
 ].join('\r\n');
 
 // 游戏实测确认使用 "My Games" (带空格) 这个路径 (见 modloader 日志 "Using default Mods path")
