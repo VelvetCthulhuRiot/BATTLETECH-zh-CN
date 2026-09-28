@@ -3,12 +3,20 @@
 * text=auto eol=lf
 
 # 二进制, 不要做任何换行/编码转换
-*.dll  binary
-*.zip  binary
-font   binary
-*.exe  binary
+*.dll   binary
+*.zip   binary
+*.exe   binary
+*.a8    binary
+*.a8.gz binary
+*.otf   binary
+*.ttf   binary
+*.ttc   binary
 
 # 让 GitHub 正确识别
 *.cs   linguist-language=C#
 *.mjs  linguist-language=JavaScript
 *.csv  linguist-language=CSV
+*.py   linguist-language=Python
+
+# 字形图集是生成产物 (64 MB 位图), 不计入语言统计
+mods/BTHanHuaFont/atlas/atlas.a8  linguist-generated=true

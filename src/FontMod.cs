@@ -32,6 +32,12 @@ namespace BTHanHua
         static readonly HashSet<string> s_swapped = new HashSet<string>();
         static readonly HashSet<string> s_shortSeen = new HashSet<string>();
 
+        // 注: 曾经想在这里做"字形探针"(靠 ATLAS_TEST 把几个界面 key 换成含缺字的串),
+        // 但实测不生效 —— 主菜单按钮走的是游戏自己的 Localize.* 系统
+        // (dump 里有 Localize.FontLocTable / Localize.Text / Localize.FontLocalizationManager),
+        // 不经过 BattleTech.Localization.LocalizeKey 这个 hook。
+        // 需要做视觉 A/B 时, 直接改部署的 strings_zh-CN.csv 里对应的 key 即可 (那才是真实数据通路)。
+
         // ---------- 自建日志 ----------
         static void Log(string msg)
         {
@@ -48,69 +54,123 @@ namespace BTHanHua
         {
             try
             {
-                string path = FindBundle();
-                s_logPath = (path != null) ? Path.Combine(Path.GetDirectoryName(path), "BTHanHuaFont.log") : null;
-                if (s_logPath != null) { try { File.WriteAllText(s_logPath, "=== BTHanHua FontMod v0.3 ===\r\n", Encoding.UTF8); } catch { } }
+                // 日志路径必须独立于字体包 —— 发行版已经不带微软雅黑 bundle 了,
+                // 若仍从 bundle 路径推导, 没有 bundle 时就会一个字都不记。
+                string modDir = FindModDir();
+                s_logPath = (modDir != null) ? Path.Combine(modDir, "BTHanHuaFont.log") : null;
+                if (s_logPath != null) { try { File.WriteAllText(s_logPath, "=== BTHanHua FontMod v0.8 ===\r\n", Encoding.UTF8); } catch { } }
 
-                Log("Init 开始; bundle=" + (path ?? "<未找到>"));
-                if (path == null) { Log("ERROR 找不到字体包 font"); return; }
+                string path = FindBundle(modDir);
+                Log("Init 开始; modDir=" + (modDir ?? "<未找到>") + " bundle=" + (path ?? "<未找到>"));
 
-                AssetBundle bundle = AssetBundle.LoadFromFile(path);
-                if (bundle == null) { Log("ERROR AssetBundle.LoadFromFile 返回 null"); return; }
-                UnityEngine.Object[] objs = bundle.LoadAllAssets(typeof(TMP_FontAsset));
-                int n = (objs == null) ? 0 : objs.Length;
-                Log("bundle 内 TMP_FontAsset 数量: " + n);
-                for (int i = 0; i < n; i++)
+                // 字体包是可选的: 它现在只用作"材质/样式模板 + 回退"。
+                // 发行版不再带它 (那是微软雅黑的衍生图集, 授权不明确; 而且 16 MB 压不动)。
+                if (path == null)
                 {
-                    TMP_FontAsset f = objs[i] as TMP_FontAsset;
-                    if (f == null) continue;
-                    Log("  asset: '" + f.name + "'");
-                    if (s_cjk == null) s_cjk = f;
+                    Log("字体包: 未提供 (正常 —— 离线字形图集会负责渲染, 材质自行构建)");
                 }
-                if (s_cjk == null) { Log("ERROR bundle 内没有 TMP_FontAsset"); return; }
-                int glyphs = (s_cjk.characterDictionary != null) ? s_cjk.characterDictionary.Count : -1;
-                string atlas = (s_cjk.atlas != null) ? (s_cjk.atlas.width + "x" + s_cjk.atlas.height) : "null";
-                Log("选定字体 '" + s_cjk.name + "' glyphs=" + glyphs + " atlas=" + atlas + " mat=" + (s_cjk.material != null ? s_cjk.material.name : "null"));
+                else
+                {
+                    AssetBundle bundle = AssetBundle.LoadFromFile(path);
+                    if (bundle == null) Log("字体包: AssetBundle.LoadFromFile 返回 null, 忽略");
+                    else
+                    {
+                        UnityEngine.Object[] objs = bundle.LoadAllAssets(typeof(TMP_FontAsset));
+                        int n = (objs == null) ? 0 : objs.Length;
+                        Log("字体包: 内 TMP_FontAsset 数量 " + n);
+                        for (int i = 0; i < n; i++)
+                        {
+                            TMP_FontAsset f = objs[i] as TMP_FontAsset;
+                            if (f == null) continue;
+                            Log("  asset: '" + f.name + "'");
+                            if (s_cjk == null) s_cjk = f;
+                        }
+                        if (s_cjk != null)
+                        {
+                            int gl = (s_cjk.characterDictionary != null) ? s_cjk.characterDictionary.Count : -1;
+                            string at = (s_cjk.atlas != null) ? (s_cjk.atlas.width + "x" + s_cjk.atlas.height) : "null";
+                            Log("字体包: 选定 '" + s_cjk.name + "' glyphs=" + gl + " atlas=" + at
+                                + " mat=" + (s_cjk.material != null ? s_cjk.material.name : "null"));
+                        }
+                        else Log("字体包: 内没有 TMP_FontAsset, 忽略");
+                    }
+                }
 
                 ApplyPatches();
-                SweepExistingFonts();
-                DumpGlyphs();
 
-                // 汉字比拉丁字母高, 游戏不少面板行高是按拉丁字母设计的 -> 整体缩一点, 避免上下行相压
+                string csv = FindCsv(path, modDir);
+                Log("CSV = " + (csv ?? "<未找到>"));
+
+                // v0.8: 优先用离线字形图集 (AtlasFont)。数据源是离线文件, 不依赖任何系统字体。
                 try
                 {
-                    string noShrink = (path != null) ? Path.Combine(Path.GetDirectoryName(path), "FONT_NOSHRINK") : null;
-                    if (noShrink != null && File.Exists(noShrink)) Log("字号缩放: 检测到 FONT_NOSHRINK, 保持原字号");
+                    bool atlasOff = modDir != null && File.Exists(Path.Combine(modDir, "ATLAS_OFF"));
+                    bool atlasForce = modDir != null && File.Exists(Path.Combine(modDir, "ATLAS_FORCE"));
+                    string atlasDir = FindAtlasDir(modDir);
+                    if (atlasOff)
+                        Log("AtlasFont: 检测到 ATLAS_OFF 开关, 跳过离线图集");
+                    else if (atlasDir == null)
+                        Log("AtlasFont: 没找到 atlas/atlas.bin, 跳过 (继续用 MSYH SDF)");
                     else
                     {
-                        ShrinkFont(s_cjk, 1.10f, "MSYH");
+                        Log("AtlasFont: 图集目录 = " + atlasDir + (atlasForce ? "   [ATLAS_FORCE 已开]" : ""));
+                        TMP_FontAsset full = AtlasFont.Build(atlasDir, csv, s_cjk, atlasForce, Log);
+                        if (full != null)
+                        {
+                            s_full = full;
+                            EnsureFallback(s_full);
+                            Log("AtlasFont: 已启用离线字形图集 (中文将使用它渲染)");
+                        }
+                        else Log("AtlasFont: 构建失败, 继续使用 MSYH SDF");
                     }
                 }
-                catch (Exception ex) { Log("字号缩放异常: " + ex.Message); }
+                catch (Exception ex) { Log("AtlasFont 阶段异常: " + ex.Message); }
 
-                // v0.7: 尝试用系统字体自建"全字库", 摆脱社区字体包 2615 字形的限制
+                // 两条路都没成 -> 中文没法渲染, 明确报出来
+                if (s_full == null && s_cjk == null)
+                {
+                    Log("ERROR 既没有离线图集也没有字体包, 中文将无法渲染 (请检查 atlas/ 目录)");
+                    return;
+                }
+
+                // 全局回退表注入必须放在这里: 此时 ActiveFont() 才是最终结果。
+                // (放在图集构建之前的话, 没有字体包时 ActiveFont() 还是 null, 注入会静默失效)
+                SweepExistingFonts();
+
+                // v0.7 的"运行时从系统字体自建图集"已证实走不通 (Unity 动态字体纹理上限 1024/2048,
+                // 覆盖率卡在 90.1%)。改为默认关闭, 只有显式放 FULLFONT_ON 才跑 —— 顺便省掉每次启动的 14 秒。
                 try
                 {
-                    string offFlag = (path != null) ? Path.Combine(Path.GetDirectoryName(path), "FULLFONT_OFF") : null;
-                    if (offFlag != null && File.Exists(offFlag))
-                    {
-                        Log("FullFont: 检测到 FULLFONT_OFF 开关, 跳过自建 (继续用 MSYH SDF)");
-                    }
+                    bool ffOn = modDir != null && File.Exists(Path.Combine(modDir, "FULLFONT_ON"));
+                    if (s_full != null) { /* 离线图集已生效, 不需要 */ }
+                    else if (!ffOn) Log("FullFont: 未启用 (该路线覆盖率上限不够; 需要 FULLFONT_ON 才会尝试)");
                     else
                     {
-                        string csv = FindCsv(path);
-                        Log("FullFont: CSV = " + (csv ?? "<未找到>"));
                         TMP_FontAsset full = FullFont.Build(csv, Log);
                         if (full != null)
                         {
                             s_full = full;
-                            EnsureFallback(s_full);          // 雅黑作为兜底
+                            EnsureFallback(s_full);
                             Log("FullFont: 已启用全字库 (中文将使用它渲染)");
                         }
                         else Log("FullFont: 构建失败, 继续使用 MSYH SDF");
                     }
                 }
                 catch (Exception ex) { Log("FullFont 阶段异常: " + ex.Message); }
+
+                // 汉字比拉丁字母高, 游戏不少面板行高是按拉丁字母设计的 -> 整体缩一点, 避免上下行相压。
+                // 必须作用在"实际用来渲染的那个字体"上 (s_full 优先): 原来只缩 s_cjk,
+                // 而渲染走 s_full, 于是全字库的字形会大 10%、行距也会变。
+                try
+                {
+                    string noShrink = (modDir != null) ? Path.Combine(modDir, "FONT_NOSHRINK") : null;
+                    if (noShrink != null && File.Exists(noShrink)) Log("字号缩放: 检测到 FONT_NOSHRINK, 保持原字号");
+                    else ShrinkFont((s_full != null) ? s_full : s_cjk, 1.10f, (s_full != null) ? "ATLAS" : "MSYH");
+                }
+                catch (Exception ex) { Log("字号缩放异常: " + ex.Message); }
+
+                // 在图集/字号都定下来之后导出"实际生效"的字形集, 供 tools/glyph-scan.mjs 校验
+                DumpGlyphs();
 
                 Log("Init 结束");
             }
@@ -350,16 +410,23 @@ namespace BTHanHua
         }
 
         // 记录字体图集里没有的字形 -> 这些就是显示成方框的原因
+        // 实际用来渲染中文的那个字体资产 (离线图集优先; 没有才退回字体包里的 MSYH)
+        static TMP_FontAsset ActiveFont()
+        {
+            return (s_full != null) ? s_full : s_cjk;
+        }
+
         static void CheckGlyphs(string s)
         {
-            if (string.IsNullOrEmpty(s) || s_cjk == null) return;
+            TMP_FontAsset af = ActiveFont();
+            if (string.IsNullOrEmpty(s) || af == null) return;
             for (int i = 0; i < s.Length; i++)
             {
                 char c = s[i];
                 if (!IsCjk(c)) continue;
                 if (s_noGlyph.Contains(c)) continue;
                 bool has;
-                try { has = s_cjk.HasCharacter(c, false); } catch { has = true; }
+                try { has = af.HasCharacter(c, false); } catch { has = true; }
                 if (!has)
                 {
                     if (s_noGlyph.Count < 800) { s_noGlyph.Add(c); Log("NOGLYPH '" + c + "' U+" + ((int)c).ToString("X4")); }
@@ -375,11 +442,12 @@ namespace BTHanHua
 
         static void EnsureFallback(TMP_FontAsset f)
         {
-            if (f == null || s_cjk == null || f == s_cjk) return;
+            TMP_FontAsset af = ActiveFont();
+            if (f == null || af == null || f == af) return;
             try
             {
                 if (f.fallbackFontAssets == null) f.fallbackFontAssets = new List<TMP_FontAsset>();
-                if (!f.fallbackFontAssets.Contains(s_cjk)) f.fallbackFontAssets.Add(s_cjk);
+                if (!f.fallbackFontAssets.Contains(af)) f.fallbackFontAssets.Add(af);
             }
             catch { }
         }
@@ -392,27 +460,37 @@ namespace BTHanHua
             try
             {
                 if (s_logPath == null) return;
-                int before = (s_cjk.characterDictionary != null) ? s_cjk.characterDictionary.Count : -1;
-                try { s_cjk.ReadFontDefinition(); } catch (Exception ex) { Log("ReadFontDefinition 失败: " + ex.Message); }
-                int after = (s_cjk.characterDictionary != null) ? s_cjk.characterDictionary.Count : -1;
-                Log("characterDictionary 数量: ReadFontDefinition 前 " + before + " -> 后 " + after);
+                // 导出"实际生效"的那个字体: 离线图集优先。
+                // 否则 glyph-scan.mjs 会拿旧 MSYH 图集的覆盖表去校验新译文, 结论就错了。
+                TMP_FontAsset fa = (s_full != null) ? s_full : s_cjk;
+                if (fa == null) return;
+                Log("导出字形集的目标字体: '" + fa.name + "' (s_full " + (s_full != null ? "已启用" : "未启用") + ")");
+                int before = (fa.characterDictionary != null) ? fa.characterDictionary.Count : -1;
+                // ReadFontDefinition 只对 bundle 里加载的资产用; 对运行时新建的资产它会重建字典,
+                // 有清空我们刚填好的数据的风险, 所以跳过。
+                if (fa == s_cjk)
+                {
+                    try { fa.ReadFontDefinition(); } catch (Exception ex) { Log("ReadFontDefinition 失败: " + ex.Message); }
+                }
+                int after = (fa.characterDictionary != null) ? fa.characterDictionary.Count : -1;
+                Log("characterDictionary 数量: 处理前 " + before + " -> 后 " + after);
 
                 SortedSet<int> set = new SortedSet<int>();
                 int srcArr = 0, srcDict = 0, srcList = 0;
                 try
                 {
-                    int[] arr = TMP_FontAsset.GetCharactersArray(s_cjk);
+                    int[] arr = TMP_FontAsset.GetCharactersArray(fa);
                     if (arr != null) for (int i = 0; i < arr.Length; i++) if (arr[i] > 0 && arr[i] <= 0xFFFF) { if (set.Add(arr[i])) srcArr++; }
                 }
                 catch (Exception ex) { Log("GetCharactersArray 失败: " + ex.Message); }
-                if (s_cjk.characterDictionary != null)
-                    foreach (int c in s_cjk.characterDictionary.Keys) if (c > 0 && c <= 0xFFFF) { if (set.Add(c)) srcDict++; }
+                if (fa.characterDictionary != null)
+                    foreach (int c in fa.characterDictionary.Keys) if (c > 0 && c <= 0xFFFF) { if (set.Add(c)) srcDict++; }
                 try
                 {
                     FieldInfo fi = typeof(TMP_FontAsset).GetField("m_glyphInfoList", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
                     if (fi != null)
                     {
-                        System.Collections.IEnumerable list = fi.GetValue(s_cjk) as System.Collections.IEnumerable;
+                        System.Collections.IEnumerable list = fi.GetValue(fa) as System.Collections.IEnumerable;
                         if (list != null)
                             foreach (object o in list)
                             {
@@ -466,7 +544,8 @@ namespace BTHanHua
             try
             {
                 List<TMP_FontAsset> g = TMP_Settings.fallbackFontAssets;
-                if (g != null && s_cjk != null && !g.Contains(s_cjk)) { g.Add(s_cjk); Log("已加入 TMP_Settings 全局回退表"); }
+                TMP_FontAsset af = ActiveFont();
+                if (g != null && af != null && !g.Contains(af)) { g.Add(af); Log("已加入 TMP_Settings 全局回退表: " + af.name); }
                 else if (g == null) Log("TMP_Settings.fallbackFontAssets 为 null");
             }
             catch (Exception ex) { Log("全局回退失败: " + ex.Message); }
@@ -489,23 +568,73 @@ namespace BTHanHua
             catch { return null; }
         }
 
-        static string FindBundle()
+        // 找离线字形图集目录 (含 atlas.bin 的那个目录)
+        static string FindAtlasDir(string modDir)
+        {
+            try
+            {
+                if (modDir != null)
+                {
+                    string p = Path.Combine(modDir, "atlas");
+                    if (File.Exists(Path.Combine(p, "atlas.bin"))) return p;
+                    if (File.Exists(Path.Combine(modDir, "atlas.bin"))) return modDir;   // 兼容直接放根目录
+                }
+                string loc = Assembly.GetExecutingAssembly().Location;
+                if (!string.IsNullOrEmpty(loc))
+                {
+                    string d = Path.GetDirectoryName(loc);
+                    string p = Path.Combine(d, "atlas");
+                    if (File.Exists(Path.Combine(p, "atlas.bin"))) return p;
+                    if (File.Exists(Path.Combine(d, "atlas.bin"))) return d;
+                }
+                string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games", "BattleTech", "mods");
+                string p2 = Path.Combine(Path.Combine(root, "BTHanHuaFont"), "atlas");
+                if (File.Exists(Path.Combine(p2, "atlas.bin"))) return p2;
+            }
+            catch { }
+            return null;
+        }
+
+        // mod 目录: 优先 DLL 所在目录 (System Mod 的 DLL 就放在 mod 文件夹里)
+        static string FindModDir()
         {
             try
             {
                 string loc = Assembly.GetExecutingAssembly().Location;
                 if (!string.IsNullOrEmpty(loc))
                 {
-                    string p = Path.Combine(Path.GetDirectoryName(loc), "font");
+                    string d = Path.GetDirectoryName(loc);
+                    if (!string.IsNullOrEmpty(d) && Directory.Exists(d)) return d;
+                }
+            }
+            catch { }
+            try
+            {
+                string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games", "BattleTech", "mods");
+                string p = Path.Combine(root, "BTHanHuaFont");
+                if (Directory.Exists(p)) return p;
+            }
+            catch { }
+            return null;
+        }
+
+        // 字体包 (可选: 只作材质/样式模板与回退)
+        static string FindBundle(string modDir)
+        {
+            try
+            {
+                if (modDir != null)
+                {
+                    string p = Path.Combine(modDir, "font");
                     if (File.Exists(p)) return p;
                 }
             }
             catch { }
-            string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games", "BattleTech", "mods");
-            string p2 = Path.Combine(root, "BTHanHuaFont", "font");
-            if (File.Exists(p2)) return p2;
             try
             {
+                string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "My Games", "BattleTech", "mods");
+                string p2 = Path.Combine(root, "BTHanHuaFont", "font");
+                if (File.Exists(p2)) return p2;
                 string[] dirs = Directory.GetDirectories(root);
                 for (int i = 0; i < dirs.Length; i++)
                 {
@@ -518,11 +647,11 @@ namespace BTHanHua
         }
 
         // 找文本 CSV (在兄弟 mod 目录 BTHanHua 里)
-        static string FindCsv(string bundlePath)
+        static string FindCsv(string bundlePath, string modDir)
         {
             try
             {
-                string dir = (bundlePath != null) ? Path.GetDirectoryName(bundlePath) : null;
+                string dir = (bundlePath != null) ? Path.GetDirectoryName(bundlePath) : modDir;
                 string mods = (dir != null) ? Path.GetDirectoryName(dir) : null;
                 if (mods != null)
                 {

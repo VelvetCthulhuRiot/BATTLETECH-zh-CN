@@ -32,7 +32,19 @@ ok('译文条目数 (不含表头)', String(dataLines.length));
 
 // ---- 2. 逐行解析 + 值级检查 ----
 console.log('\n[2] 逐行解析与值级约束');
-const wl = new Set([...fs.readFileSync(path.join(PROJ, 'corpus', 'glyph-covered.txt'), 'utf8').replace(/\s/g, '')]);
+// 字形白名单基准: 优先用新离线图集的字符集 (corpus/font-atlas/charset.txt, 8354 字);
+// 没有才退回旧的 2615 字表。新方案下图集已覆盖通用规范汉字表 BMP 部分, 白名单不再是约束。
+const wlFile = fs.existsSync(path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt'))
+  ? path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt')
+  : path.join(PROJ, 'corpus', 'glyph-covered.txt');
+const wl = new Set([...fs.readFileSync(wlFile, 'utf8').replace(/\s/g, '')]);
+console.log(`   字形白名单基准: ${path.basename(wlFile)} (${wl.size} 字)`);
+
+// 与 build-atlas.py / AtlasFont.cs 同口径: 控制符(Cc)/格式符(Cf)/未分配(Cn)/代理(Cs)/
+// 私用(Co)/分隔符(Z*) 都不需要字形。
+function needsGlyph(ch) {
+  return !/[\p{Cc}\p{Cf}\p{Cn}\p{Cs}\p{Co}\p{Zs}\p{Zl}\p{Zp}]/u.test(ch);
+}
 const seen = new Set();
 const order = [];
 let asciiComma = 0, oddQuote = 0, quoteRun = 0, usOutside = 0, usOutsideRows = 0, usInside = 0, spanNoSep = 0, outAtlas = 0, litCR = 0, emptyVal = 0, spanOpen = 0, spanClose = 0, tagLines = 0;
@@ -93,6 +105,9 @@ for (const L of dataLines) {
     const cp = ch.codePointAt(0);
     if (cp < 128 || cp === 0x1f) continue;
     if (wl.has(ch)) continue;
+    // 控制符/格式符/空白不需要字形 (U+200B 零宽空格、U+3000 全角空格 ...), 与
+    // build-atlas.py 的 needs_glyph / AtlasFont.cs 的 NeedsGlyph 同口径
+    if (!needsGlyph(ch)) continue;
     badc.add(ch);
   }
   if (badc.size) {

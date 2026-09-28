@@ -6,6 +6,8 @@
 **不修改游戏安装目录里的任何文件**。
 
 - 覆盖 **21,505 / 21,505** 条官方本地化键（100%，0 条未翻译）
+- **8,352 个字形**的离线中文字形图集（Noto Sans SC，SIL OFL 1.1），
+  含《通用规范汉字表》全部 BMP 汉字，**无缺字、无字形妥协**
 - 引用键顺序与官方 `strings_de-DE.csv` 完全一致
 - 自带全量不变量自检脚本，可自行复核
 
@@ -87,18 +89,23 @@ mods\BTHanHua\          文本汉化 (Game Mod)
   mod.json              ModLoader 描述文件: Manifest 把 strings_zh-CN.csv 注入版本清单
   mod.alt.json          备用描述文件 (若 mod.json 加载失败, 用它替换再试)
   strings_zh-CN.csv     中文文本包 (21,505 条, 4.6 MB)
- 说明.txt               随包说明
+  说明.txt               随包说明
 
 mods\BTHanHuaFont\      字体注入 (System Mod)
   systemMod.json        System Mod 描述文件
   BTHanHuaFont.dll      注入程序 (C#, 针对 1.9.1 编译)
-  font                  UnityFS 字体包 (MSYH SDF, 2,615 字形) —— 让中文能渲染出来
+  atlas\atlas.a8        字形图集像素 (8192x8192 Alpha8, 64 MB) —— 让中文能渲染出来
+  atlas\atlas.bin       字形记录 (8,352 条 + FaceInfo)
+  LICENSE-OFL.txt       Noto Sans SC 的 SIL OFL 1.1 许可全文 (随包必须带)
 
 src\                    注入程序源码
 tools\                  构建与自检脚本
+tools\font\             字形图集的生成脚本与字符集
 docs\screenshots\       界面截图
 BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说明)
 ```
+
+> `atlas.a8` 是裸位图，压缩后只有 7 MB（原始 64 MB），所以 zip 里并不占多少体积。
 
 ### 两个 mod 为什么要分开
 
@@ -127,12 +134,15 @@ BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说�
 | 每行的双引号个数必须是**偶数** | 游戏解析器是引号状态机。一个字面引号要写成 `""`（官方 de/fr/ru 的引号连续段最长就是 2） |
 | `[[引用键<U+001F>显示文本]]` | `[[...]]` 是富文本链接。**分隔符是一个不可见的 U+001F**，不是空格 |
 | U+001F 也是官方的**逗号替身** | 官方 de-DE 在链接标记之外用了 29,409 个 U+001F。游戏载入时会还原成真逗号 |
-| 只能用字形图集内的字 | 图集固定 2,610 个汉字（`tools/glyph-covered.txt`）。表外汉字在游戏里显示为**方块** |
 | 不能出现字面 `\r` | 官方用 `\n`（3425 行）对 `\r\n`（仅 4 行） |
 
 最后两条组合起来有个重要后果：`.NET` 数字格式串里的逗号**必须**写成 U+001F，
 写成全角 `，` 会被 .NET 当成普通字符，于是机甲造价显示成 `2160000，，.00M` 而不是 `2.16M`。
 这是本项目踩过的坑之一。
+
+> **关于字形**：v1.1 起图集覆盖 8,352 字（含规范字表全部 BMP 汉字），
+> 译文用字不再有任何限制——`tools/glyph-covered.txt` 那份 2,615 字白名单已不再需要，
+> `verify-csv.mjs` 会自动改用 `tools/font/charset.txt` 做基准。
 
 ---
 
@@ -155,8 +165,20 @@ node tools\verify-csv.mjs
 [4] 链接标记      [[...]] 平衡 (相对官方无额外残缺)
 ```
 
+字形基准会自动选用 `tools/font/charset.txt`（新的 8,354 字图集）；
+没有它才退回旧的 `tools/glyph-covered.txt`（2,615 字）。
+
 脚本会自动从游戏目录读取官方 `strings_de-DE.csv` 做对照；找不到时只跳过对照项，不报错。
 路径写在脚本顶部，换机器可自行修改。
+
+### 字形图集自检
+
+```powershell
+python tools\font\verify-atlas.py --out tools\font\out --sample 9000
+```
+
+它把图集里的每个字形像素与 FreeType 直接栅格化的结果逐字节比对
+（当前结果是 **8,352 / 8,352 完全一致**），并校验 `atlas.bin` 的 CRC32 与 FaceInfo 合理性。
 
 ---
 
@@ -165,96 +187,69 @@ node tools\verify-csv.mjs
 | 症状 | 处置 |
 |---|---|
 | 首次进 MODS 提示**检测不到模组** | **正常现象**。勾选「模组启用」→ 保存 → **完全重启游戏**（首次要建模组索引） |
-| 文字变成**方框**/不显示 | 删掉 `mods\BTHanHuaFont\` 文件夹。文本汉化不受影响，只是中文缺字形 |
+| 中文变成**方框**/不显示 | 说明字形图集没加载成功。看 `mods\BTHanHuaFont\BTHanHuaFont.log` 里的 `AtlasFont` 行；日志会写明原因（缺 `atlas\atlas.a8`、CRC 不符、着色器找不到…） |
 | 界面还是**英文** | 设置 → LANGUAGE 选「中文」。若下拉框里没有「中文」，说明 `mod.json` 没加载成功——试试用 `mod.alt.json` 覆盖 `mod.json` |
-| 某个词读起来怪怪的（如「眼毛」） | 字体字表的限制，**不是错译**，见下一节 |
 | MODS 菜单**卡死** | 确认两个 mod 在**两个独立文件夹**里，且 `Name` 不同 |
 | 想恢复原样 | 删掉两个文件夹，重启游戏 |
 
 注入程序会往 `mods\BTHanHuaFont\BTHanHuaFont.log` 写自己的日志（游戏默认的
 `settings.json` 里日志级别是 `Error` 且 `disableLoggingOnLoad: true`，所以不能只靠游戏日志）。
-日志里可以看字形注入结果和漏译（MISS）记录。
+日志里可以看字形图集的加载结果、覆盖率、以及漏译（MISS）记录。
 
 ---
 
-## ⚠️ 有些译文读起来怪怪的？那不是翻译错了
+## 关于字体与译文
 
-**请先看这一节再判断"这汉化翻错了"。**
+游戏自带字体不含汉字，得靠 `BTHanHuaFont` 注入一个中文字形图集。
 
-游戏自带字体不含汉字，得靠 `BTHanHuaFont` 注入一个字体图集。而这个图集**只包含 2,610 个汉字**
-（完整字表见 [`tools/glyph-covered.txt`](tools/glyph-covered.txt)）。
+**v1.1 起图集有 8,352 个字形**，由 **Noto Sans SC**（SIL OFL 1.1，可自由再分发）离线生成，
+覆盖《通用规范汉字表》一级/二级/三级**全部 BMP 汉字**（7,909 字）。因此：
 
-**图集里没有的字，在游戏里会直接显示成一个方块。** 所以遇到译文需要的字不在图集里时，
-我们只有三条路：换一个图集里有的字、换个说法、或者保留拉丁原文。
+- 译文**没有任何字形限制**，`眉毛` / `鸣谢` / `渡鸦` / `翡翠曙光` 这些自然写法都在
+- v1.0 那 **816 条字形替换规则已全部回滚**（当时图集只有 2,610 汉字，导致
+  `眉毛→眼毛`、`渡鸦→鸟/Raven` 这类"怪译文"；那些是**有意取舍，不是错译**，现在都已成为历史）
+- 官方有、旧版因为缺 `¢` 字形而被删掉的**星币符号**也补回来了
+  （例如 `现金奖励： 1，000，000` → `现金奖励： ¢1,000,000`）
 
-比如你可能会看到：
+只有两种字仍然渲染不出，属于技术硬限制：
 
-| 本来该写 | 实际写成 | 缺的字 |
-|---|---|---|
-| 眉毛 | 眼毛 | `眉` |
-| 共鸣 | 共响 | `鸣` |
-| 脸 | 面孔 | `脸` |
-| 睡 | 卧 | `睡` |
-| 喊 | 叫 | `喊` |
-| 兑换 | 交换 | `兑` |
-| 习惯 | 习性 | `惯` |
-| 弊端 | 害处 | `弊` |
-| 骨头 | 骸骨 | `骨` |
-| 陶 | 桃 | `陶` |
-| 胶 | 皮 | `胶` |
-| 霜 | 雪 | `霜` |
-| 渡鸦 | 鸟 / `Raven` | `鸦` |
-| 独角鲸 | 独角巨 / `Narwhal` | `鲸` |
-| 虎隼 | 豹隼 / `Tigerfalcon` | `虎` |
-| 长脚汤姆 | `Long Tom` | `汤` |
-| 翡翠曙光 | 翡翠黎明 | `曙` |
+- **CJK 扩展 B 及以后**（非 BMP 字符，如 `𠅘` `𠙶`）——TMP 1.2 的字符索引链是 BMP，无法支持，
+  规范字表里的 196 个此类字符已排除
+- 玩家**自己输入**的极生僻字可能不在 8,354 字的字符集里
 
-这些是**逐条记录在案的有意取舍，不是漏检的错译**：
-我们建了 **816 条字形替换规则**，实际作用在 **约 2,300 条**译文上。
-其中凡是能用拉丁原名保留原意的（船名、机甲型号、国家名等），一律保拉丁，而不是硬凑一个错的中文。
+### 实现细节
 
-`眉` `鸣` `鸦` `鲸` `虎` `汤` `曙` `脸` `睡` `喊` `兑` `惯` `弊` `骨` `陶` `胶` `霜` `蕾` `胃`
-这类字在这个图集里都没有——它是个偏"常用界面字"的子集，不是完整汉字集。
-
-### 想彻底解决？
-
-**换字体图集就行，译文里的替换可以全部回滚。** 用 [思源黑体](https://github.com/adobe-fonts/source-han-sans)
-或 [Noto Sans CJK](https://github.com/notofonts/noto-cjk)（都是 SIL OFL 开源授权、可再分发）生成一份覆盖
-常用汉字的图集替换掉 `mods/BTHanHuaFont/font`，再把 `眉/鸣/鸦` 这些字写回去即可。
-
-**完整的可行性分析、实测数据和三条实现路线的取舍已经写在
-[`docs/FONT-ATLAS.md`](docs/FONT-ATLAS.md)** —— 里面有一张 4096² 图集能装多少字的容量测算
-（结论：可以一次性做到覆盖整个通用规范汉字表，不只是补上现在缺的 801 个字），
-以及哪些坑已经踩过（运行时建图集为什么走不通）。
-
-这也是顺带解决下面那条**字体授权提示**的正路（微软雅黑的再分发授权是不明确的）。
+完整的实测数据、字形度量约定、踩过的坑与复现步骤写在
+[`docs/FONT-ATLAS.md`](docs/FONT-ATLAS.md)。生成脚本在
+[`tools/font/`](tools/font/)，字符集是 [`tools/font/charset.txt`](tools/font/charset.txt)。
 
 ### 发现真的错译 / 读不通？
 
-上面说的是**单个字被替换**造成的怪；如果你看到的是**整句不通、意思反了、明显机翻腔、或者某句完全没有中文**，
+如果你看到的是**整句不通、意思反了、明显机翻腔、或者某句完全没有中文**，
 那是真的缺陷，欢迎开 [Issue](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN/issues)，
 把界面上的原话（或截图）贴上来，我可以定位到具体的 key 去改。
+
+译文的修正都集中记录在 `tools/font/overrides.jsonl`（每条带 `why` 说明官方依据），
+可复查、可回滚。
 
 ---
 
 ## 已知限制（如实说明）
 
-- **翻译用词受字体字表限制**：图集固定 2,610 个汉字，图集外的字会显示成方块，因此有约 2,300 条译文
-  做过字形替换（如 `眉毛→眼毛`）。**这不是错译，详见上面那节。**
-- **部分专名只能用拉丁原名**：同样因为缺字，缺 `鸦/鲸/虎/汤/曙/脸/睡` 等，
-  所以 Raven / Narwhal / Tigerfalcon / Long Tom / Fiji / Greece 这类保留了拉丁写法。
-  这是「用社区字体包 + 白名单」这条技术路线的固有代价。
+- **CJK 扩展 B 及以后无法渲染**：TMP 1.2 的字符索引链是 BMP，规范字表里的 196 个非 BMP 字符
+  （如 `𠅘` `𠙶`）已排除。玩家自己输入的极生僻字也可能不在 8,354 字的字符集里。
 - **约 10,300 条社区人工译文（Paratranz）未做二次精修**：抽样看是 `glacier→冰川` 这种已译好的
   词条，改动收益接近零。机器翻译来源的部分（约 5,600 条）已逐条精修过。
 - **2 处裸 `DM.*` 引用**保留原样：官方德语本身就是裸的，与官方保持一致。
 - 少量开发者内部串（`(HIDDEN)…` 调试目标名）故意不翻译。
+- **主菜单右下角的 Season Pass 横幅仍是英文**：那串文字不经过游戏的本地化系统，CSV 覆盖不到。
 - **只支持 1.9.1 (686R)**：DLL 依赖该版本的游戏程序集。
 
 ---
 
 ## 从源码构建
 
-`src\` 里是注入程序源码（`FontMod.cs` / `FullFont.cs`）。
+`src\` 里是注入程序源码（`FontMod.cs` / `AtlasFont.cs`，另附已不启用的 `FullFont.cs`）。
 用 .NET Framework 自带的编译器即可，**不需要装 Visual Studio**：
 
 ```powershell
@@ -266,16 +261,25 @@ $csc = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
   /reference:"$Managed\UnityEngine.dll" `
   /reference:"$Managed\UnityEngine.CoreModule.dll" `
   /reference:"$Managed\UnityEngine.AssetBundleModule.dll" `
-  /reference:"$Managed\UnityEngine.UI.dll" `
+  /reference:"$Managed\UnityEngine.ImageConversionModule.dll" `
+  /reference:"$Managed\UnityEngine.UIModule.dll" `
+  /reference:"$Managed\UnityEngine.IMGUIModule.dll" `
   /reference:"$Managed\UnityEngine.TextRenderingModule.dll" `
+  /reference:"$Managed\UnityEngine.UI.dll" `
   /reference:"$Managed\Unity.TextMeshPro.dll" `
-  /reference:"$Managed\Assembly-CSharp.dll" `
   /reference:"$Game\Mods\HBS\0Harmony.dll" `
-  src\FontMod.cs src\FullFont.cs
+  src\FontMod.cs src\FullFont.cs src\AtlasFont.cs
 ```
 
-> 注意：编译需要引用游戏自带的 `Assembly-CSharp.dll`，但**本仓库不包含它**
-> （那是游戏本体代码，不随本仓库分发）。请自备正版游戏。
+> 注意：编译器是 .NET Framework 自带的 **C# 5**（不支持字符串插值、`nameof`、`?.` 等），
+> 改代码时请守住这个语言版本。
+>
+> 也不需要再引用 `Assembly-CSharp.dll`——注入点全部按类型名反射查找，
+> 这样编译时无需游戏本体程序集，仓库因此不含任何游戏文件。
+
+字形图集的生成脚本在 `tools\font\`（Python + freetype-py），字符集、上游字表、
+字体出处与 SHA256 见 [`tools/font/README.md`](tools/font/README.md) 与
+[`docs/FONT-ATLAS.md`](docs/FONT-ATLAS.md)。
 
 数据管线的完整工具链（合并各来源、术语统一、专名汉化、字形安全网等）也在 `tools\` 里，
 其中 `merge-final.mjs` 需要自行准备上游语料后才能运行（见脚本内的路径常量）。
@@ -310,9 +314,14 @@ git tag -a v1.1 -m "v1.1"; git push origin v1.1
 - 本项目（注入程序源码、构建脚本、以及在此之上的译文修订）：**MIT**，见 [`LICENSE`](LICENSE)
 - 译文语料改编自 **[cxwithyxy/BATTLETECH_zhcn](https://github.com/cxwithyxy/BATTLETECH_zhcn)**
   （MIT License, Copyright © 2022 cx2889），其中包含 Paratranz 社区人工译文
-- 字体包 `font` 同样来自上述上游仓库（**MIT**），是 **Microsoft YaHei** 的 SDF 图集
+- 字形来自 **[Noto Sans SC](https://github.com/notofonts/noto-cjk)**（Google 与 Adobe 联合开发，
+  与思源黑体同源），**SIL Open Font License 1.1**，可自由再分发。
+  图集属于其衍生作品，随包提供 [OFL 全文](LICENSE-OFL.txt)
 
-第三方归属与字体的授权提示详见 [`THIRDPARTY.md`](THIRDPARTY.md)。
+第三方归属与授权细节详见 [`THIRDPARTY.md`](THIRDPARTY.md)。
+
+> v1.0 曾随包携带一份 **Microsoft YaHei（微软雅黑）** 的 TextMeshPro 字形图集，其再分发授权并不明确；
+> **v1.1 起已彻底移除**，改由上面这份 OFL 图集承担渲染。
 
 BATTLETECH 是 Harebrained Schemes / Paradox Interactive 的商标与版权作品。
 本仓库只包含**文本与代码**，不含任何游戏本体文件；使用时请自备正版游戏。

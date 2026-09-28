@@ -1,0 +1,32 @@
+{"key":"fiji","value":"菲济","src":"shipped","why":"旧版已汉化\"菲济\", 自然版留 Fiji"}
+{"key":"frenchguiana","value":"法属瓜亚那","src":"shipped","why":"旧版\"法属瓜亚那\" > 自然版 French Guiana"}
+{"key":"greenland","value":"格林兰","src":"shipped","why":"旧版\"格林兰\" > 自然版 Greenland"}
+{"key":"guyana","value":"瓜亚那","src":"shipped","why":"旧版\"瓜亚那\" > 自然版 Guyana"}
+{"key":"taurus","value":"托鲁斯","src":"shipped","why":"旧版\"托鲁斯\"(地名) > 自然版\"金牛座\"(星座)"}
+{"key":"tweet","value":"鸟叫","src":"shipped","why":"旧版\"鸟叫\" > 自然版\"推文\"; 上下文是鸟叫声效"}
+{"key":"yourcompany%","value":"你的公司%","src":"shipped","why":"旧版\"你的公司\" > 自然版\"你的部队\"; 官方 de = Deine Firma"}
+{"key":"destroytheziegelhauswhileprotectingmilitiahq","value":"摧毁石房并保护民兵总部","src":"shipped","why":"旧版已汉化, 自然版留 Ziegelhaus"}
+{"key":"makesurejailbirdslanceevacuatessafely","value":"确保囚犯小队安全撤离","src":"shipped","why":"旧版已汉化, 自然版留 Jailbird"}
+{"key":"value:¢9^999","value":"值： 9，999","src":"shipped","why":"旧版格式更整齐; ¢ 由星币符号阶段补"}
+{"key":"¢9^999^999/qtr","value":"9，999，999 / QRT","src":"shipped","why":"官方 QRT 未翻译, 旧版保留 QRT"}
+{"key":"¢9999999/mo","value":"9，999，999/月","src":"shipped","why":"自然版把 \"/月\" 写成 \"/周一\"(星期一)"}
+{"key":"[¢300^000^argo:hospitalbays]","value":"[300，000 阿尔戈：医疗舱]","src":"shipped","why":"自然版把 Krankendecks(医疗舱) 译成\"病态套牌\""}
+{"key":"providegenerousmechbaysupportfor¢100^000*","value":"保证以 100，000 提供慷慨的机甲机库支持。","src":"shipped","why":"自然版丢了\"提供…支持\""}
+{"key":"providegenerousmedbaysupportfor¢100^000*","value":"保证以 100，000 提供慷慨的医务室支持。","src":"shipped","why":"自然版丢了\"提供…支持\""}
+{"key":"provideminimalmedbaysupportfor¢25^000*","value":"保证以 25，000 提供最低限度的医务室支持。","src":"shipped","why":"自然版 ¢ 位置错"}
+{"key":"providesomesupportbutalsouseofthegymfor¢100^000*","value":"保证以 100，000 提供部分支持， 并可使用健身室。","src":"shipped","why":"自然版丢了\"提供部分支持\""}
+{"key":"sellhimsomeheavyfirepowerfor¢150^000*","value":"以 150，000 向他出售强大火力。","src":"shipped","why":"自然版 ¢ 位置错"}
+{"key":"thestratfordnarwhalisjustupahead^commander*lookslikearealdump*","value":"斯特拉特福 Narwhal 就在前面，指挥官。看起来真是个破地方。","src":"shipped","why":"旧版已部分汉化, 自然版整句留英文"}
+{"key":"actually^ihaveadifferentideaofwhattodowiththeraven*","value":"其实，关于怎么处理这架渡鸦，我有个不同的主意。","src":"custom","why":"旧版\"渡鸟\"是缺\"鸦\"字的妥协; 自然版留 Raven"}
+{"key":"capturethearmorytorecovertheprototyperaven","value":"占领军械库以回收渡鸦原型机","src":"custom","why":"旧版\"渡鸟\"、自然版 Raven, 都不如渡鸦"}
+{"key":"recovertheprototyperaven","value":"回收渡鸦原型机","src":"custom","why":"旧版\"Raven 比尔格原型\"把 Birg(取回) 音译了, 是坏值"}
+{"key":"u00a2999^999^999","value":"¢999，999，999","src":"custom","why":"旧版\"999 修正.\"是坏值; 官方 de = ¢999.999.999"}
+{"key":"scar","value":"疤痕","src":"custom","why":"用户反馈: 官方 de=Narbe / fr=Balafre 都是\"疤痕\"; 旧译\"创伤\"是 wound/trauma, 不准确"}
+{"key":"makeup","value":"妆容","src":"custom","why":"用户反馈: 官方 de=Schminke / fr=Maquillage 都是\"化妆品/妆容\"; 旧译\"美容\"偏\"美容院\"义"}
+{"key":"day","value":"日","src":"custom","why":"用户反馈: 设置里的日期格式显示\"年/月/天\", 应为\"年/月/日\"。day 这个 key 只做日期格式分量用, 时长另有 {0}days / 100days 等 key"}
+{"key":"showstock","value":"显示标准","src":"custom","why":"官方 de=\"Standard anzeigen\" / ru=\"Станд.\" 都是\"标准\", fr 才是 stocks; 且\"显示库存\"过长会把按钮挤成两行"}
+{"key":"med","value":"中型","src":"custom","why":"官方 de=Mittel; 与 轻型/重型/突击 保持一致的吨位级别用词 (旧译\"中等\")"}
+{"key":"medium","value":"中型","src":"custom","why":"同上; 官方 de=Mittel"}
+{"key":"40-55t","value":"40-55吨","src":"custom","why":"旧值\"40- 55吨\"多个空格, 与 20-35吨 / 80-100吨 不一致"}
+{"key":"60-75t","value":"60-75吨","src":"custom","why":"旧值\"60-75 吨\"在\"吨\"前多一个空格"}
+{"key":"gun","value":"枪炮","src":"custom","why":"用户反馈: 小长条只显示\"枪\"。gun 是 gunner 四项属性的缩写 key (官方 de=\"WAF.\" 即 Waffen 的缩写), 但同排的驾驶/勇气/战术都是 2 字(tac 官方 de=\"Tak.\" 中文也仍是\"战术\"), 宽度放得下, 没必要单独截短"}

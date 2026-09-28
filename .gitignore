@@ -3,6 +3,15 @@ mods/BTHanHuaFont/BTHanHuaFont.log
 mods/BTHanHuaFont/BTHanHuaFont.glyphs.txt
 mods/BTHanHuaFont/FONT_NOSHRINK
 mods/BTHanHuaFont/FULLFONT_OFF
+mods/BTHanHuaFont/ATLAS_OFF
+mods/BTHanHuaFont/ATLAS_FORCE
+mods/BTHanHuaFont/FULLFONT_ON
+
+# 字形图集: 输入字体与构建中间产物
+# (字体 8.3 MB, 可下载 + 可用 SHA256 校验; 见 tools/font/README.md)
+tools/font/font/
+tools/font/out/
+tools/fontenv/
 
 # 自检产物
 corpus/glyph-stray.jsonl

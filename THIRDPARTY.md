@@ -18,34 +18,48 @@
 - **社区旧汉化 CSV** —— `pre-data/localization/strings_zh-CN.csv`
 - 其余缺口由上游脚本基于官方德语机翻补足
 
-我们在其基础上做了大量修订：合并去重、术语按术语表统一、专名汉化、字形约束替换、
-占位符与富文本标记修复、机翻来源逐条精修等。上游的 MIT 版权声明已按要求保留在
-[`LICENSE`](LICENSE) 与本文件中。
+我们在其基础上做了大量修订：合并去重、术语按术语表统一、专名汉化、占位符与富文本标记修复、
+机翻来源逐条精修，以及**补回星币符号 `¢`**（官方 75 个键里有，旧版因字形缺失被删掉了）等。
+上游的 MIT 版权声明已按要求保留在 [`LICENSE`](LICENSE) 与本文件中。
 
 ---
 
-## 2. 字体包 `mods/BTHanHuaFont/font`
+## 2. 字形图集 `mods/BTHanHuaFont/atlas/`
 
-- **来源**：同上，上游仓库内的 `pre-data/BATTLETECH_1.9.1_zhcn_v0.03/BattleTech_Data/StreamingAssets/font`
-- **格式**：UnityFS 资源包（Unity 2018.4.2f1），内含一个 TextMeshPro 字体资产 `MSYH SDF`
-- **内容**：2,615 个码位（其中约 2,458 个汉字）的 SDF 字形图集，16.2 MB
-- **作用**：游戏自带字体不含汉字，没有它中文会显示成方块
-- **上游授权**：上游以 **MIT** 分发该文件
+中文字形来自 **Noto Sans SC**，以 **SIL Open Font License 1.1** 授权。
 
-### ⚠️ 需要使用者知悉的授权提示
+| 项 | 值 |
+|---|---|
+| 字体 | Noto Sans SC Regular（Google 与 Adobe 联合开发，与思源黑体 Source Han Sans 同源同设计） |
+| 来源 | https://github.com/notofonts/noto-cjk → `Sans/SubsetOTF/SC/NotoSansSC-Regular.otf` |
+| 文件版本 | `2.004;GOOG;NotoSansSC-Regular;ADOBE` |
+| 文件 SHA256 | `FAA6C9DF652116DDE789D351359F3D7E5D2285A2B2A1F04A2D7244DF706D5EA9` |
+| 上游授权文件 | `Sans/LICENSE`（https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE） |
+| 本仓库随附 | [`LICENSE-OFL.txt`](LICENSE-OFL.txt)（OFL 1.1 全文，含版权行） |
 
-`MSYH` 是 **Microsoft YaHei（微软雅黑）** 的缩写。这个文件是把微软雅黑转换成
-TextMeshPro 的 SDF 字形图集后的**衍生作品**，而不是原始的 TTF。
+### 产物是什么
 
-- 微软雅黑的字体授权通常**不允许再分发**（包括衍生格式）。上游项目以 MIT 分发该文件，
-  这一行为本身并不当然解决字体本身的授权问题。
-- 该文件在被上游以 MIT 公开分发的形式下已经在公网存在多年；本仓库沿用同一来源。
-- **如果你的使用场景对字体授权敏感**，请删掉 `mods/BTHanHuaFont/font`，改为用你自己
-  系统里的微软雅黑生成一份（Windows 自带），或换用你有权分发的开源中文字体
-  （如思源黑体 / Noto Sans CJK）重新生成 SDF 图集。
-- 删掉这个文件**不会影响文本汉化**，只是中文会因缺字形而显示为方块。
+`atlas/atlas.a8` 与 `atlas/atlas.bin` 是把上面那份字体**离线栅格化**得到的字形位图：
 
-如果字体权利人提出异议，请直接删除该文件——其余部分（代码与译文）不依赖它。
+- `atlas.a8` —— 8192×8192 的 Alpha8 位图（8192×8192 字节），**不含任何字体轮廓数据**
+- `atlas.bin` —— 8,352 条字形记录（码位 + 图集坐标 + 度量），外加 FaceInfo
+- 字符集见 [`tools/font/charset.txt`](tools/font/charset.txt)（8,354 字，
+  含《通用规范汉字表》一级/二级/三级全部 7,909 个 BMP 汉字）
+- 生成脚本 [`tools/font/build-atlas.py`](tools/font/build-atlas.py)，约 5 秒可复现
+
+### 授权要点（OFL 1.1）
+
+1. **版权行含 Reserved Font Name 'Source'**：
+   `Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'`。
+   Noto Sans CJK 与思源黑体同源，继承了这条 RFN。
+   → 我们**不得在产品名里使用 "Source"**。本项目的产物叫 `BTHanHua` / 字形图集，不含该名，合规。
+   描述性引用（"基于思源黑体 / Noto Sans SC 生成"）不受 RFN 限制。
+2. 字形图集属于 OFL 意义上的**衍生作品**，因此同样以 **OFL 1.1** 分发，
+   并随包提供 OFL 全文与上述版权行（见 `LICENSE-OFL.txt`）。
+3. 本项目**不再分发任何非开源授权的字体**。
+   早期版本（v1.0）曾随包携带一份 **Microsoft YaHei（微软雅黑）** 的 TextMeshPro 图集
+   （`mods/BTHanHuaFont/font`，16.2 MB），其再分发授权并不明确；
+   自 v1.1 起该文件已被彻底移除，改由上面这份 OFL 图集承担渲染。
 
 ---
 
@@ -54,16 +68,17 @@ TextMeshPro 的 SDF 字形图集后的**衍生作品**，而不是原始的 TTF�
 - **BATTLETECH** © Harebrained Schemes / Paradox Interactive
 - 本仓库**不含**游戏的 `Assembly-CSharp.dll`、`VersionManifest.csv`、
   `resources.assets`、`strings_de-DE.csv` 等任何本体文件
-- `src/` 里的注入程序在**编译时**需要引用你本机的 `Assembly-CSharp.dll`，
-  但仓库不随附该文件——请自备正版游戏
+- `src/` 里的注入程序在**编译时**需要引用你本机的游戏程序集，但仓库不随附这些文件——请自备正版游戏
 - 官方 mod 支持（HBS ModLoader、`0Harmony.dll`）由游戏随包提供，同样不随本仓库分发
+- 注入程序运行时会调用游戏自带的 **`TextMeshPro/Bitmap` 着色器**（Unity TextMeshPro 的一部分），
+  这是对已安装游戏正常功能的调用，不是再分发
 
 ### 关于 `docs/screenshots/`
 
 `docs/screenshots/` 里是**游戏运行截图**（游戏画面与 UI 的版权属于
 Harebrained Schemes / Paradox Interactive），仅用于说明本汉化的实际效果，
-按常规同人作品的做法作为示例展示。截图已从 3200×2000 压缩到 1600×1000 以控制仓库体积。
+按常规同人作品的做法作为示例展示。截图已压缩以控制仓库体积。
 
-截图里出现的飞行员名 / 部队名（如 `Polecat`、`Ada Fujiwara`）是游玩时自拟的虚构名称，
-与现实身份无关。如果其中有你不想公开的内容，删掉对应文件即可，README 里的图片链接会变成裂图，
+截图里出现的飞行员名 / 部队名是游玩时自拟的虚构名称，与现实身份无关。
+如果其中有你不想公开的内容，删掉对应文件即可，README 里的图片链接会变成裂图，
 把那一行也删掉就行。

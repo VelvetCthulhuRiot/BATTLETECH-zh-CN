@@ -99,9 +99,22 @@ for (const s of srcOf.values()) counts[s] = (counts[s] || 0) + 1;
 console.log(`\n合并后: ${merged.size} / ${keyOrder.length} = ${(merged.size / keyOrder.length * 100).toFixed(1)}%`);
 console.log('  来源分布: ' + JSON.stringify(counts));
 
-// ---- 字形替代: 字体图集只有 2615 个字形, 图集外的字会显示成方框 ----
+// ---- 字形替代: 图集外的字会显示成方框 ----
 // 映射来源: (a) 固定表(非汉字) (b) 子代理生成的"缺字->替代写法"表 corpus/zh-glyph/out*.jsonl
-const ATLAS = new Set([...fs.readFileSync(path.join(PROJ, 'corpus', 'glyph-covered.txt'), 'utf8').replace(/\s/g, '')]);
+// --natural 模式: 改用【新离线图集的覆盖表】做基准 (8354 字), 于是"图集外"基本为空集 ——
+//   既不再做逐字替换, 又保留了"有图集外残留就报错退出"的安全网。
+const ATLAS_FILE = NATURAL
+  ? path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt')
+  : path.join(PROJ, 'corpus', 'glyph-covered.txt');
+const ATLAS = new Set([...fs.readFileSync(ATLAS_FILE, 'utf8').replace(/\s/g, '')]);
+console.log(`图集基准: ${path.basename(ATLAS_FILE)} (${ATLAS.size} 字)${NATURAL ? '  [--natural]' : ''}`);
+
+// 与 build-atlas.py / AtlasFont.cs 同口径: 控制符(Cc)/格式符(Cf)/未分配(Cn)/代理(Cs)/
+// 私用(Co)/分隔符(Z*) 都不需要字形, 不该被当成"图集外残留"。
+// 典型: U+001F 官方逗号替身、U+200B 零宽空格、U+3000 全角空格。
+function needsGlyph(ch) {
+  return !/[\p{Cc}\p{Cf}\p{Cn}\p{Cs}\p{Co}\p{Zs}\p{Zl}\p{Zp}]/u.test(ch);
+}
 
 const glyphMap = new Map([['¢', ''], ['ö', 'o'], ['ä', 'a'], ['ü', 'u'], ['è', 'e'], ['™', 'TM'], ['–', '-'], ['©', '(C)'], ['＃', '#'], ['【', '['], ['】', ']'], ['［', '['], ['］', ']'],
   // 图集外的高频"漏网"字: 子代理改写时容易带进来, 在这里兜底 (值可以是多字)
@@ -324,7 +337,9 @@ console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${f
     ['苏米尔', '纯丽'], ['须美', '纯丽'],
     ['麻理子', '马里科'], ['真理子', '马里科'],
     ['森瑞拉', '琴特雷拉'], ['森雷拉', '琴特雷拉'], ['琴特蕾拉', '琴特雷拉'],
-    ['翡翠晨光', '翡翠黎明'], ['翡翠曙光', '翡翠黎明'],   // glossary 作"翡翠曙光", 但"曙"不在字形图集内
+    ['翡翠晨光', '翡翠曙光'], ['翡翠黎明', '翡翠曙光'],   // glossary: Emerald Dawn=翡翠曙光
+                                                          // (旧版因"曙"不在字形图集内才写成"黎明"; 新图集已含"曙", 改回 glossary 写法)
+    ['跳跃船', '远航舰'], ['跳船', '远航舰'],              // glossary/语料主流写法: JumpShip=远航舰 (45 条), 这几条是漏网的
     ['洛城科技', '失落技术'], ['洛斯科技', '失落技术'], ['乐斯泰科技', '失落技术'],
     ['机甲湾', '机甲库'],
     ['疏散区', '撤离区'],
@@ -477,22 +492,31 @@ for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(
     ['迟钝', '笨'], ['教诲', '教导'], ['跳梁小丑', '小丑'],
   ];
   let sw = 0;
-  for (const [k, v0] of merged) {
-    let v = v0, ch = false;
-    for (const [from, to] of STRAY) if (v.includes(from)) { v = v.split(from).join(to); ch = true; }
-    if (ch) { merged.set(k, v); sw++; }
+  if (NATURAL) {
+    // 逐字兜底不跑了, 这些"为兜底造出的怪词"做的词级修正也就没必要了
+    console.log('   (词级兜底: 已跳过 --natural)');
+  } else {
+    for (const [k, v0] of merged) {
+      let v = v0, ch = false;
+      for (const [from, to] of STRAY) if (v.includes(from)) { v = v.split(from).join(to); ch = true; }
+      if (ch) { merged.set(k, v); sw++; }
+    }
   }
   if (sw) console.log(`   (词级兜底替换 ${sw} 条)`);
   let net = 0;
-  for (const [k, v0] of merged) {
-    let v = v0, changed = false;
-    for (const [from, to] of glyphMap) if (v.indexOf(from) >= 0) { v = v.split(from).join(to); changed = true; }
-    if (changed) { merged.set(k, v); net++; }
+  if (NATURAL) {
+    console.log('   (逐字兜底: 已跳过 --natural, 由新图集承担)');
+  } else {
+    for (const [k, v0] of merged) {
+      let v = v0, changed = false;
+      for (const [from, to] of glyphMap) if (v.indexOf(from) >= 0) { v = v.split(from).join(to); changed = true; }
+      if (changed) { merged.set(k, v); net++; }
+    }
   }
   const stray = new Map(), rows = [];
   for (const [k, v] of merged) {
     const bad = new Set();
-    for (const ch of v) { const cp = ch.codePointAt(0); if (cp < 128 || cp === 0x1f || ATLAS.has(ch)) continue; bad.add(ch); }
+    for (const ch of v) { const cp = ch.codePointAt(0); if (cp < 128 || cp === 0x1f || ATLAS.has(ch) || !needsGlyph(ch)) continue; bad.add(ch); }
     if (bad.size) { rows.push(k); for (const c of bad) stray.set(c, (stray.get(c) || 0) + 1); }
   }
   console.log(`字形安全网: 兜底替换 ${net} 条; 图集外残留 ${rows.length} 行 / ${stray.size} 种字符`);
@@ -533,6 +557,74 @@ for (const [k, m, s] of suspect.slice(0, 12)) console.log(`    [${s}] ${k.slice(
   let n = 0;
   for (const [k, v] of EXACT) if (merged.has(k) && merged.get(k) !== v) { merged.set(k, v); n++; }
   console.log(`定点覆盖: ${n} / ${EXACT.size} 条`);
+}
+
+// ---- 人工裁决: 定点覆盖个别条目 ----
+// 换成自然措辞后, 有少数条目旧版(界面串重写)更好 (例如旧版把 Greenland 译成"格林兰",
+// 自然版却留了英文); 也有几处两边都不对、需要人工新写。
+// 结论统一放 corpus/font-atlas/overrides.jsonl (由 tools/make-overrides.mjs 生成),
+// 便于复查与回滚 —— 不要直接在 CSV 上手工改。
+{
+  const ovPath = path.join(PROJ, 'corpus', 'font-atlas', 'overrides.jsonl');
+  if (fs.existsSync(ovPath)) {
+    let n = 0, same = 0, miss = 0;
+    for (const L of fs.readFileSync(ovPath, 'utf8').split('\n')) {
+      if (!L.trim()) continue;
+      const o = JSON.parse(L);
+      if (!merged.has(o.key)) { miss++; continue; }
+      if (merged.get(o.key) === o.value) { same++; continue; }
+      merged.set(o.key, o.value); n++;
+    }
+    console.log(`人工裁决: 覆盖 ${n} 条, 已一致 ${same} 条${miss ? `, !! ${miss} 条 key 不存在` : ''}`);
+  } else {
+    console.log('人工裁决: 无 overrides.jsonl, 跳过');
+  }
+}
+
+// ---- 星币符号 ¢ 修复 ----
+// 官方有 75 个 key 的值里带 ¢ (C-Bill 货币符号), 而旧图集没有 ¢ 字形, 被逐字替换删掉了 ——
+// 于是"现金奖励： 1，000，000"少了货币符号。新图集包含 ¢, 这里按官方位置补回来。
+{
+  const keyInfo = new Map();
+  try {
+    for (const L of fs.readFileSync(path.join(PROJ, 'corpus', 'keys.jsonl'), 'utf8').split('\n')) {
+      if (!L.trim()) continue;
+      const o = JSON.parse(L);
+      keyInfo.set(o.key, o);
+    }
+  } catch { }
+  let fixed = 0, localized = 0; const failed = [];
+  for (const [k, o] of keyInfo) {
+    const off = (o.de || '') + '|' + (o.en || '') + '|' + (o.fr || '') + '|' + (o.ru || '');
+    if (!off.includes('¢')) continue;
+    const v = merged.get(k);
+    if (v === undefined || v.includes('¢')) continue;
+    // 已经用"星币/C钱"这种词本地化过的就不要再塞符号了 (官方法语有时也是这个写法)
+    if (/星币|C钱|C-/.test(v)) { localized++; continue; }
+    let done = false;
+    const m = /¢([0-9^*]+)/.exec(k);          // key 里的 ¢ 后面就是金额模式 (^=逗号, *=小数点)
+    const cands = [];
+    if (m) {
+      const raw = m[1];
+      cands.push(raw.replace(/\^/g, '，').replace(/\*/g, '.'));
+      cands.push(raw.replace(/\^/g, '，').replace(/\*/g, '，'));
+      cands.push(raw.replace(/\^/g, '.').replace(/\*/g, '.'));
+      cands.push(raw);
+    }
+    for (const c of cands) {
+      const i = v.indexOf(c);
+      if (i >= 0) { merged.set(k, v.slice(0, i) + '¢' + v.slice(i)); done = true; break; }
+    }
+    if (!done) {
+      // 退路: 找第一个不在 <...> 标签里的数字 (避免插进 <color=#DE6729> 这种颜色值)
+      const masked = v.replace(/<[^>]*>/g, (t) => '\u0000'.repeat(t.length));
+      const dm = /[0-9]/.exec(masked);
+      if (dm) { merged.set(k, v.slice(0, dm.index) + '¢' + v.slice(dm.index)); done = true; }
+    }
+    if (done) fixed++; else failed.push(k);
+  }
+  console.log(`星币符号 ¢ 修复: 补 ${fixed} 条, 已本地化为"星币"略过 ${localized} 条`
+    + (failed.length ? `  !! 失败 ${failed.length}: ${failed.join(', ')}` : ''));
 }
 
 // ---- 写出 ----
