@@ -36,13 +36,21 @@ jobs:
           ASSET: ${{ inputs.asset || 'BTHanHua-mod.zip' }}
         run: |
           set -euo pipefail
-          echo "tag=$TAG  asset=$ASSET"
+          # 发版说明放在 docs/release-notes/<tag>.md, 与代码一起版本化
+          NOTES="docs/release-notes/$TAG.md"
+          echo "tag=$TAG  asset=$ASSET  notes=$NOTES"
           ls -l "$ASSET"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "release $TAG 已存在, 直接上传资源"
+            echo "release $TAG 已存在, 更新说明"
+            if [ -f "$NOTES" ]; then gh release edit "$TAG" --notes-file "$NOTES"; fi
           else
             echo "release $TAG 不存在, 创建它"
-            gh release create "$TAG" --title "$TAG" --generate-notes
+            if [ -f "$NOTES" ]; then
+              gh release create "$TAG" --title "$TAG" --notes-file "$NOTES"
+            else
+              echo "!! 找不到 $NOTES, 退回自动生成的 changelog"
+              gh release create "$TAG" --title "$TAG" --generate-notes
+            fi
           fi
           gh release upload "$TAG" "$ASSET" --clobber
           echo "--- 当前 release 资源 ---"
