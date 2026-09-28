@@ -17,6 +17,9 @@ tools/fontenv/
 corpus/glyph-stray.jsonl
 *.tmp
 
+# 打包中间目录 (pack-mod.ps1 会写 <仓库>/dist/, 成品 zip 只留在仓库根目录那一份)
+dist/
+
 # 编辑器 / 系统
 .vscode/
 .idea/

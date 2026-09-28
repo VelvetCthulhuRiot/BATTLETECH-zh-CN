@@ -93,7 +93,7 @@ const readme = [
   '译文语料改编自 cxwithyxy/BATTLETECH_zhcn (MIT, (c) 2022 cx2889)。',
   '字形来自 Noto Sans SC (SIL OFL 1.1, 可自由再分发), 全文见 BTHanHuaFont\\LICENSE-OFL.txt。',
   '第三方归属详见项目 THIRDPARTY.md。',
-].join('\r\n');
+].join('\n');   // LF: 与 .gitattributes 的 eol=lf 一致, 仓库里那份与 zip 里那份就完全相同
 
 // 游戏实测确认使用 "My Games" (带空格) 这个路径 (见 modloader 日志 "Using default Mods path")
 const targets = [

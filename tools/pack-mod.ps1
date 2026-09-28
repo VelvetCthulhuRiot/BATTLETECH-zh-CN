@@ -1,4 +1,4 @@
-﻿﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
+﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
 # 用法: powershell -ExecutionPolicy Bypass -File pack-mod.ps1
 #
 # 注意: 本文件必须带 UTF-8 BOM。Windows PowerShell 5.1 读 .ps1 需要 BOM,
