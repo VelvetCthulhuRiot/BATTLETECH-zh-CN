@@ -1,9 +1,10 @@
 import fs from 'node:fs';
+import { GAME, SA, LOC } from './game-path.mjs';
 import { fileURLToPath } from 'node:url';
 // 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
 // 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
 const P = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const G = 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH/BattleTech_Data/StreamingAssets/data/localization';
+const G = LOC;
 function load(f) {
   const m = new Map();
   for (const l of fs.readFileSync(f, 'utf8').replace(/^\uFEFF/, '').split('\n')) {

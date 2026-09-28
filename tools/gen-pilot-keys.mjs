@@ -4,6 +4,7 @@
 // 与机甲那套同机制: 游戏按"英文字符串规范化"查 CSV, 查不到就显示英文。
 // 自动跳过与机甲表冲突的 key (同一个 key 只能有一个译名, 机甲名可见度高得多, 让机甲赢)。
 import fs from 'node:fs';
+import { GAME, SA, LOC } from './game-path.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 // 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
@@ -90,7 +91,7 @@ try {
 const zhMap = new Map(zhRows);
 const deMap = new Set();
 try {
-  for (const L2 of fs.readFileSync(path.join('D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH',
+  for (const L2 of fs.readFileSync(path.join(GAME,
     'BattleTech_Data', 'StreamingAssets', 'data', 'localization', 'strings_de-DE.csv'), 'utf8')
     .replace(/^\uFEFF/, '').split('\n').slice(1)) {
     const i = L2.indexOf(','); if (i > 0) deMap.add(L2.slice(0, i));
@@ -102,7 +103,6 @@ const vis = (v) => v
 const norm2 = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 
 // 全部飞行员的 FirstName / LastName / Callsign
-const GAME = 'D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH';
 const pd = path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'pilot');
 const allNames = new Set();
 if (fs.existsSync(pd)) {

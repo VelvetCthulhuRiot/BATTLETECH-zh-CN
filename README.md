@@ -155,7 +155,9 @@ BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说�
 - ⚠️ **改之前先备份**（例如另存一份 `.csv.bak`），改坏了可以立刻还原。
 - ⚠️ 用能保持 **LF 换行**的编辑器（VS Code / Notepad++）。用会把文件存成 CRLF 的编辑器
   会让游戏解析出问题。
-- 改完可以跑一次自检确认没破坏格式：`node tools\verify-csv.mjs`（需要 `BT_GAME` 指向游戏目录）。
+- 改完可以跑一次自检确认没破坏格式（把你改的那份文件传给它）：
+  `node tools\verify-csv.mjs ..\mods\BTHanHua\strings_zh-CN.csv`
+  —— 需要 `BT_GAME` 指向游戏目录，用来读官方德语做对齐比对（见[关于路径](#关于路径克隆下来即可用不需要改代码)）。
 
 以下是硬性约定，**违反任意一条都会在游戏里出问题**：
 
@@ -195,6 +197,16 @@ node tools\verify-csv.mjs
 [3] 与官方对齐    官方 key 全部有译文 · 无多余 key · key 相对顺序与官方一致
 [4] 链接标记      [[...]] 平衡 (相对官方无额外残缺)
 ```
+
+> **默认检查的是构建源** `corpus\strings_zh-CN.csv`（语料不入库，克隆下来只有这一条会跑不起来）。
+> 也可以指定任意一份 CSV —— 例如**手改了 mods 里那份**之后，想确认没改坏格式：
+>
+> ```powershell
+> node tools\verify-csv.mjs ..\mods\BTHanHua\strings_zh-CN.csv
+> ```
+>
+> 这一步需要 `BT_GAME` 指向游戏目录（用来读官方 `strings_de-DE.csv` 做对齐比对），
+> 见 [关于路径](#关于路径克隆下来即可用不需要改代码)。
 
 字形基准会自动选用 `tools/font/charset.txt`（新的 8,354 字图集）；
 没有它才退回旧的 `tools/glyph-covered.txt`（2,615 字）。
@@ -325,17 +337,34 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 所以仓库克隆到任何目录都能直接运行，也不会有谁的 Windows 用户名出现在脚本里。
 
-唯一需要按自己环境调整的是**游戏安装路径**，两种方式任选：
+唯一需要按自己环境调整的是**游戏安装路径** —— 因为 Steam 库在哪台机器上都不一样
+（默认在 `C:\Program Files (x86)\Steam`，但装在别的盘、或者用 `SteamLibrary`、
+自定义库目录都很常见）。
+
+脚本会按这个顺序自己找，**不需要改代码**：
+
+1. 环境变量 `BT_GAME`
+2. 常见位置（`C:\Program Files (x86)\Steam\...`、各盘的 `Steam` / `SteamLibrary`）
+3. 都找不到 → **直接报错并告诉你怎么设**，绝不会拿一个错路径硬跑
+   （显式设了 `BT_GAME` 但路径无效时也会立刻报错，不会悄悄换用别的目录）
+
+不知道游戏装在哪？让 Steam 告诉你：
+
+> Steam 客户端 → **库** → 右键 **BATTLETECH** → **管理** → **浏览本地文件**
+
+拿到路径后这样用：
 
 ```powershell
-# 方式一（推荐）：设环境变量，不用改代码
-$env:BT_GAME = "D:\Steam\steamapps\common\BATTLETECH"
-node tools\verify-csv.mjs
+# 只为当前这个 PowerShell 窗口设置
+$env:BT_GAME = "C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH"
 
-# 方式二：改脚本顶部的默认值
-#   tools\merge-final.mjs / tools\gen-mech-keys.mjs / tools\verify-csv.mjs
-#   tools\font\extract-dlc-mechs.py  ->  GAME = ...
+# 想永久生效（以后新开的窗口都有效）
+[Environment]::SetEnvironmentVariable('BT_GAME', 'C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH', 'User')
+
+node tools\verify-csv.mjs        # 跑一下确认路径对了
 ```
+
+> 上面两条命令里的路径只是**默认位置的例子**，请换成你自己机器上的实际路径。
 
 > ⚠️ `merge-final.mjs` 与几个 key 生成器还需要**自行准备上游语料**才能运行
 > （语料是从游戏原文件提取并整理出来的，不入库；目录约定见脚本内注释）。

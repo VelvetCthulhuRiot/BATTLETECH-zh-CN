@@ -1,23 +1,26 @@
 // verify-csv.mjs — 汉化 CSV 全量不变量自检
-// 用法: node tools/verify-csv.mjs
+// 用法:
+//   node tools/verify-csv.mjs                                       # 默认检查 corpus/strings_zh-CN.csv (构建源)
+//   node tools/verify-csv.mjs ..\mods\BTHanHua\strings_zh-CN.csv     # 也可指定任意一份 CSV
 // 逐条检查所有"一旦违反就会在游戏里出问题"的硬性约束, 全部通过才打印 OK。
+// 指定路径的用法是给"手改了 mods 里那份 CSV"的人准备的: 仓库不含语料, 手改后照样能自检。
 import fs from 'node:fs';
+import { GAME, SA, LOC } from './game-path.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 // 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
 // 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。
 const PROJ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-// 游戏本地化目录: 可用环境变量 BT_GAME 覆盖 (指向游戏根目录), 省得改脚本
-const GAME = (process.env.BT_GAME || 'D:/MyDownload/Things/Steam/steamapps/common/BATTLETECH')
-  + '/BattleTech_Data/StreamingAssets/data/localization';
-const CSV = path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
+const CSV = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.join(PROJ, 'corpus', 'strings_zh-CN.csv');
 const US = '\u001f';
 
 // 官方德语 (用于多处对照; 文件不存在时相关检查自动降级为"不作跨语言比较")
 const deMap = (() => {
   try {
-    const p = path.join(GAME, 'strings_de-DE.csv');
+    const p = path.join(LOC, 'strings_de-DE.csv');
     const m = new Map();
     for (const L of fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, '').split('\n').slice(1)) {
       const i = L.indexOf(',');
@@ -50,11 +53,20 @@ ok('译文条目数 (不含表头)', String(dataLines.length));
 
 // ---- 2. 逐行解析 + 值级检查 ----
 console.log('\n[2] 逐行解析与值级约束');
-// 字形白名单基准: 优先用新离线图集的字符集 (corpus/font-atlas/charset.txt, 8354 字);
+// 字形白名单基准: 优先用新离线图集的字符集 (8354 字);
 // 没有才退回旧的 2615 字表。新方案下图集已覆盖通用规范汉字表 BMP 部分, 白名单不再是约束。
-const wlFile = fs.existsSync(path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt'))
-  ? path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt')
-  : path.join(PROJ, 'corpus', 'glyph-covered.txt');
+// 语料在工作区时字符集在 corpus/font-atlas/, 公开仓库里同一份在 tools/font/ —— 两处都认。
+const WL_CANDIDATES = [
+  path.join(PROJ, 'corpus', 'font-atlas', 'charset.txt'),
+  path.join(PROJ, 'tools', 'font', 'charset.txt'),
+  path.join(PROJ, 'corpus', 'glyph-covered.txt'),
+  path.join(PROJ, 'tools', 'glyph-covered.txt'),
+];
+const wlFile = WL_CANDIDATES.find((p) => fs.existsSync(p));
+if (!wlFile) {
+  console.error('!! 找不到字形字符集 (charset.txt / glyph-covered.txt)');
+  process.exit(1);
+}
 const wl = new Set([...fs.readFileSync(wlFile, 'utf8').replace(/\s/g, '')]);
 console.log(`   字形白名单基准: ${path.basename(wlFile)} (${wl.size} 字)`);
 
@@ -185,7 +197,7 @@ ok('含 <...> 富文本标签的行', String(tagLines));
 
 // ---- 3. 与官方 CSV 对齐: key 集合与顺序 ----
 console.log('\n[3] 与官方 CSV 对齐');
-const dePath = path.join(GAME, 'strings_de-DE.csv');
+const dePath = path.join(LOC, 'strings_de-DE.csv');
 if (!fs.existsSync(dePath)) {
   warn('官方 de-DE 存在, 可做 key 对齐', '未找到官方文件, 跳过');
 } else {
@@ -218,7 +230,7 @@ if (!fs.existsSync(dePath)) {
 // ---- 4. [[...]] 链接标记: 区分"我们引入的缺陷"与"官方自身就残缺" ----
 console.log('\n[4] [[...]] 链接标记完整性');
 {
-  const dePath2 = path.join(GAME, 'strings_de-DE.csv');
+  const dePath2 = path.join(LOC, 'strings_de-DE.csv');
   const deMap = new Map();
   if (fs.existsSync(dePath2)) {
     for (const l of fs.readFileSync(dePath2, 'utf8').replace(/^\uFEFF/, '').split('\n')) {

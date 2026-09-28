@@ -1,11 +1,10 @@
 // 最终合并: 官方KEY + 多源中文译文 -> 游戏可用 strings_zh-CN.csv
 // 关键修正: repo CSV 必须按"行内第一个逗号"解析 (官方格式保证 KEY 内无半角逗号, 且文件含未配对引号)
 import fs from 'node:fs';
+import { GAME, SA, LOC } from './game-path.mjs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const GAME = process.env.BT_GAME || 'D:\\MyDownload\\Things\\Steam\\steamapps\\common\\BATTLETECH';
-const LOC = path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'localization');
 
 // 仓库根目录: 从脚本自身位置推导 (脚本位于 <root>/tools/)。
 // 这样克隆下来就能直接跑, 也避免把开发机的用户名写进公开仓库。

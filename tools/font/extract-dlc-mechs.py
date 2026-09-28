@@ -10,8 +10,30 @@
 import os, json
 import UnityPy
 
-# 游戏安装路径: 可用环境变量 BT_GAME 覆盖, 省得改脚本
-GAME = os.environ.get('BT_GAME', r'D:\MyDownload\Things\Steam\steamapps\common\BATTLETECH')
+# 游戏安装目录: BT_GAME 环境变量优先, 否则在常见 Steam 位置里找, 都找不到就报错退出。
+# (与 tools/game-path.mjs 保持同一套逻辑; Steam 库不一定在 C 盘, 所以不能写死。)
+def _find_game():
+    cands = [
+        os.environ.get('BT_GAME'),
+        r'C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH',
+        r'C:\Program Files\Steam\steamapps\common\BATTLETECH',
+        r'C:\Steam\steamapps\common\BATTLETECH',
+        r'C:\SteamLibrary\steamapps\common\BATTLETECH',
+        r'D:\Steam\steamapps\common\BATTLETECH',
+        r'D:\SteamLibrary\steamapps\common\BATTLETECH',
+        r'E:\Steam\steamapps\common\BATTLETECH',
+        r'E:\SteamLibrary\steamapps\common\BATTLETECH',
+        r'D:\MyDownload\Things\Steam\steamapps\common\BATTLETECH',   # 作者开发机
+    ]
+    for c in cands:
+        if c and os.path.isdir(os.path.join(c, 'BattleTech_Data', 'StreamingAssets', 'data')):
+            return c
+    print('!! 找不到 BATTLETECH 安装目录。请设环境变量 BT_GAME 指向游戏根目录, 例如:')
+    print('     set BT_GAME=C:\\Program Files (x86)\\Steam\\steamapps\\common\\BATTLETECH')
+    print('   不确定装在哪? Steam 客户端 -> 库 -> 右键 BATTLETECH -> 管理 -> 浏览本地文件')
+    raise SystemExit(1)
+
+GAME = _find_game()
 AB = os.path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'assetbundles')
 # 输出目录 = 本脚本所在目录。工作区里它在 corpus/font-atlas/ (gen-mech-keys.mjs 从这里读),
 # 公开仓库里它在 tools/font/ —— 两种布局都成立, 且不含开发机路径。

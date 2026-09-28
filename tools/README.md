@@ -28,11 +28,28 @@ tools/
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 ```
 
-克隆到任何目录都能直接跑。唯一要按自己环境调整的是**游戏安装路径** —— 用环境变量即可，
-不必改代码：
+克隆到任何目录都能直接跑。唯一要按自己环境调整的是**游戏安装路径**
+（Steam 库在哪台机器上都不一样，默认 `C:\Program Files (x86)\Steam`，也可能在别的盘
+或叫 `SteamLibrary`），交给 `tools/game-path.mjs` 统一解析，**不用改代码**：
+
+1. 环境变量 `BT_GAME`
+2. 常见 Steam 位置（C 盘默认位置 + 各盘的 `Steam` / `SteamLibrary`）
+3. 都没有 → 打印怎么设置并退出；设了 `BT_GAME` 但无效也会立刻报错，**不会静默换目录**
+
+不确定装在哪就问 Steam：**库 → 右键 BATTLETECH → 管理 → 浏览本地文件**。
 
 ```powershell
-$env:BT_GAME = "D:\Steam\steamapps\common\BATTLETECH"
+# 当前窗口
+$env:BT_GAME = "C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH"
+# 永久（用户级环境变量）
+[Environment]::SetEnvironmentVariable('BT_GAME', 'C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH', 'User')
+```
+
+想换成别的游戏版本/目录时也用它，例如做多版本对照：
+
+```powershell
+$env:BT_GAME = "E:\Games\BATTLETECH-1.9.1"
+node tools\verify-csv.mjs
 ```
 
 ## 重建译文的顺序
