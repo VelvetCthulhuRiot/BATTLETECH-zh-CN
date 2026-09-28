@@ -296,7 +296,8 @@ python tools\font\verify-atlas.py --out tools\font\out --sample 9000
 用 .NET Framework 自带的编译器即可，**不需要装 Visual Studio**：
 
 ```powershell
-$Game = "D:\Steam\steamapps\common\BATTLETECH"
+# 换成你自己机器上的游戏路径 (见下方「关于路径」, 脚本会自动找, 这里要手动填)
+$Game = "C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH"
 $Managed = "$Game\BattleTech_Data\Managed"
 $csc = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 
