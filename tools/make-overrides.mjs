@@ -140,6 +140,129 @@ const CUSTOM = [
     '官方 de 就是光秃秃的 "Darius", 那个 " —" 是我们自己加的 (旧值 " —达吕斯") -> 去掉'],
   ['kerensky', '克伦斯基',
     '顺带扫出来的同类脏数据: 旧值 " 克伦斯基" 带一个前导空格 (官方 de="KERENSKY"), 会显示成多一个空格'],
+  // --- 用户反馈 (第二轮: 深玩后逐条截图) ---
+  ['melee', '近战攻击',
+    '用户反馈: 战斗界面右下武器栏里近身攻击那一行显示"肉搏", 要求改成"近战攻击"。' +
+    '这是 WeaponCategory 枚举, 只当武器名用 (官方 de="Nahkampf"); 其余含 melee 的条目' +
+    '(肉搏伤害 / 命中 / 回避 …) 走 merge-final 的"肉搏->近战"术语统一, 不在这里逐条改'],
+  ['well^shit*', '我操！',
+    '用户反馈: 阿拉诺夫人死讯那三个回答里, 第一条"哦，狗屎。"太生硬, 直接译"我操！"即可。' +
+    'en="Well, shit." / 官方 de="Oh, scheiße." / fr="Ah, merde."'],
+  ['damnit*whatawaste*', '妈的，全白费了。',
+    '用户反馈: 第三条"该死的。真是浪费。"翻译腔明显(中文口语不说"该死")。' +
+    'en="Damnit. What a waste." / de="Verdammt. So eine Verschwendung." / fr="Bon sang. Quel gâchis." -> 口语化'],
+  // --- 顺带扫出来的同源问题 (同一批 key 里的漏译/坏值) ---
+  ['masonsmarauders', '梅森的掠夺者',
+    '顺带扫出来的同类漏译: 这是闪点里那支佣兵团的 factionID, 出自 ' +
+    'data/cast/castDef_FP_justinAllard_GarrilacDefault.json, 值一直是英文原名 "MasonsMarauders"。' +
+    '官方 de="Masons Marodeure" / fr="Les maraudeurs de Mason"; CSV 里另外 4 处同词已译"梅森的掠夺者", 对齐'],
+  ['[flashpointdecision:agreetofightmasonsmarauders*]iacceptyourterms*wellmeetyouonthegroundfortheduel*',
+    '<color=#85DBF6FF> [闪点决定:同意， 与梅森的掠夺者战斗。] </color> 我接受你的条件。到地面上来一决胜负吧。',
+    '顺带扫出来的坏值: 与上一条同一句闪点决定(另一条写的是"梅森的掠夺者"), 这条把 Mason 当"泥瓦匠"译成了' +
+    '"打击泥瓦匠掠夺者"。en=I accept your terms. We\'ll meet you on the ground for the duel.'],
+  ['lordcommandermason', '领主指挥官梅森',
+    '顺带扫出来的坏值: 旧值"军阀梅森"把 Lord Commander 当成了"军阀"(warlord)。' +
+    '官方 de/fr 都保留 "Lord Commander Mason"; 这是 castDef 的 firstName, 会显示在对话框抬头 -> 直译'],
+  // --- 用户反馈 (第二轮): 整句重写 (含英文专名/换行, 只能放这里 —— 见 merge-final 术语统一段的注释) ---
+  ['mynameisdariusoliveira^andimthexoofmarkhamsmarauders*newlinenewlinewereamercenaryoutfitwithtiestohousearanowedidsomeworkfor[[dm*basedescriptiondefs[lorehighlordtamatiarano]^highlordtamatiwaybackwhen*',
+    '我叫达吕斯·奥利维拉，是马卡姆的掠夺者佣兵团的副舰长。\\n\\n我们是一支和阿拉诺家族有联系的雇佣兵部队...很久以前，我们曾为[[DM.BaseDescriptionDefs[LoreHighLordTamatiArano]\u001f最高领主塔马蒂]]效力，那时他还活着。',
+    '用户反馈: 对话里显示成"是马卡姆\'s Marauders的副舰长" —— 英文原名连所有格 \'s 一起留在译文里, 没译。' +
+    '官方 de="der ausführende Offizier von Markhams Marodeuren" / fr="chef des Maraudeurs de Markham"; ' +
+    'Marauders 按 glossary(Marauder=掠夺者) 与 CSV 里既有的"马卡姆的掠夺者"处理'],
+  ['idintroduceyoutocommandermarkham^buthewasonasupplyruninthemarketdistrictwhenthebombsfell*he^uhwell*newlinenewlinehedidntmakeit*',
+    '我本想向您介绍马卡姆指挥官，但炸弹落下时他正在市场区。他，呃……好吧。\\n\\n他没有活着出来。',
+    '用户反馈: 这句对话里冒出一个莫名其妙的"H", 读不通。' +
+    'en="I\'d introduce you to Commander Markham, but he was on a supply run in the market district when the bombs fell. ' +
+    'He, uh... well." —— 旧值把 "uh" 译成了坏值"?H", 而且"市场区"后面多一个"，。"。' +
+    '顺带把 "I\'d introduce you to"(虚拟语气)补成"我本想向您介绍"'],
+  // ================= 用户反馈 (第三轮: 教程对话 / 机甲库那一屏 / 阿尔戈号升级界面) =================
+  // --- ① 教程选项: 一个坏掉的富文本标签 + "Heat" 被译成"温暖" ---
+  ['[tutorial:heat^stability^andmodifiers]youseemtoknowyourwayaroundabattlefield^yang*anyadvice?',
+    '<color=#85DBF6FF> [教程:热量、稳定性与修正因子] </color> 你似乎对战场很在行，杨。有什么建议吗？',
+    '用户反馈: 这条选项直接把 <color = #85DBF6FF> 当文字显示出来了, 而且"温暖"读不通。' +
+    '① 旧值里标签写成 "<color = #85DBF6FF>"(等号两侧有空格), 游戏富文本解析不了 —— ' +
+    '同一个菜单其它选项都是无空格的 "<color=#85DBF6FF>", 已对齐;' +
+    '② key 就是 en 原文 "[tutorial:heat^stability^andmodifiers]", Heat 是"热量", 旧值译成了"温暖";' +
+    '官方 de="[Tutorial: Wärme, Stabilität und Modifikatoren]"。Modifiers 按语料主流写法"修正因子"(26 处)' +
+    '(旧值"修饰符"全库只有这一处);' +
+    '③ 后半句 en="You seem to know your way around a battlefield, Yang." 是对杨说的, 旧值写成了"他们"'],
+  ['[tutorial:mechbay]anythingishouldknowaboutthemechbaysthemselves?',
+    '<color=#85DBF6FF> [教程:机甲库] </color> 关于机甲库本身，我应该了解什么？',
+    '用户反馈(机甲库术语混乱): 标签里夹着英文"教程:Mech 机库", 正文又问的是"维护脚手架"。' +
+    'en="anything I should know about the MechBays themselves?" —— 问的是机甲库本身, ' +
+    '旧值是被官方德语"Wartungsgerüste"(维修脚手架)带偏了。Mech Bay 统一叫"机甲库"'],
+  ['[tutorial:mechcomponents]ivebeenwonderingaboutthecomponentsyoucanputonourmechs*',
+    '<color=#85DBF6FF> [教程:机甲组件] </color> 我一直在琢磨能给我们机甲装哪些组件。',
+    '顺带修同一菜单的口径: key 是 [tutorial:mechcomponents], 官方 de="Mech-Komponenten", ' +
+    '而旧值写了"机械组件"(机械=mechanical)。另外 en="I\'ve been wondering about the components you can put on our mechs." ' +
+    '是"一直想知道", 旧值"我想了解更多关于我们机械组件的信息"把句子译散了'],
+  // --- ② 机甲维修界面: 吨位后面多出来的那个 "S" ---
+  ['{0:0*##}ton{1}remaining', '剩余 {0:0.##} 吨',
+    '用户反馈: 机甲维修界面显示"12吨S剩余", 多一个莫名其妙的 S。' +
+    '这是 en 的复数后缀占位符: en 模板是 "{0} ton{1} remaining"({1} 填 "s"), ' +
+    '中文没有复数, 必须整个去掉 —— 官方 fr 就是硬写 "{0:0.##} t restante(s)" 不接 {1}(de 接了, 是官方德语的毛病)'],
+  ['{0:0*##}ton{1}overweight', '超重 {0:0.##} 吨',
+    '同 ②, 是它的"超重"兄弟 key: "{0} ton{1} overweight" 里的 {1} 也是复数后缀, 去掉'],
+  ['{0:###0*##}ton{1}remaining', '剩余 {0:###0.##} 吨',
+    '同 ②(另一种小数位格式的同义 key): 旧值"仍然是 {0:###0.##} 吨"既保留了怪语序又丢了语义, 统一'],
+  ['{0:###0*##}ton{1}overweight', '超重 {0:###0.##} 吨',
+    '同 ②(另一种小数位格式的同义 key): 旧值"{0:###0.##}吨{1}超重"同样会多出一个 S'],
+  // --- ③ 机甲库那一屏: Mech Bay / Mech Cubicle / Repair Scaffolding 三个词分清楚 ---
+  ['bays', '机甲库',
+    '用户反馈(机甲库术语混乱): 机甲库界面顶部那个页签显示"机库", 而左侧导航/阿尔戈号升级卡都叫"机甲库"。' +
+    '官方 de="Buchten" / fr="Baies" 就是 Mech Bay。本项无 src(界面标签, 来自 prefab)'],
+  ['bay1', '1号机甲库',
+    '用户反馈(机甲库术语混乱): 机甲库里每一栏的标题是"1号库", 与升级卡的"1号机甲库"(key mechbay1)不一致。' +
+    '官方 de="Bucht 1" / fr 同样是 Bay 1'],
+  ['bay2', '2号机甲库', '同 bay1: 官方 de="Bucht 2"; 与 key mechbay2 的"2号机甲库"对齐'],
+  ['bay3', '3号机甲库', '同 bay1: 官方 de="Bucht 3"; 与 key mechbay3 的"3号机甲库"对齐'],
+  ['bayl', 'L号机甲库', '同 bay1: 官方 de="Bucht L"(Leopard 上的机库位)'],
+  ['beyondeachcubicleholdingonebattlemech?notmuch*itsallaboutcapacity*themoremechbayswehave^themoremechswecankeepbattle-ready*andthemoremechswehavebattle-ready^themoreflexibilityyouhaveinyourdeploymentoptions*',
+    '除了每个机甲隔舱能放一台战斗机甲，也没什么了。这主要是容量的问题：我们的机甲库越多，能保持战备状态的机甲就越多；战备状态的机甲越多，您在部署时的选择就越灵活。',
+    '用户反馈(机甲库术语混乱): 这条回答里 cubicle 和 mech bay 都被译成了"维修脚手架/维护脚手架", 同一句话里两个不同的东西用同一个词。' +
+    'en(就在 key 里)="Beyond each cubicle holding one BattleMech? Not much. It\'s all about capacity. ' +
+    'The more Mech Bays we have, the more mechs we can keep battle-ready..." —— ' +
+    '用户给的口径: 每库6个隔舱、每舱一台战备机甲。所以 cubicle="机甲隔舱"(与 key theargosmechbayisvast 的既有译法一致)、Mech Bay="机甲库"; ' +
+    '"维修脚手架"是另一件东西(key repairscaffolding, Repair Scaffolding)'],
+  ['thepowersbackontotherestofthemechbay^andwecanstartrepairsonthelastsixcubicles*evenifyoudontwanttofillthemwithmechs^believeme^icanputtheextraspacetogooduse*itsgonnatakeashitloadofwork^though*',
+    '机甲库其余部分的电力恢复了，我们可以开始修复最后6个机甲隔舱。就算你不想用机甲把它们填满，相信我，多出来的空间我也能派上大用场。不过，这活儿可不轻松。',
+    '同 ③: 旧值"我们可以开始修复最后的6间隔舱"漏了"甲"字(机甲隔舱), 且"只是还有好多工作要做"语气太弱' +
+    '(en="It\'s gonna take a shitload of work, though.")'],
+  ['dependsonthemechbayconditionsyoureworkingin*agoodmechbaywithadvancedscaffoldingandequipmentisfasterthanoneyoullfindonastandardleopard*',
+    '取决于您在什么样的机甲库里干活。一座配有先进维修脚手架和设备的机甲库，要比标准豹式上的机库快得多。',
+    '同 ③: 旧值"取决于您正在工作的机库 ， 的状况。配备高级维护脚手架和工具的良好机库比普通豹子上的机库要快 ，。" ' +
+    '既把 Mech Bay 写成"机库"、又用"维护脚手架/脚手架"两种写法、Leopard 还译成了"豹子"(语料里是"豹式"), ' +
+    '而且原句里那个多余的"，。"是坏值'],
+  ['idisplayourmechbaysefficiencyinmechtechpointsonyourtraveldisplayunderthefinancesandcrewmoralereadouts*thehighertherating^thefastertherepairs*',
+    '我们机甲库的效率以""技师点数""的形式显示在您的旅行显示屏上，就在财务和士气的数值下面。这个数值越高，修复速度越快。',
+    '同 ③: 旧值"我们机库的效率显示在您旅行显示屏上的 MechTech 点数中 ， 在财务和团队士气的值下。" 有两个问题: ' +
+    'Mech Bay 写成"机库"; MechTech 直接留了英文, 而语料里这个属性统一叫"技师点数"' +
+    '(见 DM.SimGameStatDescDefs[SimGameStatDesc_MechTechSkill] 的引用文本, 与升级卡" +2技师点数"一致)'],
+  ['nomechtechnewlinetasksscheduled', '没有技师\\n任务安排',
+    '同 ③: 旧值"没有 MechTech 任务 \\n 计划"把 MechTech 留成英文, 而且换行符位置不对' +
+    '(官方 de="Keine MechTech-\\nAufgaben geplant" 是在词中间断行的两行标签)'],
+  ['noemptybays', '没有空闲的机甲库位',
+    '同 ③: 旧值"没有空闲的机库位"用了没统一的"机库"(官方 de="Keine freien Buchten")。' +
+    '⚠️ 这条只是把词统一, 没有改语义 —— 到底指"机甲库满了"还是"这一库里6个隔舱都占了", 等用户在界面上真遇到再定'],
+  // --- ④ 阿尔戈号升级界面: 大图标下的分类标签与模块名不一致 ---
+  ['habitatpods', '居住舱',
+    '用户反馈: 升级界面大图标上写"栖息胶囊", 点开后简介里的分类标签却是"居住舱"。' +
+    '"栖息胶囊"是照官方德语"Habitatkapseln"(Kapsel=胶囊)硬译的; 三个舱本身叫"阿尔法舱/贝塔舱/伽玛舱", ' +
+    'en=Habitat Pods。统一到 popup 用的"居住舱"(key habitatpod)'],
+  ['repairrefit', '维修与改装',
+    '用户反馈: 同一类升级, 大图标写"维修与改装"(key repair&refit), 点开后分类标签写"修复改造"。' +
+    '官方 de 两处都是 "Reparieren und umrüsten" -> 统一到"维修与改装"'],
+  ['training', '训练模块',
+    '用户反馈: 阿尔戈号升级界面大图标写"训练模块"(key trainingmodules, 官方 de="Ausbildungsmodule"), ' +
+    '点开后分类标签却是"训练"。本 key 的 src 就是 argoUpgrade_trainingModule1.json, 只当这个分类标签用 -> 统一'],
+  // --- ⑤ 顺带: 同一个"标签被写坏"的家族 (官方三语都能跑, 就我们的写法会原样显示标签) ---
+  ['currentprofile:none', '当前配置文件: <color=red>无</color>',
+    '顺带扫出来的同类坏值: 旧值 "当前配置文件:<color = ""red "">NONE </color>" 里等号两侧有空格, ' +
+    'TMP 解析不了会原样显示标签。官方三语都是无引号、无空格的 "<color=red>" 并把占位符译出' +
+    '(de="Aktuelles Profil: <color=red>KEINS</color>" / fr=AUCUN / ru=НЕТ), 照此对齐; ' +
+    '注意英文源串 strings_dev-WWW.csv 里是 "<color=""red"">", 官方本地化都去掉了引号, 这里跟官方'],
+  ['customid:none', '自定义 ID: <color=red>无</color>',
+    '同 currentprofile:none(官方 de="Benutzerdefinierte ID: <color=red>KEINE</color>")'],
 ];
 
 const out = [];

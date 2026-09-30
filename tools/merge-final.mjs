@@ -330,6 +330,23 @@ for (const [k, v0] of merged) {
 }
 console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${fixCoin}, 千位分隔 ${fixThousand}, 半角逗号→全角 ${fixComma}, 引号转义 ${fixQuote}, \\r\\n→\\n ${fixCRLF}`);
 
+// ---- 富文本标签规范化: 等号两侧被加了空格 ----
+// TMP 解析不了 "<color = #85DBF6FF>", 于是界面上原样显示这串标签文字
+// (用户反馈: 教程选项里就冒出来过; 同一菜单其它选项写的是无空格的 "<color=#85DBF6FF>", 显示正常)。
+// 官方 de/fr/ru 全是无空格写法, 这里统一收口。
+// 注意: 只动"等号两侧的空格"。官方伪本地化串 strings_dev-WWW.csv 里本来就有
+// "<color #F79B26FF>"(压根没有等号)和 "<link="X">"(值带引号)这类写法, 那是【源串】格式,
+// 不在这里动 —— 见 EULA/隐私政策那两条。
+{
+  let n = 0;
+  for (const [k, v0] of merged) {
+    if (!/<\s*\/?\s*[A-Za-z][A-Za-z0-9-]*\s*=/.test(v0)) continue;
+    const v = v0.replace(/<(\s*\/?\s*[A-Za-z][A-Za-z0-9-]*)\s*=\s*/g, '<$1=');
+    if (v !== v0) { merged.set(k, v); n++; }
+  }
+  console.log(`富文本标签规范化(去掉等号两侧空格): ${n} 条`);
+}
+
 // ---- 术语统一: 各分片代理各自统一过一遍, 口径不一; 此处按 glossary.tsv 收敛到唯一写法 ----
 {
   // 专有名词/术语: 无论上下文都只有一个正确写法 -> 无条件替换
@@ -356,6 +373,20 @@ console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${f
     ['钢铁野兽', '钢铁猛兽'],        // glossary: Steel Beast=钢铁猛兽
     ['天琴联邦', '天琴共和国'],
     ['卡佩兰斯', '御夫星人'],
+    // ---- 用户反馈 (第二轮: 深玩后逐条截图) ----
+    // ⚠️ 这里只能放"不依赖后面几个阶段"的短语: 本段跑在"专名汉化"(Markham->马卡姆)之前,
+    //    含英文专名或半角句号的整句改不动, 那几条走 make-overrides.mjs 的人工裁决(最后才跑)。
+    ['肉搏', '近战'],           // 战斗界面右下武器栏那行 "Melee"; 用户要求改叫"近战"(裸 key melee 见人工裁决 -> "近战攻击")
+    ['加里拉克', '加瑞拉克'],     // glossary: Garrilac=加瑞拉克; 另有 3 处把 Garrilac 写成了"加里拉克"
+    ['军阀梅森', '领主指挥官梅森'],  // 同源坏值: 同一句里 Lord Commander 也被当成"军阀"(warlord); 官方 de 直接保留 "Lord Commander"
+    ['梅森加瑞拉克', '梅森·加瑞拉克'],  // 上一条改完后的残留: 名字中间少了间隔号 (glossary: Mason Garrilac=梅森·加瑞拉克)
+    ['一只 ibex', '一只北山羊'],  // 埃斯皮诺萨家族纹章: en="an ibex on a field of thorns"; 官方 de=Steinbock / fr=bouquetin 都是北山羊
+    ['我的Marauders', '我的掠夺者'],  // 未译的 Marauders (glossary: Marauder=掠夺者)
+    // ---- 用户反馈 (第三轮: 机甲库那一屏的术语) ----
+    // Mech Bay 统一叫"机甲库"(左侧导航/阿尔戈号升级卡早就是这个写法), 早期从官方德语
+    // "Mech-Hangar/Wartungsgerüst" 转手过来的译文留下了"机库"和"机甲机库"两种写法。
+    // 只在 key 带 mechbay 时才换 —— 故事里的 hangar(瓦罗的机库/沃洛机库)是真 hangar, 不能动。
+    ['机甲勇士', '机甲战士'],    // 全库只有 2 处, 且其中一句里前后就用了"机甲战士"和"机甲勇士"两个词
   ];
   // 同一个词有正当的其它含义 -> 只在 key 能确认语境时才替换
   const KEYED = [
@@ -364,6 +395,19 @@ console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${f
     [/contract/i, [['订单', '合约']]],
     [/salvage/i, [['废料', '战利品']]],
     [/xo|executive/i, [['执行官', '副舰长'], ['副驾驶', '副舰长']]],         // glossary: XO=副舰长
+    // 同一份 LoreBloodChit 的引用显示文本有三种写法(血幅/血票/血牌), 统一到术语本身 key=bloodchit 的"血幅"
+    [/bloodchit/i, [['血票', '血幅'], ['血牌', '血幅']]],
+    // Mech Bay -> 机甲库 (长写法先换, 否则"机甲机库"会被拆成"机甲机甲库")
+    [/mechbay/i, [['机甲机库', '机甲库'], ['机库', '机甲库']]],
+  ];
+  // 用户反馈: 战斗里那条蓝条(Resolve)旧译"决心"太笼统, 改叫"战斗决心" —— 和公司层面的
+  // Morale"士气"区分开(两个属性在游戏里是两回事, 都叫一个词玩家会混)。
+  // 但 key 带 resolve 不等于就是这套机制, 下面这三条里的 resolve 是叙事上的 determination, 必须留在"决心":
+  //   "the Directorate's atrocities have steeled our resolve"(坚定了我们的决心)、
+  //   "the symbol of my house, and of our unshakable resolve"(不可动摇的决心)、
+  //   "Yang looks anxious but resolved"(杨看上去不安，但已经下了决心)
+  const RESOLVE_NARRATIVE = [
+    'thingsaregoingwellenough', 'yes^iwill', 'whenyouarriveatthemorningbriefing',
   ];
   const hits = new Map();
   for (const [k, v0] of merged) {
@@ -377,6 +421,15 @@ console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${f
     };
     for (const [from, to] of FLAT) bump(from, to);
     for (const [re, list] of KEYED) if (re.test(k)) for (const [from, to] of list) bump(from, to);
+    if (/resolve/i.test(k) && !RESOLVE_NARRATIVE.some(p => k.startsWith(p))) {
+      // 一次替换搞定两种写法: "决心点数"要整体吃掉, 否则会写出"15点战斗决心点数"。
+      // 用 replace(回调) 单遍扫描, 中途不会把刚插入的"战斗决心"再替换一次(踩过 bump 的地雷)。
+      const n = v.split('决心').length - 1;
+      if (n) {
+        v = v.replace(/决心点数|决心/g, '战斗决心');
+        hits.set('决心→战斗决心', (hits.get('决心→战斗决心') || 0) + n);
+      }
+    }
     if (v !== v0) merged.set(k, v);
   }
   const total = [...hits.values()].reduce((a, b) => a + b, 0);

@@ -416,14 +416,14 @@ KEY,zh-CN
 [background:aurigansoldier]theremustbemoretothisshipsstorythanweunderstand*nocivilianvesselshouldbecarryingthiskindofintel*,<color=#85DBF6FF>[职业:奥里根士兵]</color>这艘船的经历一定比我们了解的更复杂。民用船只不该携带这种情报。
 [background:aurigansoldier]youcametotherightcompany^ladycentrella*duringmytourintheauriganmilitary^itangledwithmorepiratesthanicancount*,<color=#85DBF6FF>[职业:奥里根士兵]</color>你找对队伍了，琴特雷拉女士。我在奥里根军队服役期间，打过的海盗多到数不清。
 [background:frontierfreelancer]icanpictureitwellenough*isawmyshareofhumanmiserywheniwasfreelancingonthefrontier*,<color=#85DBF6FF>[职业:边境自由职业者]</color>我能想象得很清楚。我在边境做自由职业时，见过不少人间惨状。
-[background:frontierfreelancer]iknowhowtoliveonthefrontier*ifthatswhereyouregoing^iguessimwithyou*,<color = #85DBF6FF> [职业:边境自由职业者] </color> 我知道，如何在边境地区生存。如果你去那里， 我会在那里。
-[background:frontierfreelancer]thatsgood*hopecankeeppeoplegoingwhentheyvegotnothingelse*isawplentyofexamplesofthatonthefrontier*,<color = #85DBF6FF> [职业:边境自由职业者] </color> 不错。希望让人们活着 ， 当他们一无所有时。我一直在边境地区看到这种情况。
-[background:frontierfreelancer]youdontworkonthefrontierwithoutlearninghowtodealwithpirates*wecanhandlethejob^nosweat*,<color = #85DBF6FF> 【职业:边境自由职业者】</color> 任何在边境地区工作的人，必须学习，如何与海盗相处。我们非常适合这项任务。
-[background:frontierfreelancer]youremindmeofawarcriminalitangledwithwheniwasworkingthefrontier*shewoundupinacage^too*,<color = #85DBF6FF>【职业:边境自由职业者】</color>你让我想起了一个战犯，我在边境工作时与，发生冲突。她也最终被关在了笼子里。
+[background:frontierfreelancer]iknowhowtoliveonthefrontier*ifthatswhereyouregoing^iguessimwithyou*,<color=#85DBF6FF> [职业:边境自由职业者] </color> 我知道，如何在边境地区生存。如果你去那里， 我会在那里。
+[background:frontierfreelancer]thatsgood*hopecankeeppeoplegoingwhentheyvegotnothingelse*isawplentyofexamplesofthatonthefrontier*,<color=#85DBF6FF> [职业:边境自由职业者] </color> 不错。希望让人们活着 ， 当他们一无所有时。我一直在边境地区看到这种情况。
+[background:frontierfreelancer]youdontworkonthefrontierwithoutlearninghowtodealwithpirates*wecanhandlethejob^nosweat*,<color=#85DBF6FF> 【职业:边境自由职业者】</color> 任何在边境地区工作的人，必须学习，如何与海盗相处。我们非常适合这项任务。
+[background:frontierfreelancer]youremindmeofawarcriminalitangledwithwheniwasworkingthefrontier*shewoundupinacage^too*,<color=#85DBF6FF>【职业:边境自由职业者】</color>你让我想起了一个战犯，我在边境工作时与，发生冲突。她也最终被关在了笼子里。
 [background:frontierpirate]asluckwouldhaveit^hijackingconvoysusedtobeaspecialtyofmine*,<color=#85DBF6FF> [职业:边境地区的海盗] </color> 幸运的是， 伏击车队是我的专长之一。
 [background:frontierpirate]iknowpiratesbetterthanmost*youwontfindanyonebettersuitedtothisjobthanus*,<color=#85DBF6FF> [职业:边境地区的海盗] </color> 我比大多数人更了解海盗。没有人比我们更适合这份工作。
 [background:frontierpirate]iservedsometimeinanauriganprisonduringyourfathersreign*itwasnopicnicbutitwasntagulag^either*,<color=#85DBF6FF> [职业:边境海盗] </color> 我在御夫座监狱服刑， 当你父亲还在掌权的时候。这不是野餐……但也不是劳教所。
-[background:frontierpirate]sure^butiintendtofightdirty*anyobjections?,<color = #85DBF6FF> [职业:边境地区的海盗] </color> 当然， 但我不打算 ， 公平竞争。有什么问题吗?
+[background:frontierpirate]sure^butiintendtofightdirty*anyobjections?,<color=#85DBF6FF> [职业:边境地区的海盗] </color> 当然， 但我不打算 ， 公平竞争。有什么问题吗?
 [background:frontierpirate]youdontknowthehalfofit^yang*spendafewyearshangingoutwithmyoldfriends^andbelievemeyoullhearworse*,<color=#85DBF6FF>[职业:边境海盗]</color>你连一半都不知道，杨。跟我的老朋友混上几年，相信我，你会听到更糟的。
 [background:innerspheremercenary]icanpictureitwellenough*isawmyshareofgulagsduringmytourintheinnersphere*,<color=#85DBF6FF>[职业:内天体雇佣兵]</color>我能想象得很清楚。我在内天体服役时，见过不少劳改营。
 [background:innerspheremercenary]ivespenttimeintheinnersphere^espinosa*iknowhowthisgameisplayed*butrightnow^inthismoment^allthatmattersisyouandus*,<color=#85DBF6FF>[职业：内天体雇佣兵]</color>我在内天体待过很长时间，埃斯皮诺萨。我知道这场游戏是怎么玩的。但现在，就在此刻，重要的只有<i>您</i>和<i>我们</i>。
@@ -432,7 +432,7 @@ KEY,zh-CN
 [background:innerspheremercenary]thenitcouldbeanybody*icantellyoufromexperiencethatsuccessorstateshipshaveawayofshowingupwhereyouleastexpectthem*,<color=#85DBF6FF>[职业:内天体雇佣兵]</color>那可能是任何人。凭经验我可以说，继承国家的舰船总会在你最意想不到的地方冒出来。
 [background:merchantguard]backbeforewemet^itraveledwithamerchantcaravan*sawalotofhorriblethings^toobutnothinglikethis*,<color=#85DBF6FF>[职业:商人护卫]</color>在我们认识之前，我跟着一支商队旅行。我也见过许多可怕的事，但没有一件像这样。
 [background:merchantguard]funnythingaboutguardingconvoysforaliving:youlearnasmuchaboutstoppingthemasyoudoaboutkeepingthemsafe*,<color=#85DBF6FF>[职业:商人护卫]</color>靠护送车队为生的有趣之处:你对如何拦下车队的了解，不亚于如何保护它们。
-[background:merchantguard]imnostrangertoprotectingnoncombatants*thisjobiswellwithinourwheelhouse*,<color = #85DBF6FF> [职业:商人守卫] </color> 我有保护平民的经验。我们有足够的专业知识来完成这项工作。
+[background:merchantguard]imnostrangertoprotectingnoncombatants*thisjobiswellwithinourwheelhouse*,<color=#85DBF6FF> [职业:商人守卫] </color> 我有保护平民的经验。我们有足够的专业知识来完成这项工作。
 [background:merchantguard]ivebeenprotectingpeoplemyentirelife^alexander*isureashelldontintendtostopnow*,<color=#85DBF6FF>[职业:商人护卫]</color>我这一生都在保护别人，亚历山大。我当然不打算现在停下。
 [background:merchantguard]smugglersdontrunwiththatkindofsecurity*hell^corporatecommercialshipsdontishouldknow^ispentyearsguardingthem*,<color=#85DBF6FF>[职业:商人护卫]</color>走私者不会有这种级别的安保。见鬼，连公司的商船都没有，我该知道，我护送过它们好几年。
 [background:solarisgladiator]ifshesstupidenoughtostepintotheringwithasolarisgladiator^imhappytoobligeher*,<color=#85DBF6FF> [职业:索拉里斯角斗士] </color> 如果她足够愚蠢 ， 可以进入对抗索拉里斯角斗士的戒指 ， 我很乐意帮她一个忙。
@@ -481,7 +481,7 @@ KEY,zh-CN
 [flashpointdecision:acceptthepayoff*note:thiswillendtheheavymetalcampaign*]okay^notker*forthelow^lowpriceoftwomillionc-bills^wellsellyoubackyourwreck*,<color=#85DBF6FF>[闪点任务决定：接受贿赂。<i>注意：这将结束重金属战役。</i>]</color>好吧，诺特克尔。以两百万星币这个极低的价钱，你可以从我们这里把残骸买回去。
 [flashpointdecision:agreetobringonlyassault-classmechs*]ifthemargravewantsloud^werepreparedtogivehimloud*,<color=#85DBF6FF>[闪点决定:同意只使用突击级机甲。]</color>如果边境总督想要大动静，我们就给他大动静。
 [flashpointdecision:agreetofightmasonsmarauders*]deal*wellseeyouonthebattlefield*,<color=#85DBF6FF> [闪点决定:同意， 与梅森的掠夺者战斗。] </color> 交易。战场上见。
-[flashpointdecision:agreetofightmasonsmarauders*]iacceptyourterms*wellmeetyouonthegroundfortheduel*,<color=#85DBF6FF> [闪点决定:同意， 打击泥瓦匠掠夺者。] </color> 我接受你的条件。我们在那里见面决斗。
+[flashpointdecision:agreetofightmasonsmarauders*]iacceptyourterms*wellmeetyouonthegroundfortheduel*,<color=#85DBF6FF> [闪点决定:同意， 与梅森的掠夺者战斗。] </color> 我接受你的条件。到地面上来一决胜负吧。
 [flashpointdecision:agreetohelpthelocals*]tellzapatathatwellhelphispeoplegetoutofhere^whethertheycanpayforitornot*wellworryaboutfinishingthesteinercontractafterthelocalsaresafe*,<color=#85DBF6FF>[闪点任务决定：同意帮助当地人。]</color>告诉萨帕塔，我们会把他的人救出去，不管他们付不付钱。等当地人安全了，我们再操心施泰纳的合约。
 [flashpointdecision:agreetokilllordanguskhulan*]wellhandleyourbrotherforyou*butwhenthedeedisdone^youdbetterholdupyourend*,<color=#85DBF6FF>[闪点决定:同意杀死安格斯·呼兰领主。]</color>我们会替你解决你的兄弟。但事成之后，你最好也履行你那一份。
 [flashpointdecision:agreetomisleadforcecommandersinghforprofit*]youveconvincedme*werein*,<color=#85DBF6FF>[闪点决定:同意误导部队长辛格以获取更多利润。]</color>你说服我了。我们加入。
@@ -500,7 +500,7 @@ KEY,zh-CN
 [flashpointdecision:continuethehuntfornoadditionalpay*]iwontletthisidiotruinourhard-wonreputationwithhousekurita*weregonnafindokadaourselvesanddothisright*,<color=#85DBF6FF> [闪点决定:继续狩猎，无需支付额外费用。] </color> 我不会， 允许这个白痴破坏我们在栗田家族中来之不易的声誉。我们会自己追查冈田并妥善解决这件事。
 [flashpointdecision:continuethehuntfornoadditionalpay*]onsecondthought^letsjustfinishthecontract*iwontgivehironakathesatisfactionofdrivingusawaywiththejobunfinished*,<color=#85DBF6FF>[闪点任务决定：不要求额外报酬，继续追捕。]</color>再想想，我们还是把这份合约做完吧。我不会让广中得意，以为能把我们赶走、让我们半途而废。
 [flashpointdecision:continueyourmissiontoassassinateyuetu*]wedontbreakourcontracts*,<color=#85DBF6FF> [闪点决定:继续执行你杀死月兔的任务。] </color> 我们没有违反合同。
-[flashpointdecision:deployalone*]ifyoutwocantplaynicelytogether^youcanfeelfreetodukeitoutonthesidelines*wellhandlethelyransonourown*,<color = #85DBF6FF> [闪点决定:一个人出去。] </color> 如果你们两个不能正常相处， 最好解决你们之间的纠纷。我们可以自己处理天琴座。
+[flashpointdecision:deployalone*]ifyoutwocantplaynicelytogether^youcanfeelfreetodukeitoutonthesidelines*wellhandlethelyransonourown*,<color=#85DBF6FF> [闪点决定:一个人出去。] </color> 如果你们两个不能正常相处， 最好解决你们之间的纠纷。我们可以自己处理天琴座。
 [flashpointdecision:deploywithchevalandherlance*]okay^cheval^yourlanceiswithme*jailbird^youandyourpalswillhavetositthisoneout*,<color=#85DBF6FF> [闪点决定:带上舍瓦尔和她的小队。] </color> 好的 ， 舍瓦尔 ， 你的小队在那里。 Jailbird ， 你和你的人待在家里。
 [flashpointdecision:deploywithjailbirdandherlance*]idontlikeultimatums*imgoingwithjailbirdslance*cheval^youkeepoutoftheao*,<color=#85DBF6FF>[闪点决定:带上监狱鸟和她的小队。]</color>我不喜欢终极要求。我跟监狱鸟的小队走。谢瓦尔，你留在行动区域外。
 [flashpointdecision:destroythedestbase*]welldestroytheircommandfacility*carlyle^youcapturethatcomstarbase*,<color=#85DBF6FF>[闪点决定:摧毁天龙精英突击队基地。]</color>我们会摧毁他们的指挥设施。卡莱尔，你去夺取通讯之星基地。
@@ -509,8 +509,8 @@ KEY,zh-CN
 [flashpointdecision:forcehironakatopayyoufortheworkyouvealreadydone*]wegetpaidforourwork*period*isaywegowithyangsideaandforcehironakatopayup*,<color=#85DBF6FF>[闪点任务决定：迫使广中为你们已经完成的工作付钱。]</color>我们的工作就得付钱，没得商量。我赞成杨的主意，逼广中付钱。
 [flashpointdecision:forcehironakatopayyoufortheworkyouvealreadydone*]youreright^wearentleavingempty-handed*soletsgoforcehironakatopayus*,<color=#85DBF6FF> [闪点决定:迫使广中 ， 支付你已经完成的工作。] 你是对的 ， 我们不会空手而归。让我们强迫广中付钱给我们，。
 [flashpointdecision:giveherthevolkoviteslocation*]ialreadygavethemafightingchance*nowillgiveyouone*,<color=#85DBF6FF> [闪点决定:揭示沃尔科人的位置。] </color> 我已经给了他们一个公平的机会。现在我给你一个。
-[flashpointdecision:giveherthevolkoviteslocation*]ifitsthatimportanttoyou^illgiveyoutheircoordinates*butyoullneedtohiresomeoneelsetopullthetrigger*,<color = #85DBF6FF> [闪点决定:揭示沃尔科人的位置。] </color> 如果这对你很重要， 我会把坐标发给你。但你必须聘请其他人， 扣动扳机。
-[flashpointdecision:goinquietlywithalightlance*]wevekeptthisoperationcovertsofar*letsstickwiththatapproachandnottipourhandtooearly*,<color = #85DBF6FF> [闪点决定:用轻型小队隐藏前进。] </color> 我们尚未暴露。我们应该继续这样做，不要过早地打出我们的王牌。
+[flashpointdecision:giveherthevolkoviteslocation*]ifitsthatimportanttoyou^illgiveyoutheircoordinates*butyoullneedtohiresomeoneelsetopullthetrigger*,<color=#85DBF6FF> [闪点决定:揭示沃尔科人的位置。] </color> 如果这对你很重要， 我会把坐标发给你。但你必须聘请其他人， 扣动扳机。
+[flashpointdecision:goinquietlywithalightlance*]wevekeptthisoperationcovertsofar*letsstickwiththatapproachandnottipourhandtooearly*,<color=#85DBF6FF> [闪点决定:用轻型小队隐藏前进。] </color> 我们尚未暴露。我们应该继续这样做，不要过早地打出我们的王牌。
 [flashpointdecision:havethemoderbjörnrescuecaptainmagorianwhileyourlancedistractsthegarrison*]ourheavieswillattackthearmorytodrawtheopforsdefensesaway*,<color=#85DBF6FF>[闪点决定:让Moderbjorn去救出马戈里安上尉，同时你的小队引开守备部队。]</color>我们的重型机甲将攻击军械库，把敌军引开。
 [flashpointdecision:havethemoderbjrnrescuecaptainmagorianwhileyourlancedistractsthegarrison*]ourheavieswillattackthearmorytodrawtheopforsdefensesaway*,<color=#85DBF6FF>[闪点决定:让Moderbjorn去救出马戈里安上尉，同时你的小队引开守备部队。]</color>我们的重型机甲将攻击军械库，把敌军引开。
 [flashpointdecision:helpgwydioncompany*]werehelpinggwydioncompany*ifwewereintheirshoes^itswhatidhopetheyddoforus*,<color=#85DBF6FF> [闪点决定:帮助 Gwydion 部队。] </color> 我们正在帮助 Gwydion.我希望 ， 如果角色互换，他们也会为我们做同样的事情 ，。
@@ -554,7 +554,7 @@ KEY,zh-CN
 [flashpointdecision:refusetheoffer*]noway*ladycunninghamwarnedusnottotrustyou*butillbesuretoletherknowwhatyoureplanning*,<color=#85DBF6FF> [闪点决定:拒绝这个提议。] </color> 没有机会。坎宁安夫人警告过我们关于你， 但我一定会让她知道你的计划。
 [flashpointdecision:refusetoacceptthecall*]noway*weregettingpaidtotakehadleyfromaconcreteboxtoadaviondropship^nottotalktoher*,<color=#85DBF6FF>[闪点任务决定：拒绝接听。]</color>绝无可能。我们拿钱是把哈德利从混凝土掩体护送到达维恩家族的空投艇上——不是来跟她聊天的。
 [flashpointdecision:refusetofollowladymarinasorders*]dr*muradisright*therearelineswewontcross^andyouvejustfoundoneofthem*,<color=#85DBF6FF>[闪点决定:拒绝玛丽娜女士的命令。]</color>穆拉德博士说得对。有些底线我们不会越过，而你刚刚碰到了其中一条。
-[flashpointdecision:refusetohelpthelocals*]wereprofessionalmercenaries^notamateurs*wedontworkunlesswegetpaid^andcontractswevenegotiatedtakepriorityovercharitywork*,<color = #85DBF6FF> [闪点决定:拒绝， 帮助当地人。] </color> 我们是职业雇佣兵， 不是业余爱好者。我们只收取费用 ， 并且已经协商好的合约优先于慈善机构。
+[flashpointdecision:refusetohelpthelocals*]wereprofessionalmercenaries^notamateurs*wedontworkunlesswegetpaid^andcontractswevenegotiatedtakepriorityovercharitywork*,<color=#85DBF6FF> [闪点决定:拒绝， 帮助当地人。] </color> 我们是职业雇佣兵， 不是业余爱好者。我们只收取费用 ， 并且已经协商好的合约优先于慈善机构。
 [flashpointdecision:rejectthecall*]notinterested*ivegotaruleagainstplayingwithmyfood*,<color=#85DBF6FF> [闪点决定:拒绝联系。] </color> 没有兴趣。我一般不玩我的食物。
 [flashpointdecision:rejecttheflashpoint*]sorry^ladymarina*ifyourelookingforadoubleagent^youllhavetosearchsomewhereelse*,<color=#85DBF6FF>[闪点决定:拒绝闪点。]</color>抱歉，玛丽娜女士。如果你要找双重间谍，就得去别处找。
 [flashpointdecision:returnthemimspytohousecentrella*]neitherofourclientswerehonestaboutwhatthisjobreallywas*iftheywontplaystraightwithus^maybethecanopianswill*,<color=#85DBF6FF>[闪点决定:把自治区情报部间谍交还琴特雷拉家族。]</color>我们的客户谁都没对这份活儿的真实性质说实话。如果他们不跟我们坦诚相待，也许船底人会。
@@ -563,8 +563,8 @@ KEY,zh-CN
 [flashpointdecision:sneakintothecommsbase*]thebunkerseemsliketherealthreathere^andanorbitalstrikeissignificantenoughthatsongwontbeabletoignoreit*,<color=#85DBF6FF>[闪点决定:潜入通讯基地。]</color>地堡似乎才是这里真正的威胁，而一次轨道打击足够重大，宋无法忽视。
 [flashpointdecision:stealalighterlance*]wellgoforthehotrods*getourpeoplemountedupingravessmostimpressivelightandmediummechs*,<color=#85DBF6FF>[闪点决定:偷一支更轻的小队。]</color>我们就挑那些快家伙。让我们的人登上格雷夫斯最出色的轻型和中型机甲。
 [flashpointdecision:taketheheavylance*]ihaveconfidencethatourmechwarriorscanfightthroughwhatevergravesthrowsatus*tellemtotakethebigbruisers*,<color=#85DBF6FF>[闪点任务决定：选择重型机甲小队。]</color>我有信心，我们的机甲战士能打赢任何 Graves 扔给我们的东西。我们就选那些大块头。
-[flashpointdecision:takethejob*]oh^whatthehell*welldoit*,<color = #85DBF6FF> [闪点决定:接受订单。] </color> 哦，见鬼了。我们将做到这一点。
-[flashpointdecision:takethejob*]sure*whynot?werein*,<color = #85DBF6FF> [闪点决定:接受订单。] </color> 当然。为什么不?我们在。
+[flashpointdecision:takethejob*]oh^whatthehell*welldoit*,<color=#85DBF6FF> [闪点决定:接受订单。] </color> 哦，见鬼了。我们将做到这一点。
+[flashpointdecision:takethejob*]sure*whynot?werein*,<color=#85DBF6FF> [闪点决定:接受订单。] </color> 当然。为什么不?我们在。
 [flashpointdecision:takethemechforyourself^riskingtianyusire*]wenevertechnicallyagreedtogivethemthatmech^andtheyneveraskedforit*boxitup^yangitsours*,<color=#85DBF6FF>[闪点任务决定：占有机甲，冒着天宇之怒的危险。]</color>确切地说，我们从没同意把机甲交给他们，他们也从没开口要过。把它装箱，杨……现在它是我们的了。
 [flashpointdecision:usethetreasuretolurebintonandmodgeawayfromedscondo*]ilikedthesoundofoptionb*letsgowithit*,<color=#85DBF6FF>[闪点决定:用宝藏把宾顿和莫奇引离埃德的公寓。]</color>我觉得方案B听起来不错。就这么办。
 [flashpointdecision:usethetreasuretolurebintonandmodgeawayfromedscondo*]ilikedthesoundofplanb*letsgowithit*,<color=#85DBF6FF>[闪点决定:用宝藏把宾顿和莫奇引离埃德的公寓。]</color>我觉得B计划听起来不错。就这么办。
@@ -643,7 +643,7 @@ KEY,zh-CN
 [origin:bankruptcy]iftherestorationcrashesandburns^mycompanysfinancesgoalongfortheride*soyeah^kameawereready*,<color=#85DBF6FF>[出身:破产]</color>如果光复运动一败涂地，我连队的财务也会跟着完蛋。所以是的，卡梅娅，我们准备好了。
 [origin:bankruptcy]iveseenthedamagethatbankruptcycandofirsthand*thatisntgoingtohappentothiscrew*,<color=#85DBF6FF> [背景:破产] </color> 我不得不亲身体验 ， 破产可能造成的损害。这个船员不会遭受这样的事情。
 [origin:bankruptcy]therestorationiswhatskeepingthiscompanyfinanciallysolvent*aslongasyoukeeppayingus^wellgowhereveryoutellustogo*,<color=#85DBF6FF>[出身:破产]</color>是光复运动让这个连队财务上还能维持。只要你继续付钱，你让我们去哪儿我们就去哪儿。
-[origin:bankruptcy]werehoveringwaytooclosetobankruptcyforcomfort^yang*thislookslikeitcouldbeawayout*,<color = #85DBF6FF> [背景:破产] </color> 我们比我想的更接近破产， 杨。那可能是我们的出路。
+[origin:bankruptcy]werehoveringwaytooclosetobankruptcyforcomfort^yang*thislookslikeitcouldbeawayout*,<color=#85DBF6FF> [背景:破产] </color> 我们比我想的更接近破产， 杨。那可能是我们的出路。
 [origin:betrayed]believeme^lordkarosas^igetthat*iunderstandbetrayalbetterthanmost*,<color=#85DBF6FF>[出身:被背叛]</color>相信我，卡罗萨斯领主，我明白。我对背叛的了解胜过大多数人。
 [origin:betrayed]calderonissupposedtobeasharpguy*itdoesnttakeageniustoseethattrustingausurperisadangerousmove*,<color=#85DBF6FF>[出身:被背叛]</color>据说卡尔德龙是个精明人。不需要天才也能看出，信任一个篡位者是危险的举动。
 [origin:betrayed]ifkarosasdeliberatelymisledusaboutthis^illhavehishead*,<color=#85DBF6FF>[出身:被背叛]</color>如果卡罗萨斯在这件事上故意误导我们，我会要他的脑袋。
@@ -655,7 +655,7 @@ KEY,zh-CN
 [origin:exiled]iknowwhatthatslikeivebeentheremyself*wherehavethetwoofyoubeenhiding?,<color=#85DBF6FF> [背景:放逐] </color> 我知道， 那是什么感觉……我亲身经历过。你们两个藏哪儿了?
 [origin:exiled]shewasnthiding^shewasdrivenintoexile*repeatthattoyourselfuntilitsticks*,<color=#85DBF6FF> [背景:流放] </color> 她没有躲藏， 她是<i>被迫流亡</i>。反复对自己说 ， 直到你明白为止。
 [origin:exiled]youneedtolethimdothis*ifihadtheoptionofgoingbackhomeandsettingthingsright^idjumpatthechance*,<color=#85DBF6FF>[出身:流放]</color>你得让他这么做。如果我有机会回家把一切拨乱反正，我会立刻抓住它。
-[origin:loner]excitingdoesntbegintodescribeit*idrathergetinafistfightwithanatlasthanletusgettrappedlikethatagain*,<color=#85DBF6FF>[出身:独行者]</color>激动人心都不足以形容。我宁愿和一台""宇宙神""打一场肉搏，也不愿让我们再陷入那样的困境。
+[origin:loner]excitingdoesntbegintodescribeit*idrathergetinafistfightwithanatlasthanletusgettrappedlikethatagain*,<color=#85DBF6FF>[出身:独行者]</color>激动人心都不足以形容。我宁愿和一台""宇宙神""打一场近战，也不愿让我们再陷入那样的困境。
 [origin:loner]followinguponthiswillberisky^sure*butiveneverletthatstopmebefore*,<color=#85DBF6FF> [背景:孤独者] </color> 尝试这样做是有风险的， 毫无疑问。但我从来没有让这阻止我。
 [origin:loner]ifiwereafraidoftakingrisks^ineverwouldveleftthatgildedcagemyparentscalledahome*weregonnahavetobejustasbold*,<color=#85DBF6FF> [背景:孤独者] </color> 如果我害怕 ， 冒险 ， 我永远不会离开我父母的金笼子。我们必须同样大胆。
 [origin:loner]lordmadeiraishisownman^ladyarano*thisshouldbehisdecision*,<color=#85DBF6FF>[出身:独行者]</color>马德拉领主有自己的主见，阿拉诺女士。这该由他决定。
@@ -743,11 +743,11 @@ KEY,zh-CN
 [tutorial:contracts]remindmewhatineedtoknowaboutmercenarycontracts*,<color=#85DBF6FF> [教程:合约] </color> 再告诉我 ， 关于佣兵合约我需要知道什么。
 [tutorial:events]isthereanygeneralinfoyoudliketoshare?,<color=#85DBF6FF> [教程:事件] </color> 是否有一般信息要与我分享?
 [tutorial:finances]tellmeabouthowouroutfitsfinanceswork*,<color=#85DBF6FF> [教程:财务] </color> 向我解释， 我们组织的财务是如何运作的。
-[tutorial:heat^stability^andmodifiers]youseemtoknowyourwayaroundabattlefield^yang*anyadvice?,<color = #85DBF6FF> [教程:温暖， 稳定性和修饰符] </color> 他们似乎很了解战场， 杨。你对我有什么建议吗?
-[tutorial:mechbay]anythingishouldknowaboutthemechbaysthemselves?,<color=#85DBF6FF> [教程:Mech 机库] </color> 关于维护脚手架本身，我应该了解什么?
-[tutorial:mechcomponents]ivebeenwonderingaboutthecomponentsyoucanputonourmechs*,<color=#85DBF6FF> [教程:机械组件] </color> 我想了解更多关于我们机械组件的信息。
+[tutorial:heat^stability^andmodifiers]youseemtoknowyourwayaroundabattlefield^yang*anyadvice?,<color=#85DBF6FF> [教程:热量、稳定性与修正因子] </color> 你似乎对战场很在行，杨。有什么建议吗？
+[tutorial:mechbay]anythingishouldknowaboutthemechbaysthemselves?,<color=#85DBF6FF> [教程:机甲库] </color> 关于机甲库本身，我应该了解什么？
+[tutorial:mechcomponents]ivebeenwonderingaboutthecomponentsyoucanputonourmechs*,<color=#85DBF6FF> [教程:机甲组件] </color> 我一直在琢磨能给我们机甲装哪些组件。
 [tutorial:mechstorage]whyusemechstorage?,<color=#85DBF6FF> [教程:存储机甲] </color> 为什么要存储机甲?
-[tutorial:mechwarriors]letstalkaboutmymechwarriors*,<color=#85DBF6FF> [教程:机甲勇士] </color> 让我们谈谈我的机甲勇士。
+[tutorial:mechwarriors]letstalkaboutmymechwarriors*,<color=#85DBF6FF> [教程:机甲战士] </color> 让我们谈谈我的机甲战士。
 [tutorial:repairingdamage]howdoirepairmechdamageafterabattle?,<color=#85DBF6FF> [教程:修复损坏] </color> 如何修复战斗后机甲的损坏?
 [tutorial:shipnavigation]okay^navigator^howdowegetfromsystemtosystem?,<color=#85DBF6FF> [教程:船舶导航] </color> 好的 ， 导航器 ， 我们如何在系统之间旅行?
 [tutorial:starmap]thestarmapconfusesmesometimes*whydoesittakelongertogettooneplacethantoanotherwhenthesystemsappeartobethesamedistanceapart?,<color=#85DBF6FF> [教程:星图] </color> 星图有时有点混乱。为什么到一个系统比到另一个系统需要更长的时间 ， 即使它们看起来是等距的?
@@ -781,15 +781,15 @@ KEY,zh-CN
 [yourviewscreenwinksoutasshugoyamaguchidisconnectsthecall*],[山口守护切断连接后屏幕变黑。]
 ^^^selectalocationforcalledshot!^^^, ^^^ 请选择一处部位予以精准射击! ^^^ 
 ^location:,， 部位: 
-{0:###0*##}ton{1}overweight,{0:###0.##}吨超重
-{0:###0*##}ton{1}remaining,仍然是 {0:###0.##} 吨
+{0:###0*##}ton{1}overweight,超重 {0:###0.##} 吨
+{0:###0*##}ton{1}remaining,剩余 {0:###0.##} 吨
 {0:+#;-#}fury,{0:+#;-#}怒气
 {0:+#;-#}heat,{0:+#;-#}热量
-{0:+#;-#}resolve,{0:+#;-#}决心
+{0:+#;-#}resolve,{0:+#;-#}战斗决心
 {0:+0;-#}acc,{0:+0;-#}精度
 {0:+0;-#}crit%,{0:+0;-#}致命一击%
-{0:0*##}ton{1}overweight,{0:0.##}吨{1}超重
-{0:0*##}ton{1}remaining,{0:0.##}吨{1}剩余
+{0:0*##}ton{1}overweight,超重 {0:0.##} 吨
+{0:0*##}ton{1}remaining,剩余 {0:0.##} 吨
 {0:0^^*00}m,{0:0，，.00}M
 {0:00}h{1:00}m{2:00}s,{0:00}时{1:00}分{2:00}秒
 {0:00}m{1:00}s,{0:00}分{1:00}秒
@@ -945,7 +945,7 @@ KEY,zh-CN
 +{res_value*tostring}[[dm*simgamestatdescdefs[simgamestatdesc_morale]^morale,+{RES_VALUE.ToString}[[DM.SimGameStatDescDefs[SimGameStatDesc_Morale]士气]]
 +{res_value*tostring}permanentchangeto[[dm*simgamestatdescdefs[simgamestatdesc_mechtechskill]^techpoints,[[DM.SimGameStatDescDefs[SimGameStatDesc_MechTechSkill]技师点数]]永久+{RES_VALUE.ToString}
 +{res_value*tostring}permanentchangeto[[dm*simgamestatdescdefs[simgamestatdesc_medtechskill]^medicalpoints,[[DM.SimGameStatDescDefs[SimGameStatDesc_MedTechSkill]医疗点数]]永久+{RES_VALUE.ToString}
-+10%basemeleehit,+ 10% 基础肉搏命中
++10%basemeleehit,+ 10% 基础近战命中
 +10%baseweaponhit,+ 10% 基础射击命中
 +10%dmg*afterjump,跳跃后 +10%伤害
 +10%dmg*mark,+10 % 铜马克
@@ -957,23 +957,23 @@ KEY,zh-CN
 +10dmg*,+ 10 伤害.
 +10dmg*(h),+10 伤害（H）
 +10maxheat,+ 10 最大热量
-+10meleedmg*,+ 10 肉搏伤害。
++10meleedmg*,+ 10 近战伤害。
 +10meleehitdefense,+10 近战命中防御
-+10meleestb*dmg*,+ 10 肉搏失衡伤害。
++10meleestb*dmg*,+ 10 近战失衡伤害。
 +10overheatthreshold,+ 10 过热阈值
 +10stb*dmg*,+ 10 失衡伤害。
-+12*5%basemeleehit,+ 12.5% 基础肉搏命中
++12*5%basemeleehit,+ 12.5% 基础近战命中
 +12*5%baseweaponhit,+ 12.5% 基础射击命中
 +120mviewdist*,+ 120米目视距离。
-+15%basemeleehit,+ 15% 基础肉搏命中
++15%basemeleehit,+ 15% 基础近战命中
 +15%baseweaponhit,+ 15% 基础射击命中
 +15%dmg*mark,+15 % 伤害标记
 +15%jobpayouts,+15% 工作支出
 +15dfadmg*,+ 15 死神天降伤害。
-+15meleedmg*,+ 15 肉搏伤害。
++15meleedmg*,+ 15 近战伤害。
 +15overheatthreshold,+ 15 过热阈值
 +15stb*dmg*,+ 15 失衡伤害。
-+17*5%basemeleehit,+ 17.5% 基础肉搏命中
++17*5%basemeleehit,+ 17.5% 基础近战命中
 +17*5%baseweaponhit,+ 17.5% 基础射击命中
 +1acc*,+ 1 精度.
 +1acc*(all),+ 1 精度。 (所有武器)
@@ -983,32 +983,32 @@ KEY,zh-CN
 +1dmg*,+ 1 伤害.
 +1health,+ 1 生命
 +1hitdefense,+ 1 命中回避
-+1hitdefensenewline+3meleedefense,+ 1 命中回避\n+ 3 肉搏回避
++1hitdefensenewline+3meleedefense,+ 1 命中回避\n+ 3 近战回避
 +1initiative,主动权 +1
 +1initiativeforalllanceunits,小队所有单位主动权 +1
 +1injuryresist,+ 1 创伤抗性
 +1maxevasion,最大闪避值+1
-+1meleehit,+ 1 肉搏命中
-+1resolvegain,每回合 + 1 决心
++1meleehit,+ 1 近战命中
++1resolvegain,每回合 + 1 战斗决心
 +1stb*dmg*,+ 1 失衡伤害。
 +1tobaseinitiative,基础主动权 +1
 +1unsteadythreshold,+ 1 失衡阈值
-+2*5%basemeleehit,+ 2.5% 基础肉搏命中
++2*5%basemeleehit,+ 2.5% 基础近战命中
 +2*5%baseweaponhit,+ 2.5% 基础射击命中
 +20%ballisticdmg*,+20 % 弹道伤害
-+20%basemeleehit,+ 20% 基础肉搏命中
++20%basemeleehit,+ 20% 基础近战命中
 +20%baseweaponhit,+ 20% 基础射击命中
 +20%dmg*mark,+20 % 伤害标记
 +20%energydmg*,+ 20% 能量武器伤害。
 +20%maxsprint,+ 20% 最大冲刺距离
 +20dmg*,+ 20 伤害.
 +20maxheat,+ 20 最大热量
-+20meleedmg*,+ 20 肉搏伤害。
-+20meleestb*dmg*,+ 20 肉搏失衡伤害。
++20meleedmg*,+ 20 近战伤害。
++20meleestb*dmg*,+ 20 近战失衡伤害。
 +20stb*dmg*,+ 20 失衡伤害。
-+22*5%basemeleehit,+ 22.5% 基础肉搏命中
++22*5%basemeleehit,+ 22.5% 基础近战命中
 +22*5%baseweaponhit,+ 22.5% 基础射击命中
-+25%basemeleehit,+ 25% 基础肉搏命中
++25%basemeleehit,+ 25% 基础近战命中
 +25%baseweaponhit,+ 25% 基础射击命中
 +25%crit*,+ 25% 致命一击。
 +25%dmg*afterjump,跳跃后 +25 % 伤害
@@ -1025,12 +1025,12 @@ KEY,zh-CN
 +2initiativeforthisunit,该单位主动权 + 2
 +2injuryresist,+ 2 创伤抗性
 +2maxevasion,最大闪避值+2
-+2meleehit,+ 2 肉搏命中
-+2resolvegain,每回合 + 2 决心
++2meleehit,+ 2 近战命中
++2resolvegain,每回合 + 2 战斗决心
 +2stb*dmg*,+ 2 失衡伤害。
 +2unsteadythreshold,+ 2 失衡阈值
 +30maxheat,+ 30 最大热量
-+30meleestb*dmg*,+ 30 肉搏失衡伤害。
++30meleestb*dmg*,+ 30 近战失衡伤害。
 +30overheatthreshold,+ 30 过热阈值
 +30stb*dmg*,+ 30 失衡伤害。
 +3acc*,+ 3 精度.
@@ -1039,20 +1039,20 @@ KEY,zh-CN
 +3acc*(missile),+ 3 精度。 (导弹武器)
 +3health,+ 3 生命
 +3hitdefense,+ 3 命中回避
-+3hitdefensenewline+6meleedefense,+ 3 命中回避\n+ 6 肉搏回避
++3hitdefensenewline+6meleedefense,+ 3 命中回避\n+ 6 近战回避
 +3injuryresist,+ 3 创伤抗性
-+3meleehit,+ 3 肉搏命中
-+3resolvegain,每回合 + 3 决心
++3meleehit,+ 3 近战命中
++3resolvegain,每回合 + 3 战斗决心
 +40maxstability,+40 最大稳定性
-+40meleedmg*,+ 40 肉搏伤害。
-+40meleestb*dmg*,+ 40 肉搏失衡伤害。
++40meleedmg*,+ 40 近战伤害。
++40meleestb*dmg*,+ 40 近战失衡伤害。
 +4acc*,+ 4 精度.
 +4dmg*,+ 4 伤害.
-+4meleedefense,+4 肉搏防御
++4meleedefense,+4 近战防御
 +4moralegain,+ 4 获得士气值
-+4resolvegain,每回合 + 4 决心
++4resolvegain,每回合 + 4 战斗决心
 +4stb*dmg*,+4 失衡伤害
-+5%basemeleehit,+ 5% 基础肉搏命中
++5%basemeleehit,+ 5% 基础近战命中
 +5%baseweaponhit,+ 5% 基础射击命中
 +5%crit,+5 % 暴击
 +5%crit*,+ 5% 暴击.
@@ -1060,24 +1060,24 @@ KEY,zh-CN
 +50%crit*,+ 50% 致命一击。
 +50%dmg*mark,+50 % 伤害标记
 +50%move,+50% 移动
-+50meleestb*dmg*,+ 50 肉搏失衡伤害。
++50meleestb*dmg*,+ 50 近战失衡伤害。
 +50mviewdist*,+ 50米目视距离。
 +55%crit,+ 55 % 暴击
 +5dfadmg*,+ 5 死神天降伤害。
 +5dmg*,+ 5 伤害.
 +5dmg*(h),+ 5 伤害。(热量)
-+5meleedmg*,+ 5 肉搏伤害。
++5meleedmg*,+ 5 近战伤害。
 +5overheatthreshold,+ 5 过热阈值
 +5shots,+ 5 Shots
 +5stb*dmg*,+5 失衡伤害
-+60meleedmg*,+ 60 肉搏伤害。
-+60meleestb*dmg*,+ 60 肉搏失衡伤害。
-+7*5%basemeleehit,+ 7.5% 基础肉搏命中
++60meleedmg*,+ 60 近战伤害。
++60meleestb*dmg*,+ 60 近战失衡伤害。
++7*5%basemeleehit,+ 7.5% 基础近战命中
 +7*5%baseweaponhit,+ 7.5% 基础射击命中
-+70meleedmg*,+ 70 肉搏伤害。
++70meleedmg*,+ 70 近战伤害。
 +75%dmg*mark,+75 % 伤害标记
 +75%srmstb*dmg*,+75 % 短程导弹稳定性伤害
-+8meleedefense,+8 肉搏防御
++8meleedefense,+8 近战防御
 +90msupportrange,+90 m 支援范围
 +99%bonus,+ 99% 奖金
 +99%stat,+99%属性
@@ -1141,7 +1141,7 @@ KEY,zh-CN
 -1slot,- 1 空位
 -1ton,- 1 吨
 2*appearance,2. 外观
-20%damagereductionagainstrangedattackstothefrontandside*newlinestackswithcover*newlineguardediscounteredbyanymeleeattack^andignoredbybreachingshot*,减少20%来自正面和侧面的射击伤害。\n可以和""掩护""效果叠加。\n""戒备""状态被肉搏攻击克制， 也能被""突破一击""技能所无视。
+20%damagereductionagainstrangedattackstothefrontandside*newlinestackswithcover*newlineguardediscounteredbyanymeleeattack^andignoredbybreachingshot*,减少20%来自正面和侧面的射击伤害。\n可以和""掩护""效果叠加。\n""戒备""状态被近战攻击克制， 也能被""突破一击""技能所无视。
 20%damagereductionagainstrangedattackstothefrontandside*newlinestackswithguarded*,减少20%来自正面和侧面的射击伤害。\n可以和""戒备""效果叠加。
 -20%stb*dmg*taken,- 20% 受到的失衡伤害
 -20%weaponheat, - 20% 武器热量
@@ -1418,7 +1418,7 @@ activeturnactorindex,ActiveTurnActorIndex
 actquicklytopreventthedirectoratefromsabotagingthesilos,行动迅速， 防止理事会引爆储存井
 actually^ihaveadifferentideaofwhattodowiththeraven*,其实，关于怎么处理这架渡鸦，我有个不同的主意。
 actually^ladysuiko^thecommanderhadthiswildideathatmaybeyouandyourdaughterneededachancetotalktoeachother*,其实，翠子女士，指挥官有个疯狂的想法：也许你和你女儿需要个机会谈谈。
-actuatorscontrolamechslimbsandareusedtoperformmeleeattacksatclosequarters*allmechscomeequippedwithstockactuators^whichcanbeupgradedforimprovedperformance*,动作机构控制机甲四肢， 用于近距离发动肉搏攻击。 所有机甲都装备了常备型号的动作机构， 这些动作机构可以升级以改善性能。
+actuatorscontrolamechslimbsandareusedtoperformmeleeattacksatclosequarters*allmechscomeequippedwithstockactuators^whichcanbeupgradedforimprovedperformance*,动作机构控制机甲四肢， 用于近距离发动近战攻击。 所有机甲都装备了常备型号的动作机构， 这些动作机构可以升级以改善性能。
 actuatorwrenched,动作机构被扭断
 adamdoochinhasonlyafewfragmentedmemoriesofaglitteringchildhoodspentinalyrancommonwealthpalace^allovershadowedbyanightmarishmemoryofthenighthisfamilyfell*hewasrescuedfromhisnurserybyaroguisholdfriendofhismothers^whofledwithhimtotheperiphery*newlinenewlinehisnewguardian^whilecommittedtokeepinghimalive^wasntaboveteachinghimhowtopickpocketsandconthegullible*ashegotolder^theymovedintosmugglingoperations^workingasateamuntilonejobwenthorriblywrongandhisguardiansacrificedhimselftocoveradamsescape*newlinenewlinealoneforthefirsttimeinhislife^adamdriftedawayfromthecriminallifestyle^wanderingtheperipheryandre-evaluatinghislifefromanadultsperspective*almostaccidentally^hewaspulledintoacriminalinvestigationwherehischildhoodskillscouldbeusedforthegoodofothers^anopportunityhewelcomed*newlinenewlinesoonhewasdoingregularworkasaninvestigator*itkeptfoodinhismouthandaroofoverhishead^butafterafewyearsinonelocation^restlessnessonceagainthreatenedhissecurity*whenhefoundhimselfworkingwithamechwarrioronacase^andinvitedafterwardtojointheirmercenarycompanyasarookiepilot^hejumpedatthechance*,亚当·杜勤对他在天琴共和国一座王宫中度过的辉煌童年只剩下一些支离破碎的记忆，而这一切都被家族毁灭之夜的恶梦记忆所笼罩。他母亲一位浪荡的""老朋友""把他从育儿室中救了出来，带着他逃到了外围。\n\n他的新监护人虽然一心想让他活下来，却也不介意教他如何偷窃和欺骗容易上当的人。随着年龄增长，他们转而做起了走私生意，一直以团队的方式合作，直到一次任务出了大岔子，他的监护人牺牲了自己，掩护亚当逃走。\n\n亚当人生中第一次独自一人，他渐渐远离了犯罪生活，在外围四处漂泊，并以成年人的角度重新审视自己的人生。几乎是在偶然之间，他被卷入了一桩犯罪调查，在那里他的童年技能可以为他人带来好处，他很欢迎这个机会。\n\n很快他就开始正式做起了调查员的工作。这份工作让他有饭吃、有地方住，但在一个地方待了几年之后，不安分又一次威胁到了他的安稳。当他在一桩案子里与一名机甲战士共事，并在之后受邀以新手的身份加入他们的雇佣兵公司时，他抓住了这个机会。
 adavionlieutenanthascommittedterribleatrocitiesinthecombinesystemofshaulkhala*ineedyoutohunthimdown^commander*hecannotbepermittedtoliveafterwhathesdone*,一位达维恩家族的中尉在绍尔哈拉联合系统中犯下了可怕的暴行。我要， 你追捕他 ， 指挥官。在此行为之后，他丧失了生命权。
@@ -1728,7 +1728,7 @@ allies,盟友
 allies999^999,盟友999，999
 allmechscomeequippedwithastockcockpitconfiguration^whichcanbeupgradedforimprovedperformance*cockpitmodsupgradethestructureoftheareathemechwarrioroccupiesduringcombat^grantingincreasedprotectionfrommortalinjuries*,所有机甲的驾驶舱都是常备配置， 它可以进行升级来改善性能。 驾驶舱模块升级了机甲战士在战斗中所在空间的结构， 增强了防护免受致命伤。
 allmechscomeequippedwithastockcockpitconfiguration^whichcanbeupgradedforimprovedperformance*commssystemupgradesallowforbetterlancecohesionduringcombat^increasingthemoralegenerated*,所有机甲出厂都配备标准驾驶舱配置，可以升级以获得更好的性能。通讯系统升级能改善战斗中队伍的协同，从而提高产生的士气。
-allmechscomeequippedwithastockcockpitconfiguration^whichcanbeupgradedforimprovedperformance*commssystemupgradesallowforbetterlancecohesionduringcombat^increasingtheresolvegenerated*,所有机甲的驾驶舱都是常备配置， 它可以进行升级来改善性能。 升级通讯系统提高小队战斗期间的凝聚力， 增加产生的决心。
+allmechscomeequippedwithastockcockpitconfiguration^whichcanbeupgradedforimprovedperformance*commssystemupgradesallowforbetterlancecohesionduringcombat^increasingtheresolvegenerated*,所有机甲的驾驶舱都是常备配置， 它可以进行升级来改善性能。 升级通讯系统提高小队战斗期间的凝聚力， 增加产生的战斗决心。
 allmechscomeequippedwithastockcockpitconfiguration^whichcanbeupgradedforimprovedperformance*rangefindersincreasetherangeatwhichtargetscanbevisuallyacquiredfordirecttargetingorspottingforsupportfire*,所有机甲的驾驶舱都是常备配置， 它可以进行升级来改善性能。 测距仪增加了目视获取目标， 以直接瞄准或引导支援火力的距离。
 allmechscomeequippedwithastocktargetingandtrackingsystemorttswhichcanbeupgradedforimprovedperformance*upgradesincreaseaccuracywhenattackingwithballistic^energy^ormissileweaponry^dependingonthetypeoftts*,所有机甲都配备了常备瞄准追踪系统\u2014或者叫TTS\u2014它可以进行升级来改善性能。 升级能根据TTS的类型， 提高使用弹道， 能量， 或导弹武器攻击的精度。
 allmoderbjörndronesmustsurvive,所有莫德比约恩无人机都必须生存
@@ -1889,7 +1889,7 @@ amechregimentwithinthecapellanhussars^theprefectorateguardhashistoricallybeenres
 amechsheatsinkingcapabilitydeterminestheamountofheatpointsthataredissipatedattheendofeachofthatmechsactions*thiscanbeimpactedpositivelyornegativelybyenvironmentalfactors*,机甲的散热能力决定了该机甲在回合结束时散去的热量点数。 环境因素会对它产生或积极或消极的影响。
 amechthattrulylivesuptoitsname!theawesome8qmountsafrighteningtrioofppcsthatcandestroy^knockdown^ordebilitateanytargetinnotime*itsungainly^butitcanshrugoffhugeamountsofincomingfire*,一种名副其实的机甲! ""可畏8Q""安装了可怕的三粒子炮组合， 能在瞬间摧毁， 打倒或者削弱任何目标。 它虽然笨拙， 但是能对大量的来袭炮火满不在乎。
 amechwarriorsgunneryskilldeterminesthechancetohitwithrangedweaponry*,机甲战士的""枪炮""技能决定了远程武器的命中率。
-amechwarriorspilotingskillincreasesthechancetohitinmeleeandimprovestheirabilitytokeepamechsteadyunderfire*,机甲战士的""驾驶""技能增加了肉搏的命中率， 并提高了他们受攻击时保持机甲稳定的能力。
+amechwarriorspilotingskillincreasesthechancetohitinmeleeandimprovestheirabilitytokeepamechsteadyunderfire*,机甲战士的""驾驶""技能增加了近战的命中率， 并提高了他们受攻击时保持机甲稳定的能力。
 amemberofthe{team_tar*factiondef*demonym}chainofcommandin{tgt_system*name}hasbeentroublingus*weneedthisirksomeoperativeeliminated*{team_emp*factiondef*demonym}intelligenceoperativeshavelocatedthetargetspositionplanetside*,{TGT_SYSTEM.name}有一位{TEAM_TAR.FactionDef.Demonym}指挥链中的成员一直让我们不安。我们需要除掉这个讨厌的特工。{TEAM_EMP.FactionDef.Demonym}的情报人员已经找到了目标在行星上的位置。
 amentothat*,同意。
 amentothat*ivebeenseeingdoublesincethatlastheadhititook^andconquerorsbeenbleedingfromtheearsforthreedaysnow*buthasanyonefromthe5thcometorelieveme?torelieveanyofus?,你是对的。由于我最近不得不头部受到撞击 ， 我看到所有东西两次 ， 并且征服者的耳朵已经流血了三天。但是有没有人从第 5 个 ， 出现来安慰我?或者我们的<i>其他人</i>?
@@ -1944,7 +1944,7 @@ ammunitionconvoy,弹药车队
 ammunitioncrates,弹药箱
 ammunitionperton:,每吨弹药:
 ammunitiontransport,弹药运输车
-amotleycrewofmercenariesledbythelordcommandermasongarrilac^anaccusedwarcriminalandtheformerdefenseministerofzathras*rumorsuggeststhatgarrilacwouldstillbelanguishingonafrontierprisonplanetifthemaraudershadntbrokenhimout*,由军阀梅森·加瑞拉克， 一个遭起诉的战犯兼扎瑟拉斯前国防部长所领导的杂牌佣兵团。 有传言称， 如果掠夺者没有让加瑞拉克逃走， 那他仍然会在一颗边地监狱星球上受苦。
+amotleycrewofmercenariesledbythelordcommandermasongarrilac^anaccusedwarcriminalandtheformerdefenseministerofzathras*rumorsuggeststhatgarrilacwouldstillbelanguishingonafrontierprisonplanetifthemaraudershadntbrokenhimout*,由领主指挥官梅森·加瑞拉克， 一个遭起诉的战犯兼扎瑟拉斯前国防部长所领导的杂牌佣兵团。 有传言称， 如果掠夺者没有让加瑞拉克逃走， 那他仍然会在一颗边地监狱星球上受苦。
 ams,反导系统
 amsammo,反导系统弹药
 amudarya,阿姆达里亚
@@ -2459,13 +2459,13 @@ asexpected^wehavemultipleincoming{team_tar*factiondef*demonym}units*,跟预料�
 asfarastherestorationisconcerned:obviously^wereintrouble*butimfairlyconfidentthat[[dm*basedescriptiondefs[loreanamariacentrella]^ladycentrellawillhelpusfindasolution*newlinenewlinethatsoundslikewishfulthinking^iknow*but[[dm*basedescriptiondefs[lorehousecentrella]^housecentrellahasavestedinterestinoursuccess*thelastthingtheywantisataurianproxyexpandingtoward[[dm*factions[faction_magistracyofcanopus]^canopianspace^andthatswhatthedirectorateappearstohavebecome*,就光复运动而言，我们显然有麻烦了。但我相当有信心，[[DM.BaseDescriptionDefs[LoreAnaMariaCentrella]琴特雷拉女士]]会帮我们找到解决办法。\n\n我知道，这听起来像是我的妄想。但[[DM.BaseDescriptionDefs[LoreHouseCentrella]琴特雷拉家族]]在我们的成功里有着切身的利益。金牛座的人最后想看到的就是一个朝[[DM.Factions[faction_MagistracyOfCanopus]船底]]星域扩张的理事会代理人，而理事会似乎正是成了这样的存在。
 asfarfromdirectoratespaceaswecouldgetwithoutleavingthefrontieramiserablelittleballofrockcalledzathras*newlinenewlineitwasanasty^brutishplanet^fullofinternecinestrifeandbloodyturmoil*therewerepowerstrugglesandmadnobles^plaguesandzealotsandholywars*,在尽可能远离理事会又不离开边境的地方……在一个名叫扎瑟拉斯的可悲小石球上。\n\n那是个令人讨厌的、野蛮的星球，到处都是内斗和血战的混乱。有权力斗争和疯狂的贵族，瘟疫和狂热分子和圣战。
 asforthepersonnelimprovementswell^idimaginetheyreobvious*mechwarriorsneedtorelaxandventcoolantbetweencombatdrops*ifyoudontgivethemaplacetodothat^theyllfindwaystokeepthemselvesentertainedsometimestothedetrimentoftherestofthecrew*newlinenewlineupgradingcrewconditionsontheargowillhavetangiblebenefitsonthebattlefieldandmakelifequieterforusonthoselongvoyages*,至于人员设施的改善……嗯，我想那些好处是显而易见的。机甲战士需要在任务之余放松、宣泄一下。如果你不给他们一个地方这么做，他们<i>自己</i>就会找到消遣的路子，有时还会损害其他船员的利益。\n\n改善<i>阿尔戈号</i>上的船员生活条件，会在战场上带来实实在在的好处，也会让我们在这些漫长的航行中过得清静些。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_davion]^federatedsuns*ifyouwant^icouldlookintobookingyoutransportonafreighterboundfordavionspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_Davion]达维恩联合太阳邦]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_kurita]^draconiscombine*ifyouwant^icouldtrytobookyoutransportonafreighterboundforkuritaspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_Kurita]栗田合众国]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_liao]^capellanconfederation*ifyouwant^icouldlookintobookingyoutransportonafreighterboundforliaospace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_Liao]御夫星邦联]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_marik]^freeworldsleague*ifyouwant^icouldlookintobookingyoutransportonafreighterboundformarikspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_Marik]自由世界联盟]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_steiner]^lyrancommonwealth*ifyouwant^icouldlookintobookingyoutransportonafreighterboundforsteinerspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_Steiner]施泰纳联邦]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_taurianconcordat]^taurianconcordat*ifyouwant^icouldlookintobookingyoutransportonafreighterboundfortaurianspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在[[DM.Factions[faction_TaurianConcordat]金牛协约国]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
-asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthemagistracyofcanopus*likeisaid^wereheadingthatwayifyouwant^icouldlookintobookingyoutransportonafreighter*maybewecangetyoutherestofthewayhome*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血票]]，你有家人生活在船底自治区。就像我说的，我们正往那边去……如果你愿意，我可以帮你找一艘货轮载你一程。也许我们能帮你走完回家的路。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_davion]^federatedsuns*ifyouwant^icouldlookintobookingyoutransportonafreighterboundfordavionspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_Davion]达维恩联合太阳邦]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_kurita]^draconiscombine*ifyouwant^icouldtrytobookyoutransportonafreighterboundforkuritaspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_Kurita]栗田合众国]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_liao]^capellanconfederation*ifyouwant^icouldlookintobookingyoutransportonafreighterboundforliaospace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_Liao]御夫星邦联]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_marik]^freeworldsleague*ifyouwant^icouldlookintobookingyoutransportonafreighterboundformarikspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_Marik]自由世界联盟]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_steiner]^lyrancommonwealth*ifyouwant^icouldlookintobookingyoutransportonafreighterboundforsteinerspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_Steiner]施泰纳联邦]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthe[[dm*factions[faction_taurianconcordat]^taurianconcordat*ifyouwant^icouldlookintobookingyoutransportonafreighterboundfortaurianspace*icantmakeanypromises^butimwillingtotry*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在[[DM.Factions[faction_TaurianConcordat]金牛协约国]]。如果你愿意，我可以帮你找一艘前往那里的货轮。我不能答应你什么，但我很乐意试一试。
+asforyouwell^youvegotoptions*newlinenewlineaccordingtoyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyoutinthemagistracyofcanopus*likeisaid^wereheadingthatwayifyouwant^icouldlookintobookingyoutransportonafreighter*maybewecangetyoutherestofthewayhome*,至于你……好吧，你有选择。\n\n根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]，你有家人生活在船底自治区。就像我说的，我们正往那边去……如果你愿意，我可以帮你找一艘货轮载你一程。也许我们能帮你走完回家的路。
 asharedsocialspaceoutsidethebarracksallowsthemechwarriorstobondasateam*,营房之外的共用社交空间能将机甲战士们拧成一支团队。
 aship*idontknowwhatkind*the[[dm*basedescriptiondefs[loreisf]^isfdossierthatireceivedreferstoitonlyasaderelictspacecraftofunknownorigin*newlinenewlinethevaguenessofthelanguageisintentional^ofcourse*thekuritanintelligencecommunityisquiteadeptatgatheringinformation^butalmostfarcicallybadatsharingit*,是关于一艘船。但我不知道那是艘什么船。我收到的[[DM.BaseDescriptionDefs[LoreISF]内卫军]]档案里，只把它称作""一艘来历不明的废弃飞船""。\n\n这种含糊其辞当然是故意的。栗田的情报机构很擅长收集情报，但在分享情报方面却差得近乎可笑。
 asia,亚洲
@@ -2581,9 +2581,9 @@ asyoureworkingoutonamachineintheargosgym^asmallgroupofmechwarriorsclearsequipmen
 asyourmechwarriorsservethemselvesheapingportionsofthemysterymeat^[[tgt_mw^{tgt_mw*callsign}divesinto{tgt_mw*det}mealwithrelish*dontyoulovehowthesmokinessbalancesthesweetness?itisnteverydayyougettoeatsomethingthathadfurandfeathers*andthelocalhunterstoldmethatthesevestigialhaunchesarethebestpartsoftheanimalthemainlocomotivelimbsaretootoughtochew*soonenough^everyoneonthecrewisravingabouttheflavorandtextureof{tgt_mw*callsign}smysteryanimal^andtheygiveacollectivethumbs-uptotheexperiment*,当船员们小心翼翼地拨着那份神秘的肉时，[[TGT_MW{TGT_MW.Callsign}]]却{TGT_MW.Det}吃得有滋有味。是不是很棒，这种烟味和香味的平衡？不是每天都有机会吃到这种同时长着皮<i>和</i>毛的东西。而且当地的猎人向我保证，这些退化的后腿才是这动物最好吃的部位——它主要用来行走的四肢太硬了。没过多久，全体船员都在盛赞{TGT_MW.Callsign}弄来的这种神秘动物的味道和口感，并集体为这次试验竖起手指。
 asyousay^professorhorvat*whenweenterthearena^iwillpersonallyrendtheseoverconfidentfoolslimbfromquiveringlimb*,所以是 ， Horvat 教授。在竞技场上，我要把这些狂妄自大的傻瓜撕成碎片。
 asyousitnexttodariusinthemess^youcantellthathesheardthisentireradish-relatedrantfrombeginningtoend*heraiseshiseyebrowtoaskaquestion*youshakeyourheadtoanswerit*newlinenewlineallright^commander^iagreethatwejustneedtoridethisout*youknowimdoingthebesticanwiththeresourceswehave*,当你坐在食堂里的达吕斯旁边时，你看出他从头到尾听完了整段关于萝卜的抱怨。他挑起毛，想问个问题。你只是摇了摇头作为回答。\n\n""好吧，指挥官，我同意，我们只能顶住。你知道我在用现有的资源尽力而为了。""
-asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthatthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlineasyangturnsadiscerninggazeoverallofthemechs^areluctantgrincrawlsacrosshisface*uhhh^yeah^goodjob^boss*lookslikethatdidthetrick*nexttime^though^justlemmedomything*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机甲机库里弥漫着令人不安的寂静。\n\n杨用审视的目光扫过所有机甲，面上慢慢爬上一个勉强的笑容。""呃，好吧，干得好，老板。看来那招奏效了。不过下次，请让我干我自己的活。""
-asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthatthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlineasyangturnsadiscerninggazeoverallofthemechs^hegroans*uhhh^yeah^boss?nexttime^justlemmedomything*looksliketheseoldgirlsaregonnabeintheshoplongerthanplanned*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机甲机库里弥漫着令人不安的寂静。\n\n杨用审视的目光扫过所有机甲，低沉地说：""呃，老板？下次请让我干我自己的活。这些老姑娘恐怕要在车间里待得比计划更久了。""
-asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlinethentheresaclatterofnoiseasanow-powerlesswinchdropsapileofscraptothefloor^clippingtheshoulderoftheloitering[[scn_mw^{scn_mw*callsign}as{scn_mw*subj}{scn_mw*gender?nonbinary:fail|default:fails}tododgeoutoftheway*newlinenewlineasthemechwarriorisshuttledofftomedbay^yangdeliverstheotherbadnews*sorryboss^butthesemechsaregonnabeintheshoplongerthanplanned*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机库里弥漫着令人不安的寂静。\n\n接着传来一阵嘈杂声，一台已经断电的绞盘把一堆废料砸到地上，击中了站在正下方的[[SCN_MW{SCN_MW.Callsign}]]的肩头，{SCN_MW.Subj}没能及时躲开。\n\n当这位机甲战士被急忙送往医务室时，杨又带来了更坏的消息。""抱歉，老板，但这些机甲要进车间的时间会比计划更长。""
+asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthatthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlineasyangturnsadiscerninggazeoverallofthemechs^areluctantgrincrawlsacrosshisface*uhhh^yeah^goodjob^boss*lookslikethatdidthetrick*nexttime^though^justlemmedomything*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机甲库里弥漫着令人不安的寂静。\n\n杨用审视的目光扫过所有机甲，面上慢慢爬上一个勉强的笑容。""呃，好吧，干得好，老板。看来那招奏效了。不过下次，请让我干我自己的活。""
+asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthatthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlineasyangturnsadiscerninggazeoverallofthemechs^hegroans*uhhh^yeah^boss?nexttime^justlemmedomything*looksliketheseoldgirlsaregonnabeintheshoplongerthanplanned*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机甲库里弥漫着令人不安的寂静。\n\n杨用审视的目光扫过所有机甲，低沉地说：""呃，老板？下次请让我干我自己的活。这些老姑娘恐怕要在车间里待得比计划更久了。""
+asyoustartflippingswitches^yangsshoutednoooo!trailsoffasherealizesthepowersurgehasalreadyrunitscourse*adisquietingsilencefillsthemechbay*newlinenewlinethentheresaclatterofnoiseasanow-powerlesswinchdropsapileofscraptothefloor^clippingtheshoulderoftheloitering[[scn_mw^{scn_mw*callsign}as{scn_mw*subj}{scn_mw*gender?nonbinary:fail|default:fails}tododgeoutoftheway*newlinenewlineasthemechwarriorisshuttledofftomedbay^yangdeliverstheotherbadnews*sorryboss^butthesemechsaregonnabeintheshoplongerthanplanned*,你拨动了几个开关，杨的那声""不——！""凄凉地拖长了尾音，因为他意识到电压冲击已经自行结束了。机甲库里弥漫着令人不安的寂静。\n\n接着传来一阵嘈杂声，一台已经断电的绞盘把一堆废料砸到地上，击中了站在正下方的[[SCN_MW{SCN_MW.Callsign}]]的肩头，{SCN_MW.Subj}没能及时躲开。\n\n当这位机甲战士被急忙送往医务室时，杨又带来了更坏的消息。""抱歉，老板，但这些机甲要进车间的时间会比计划更长。""
 asyouwatch^[[tgt_mw^{tgt_mw*callsign}andtheberserkerstrikeaseriesofincreasinglyelaborateposes^shoutingthewholetime^untilfinallytheberserkerrushesbehemothandsweepsherintoabearhugthatwouldhavedwarfedalmostanybodyelse*newlinenewlinewhenhereleasesher^theberserkerglancesoveratyou^thensays^behemoth!youwentstraight?icantbelieveit!newlinenewlinenaw^saysbehemoth*wouldibehereifidgonestraight?imjusttakingthescenicroutetohell*commander^thisisanoldpalofmine^frombeforeijoinedup*newlinenewlinethatseemstobeitfortheintroductions^buttheresstilldrinkstobepurchasedandunlikelystoriestocackleover*onthewaybacktotheship^behemothisinebullientspiritsandfilledwithstoriesforherfellowmechwarriors*,在你注视下，[[TGT_MW{TGT_MW.Callsign}]]和狂战士摆出一个比一个花哨的姿势，全程大吼大叫，最后狂战士冲向巨兽，一把把她抱进一个足以压垮几乎任何人的熊抱里。\n\n他放开她之后，狂战士朝你扫了一眼，然后说：""<I>巨兽</I>！你改邪归正了？我简直不敢相信！""\n\n""没呢，""巨兽说，""要不然我怎么会在这儿？我只是选了风景更好的那条通往地狱的路。指挥官，这是我的老朋友，在我入伍之前就认识了。""\n\n介绍似乎就到此为止了，但还有足够的时间喝上几杯，讲讲离奇的故事。回船的路上，巨兽心情大好，满腹都是讲给其他机甲战士听的故事。
 asystemintheauriganfrontier^lyretonwasformerlyacapellangarrisonworld^lostafterthesecondsuccessionwar*thepopulationoflyretonisspreadacrossthreetropicalmoonsofthesystemslargegasgiant*eachmoonisindependent^andcivilconflictbetweenthemoonsmakesthesystematenseanddangerousplace*,利勒顿是奥里根远邦的一个星系，曾是御夫星人的驻防星球，在第二次继承战争之后失守。利勒顿的人口分散在该星系巨型气态巨行星的三颗热带卫星上。每颗卫星各自独立，卫星之间的内战让这个星系成了一个紧张而危险的地方。
 asystemofminorimportanceinthedraconiscombine^locatedwithinaone-jumpradiusofkawabe^toruga^ljugarn^andtatsuno*priortothefallofthestarleague^shaulkhalawashometothe284thsldfbattlemechdivision*,绍尔哈拉是天龙联合体的一个小型星系， 位于川边， 吐尔尕， 于冈， 和龙野一次跃迁的半径之内。 在星际联盟灭亡前， 绍尔哈拉是星际联盟防卫军第284战斗机甲师的母星。
@@ -2688,11 +2688,11 @@ atthelevelofcompanyandabove^commandofinfantryelementsbecomesasmuchajobofsupplyan
 attheminingplanet{tgt_system*name}^acquiringandsortingtheplentifulsuppliesformechrepairsisanallhandsevent*newlinenewlinewhileconferringwithdarius^youoverhearseveralmechwarriorsdiscussinganunregulatedfightingringrunbythelocalminersandmachinists*[[tgt_mw^{tgt_mw*callsign}saysloudly^letsshowtheseyokelshowrealwarriorsfight!newlinenewlinedariusraisesaneyebrowatyouasiftosay^yougotthis?newlinenewlineasyouapproachthemechwarriors^{tgt_mw*callsign}sets{tgt_mw*det}shouldersbelligerently^asifdaringyoutoforbidtheentertainment*,每个人都来帮忙获取和整理这座采矿星球{TGT_SYSTEM.Name}上丰富的机甲维修物资。\n\n当你与达吕斯商议时，你听到几名机甲战士在谈论一个由当地矿工和机械师组织的无证格斗俱乐部。[[TGT_MW{TGT_MW.Callsign}]]大声宣布：""让我们给这些土包子看看真正的战士是怎么打仗的！""\n\n达吕斯朝你投来疑问的目光，像是在问：""你搞得定吗？""\n\n当你走近那些机甲战士时，{TGT_MW.Callsign}挑衅地摆出架势，好像{TGT_MW.Subj}要向你挑战，不准他们参与这项活动。
 attheriskofsoundingimmodest^yes*thetauriansarebigfishinasmallbackwaterpond*the[[dm*factions[faction_liao]^capellanconfederation^ontheotherhand^isa[[dm*basedescriptiondefs[loresuccessorstate]^successorstateofthe[[dm*basedescriptiondefs[loreinnersphere]^innersphere*wehavemoretoofferyouthantheydo^byanorderofmagnitude*newlinenewlinechoosingtheconcordatsinterestsoverourswouldbeaquestionabledecisionatbest*,冒着听起来不自量力的风险说：是的。金牛人不过是小池子里的大鱼。而[[DM.Factions[faction_Liao]Capellan Confederation]]则是[[DM.BaseDescriptionDefs[LoreInnerSphere]Inner Sphere]]的一个[[DM.BaseDescriptionDefs[LoreSuccessorState]Successor State]]。我们能给你们的，比他们多出一个数量级。\n\n把协约的利益置于我们的利益之上，充其量也是个可疑的决定。
 atthesoundofthedoorslidingopen^dariusandyangturninunisontofaceyou*newlinenewlinecommander^dariusintones^hisvoicetingedwithexasperation*thecolonyon{tgt_system*name}hasrequestedourhelp--newlinenewlineyangcutsinhespracticallygiddywithexcitement*boss^theyhave[[dm*basedescriptiondefs[loreagromech]^agromechs!herders^farmhandsevenacattlemaster!thesearesomeofthewonkiestmachinesevertowalkontwolegs*youvegottaletmeworkonthem*newlinenewlinedariusfrowndeepens*thisisnotthebestuseofourtimeorresources*newlinenewlinecomeon^boss*yangclaspshishands^pleading*agromechs!,听到门滑开的声音，达吕斯和杨同时转过头来面对你。\n\n""指挥官，""达吕斯语气里透着火气，""{TGT_SYSTEM.Name}上的殖民地请求我们支援……""\n\n杨兴奋得几乎发狂，打断了他：""老大，他们有[[DM.BaseDescriptionDefs[LoreAgroMech]AgroMechs]]！牧民、农夫……甚至还有一台CattleMaster！这可是有史以来最古怪的双足机器。你一定得让我去摆弄摆弄它们。""\n\n达吕斯的神色更阴沉了。""这可不是我们时间和资源的最佳用途。""\n\n""别这样，老大，""杨双手合十，央求道，""农机啊！""
-atthislevelofmorale^youwillgain0resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得0点决心点数。
-atthislevelofmorale^youwillgain15resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得15点决心点数。
-atthislevelofmorale^youwillgain25resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得25点决心点数。
-atthislevelofmorale^youwillgain35resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得35点决心点数。
-atthislevelofmorale^youwillgain5resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得5点决心点数。
+atthislevelofmorale^youwillgain0resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得0点战斗决心。
+atthislevelofmorale^youwillgain15resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得15点战斗决心。
+atthislevelofmorale^youwillgain25resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得25点战斗决心。
+atthislevelofmorale^youwillgain35resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得35点战斗决心。
+atthislevelofmorale^youwillgain5resolvepointsperroundofbattle*,士气处于这一级别时， 每回合战斗你将会获得5点战斗决心。
 attributes,属性
 atyourdirection^thekitchenreducesmealsizestomakesupplieslasttothenextquarter*tempersflare^andthemechwarriorsstartfrequentargumentswiththekitchenstaffovertheircaloricneeds*,根据你的指示， 厨房开始减少配餐的饭量来维持物资到下个季度。 情绪开始蔓延， 机甲战士们开始频频为自己的热量需要与厨房员工吵架。
 audio,音频
@@ -2899,11 +2899,11 @@ baumann,鲍曼
 baumanngroup,BaumannGroup
 baumanngroupcrimebossandcomptroller,鲍曼犯罪集团头目和主计长
 baumanngroupelitemechwarrior,鲍曼犯罪集团精锐机甲战士
-bay1,1号库
-bay2,2号库
-bay3,3号库
-bayl,L号库
-bays,机库
+bay1,1号机甲库
+bay2,2号机甲库
+bay3,3号机甲库
+bayl,L号机甲库
+bays,机甲库
 baz,baz
 bcd,BCD
 b-complete,B-完成
@@ -3018,7 +3018,7 @@ bewaryofthebasedefenders^andadditionalpatrolsinthearea*goodhunting^commander*,�
 bewaryofthebasedefenders^andwatchforanyadditionalpatrolsinthearea*goodhunting^commander*,小心基地的守卫， 并注意这一地区任何另外的巡逻队。 猎杀愉快， 指挥官。
 bewaryofthebasedefenses*thisisacriticalfacilityfor{team_emp*factiondef*shortname}^sotheremaybeadditionalpatrolsinthearea*,小心该基地的防御力量， 这是{TEAM_EMP.FactionDef.ShortName}的要害设施， 所以这一地区可能有另外的巡逻队。
 bewaryofthesecurityforces^butthebuildingsshouldtakepriority*goodhunting^commander*,小心安保部队， 但建筑物应该优先考虑。 猎杀愉快， 指挥官。
-beyondeachcubicleholdingonebattlemech?notmuch*itsallaboutcapacity*themoremechbayswehave^themoremechswecankeepbattle-ready*andthemoremechswehavebattle-ready^themoreflexibilityyouhaveinyourdeploymentoptions*,除了维修脚手架 ， 哪个可以放一个战斗机甲?没有更多了。这主要是关于容量。我们拥有的维护脚手架越多 ， 我们可以保持可用的机甲越多。我们拥有的机甲越多，您在规划部署时就越灵活。
+beyondeachcubicleholdingonebattlemech?notmuch*itsallaboutcapacity*themoremechbayswehave^themoremechswecankeepbattle-ready*andthemoremechswehavebattle-ready^themoreflexibilityyouhaveinyourdeploymentoptions*,除了每个机甲隔舱能放一台战斗机甲，也没什么了。这主要是容量的问题：我们的机甲库越多，能保持战备状态的机甲就越多；战备状态的机甲越多，您在部署时的选择就越灵活。
 beyondnegotiatingacontract?mostinhabitedsystemsmaintainahiringhallwherewecanrecruitnewmechwarriors*besuretotakealookyouneverknowwhatkindoftalentyouregoingtofind*newlinenewlinemostsystemsalsohavemerchantswhocanbuyandsellhardwaresuchasweapons^equipment^andmechpartssometimesevenfullyoperationalbattlemechs^too*,除了谈合约，还能做什么？大多数有人居住的星系都设有招募大厅，我们可以在那里招募新的机甲战士。一定要去瞧瞧……你永远不知道自己会碰上什么人才。\n\n大多数星系也有商人，可以买卖武器、装备和机甲零件。有些甚至能提供可完全运作的战斗机甲。
 beyondpoliticalboundaries^thenavsystemwillhighlightpoliticalfactionsactiveinthesystem*thatshouldgiveyouagoodideaofwhoshiring*newlinenewlineitsprobablyagoodideatocheckourreputationwiththelocalfactionsbeforeorderingalongvoyage*,除了政治边界外，导航系统还显示系统中活跃的政治派别，。这应该可以让您很好地了解谁有工作要雇用。\n\n在订购长途旅行之前检查我们与当地派系的声誉绝对是有意义的。
 beyondrepair,无法维修
@@ -3777,7 +3777,7 @@ cleversmugglers^hidinginplainsight*nowthattheircoversblown^theyrelikelytocallfor
 clickformoreoptions,点击查看更多选项
 clickhere,点击这里，
 clickonamechwarriorsportrait^orpresstabtocyclebetweenavailableunits*,点击一个机甲战士的头像， 或按TAB键切换可用单位。
-clickthemeleetargetingreticleontheenemy^orpressvtocyclethroughmeleetargets*then^clicktheattackbutton*,点击敌人身上的肉搏瞄准分划， 或按V键切换肉搏目标。 然后， 点击攻击按钮。
+clickthemeleetargetingreticleontheenemy^orpressvtocyclethroughmeleetargets*then^clicktheattackbutton*,点击敌人身上的近战瞄准分划， 或按V键切换近战目标。 然后， 点击攻击按钮。
 clicktohavea1on1conversationwithdefault,点击与默认进行一对一的对话
 clicktohaveaone-on-oneconversationwithhologram*,点击与全息图进行一对一的对话。
 clicktohaveaone-on-oneconversationwithkamea*,点击与卡梅娅进行一对一的对话。
@@ -4381,9 +4381,9 @@ corridorbocce,过道地掷球
 cortez,科尔特斯
 cost,消耗
 cost:100fury,消耗: 100怒气
-cost:20resolve(thismechwarriorhashighspirits),消耗: <color=#85DBF6FF>20决心(该机甲战士情绪高昂)</color>
-cost:30resolve,消耗: 30决心
-cost:40resolve(thismechwarriorhaslowspirits),消耗: <color=#F04228FF>40决心(该机甲战士情绪低落)</color>
+cost:20resolve(thismechwarriorhashighspirits),消耗: <color=#85DBF6FF>20战斗决心(该机甲战士情绪高昂)</color>
+cost:30resolve,消耗: 30战斗决心
+cost:40resolve(thismechwarriorhaslowspirits),消耗: <color=#F04228FF>40战斗决心(该机甲战士情绪低落)</color>
 costarica,哥斯达黎加
 costlives?costlives?!youorderedmetokilleleventhousandpeopleonperdition^andnowyoucareaboutbloodshed?newlinenewlinethereisanoceanofbloodonmyhands^father!ispilleditbecauseyoutoldmeitwasnecessary!,付出生命？<i>付出生命</i>？！你命令我在佩尔迪申杀死<i>11000</i>人，而<i>现在</i>你却在担心流血？\n\n我手上沾着<i>一片血海</i>，父亲！是我让它流出来的，因为<i>你告诉我</i>那是<i>必要</i>的！
 costsmoney,消耗资金
@@ -4486,7 +4486,7 @@ currentmorale:{0},当前士气: {0}
 currentobjective,当前目标
 currentphase,当前阶段
 currentposition,当前位置
-currentprofile:none,当前配置文件:<color = ""red "">NONE </color>
+currentprofile:none,当前配置文件: <color=red>无</color>
 currentrotation,当前旋转角
 currentround,当前回合
 currentseed,当前种子
@@ -4496,7 +4496,7 @@ cursahadlongbeenabandonedastoomarginalacolonytosustain^butplayedaroleinthewarbet
 custom,自定义
 customcampaign,自定义战役
 customgame,自定义游戏
-customid:none,自定义 ID:<color = ""red "">NONE </color>
+customid:none,自定义 ID: <color=red>无</color>
 customize,自定义
 customizecharacter,自定义角色
 customizecompany,定制部队
@@ -4594,7 +4594,7 @@ damnit*okayyoureright*stayalivedownthere!illkeeptryingtogetfarahonthecomms*,\u20
 damnit*webitoffmorethanwecouldchew^{commander*lastname}*thisismyfailureasmuchasitisyours*,该死的。我们一定已经接管了某些东西 ， {COMMANDER.LastName}.我们都失败了。
 damnit*weneedtoclearoutofherebeforetheyarrive*howmuchtimehavewegot?,见鬼。 我们需要在他们抵达之前离开这儿。 我们还有多少时间?
 damnit*whatareouroptions?,该死。 我们有什么选择?
-damnit*whatawaste*,该死的。真是浪费。
+damnit*whatawaste*,妈的，全白费了。
 damnit^commander^wecantaffordtotaketheselosses!meganandtempestarecountingonme^andimcountingonyou!,该死， 指挥官， 我们无法承受这些损失! 梅甘和""暴雨""都指望着我， 而我只能指望你了!
 damnit^girlwedonthavetimeforthis*takethem!killtheoldmanandthemechwarrior^buttakeladyaranoalive!,该死， 姑娘\u2014我们没时间搞这个了。 拿下他们! 杀了老头和机甲战士， 但要活捉阿拉诺女士!
 damnit^victoria^itaughtyoubetterthanthis!,该死， 维多利亚， 我可不是这么教导你的!
@@ -4905,7 +4905,7 @@ defendthebasefromattackingenemyunits*,保护基地免受敌军攻击。
 defendthecommandcentre,守卫指挥中心
 defendthedraconiscombineresearchbase,保卫天龙联合体的研究基地
 defendtheevacuatedspaceport,保卫已撤离的太空港。
-defendthefortifiedmechbay,保卫坚固的机甲机库
+defendthefortifiedmechbay,保卫坚固的机甲库
 defendthefortifiedrepairbay,保卫坚固的维修区
 defendthefueltankatpadalpha,守卫位于A停机坪的燃料罐
 defendthefueltankatpadbravo,守卫位于B停机坪的燃料罐
@@ -4956,7 +4956,7 @@ dependable+highmorale,可靠+士气高昂
 dependencies,依赖
 dependingonwhatsbeingproducedthere^thiscouldbesimple^oritcouldbeterrifying*iwishicouldbemorespecific^butouremployersdontevenknowwhowerefighting*,根据那里生产的东西， 这可能很简单， 也可能很可怕。 我希望我能说得更具体些， 但是我们的雇主甚至不知道我们在和谁战斗。
 dependingonwhatsbeingproducedthere^thiscouldbetrivialorterrifying*iwishicouldbemorespecific^butouremployersdontevenknowwhowerefighting*,根据那里生产的东西， 这可能微不足道， 也可能很可怕。 我希望我能说得更具体些， 但是我们的雇主甚至不知道我们在和谁战斗。
-dependsonthemechbayconditionsyoureworkingin*agoodmechbaywithadvancedscaffoldingandequipmentisfasterthanoneyoullfindonastandardleopard*,取决于您正在工作的机库 ， 的状况。配备高级维护脚手架和工具的良好机库比普通豹子上的机库要快 ，。
+dependsonthemechbayconditionsyoureworkingin*agoodmechbaywithadvancedscaffoldingandequipmentisfasterthanoneyoullfindonastandardleopard*,取决于您在什么样的机甲库里干活。一座配有先进维修脚手架和设备的机甲库，要比标准豹式上的机库快得多。
 depletemedbayresourcestotrytosave{tgt_mw*obj}*,耗尽医务室的所有资源来尝试挽救{TGT_MW.OBJ}。
 deploy,部署
 deployed,已部署
@@ -6202,7 +6202,7 @@ evasionmakesthistargethardertohit,闪避使该目标更难被命中。
 evasionunchanged,闪避值不变
 evasive,闪避
 evasivechargecapincreasedby1,闪避加成上限增加1
-evenbeforeyouarriveatthemorningbriefing^youcanheardr*muradsraisedvoice*soitold[[tgt_mw^{tgt_mw*callsign}toleaveengineeringatonce!newlinenewlineyanggrimaces*yeah^andthen{tgt_mw*subj}showedupinthemechbay*ittookawholetwominutesforoneofmywinchestofail*newlinenewlinesumirerollshereyes*well^dontsend{tgt_mw*obj}tothebridge^chief*youwantthecommstoshortoutagain?newlinenewlinefinally^dariusnoticesyoustandinginthedoorwayandexplains*commander^wehavetodosomethingabout{tgt_mw*callsign}*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:re|default:s}ajinx*,还没走到会议室门口，你就能听到穆拉德博士提高的声音。……所以我就跟 [[TGT_MW{TGT_MW.Callsign}]] 说了，让{TGT_MW.SUBJ}立刻离开轮机舱！\n\n杨露出牙齿笑了笑。是啊，然后{TGT_MW.SUBJ}就出现在机甲机库里了。才两分钟，我的一台绞盘就坏了。\n\n纯丽翻了个白眼。那别把这位机甲战士派到舰桥上去，首长。你想让通讯系统再出一次故障吗？\n\n最后，达吕斯注意到你站在门口，解释道：指挥官，我们得为 {TGT_MW.Callsign} 想点办法。{TGT_MW.SUBJ_C}是个扫把星。
+evenbeforeyouarriveatthemorningbriefing^youcanheardr*muradsraisedvoice*soitold[[tgt_mw^{tgt_mw*callsign}toleaveengineeringatonce!newlinenewlineyanggrimaces*yeah^andthen{tgt_mw*subj}showedupinthemechbay*ittookawholetwominutesforoneofmywinchestofail*newlinenewlinesumirerollshereyes*well^dontsend{tgt_mw*obj}tothebridge^chief*youwantthecommstoshortoutagain?newlinenewlinefinally^dariusnoticesyoustandinginthedoorwayandexplains*commander^wehavetodosomethingabout{tgt_mw*callsign}*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:re|default:s}ajinx*,还没走到会议室门口，你就能听到穆拉德博士提高的声音。……所以我就跟 [[TGT_MW{TGT_MW.Callsign}]] 说了，让{TGT_MW.SUBJ}立刻离开轮机舱！\n\n杨露出牙齿笑了笑。是啊，然后{TGT_MW.SUBJ}就出现在机甲库里了。才两分钟，我的一台绞盘就坏了。\n\n纯丽翻了个白眼。那别把这位机甲战士派到舰桥上去，首长。你想让通讯系统再出一次故障吗？\n\n最后，达吕斯注意到你站在门口，解释道：指挥官，我们得为 {TGT_MW.Callsign} 想点办法。{TGT_MW.SUBJ_C}是个扫把星。
 evenbeforeyouenterthemesshallyoucanhearthepalpablebuzzofgrumbling*[[tgt_mw^{tgt_mw*callsign}svoicerisesabovetheclamor*newlinenewlineradishes?radishes?!iswear^ifieverseeanotherradishonmyplate^imgoingtojumpoutanairlockandhopethenextdropshiptocomealonghasabettercook!newlinenewlinetheechoofagreementthatfollowssuggestsarisingdisenchantmentwiththemesshallscurrentmenu*,还没走进食堂，你就能听到一阵清晰可闻的抱怨声。[[TGT_MW{TGT_MW.Callsign}]] 的声音盖过了喧闹。\n\n萝卜？<i>萝卜</i>？！我发誓，要是我盘子里再出现一根萝卜，我就从气闸跳出去，指望下一艘经过的空投艇有个更好的厨子！\n\n随之而来的赞同声表明，船员们对食堂目前的菜单越来越不满了。
 evencomstaroccasionallyrequirestheservicesofmercenaries^commander*wewilllookhighlyuponyou^shouldyouaidus*,即使是通讯之星偶尔也需要雇佣兵的服务， 指挥官。 如果你帮助我们， 我们就会高看你。
 evenifhedoesnt^thehittoourreputationwillbeenormous*imagineusrunningawayonthehighlightreelofthenextseasonofbountyhunters*youthinkanyonewouldwanttohireusafterthat?,就算他真的不追究，这对我们声誉的打击也是巨大的。想象一下，在下一季<i>赏金猎人</i>的精彩回放里，我们的部队夹着尾巴逃跑的样子。你觉得那之后还会有人雇我们吗?
@@ -6225,7 +6225,7 @@ everyfiberofmybeingisscreamingatmetonotabandonlordmadeira*todropeverythingandres
 everymonth^{team_tar*factiondef*name}sendsoutanothersupplyconvoyloadedwithmilitaryhardwareandvaluableelectronics*theyguarditheavily^sowerenotaskingyoutohitthemainforce;nosenseinthrowingawaygoodmercenaries*insteadwewantyoutopickoffthetailendoftheconvoy*thecargoisntasvaluableaswhattheysendoutinthevanguard^butitwontbeasheavilydefended*taketheconvoyout^andwellsendinourpeopletograbwhateversstillintact*wedontreallywanttogetshotat^sowellpayabonusifyoutakeoutallthedefenders^aswell*,每个月，{TEAM_TAR.FactionDef.Name}都会派出另一支满载军事装备和贵重电子设备的补给车队。他们防守严密，所以我们不是要你正面攻打主力部队；把优秀的佣兵白白葬送掉毫无意义。我们想让你干掉车队的尾部。车尾的货物不像前卫运的那么值钱，但守卫也不会那么森严。端掉这支车队，我们会派人去把还完好的东西都搬走。我们可不想挨枪子，所以如果你能把所有守卫一并干掉，我们还会额外付你一笔奖金。
 everyone,所有人
 everyoneaboardtheargosnapsintoaction*techspreptheleopardforaction^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^anditsweaponseruptintoaction*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^themedbaysufferedextensivedamage*also[[tgt_mw^{tgt_mw*callsign}tookaminorinjuryaboardtheleopard*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器猛烈开火。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，医务室严重受损。另外，[[TGT_MW{TGT_MW.Callsign}]]在豹式上受了轻伤。""
-everyoneaboardtheargosnapsintoaction*techspreptheleopardfortakeoff^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^itsweaponsspittingfireinalldirections*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^boththemechbayandthebarrackssufferedextensivedamage^and[[scn_mw^{scn_mw*callsign}waswounded*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式的起飞做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器朝四面八方喷吐火力。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，机库和船员宿舍都受到严重损坏，[[SCN_MW{SCN_MW.Callsign}]]也受了伤。""
+everyoneaboardtheargosnapsintoaction*techspreptheleopardfortakeoff^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^itsweaponsspittingfireinalldirections*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^boththemechbayandthebarrackssufferedextensivedamage^and[[scn_mw^{scn_mw*callsign}waswounded*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式的起飞做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器朝四面八方喷吐火力。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，机甲库和船员宿舍都受到严重损坏，[[SCN_MW{SCN_MW.Callsign}]]也受了伤。""
 everyoneaboardtheargosnapsintoaction*techspreptheleopardfortakeoff^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^itsweaponsspittingfireinalldirections*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^boththemedbayandmechbaysuffereddamagethatruinedsuppliesandequipment*theyllbestrugglingforthenextcoupleweeks*fortunately^thatstheonlysignificantdamagereport*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式的起飞做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器朝四面八方喷吐火力。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，医务室和机甲库都受损严重，一批物资和设备被毁。接下来几周他们会很吃力，不过幸运的是这是唯一一处重大损伤。""
 everyoneaboardtheargosnapsintoaction*techspreptheleopardfortakeoff^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^itsweaponsspittingfireinalldirections*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^boththemedbayandthebarrackssuffereddamage^and[[scn_mw^{scn_mw*callsign}waswounded*fortunately^thatstheonlysignificantdamagereport*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式的起飞做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器朝四面八方喷吐火力。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，医务室和船员宿舍都受到了损伤，[[SCN_MW{SCN_MW.Callsign}]]也受了伤。还好没有更多损失。""
 everyoneaboardtheargosnapsintoaction*techspreptheleopardfortakeoff^thebridgecrewtrackstheincomingdebris^andeveryoneelsesecuresbreakables*atlast^theleopardpushesawayfromthedockingcollar^spiralsgracefullytowardsthedebriscloud^itsweaponsspittingfireinalldirections*newlinenewlinetheresshudderingandbangingastheargopassesthroughthecloud*thenitspastandtheclatterfadesaway*dariusannounces^commander^thebarrackssufferedextensivedamage*[[scn_mw^{scn_mw*callsign}waswoundedthere*and[[tgt_mw^{tgt_mw*callsign}tookaminorinjuryaboardtheleopard*,<i>阿尔戈号</i>上的全体船员立刻行动起来。技术人员为豹式的起飞做好准备，舰桥组紧盯迎面而来的碎片，其他人则把所有易碎物品固定好。终于，豹式脱离对接环，优雅地朝碎片云盘旋而去，武器朝四面八方喷吐火力。\n\n<i>阿尔戈号</i>穿过碎片云时，船身不断震动、发出撞击声。随后它穿了过去，撞击声渐渐平息。达吕斯宣布：""指挥官，船员宿舍受损严重，[[TGT_MW{TGT_MW.Callsign}]]在那里受了伤。另外，[[SCN_MW{SCN_MW.Callsign}]]在豹式上受了点轻伤。""
@@ -6315,7 +6315,7 @@ exchanger++,换热器 + +
 excuseme^doc*thewhat?,对不起，医生。什么?
 execute,执行
 executeajumpmove^gainingevasivechargesbasedondistance(+2difficultytohitthisunitwithrangedattacksperevasivecharge)*youmayalsousejumptoinitiateadeathfromaboveattackonnearbyenemies*,执行跳跃移动， 会根据跳跃距离获得闪避加成(每格闪避加成使射击命中该单位的难度+2). 你也可以使用跳跃来发动""死神天降""攻击附近的敌人。
-executeanormalmove^gainingevasivechargesbasedondistance(+2difficultytohitthisunitwithrangedattacksperevasivecharge)*mayalsousetoinitiateameleeattackonnearbyenemies*,执行普通移动， 会根据移动距离获得闪避加成(每格闪避加成使射击命中该单位的难度+2). 也可以用来发动肉搏攻击附近的敌人。
+executeanormalmove^gainingevasivechargesbasedondistance(+2difficultytohitthisunitwithrangedattacksperevasivecharge)*mayalsousetoinitiateameleeattackonnearbyenemies*,执行普通移动， 会根据移动距离获得闪避加成(每格闪避加成使射击命中该单位的难度+2). 也可以用来发动近战攻击附近的敌人。
 executiveofficer,副舰长
 exercisezerotolerance*,练习零容忍.
 exile,放逐
@@ -6348,33 +6348,33 @@ experience,经验
 expert,专家
 expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color>枪炮</b>\n\n一名神枪手，可以使用""突破一击""对付哪怕有着良好防护的目标。作战时还擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。
 expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长:</color>枪炮</b>\n\n一名神枪手，可以使用""突破一击""对付哪怕有着良好防护的目标。作战时还擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>特长:</color>勇气</b>\n\n能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
-expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>枪炮</b>\n\n一名神枪手，甚至能对防御严密的目标使用""突破一击""。擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
-expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>枪炮</b>\n\n一名神枪手，可以使用""突破一击""对付哪怕有着良好防护的目标。作战时还擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
+expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>枪炮</b>\n\n一名神枪手，甚至能对防御严密的目标使用""突破一击""。擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
+expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>枪炮</b>\n\n一名神枪手，可以使用""突破一击""对付哪怕有着良好防护的目标。作战时还擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
 expertise:gunnerynewlinenewlineacrackshotabletousebreachingshotagainstevenwell-defendedtargets*adeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长:</color>枪炮</b>\n\n一名神枪手，可以使用""突破一击""对付哪怕有着良好防护的目标。作战时还擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。\n\n<b><color=#85DBF6>特长:</color>战术</b>\n\n通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。
-expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的肉搏攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
-expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的肉搏攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>枪炮</b>\n\n擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。
-expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemove^andbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的肉搏攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
-expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的肉搏攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。
+expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的近战攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
+expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的近战攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>枪炮</b>\n\n擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。
+expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemove^andbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的近战攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
+expertise:gutsnewlinenewlinearesilientfighterwithcripplingmeleeattacksviajuggernautandimprovedhandlingofheatgeneration*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长：</color>勇气</b>\n\n一名顽强的斗士，能通过""重锤""发动毁灭性的近战攻击，对发热的控制也更好。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>专精：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。
 expertise:gutsnewlinenewlinearesilientfighterwithimprovedhandlingofheatgenerationviacoolantvent*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长:</color>勇气</b>\n\n一名适应力强的战士，通过""泄放冷却剂""加强对发热的控制。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
 expertise:gutsnewlinenewlinearesilientfighterwithimprovedhandlingofheatgenerationviacoolantvent*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color>勇气</b>\n\n一名适应力强的战士，通过""泄放冷却剂""加强对发热的控制。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>特长:</color>枪炮</b>\n\n作战时擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。
-expertise:gutsnewlinenewlinearesilientfighterwithimprovedhandlingofheatgenerationviacoolantvent*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>勇气</b>\n\n一名适应力强的战士，通过""泄放冷却剂""加强对发热的控制。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
+expertise:gutsnewlinenewlinearesilientfighterwithimprovedhandlingofheatgenerationviacoolantvent*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>勇气</b>\n\n一名适应力强的战士，通过""泄放冷却剂""加强对发热的控制。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
 expertise:gutsnewlinenewlinearesilientfighterwithimprovedhandlingofheatgenerationviacoolantvent*capableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长:</color>勇气</b>\n\n一名适应力强的战士，通过""泄放冷却剂""加强对发热的控制。还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。\n\n<b><color=#85DBF6>特长:</color>战术</b>\n\n通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。
 expertise:none,专长：无
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。\n\n<b><color=#85DBF6>专精：</color>枪炮</b>\n\n擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。\n\n<b><color=#85DBF6>专精：</color>勇气</b>\n\n还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""闪避移动""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>战术</b>\n\n通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>枪炮</b>\n\n作战时擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。
-expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>勇气</b>\n\n能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。\n\n<b><color=#85DBF6>专精：</color>枪炮</b>\n\n擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。\n\n<b><color=#85DBF6>专精：</color>勇气</b>\n\n还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""闪避移动""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>战术</b>\n\n通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>枪炮</b>\n\n作战时擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。
+expertise:pilotingnewlinenewlineadefthandlerabletosprintfurther^becomehardertohit^andevenmoveaftershootingthankstoacepilot*skilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长:</color>驾驶</b>\n\n一名灵巧的操作手，能冲得更远，变得更加难以被击中，借助""王牌驾驶员""甚至能在射击后移动。还擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。\n\n<b><color=#85DBF6>特长:</color>勇气</b>\n\n能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletoactearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长:</color>战术</b>\n\n一名适应力强的战斗员，能早于其它单位行动，抓住""精准射击""机会时享有更高的精度。还能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletoactearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color>战术</b>\n\n一名适应力强的战斗员，能早于其它单位行动，抓住""精准射击""机会时享有更高的精度。还能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。\n\n<b><color=#85DBF6>特长:</color>枪炮</b>\n\n作战时擅长使用远程武器，能够通过""多目标攻击""同时应付多个对手。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletoactearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长:</color>战术</b>\n\n一名适应力强的战斗员，能早于其它单位行动，抓住""精准射击""机会时享有更高的精度。还能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。\n\n<b><color=#85DBF6>特长:</color>勇气</b>\n\n能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
-expertise:tacticsnewlinenewlineanadaptablecombatantabletoactearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>战术</b>\n\n一名适应力强的战斗员，能早于其它单位行动，抓住""精准射击""机会时享有更高的精度。还能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于肉搏攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
+expertise:tacticsnewlinenewlineanadaptablecombatantabletoactearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长:</color>战术</b>\n\n一名适应力强的战斗员，能早于其它单位行动，抓住""精准射击""机会时享有更高的精度。还能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。也会改善武器的最小射程。\n\n<b><color=#85DBF6>特长:</color>驾驶</b>\n\n擅长控制机甲，通过""步伐沉稳""躲避伤害，并且更长于近战攻击。所驾驶的机甲要进入""失衡""状态有着更高的阈值。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletomoveearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>专长：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletomoveearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。\n\n<b><color=#85DBF6>专精：</color>枪炮</b>\n\n擅长在战斗中使用远程武器，并能通过""多目标攻击""同时应付多个对手。
 expertise:tacticsnewlinenewlineanadaptablecombatantabletomoveearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>专长：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。\n\n<b><color=#85DBF6>专精：</color>勇气</b>\n\n还能通过""固若金城""更有效地坚守阵地，在失能之前能承受更多伤害。也能更好地控制武器的后坐效应。
-expertise:tacticsnewlinenewlineanadaptablecombatantabletomoveearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用肉搏攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
+expertise:tacticsnewlinenewlineanadaptablecombatantabletomoveearlierthanotherunitsandwhoenjoysmoreprecisionwhentakingcalledshotopportunities*effectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*newlinenewlinespecialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>专长：</color>战术</b>\n\n一名适应力强的斗士，能比其他单位更早移动，抓住""精准射击""机会时精度更高。能通过""感应器锁定""高效地发现目标，更好地利用间瞄火力机会。武器的最小射程也会得到改善。\n\n<b><color=#85DBF6>专精：</color>驾驶</b>\n\n一名灵巧的操控者，能冲得更远、更难被击中，还能借助""王牌驾驶员""在射击后继续移动。擅长操控机甲，通过""闪避移动""躲避伤害，并且更善于用近战攻击命中目标。所驾驶的机甲更不容易进入""失衡""状态。
 expires:,到期:
 expires:23days%,有效期:23天%
 explain*,解释一下自己.
@@ -6617,7 +6617,7 @@ flamer+++,喷火器 + + +
 flamerammo,喷火器弹药
 flamerammo*shouldnotbepurchasableoravailable!!!flamersshouldhaveinternalammoonly*,喷火器弹药。 应该买不到也弄不到!!! 火焰喷射器应该只有内置弹药。
 flamerprojection,喷火器发射
-flamers^smalllasers^andmachinegunsautomaticallyfireaftermeleeattacks*,喷火器， 小型激光和机枪会在肉搏攻击后自动开火。
+flamers^smalllasers^andmachinegunsautomaticallyfireaftermeleeattacks*,喷火器， 小型激光和机枪会在近战攻击后自动开火。
 flamersgeneratenoheatwhenfired^buttheycanquicklyoverheatanenemybattlemech*,喷火器在射击时不会产生热量， 但它们可以迅速让一部敌方机甲过热。
 flamerweaponsareuniqueinthattheydeallittlephysicaldamagebutinsteadexpelsuperheatedplasma^applyingsubstantialheattotheirtarget*whendoneproperly^thiscanhamperenemyreturnfireorevencausethetargetedunittoshutdownfromoverheating*,喷火器的独特性在于它们几乎不造成物理伤害， 而是喷射炙热的等离子体， 对目标释放大量热能。 善加利用的话， 能妨碍敌人还击， 甚至还能让目标单位因过热而关机。
 flanker,侧卫
@@ -6716,7 +6716,7 @@ foreclosure,止赎权
 foresightandvision*thehereditaryrulersoftheaurigancoalition^currentlyledbyladykameaarano*thearanohousesigilisagreatcormorantonafieldofred*theancestralseatofhousearanoiscoromodirvi*newlinenewlinefromtheearlydaysoftherimwardtradepartnershipandthefoundingoftheaurigancoalitionin2910throughtothecurrentday^housearanohasledthesystemsoftheauriganreach*,“远见卓识。”奥里根同盟的世袭统治者，目前由卡梅娅·阿拉诺女士领导。阿拉诺家族的纹章是红底上的一只巨大鸬鹚。阿拉诺家族的祖地是科罗摩迪尔 VI。\n\n从缘向贸易伙伴关系的初创时期、以及2910年奥里根同盟的建立，一直到今天，阿拉诺家族始终领导着奥里根远邦的各个星系。
 forest,森林
 forestreducesmovementandspottingdistance^andprovidescover(20%damagereductionagainstrangedattackstothefrontandside;stackswithguarded)*,森林会减少移动和观测距离， 同时提供""掩护""效果(减少20%来自正面和侧面的射击伤害; 可以和""戒备""效果叠加)。
-forevervigilant*afoundinghouseoftheaurigancoalition^currentlyruledbydirectorsantiagoespinosa*theespinosahousesigilisanibexonafieldofthorns*theancestralseatofhouseespinosaiscoromodirv*newlinenewlinehouseespinosastagedamilitarycouponladykameaaranoscoronationday^topplingtheoldaurigancoalitionandreplacingitwithanewauthoritariangovernment:theaurigandirectorate*,永远警醒。奥里根同盟的创始家族，目前由理事圣地亚哥·埃斯皮诺萨统治。埃斯皮诺萨家族的纹章是荆棘丛中的一只 ibex。埃斯皮诺萨家族的祖地是科罗摩迪尔 V。\n\n埃斯皮诺萨家族在卡梅娅·阿拉诺女士的加冕日发动军事政变，推翻了旧的奥里根同盟，代之以新的专制政府：奥里根理事会。
+forevervigilant*afoundinghouseoftheaurigancoalition^currentlyruledbydirectorsantiagoespinosa*theespinosahousesigilisanibexonafieldofthorns*theancestralseatofhouseespinosaiscoromodirv*newlinenewlinehouseespinosastagedamilitarycouponladykameaaranoscoronationday^topplingtheoldaurigancoalitionandreplacingitwithanewauthoritariangovernment:theaurigandirectorate*,永远警醒。奥里根同盟的创始家族，目前由理事圣地亚哥·埃斯皮诺萨统治。埃斯皮诺萨家族的纹章是荆棘丛中的一只北山羊。埃斯皮诺萨家族的祖地是科罗摩迪尔 V。\n\n埃斯皮诺萨家族在卡梅娅·阿拉诺女士的加冕日发动军事政变，推翻了旧的奥里根同盟，代之以新的专制政府：奥里根理事会。
 forewarnedisforearmed^sure^butitsstillmeanttobeatrap*thiscouldgetdicey*,凡事预则立， 当然， 但它仍然是一个陷阱。 这可能就需要冒险。
 forginganalliancewithafactionhasitsdownside*thatfactionsenemiesbecomeyourenemies*,与一个派系结盟有其不利之处。 那个派系的敌人会变成你的敌人。 
 forgoodreason*ivegotmorethanahundredenemykillsundermybelt*ifyoudontwanttojointhem^isuggestthatyouturntailandrun*,有充分的理由。我杀了100多个敌人。除非你想提高这个数字， 你最好给脚后跟钱。
@@ -6894,7 +6894,7 @@ gainhighmorale,获得高昂士气
 gaining:certainweaponslikelrmscausestabilitydamagetoamech*thisisshownbytheyellowbaronthemechreadout*newlinenewlineeffects:takingstabilitydamagecancauseamechtobecomeunstable*unstablemechslosetheirguardedstate^areunabletosprint^andmayevenbeknockeddown*newlinenewlineknockdown:fallingmechsinjuretheirmechwarriorandtemporarilysetthembackastepintheinitiativeorder*,<size=120%>• </size> <b>获得：</b>某些武器（如 LRM）会对机甲造成稳定性伤害。机甲读数上的黄色条会显示这一点。\n\n<size=120%>• </size> <b>效果：</b>承受稳定性伤害会使机甲变得不稳定。不稳定的机甲会失去<b>戒备</b>状态，无法<b>冲刺</b>，甚至可能被击倒。\n\n<size=120%>• </size> <b>击倒：</b>倒下的机甲会伤及机甲战士，并使其在行动顺序中暂时后退一步。
 gaining:heatisbuiltupbyfiringweaponsorothereffects*thisisshownbytheredbaronthemechreadout*newlinenewlineeffects:heatbuild-upcancauseinternalstructuredamageandcanshutdownamechathigherlevels*shutdownmechsarehighlyvulnerabletoenemytargetingsystems*newlinenewlinemanagingheat:toreduceheatbuild-up^clickthedotnexttoaweaponintheweaponspaneltotoggleitoff*standinginwaterorothercoolingterrainalsohelpsreduceheateachround*,<size=120%>• </size> <b>获得：</b>热量由开火或其它效果积累产生。机甲读数上的红色条会显示这一点。\n\n<size=120%>• </size> <b>效果：</b>热量积累会造成内部结构损伤，达到较高水平时还会让机甲停机。停机的机甲极易被敌方的瞄准系统击中。\n\n<size=120%>• </size> <b>热量管理：</b>要减少热量积累，可点击武器面板中武器旁边的圆点将其关闭。站在水中或其它具备冷却效果的地形上，也能帮助每回合降低热量。
 gaining:knockeddownandshutdownmechsarevulnerabletocalledshots*newlinenewlineeffects:targetingaknockeddownorshutdownmechbringsupthecalledshotinterface^allowingthechoiceofspecificlocationforrangedattack*attacksmissingthetargetlocationaremorelikelytohitadjacentareas*newlinenewlinesalvage:destroyingbothlegsortheheadofamechwithoutdestroyingthecentertorsoincreasesthenumberofsalvageablemechparts*,<size=120%>• </size> <b>获得：</b>被击倒和停机的机甲容易被瞄准射击命中。\n\n<size=120%>• </size> <b>效果：</b>瞄准被击倒或停机的机甲会调出瞄准射击界面，可以从中选择远程攻击的具体部位。未命中目标部位的攻击更有可能击中相邻区域。\n\n<size=120%>• </size> <b>战利品：</b>在不摧毁机甲中央躯干的情况下摧毁其双腿或头部，可以增加可回收的机甲部件数量。
-gaining:yourlancesresolveincreasesincrementallyeachroundofcombatandsignificantlywhenyoudamageordestroyanenemy*thisisshownbytheverticalbluebarnexttoyourmechwarriors*newlinenewlineeffects:whenyourlancesresolvebarishalf-full^yourmechwarriorsbecomeinspired^gaining+1accuracytoallattacks*resolvealsoallowstheuseoftheprecisionstrikeandvigilanceabilities*newlinenewlinemorale:yourcompanysshipboardmoraledirectlyimpactsyourlancesstartingresolveeachmission*,<size=120%>• </size> <b>获得：</b>你小队的决心会在每一轮战斗中逐步提升，当你击伤或摧毁敌人时会大幅提升。机甲战士旁边的蓝色竖条会显示这一点。\n\n<size=120%>• </size> <b>效果：</b>当你小队的决心条达到半满时，机甲战士们会受到鼓舞，所有攻击获得 +1 精准度。决心还允许使用精准打击和警戒技能。\n\n<size=120%>• </size> <b>士气：</b>你所在连队的舰上士气会直接影响每场任务中小队的初始决心值。
+gaining:yourlancesresolveincreasesincrementallyeachroundofcombatandsignificantlywhenyoudamageordestroyanenemy*thisisshownbytheverticalbluebarnexttoyourmechwarriors*newlinenewlineeffects:whenyourlancesresolvebarishalf-full^yourmechwarriorsbecomeinspired^gaining+1accuracytoallattacks*resolvealsoallowstheuseoftheprecisionstrikeandvigilanceabilities*newlinenewlinemorale:yourcompanysshipboardmoraledirectlyimpactsyourlancesstartingresolveeachmission*,<size=120%>• </size> <b>获得：</b>你小队的战斗决心会在每一轮战斗中逐步提升，当你击伤或摧毁敌人时会大幅提升。机甲战士旁边的蓝色竖条会显示这一点。\n\n<size=120%>• </size> <b>效果：</b>当你小队的战斗决心条达到半满时，机甲战士们会受到鼓舞，所有攻击获得 +1 精准度。战斗决心还允许使用精准打击和警戒技能。\n\n<size=120%>• </size> <b>士气：</b>你所在连队的舰上士气会直接影响每场任务中小队的初始战斗决心值。
 gainingmorexp,获得更多经验
 gainingxp,获得经验
 gainlargereputation^largemorale,大量增加声望和士气
@@ -7352,7 +7352,7 @@ ha!itoldyoumonitoring{team_emp*factiondef*demonym}commswouldpayoff*thatlookslike
 ha!youmustbethejanitortheysenttoturnthelightsbackon*,哈! 你一定就是他们派来重新点灯的看门人。
 haas,哈斯
 habitatpod,居住舱
-habitatpods,栖息胶囊
+habitatpods,居住舱
 hacker,黑客
 haddencornichon^laterknownascoldfire^wasborninthebrixtanasystemofthemagistracyofcanopus*hegrewuponthebackstageofatravelingpleasurecircusaspartofanextendedfamilyresponsibleforthecircusspyrotechnicdisplays*whilehesharedhisfamilysloveforexplosions^hequicklybecameboredwiththelimitedcreativityofthecircusswell-definedshow*assoonashecouldtalkhisfamilyintoit^heandtwoofhiscousinsweretradedtoanewcircuslookingtostartupitsownpyrotechnicsshowinexchangeforanapprenticedancer*thenewcircusfocusedondramaticreenactmentsofhistoricalbattlescompletewithbattlemechshellsthatrequiredhisexpertisetolookandsoundreal*newlinenewlinebarelytwoyearsafterjoininghisnewcircus^hestartedknockingatthedoorsofthemagistracyarmedforces^hopingtojointhemagistracyroyalguardasamechwarrior*sincehiseducationupuntilthatpointhadbeenveryspotty^hewasrepeatedlyturnedawayinfavorofmoretraditionalcandidates*buttheyoungcoldfireknewnothingcouldbebetterthanpilotingamechintobattle^sohebuckleddownandlearnedjustenoughtopasstheentryexamsimposedbythemaf*theygavehimthetraininghewanted^butnotthebattles*assoonashiscontractexpired^heabandonedthepeace-lovingmagistracyforaplacewhereamechwarriorcouldalwaysfindwork:theunclaimed^lawlesssystemsoftherimwardperiphery*newlinenewlineasapilot^coldfireisloud^jovial^andalwaysupforthehighest-riskmissionsevenifthelikelihoodofgettingpaidislow*helpingothersisinhisblood^heclaims^andifhecanhaveagoodtimewhiledoingit^evenbetter!helovespushingthebiggestmechstotheirhighestspeedsandrelishesawell-executeddeathfromabove*outsideofbattle^hesrambunctiousbutusuallystopsshortofcausingrealtroubletohiscos*andifyoueverneedapyrotechnicsdisplay^hesyourman*,哈登·科尼雄，后来人称“冷火”，出生在船底自治区的布里克斯塔纳星系。他在一个巡回游乐马戏团的后台长大，是一个负责马戏团烟火表演的大家庭的一员。他继承了家人对爆炸的热爱，但很快就厌倦了马戏团那套一成不变的节目，创意实在有限。等他说服了家人，他和两个表兄弟就被交换到一家新马戏团，换回一名学舞的学徒，那家新马戏团正想开办自己的烟火表演。新马戏团专搞历史战役的戏剧化重演——还要用战斗机甲外壳，得靠他的本事才能让它们看起来、听起来都像真的。\n\n进新马戏团不到两年，他就开始去敲自治区武装部队的门，希望以机甲战士的身份加入自治区王家卫队。由于他此前的教育实在零碎，他一次次被拒，机会都给了出身更正统的候选人。可年轻的冷火知道，没有什么比驾驶机甲上战场更好了，于是他埋头苦学，刚好够通过MAF的入伍考试。他得到了想要的训练，却得不到战斗。合约一到期，他就离开了爱好和平的自治区，去往机甲战士永远能找到活干的地方：外围星区那些无主而无法无天的星系。\n\n作为驾驶员，冷火爱闹、快活，总是愿意接下最高风险的任务——哪怕拿到报酬的可能性很低。他声称，帮助别人是他的天性，要是还能顺便玩得开心，那就更好了！他喜欢把最大的机甲开到最高速度，也享受一记干脆利落的死神天降。战场之外，他闹腾得很，但通常不至于给长官惹出真正的麻烦。而你要是哪天需要一场烟火表演，他就是你要找的人。
 hadley,哈德利
@@ -7602,7 +7602,7 @@ hereisaresponseoption*thesearedesignedtobeamaxoftwolinesoftextsolike^trytonotgob
 hereiswhereinfodescribingthisstatusconditionwouldgo*maxthislongorsuch*,此处将填入描述该状态效果的信息。最长大约这么长。
 hereitis^commanderthemessagethatthe[[dm*basedescriptiondefs[loreemeralddawn]^emeralddawntight-beamedusfromnewrennes*newlinenewlinebucklein;itskindofadoozy*,来了，指挥官，这就是[[DM.BaseDescriptionDefs[LoreEmeraldDawn]Emerald Dawn]]从新雷恩发来的消息。\n\n坐稳了，这消息可不简单。
 hereshopingyoudontgotwofortwo*newlinenewlinegoodluckdownthere^all*illbekeepinganeyeonyoufromuphere*,让我们希望， 第二次效果更好。\n\n祝大家好运。我会从这里一直注视着你。
-hereshowthisisgonnawork*imgonnadropalanceontheplanetssurface^inthecrateryouleftwhenyoutookoutmyfavoritedivebar*yousendyourbestequivalentlancetotakeaswingatme*thesidewiththelastmechstandingwins*newlinenewlineifthatsyou^illleaveallardalone*butifmymaraudersendupgivingyouataste^yougivememyquarter-million^plusinterest*deal?,听好了，这仗这么打。我会把一支机甲小队投到行星地表——就投在你炸掉我最爱那家酒吧时留下的陨石坑里。你派你最拿得出手的同级小队来跟我较量。最后还站着机甲的一方获胜。\n\n要是你赢了，我就不再找阿拉德的麻烦。可要是我的Marauders<i>狠狠教训了你</i>，你就得把我那二十五万还我——外加利息。成交吗？
+hereshowthisisgonnawork*imgonnadropalanceontheplanetssurface^inthecrateryouleftwhenyoutookoutmyfavoritedivebar*yousendyourbestequivalentlancetotakeaswingatme*thesidewiththelastmechstandingwins*newlinenewlineifthatsyou^illleaveallardalone*butifmymaraudersendupgivingyouataste^yougivememyquarter-million^plusinterest*deal?,听好了，这仗这么打。我会把一支机甲小队投到行星地表——就投在你炸掉我最爱那家酒吧时留下的陨石坑里。你派你最拿得出手的同级小队来跟我较量。最后还站着机甲的一方获胜。\n\n要是你赢了，我就不再找阿拉德的麻烦。可要是我的掠夺者<i>狠狠教训了你</i>，你就得把我那二十五万还我——外加利息。成交吗？
 heresthemillionc-billquestion^meyer*whydidntyousayanythingaboutthisbeforewejumped?,关键问题来了，梅耶尔：在我们跃迁之前，你为什么什么都不说？
 hereswherewellmakecontactwiththetargets*oncewestartshooting^theconvoywillprobablymakeabreakforit*interceptthem*,这里就是我们将与目标相遇的地点。 一旦我们开始射击， 车队将会试图突围。 拦截他们。
 heretheycome!youvegottaurianbattlemechsonthemainapproach!,它们来了! 主干道上出现金牛战斗机甲!
@@ -7684,7 +7684,7 @@ heyagain^boss*whatsup?,又见面了，老大。怎么了？
 heyboss^imseeingmorecontacts*whatevertheseguysstolemustbeimportant*,嘿老大， 我看到了更多接触。 不管这些家伙偷了什么反正肯定很重要。
 heymeyer^itsme^theprofessional^andimstillalive!ahahahahaha!,嘿，梅耶尔，是我，专业人士，我还活着！啊哈哈哈哈！
 heyya^boss*canigetyousomething?,嘿呀，老大。要我给你拿点什么吗？
-heyya^boss*welcometothemechbaymyownlittlepieceofheavenrighthereontheship*newlinenewlinesomethingicanhelpyouwith?,嘿，老板。欢迎来到机甲机库——我个人在船上的天堂。\n\n有什么可以帮到你的吗?
+heyya^boss*welcometothemechbaymyownlittlepieceofheavenrighthereontheship*newlinenewlinesomethingicanhelpyouwith?,嘿，老板。欢迎来到机甲库——我个人在船上的天堂。\n\n有什么可以帮到你的吗?
 hgn-733piic,HGN-733P IIC
 hibuarius,希布拉乌斯
 hidden,隐藏的
@@ -8217,9 +8217,9 @@ ididntdiewhendukericolaskedmeto*iguessthatsconsideredrudeinthecombine*,里科尔
 ididntrequestyouropinion^mercenary*untilido^idadviseyoutokeepyourmouthshut*,我没有征求你的意见，雇佣兵。在我要之前，我建议你闭上嘴。
 ididthatforthereach!forourpeople!itwasmyresponsibilityididnthaveachoice!newlinenewlinebutyoudontunderstand*andyouneverwill*,我是为了<i>远邦</i>才那么做的！为了<i>我们的人民</i>！那是我的责任——<i>我别无选择</i>！\n\n可是……你不明白。你永远也不会明白。
 idimaginedyoudfeelthatway*illgoaheadandgetstarted*newlinenewlinewerestillgoingtoneedawaytogetthecodeontoostergaardsship*idsuggesttakingoveraground-basedcommunicationsarraysomethingonanetworkthattheiberiascomputertrusts*,我早就猜到你会这么想。我这就开始动手。\n\n我们还得想办法把代码送进奥斯特加德的船里。我建议我们拿下一座地面通讯阵列，接入一个<i>伊贝里亚</i>计算机信得过的网络。
-idintroduceyoutocommandermarkham^buthewasonasupplyruninthemarketdistrictwhenthebombsfell*he^uhwell*newlinenewlinehedidntmakeit*,我想向您介绍马卡姆指挥官 ， 但炸弹落下时他正在市场区 ，。他，?H...好吧。\n\n他没有活着出去。
+idintroduceyoutocommandermarkham^buthewasonasupplyruninthemarketdistrictwhenthebombsfell*he^uhwell*newlinenewlinehedidntmakeit*,我本想向您介绍马卡姆指挥官，但炸弹落下时他正在市场区。他，呃……好吧。\n\n他没有活着出来。
 idislikeyourkind^mercenary*butitseemsthatdesperatetimesforcecompromisesonallofus*bearthatinmindshouldyouacceptthiscontract:weofferittoyouonlybecausewehavenootherchoice*treadcarefully*,我不喜欢你这样子， 佣兵。 但似乎非常时期迫使我们所有人妥协。 你接下这份合约的时候要记住: 我们给你是因为我们别无选择。 谨慎行事。
-idisplayourmechbaysefficiencyinmechtechpointsonyourtraveldisplayunderthefinancesandcrewmoralereadouts*thehighertherating^thefastertherepairs*,我们机库的效率显示在您旅行显示屏上的 MechTech 点数中 ， 在财务和团队士气的值下。此值越高 ， 修复工作越快。
+idisplayourmechbaysefficiencyinmechtechpointsonyourtraveldisplayunderthefinancesandcrewmoralereadouts*thehighertherating^thefastertherepairs*,我们机甲库的效率以""技师点数""的形式显示在您的旅行显示屏上，就在财务和士气的数值下面。这个数值越高，修复速度越快。
 idlikethat*untilthen^illbidyouaveryfondfarewell*newlinenewlinebewell^{commander*callsign}*iwishyousuccessinyouradventurestocome*,我愿意。在那之前，我想和你说再见。\n\n再见，{COMMANDER.Callsign}。我祝你在未来的冒险中一切顺利。
 idliketoaskyouaboutsomethingelse*,我想问你点别的事。
 idliketoassistwiththat^ifyoullhaveme*iawaityourjudgment^ladymarina;myfutureisinyourhands*,如果允许的话，我愿意帮忙。我等候你的裁决，玛丽娜女士。我的未来掌握在你手中。
@@ -8359,7 +8359,7 @@ ifkellissayingthatthiswillbetough^iminclinedtobelievehim*getyourwarfaceon^comman
 iflordmadeiradoeshisjobright^itwontbeaproblemformuchlonger*,如果马德拉勋爵干得漂亮，这个问题很快就会过去。
 iflordmadeiradoesntmakeit^wevegotonemorefriendtoavenge*,如果马德拉勋爵没能挺过去，我们就又多一个要为之报仇的朋友。
 ifoneofyourmechsgetstoohot^youcoulddodamagetoitsinternalstructureorworse^shutdowntheengineinthemiddleofcombat^leavingitasittingduck*,如果机甲过热 ， 它的内部结构可能会损坏......在最坏的情况下，引擎将在战斗中关闭 ， 这样你就坐在展示盘上。
-ifoneofyourmechsisrunninghot^rememberthatmeleeattacksdontgenerateheat*,如果你的某部机甲太热了， 记住肉搏攻击不会产生热量。
+ifoneofyourmechsisrunninghot^rememberthatmeleeattacksdontgenerateheat*,如果你的某部机甲太热了， 记住近战攻击不会产生热量。
 ifostergaardwerepullingthisanywherebutthereach^thewholeinnerspherewouldbescreamingaboutwarcrimes*wecantletthetauriansgetawaywithwhattheyredoinghere^commander*punishthemforit*,如果奥斯特加德的事情传到远邦之外的地方去， 那整个内天体都会声讨战争罪行。 我们不能让金牛人从他们在这儿做的事情中抽身， 指挥官。 为此惩罚他们吧。
 ifshesinthisregion^weneedtofindherandtakeherout*thenwecanevac*,如果她在这个地区， 我们就需要找到她并除掉她。 然后我们就可以撤离了。
 ifshesstupidenoughtogetbetweenusandourtargets^illtakeheroutmyself*andillmakecertainthatshesproperlydeadthistime*,如果它足够愚蠢 ， 挡在我们和我们的目标之间 ， 我会亲自处理它。而这一次我会确保，她真的死了。
@@ -8446,7 +8446,7 @@ ifyouretreatnow^youwillbespared*ifyouremain^wewillwipeyououtcompletely*songout*,
 ifyouretreatorfailandyoudonotcompleteatleastonemissionobjectiveanddefeatatleastoneenemyunit^theattemptisconsideredtobeinbadfaith*youwillnotbepaid^andyouwilllosereputationwiththeemployersfactionaswellasthemercenaryreviewboard*,如果你撤退或者失败， 而且没有完成至少一个任务目标， 击败至少一个敌方单位， 那这一企图将被认定为恶意。 你会得不到报酬， 并在雇主派系和佣兵评委会那里失去声望。
 ifyouretreatorfailandyoudonotcompleteatleastonemissionobjectiveanddefeatatleastoneenemyunit^theattemptisconsideredtobeinbadfaith*youwillnotbepaid^andyouwilllosereputationwiththeemployersfactionaswellaswiththemercenaryreviewboard*,如果你撤退或者失败， 而且没有完成至少一个任务目标， 击败至少一个敌方单位， 那这一企图将被认定为恶意。 你会得不到报酬， 并在雇主派系和佣兵评委会那里失去声望。
 ifyourmechisatahigherelevationthanitstarget^itwillhaveaslightlyhigherchancetohit*,如果你的机甲所处的位置比目标要高， 那么命中率会稍高一些。
-ifyourshipboardmoraleishighenough^yougainresolveeachroundofcombat*useittoactivatepowerfuloffensiveanddefensiveabilities*,如果你在船上的士气够高， 就能在每个作战回合获得""决心"". 用它激活强大的进攻和防御技能吧。
+ifyourshipboardmoraleishighenough^yougainresolveeachroundofcombat*useittoactivatepowerfuloffensiveanddefensiveabilities*,如果你在船上的士气够高， 就能在每个作战回合获得""战斗决心"". 用它激活强大的进攻和防御技能吧。
 ifyousayso*butfortherecord^thisthebigfishmattersandthelittleguygetsscrewedstuffispartofthereasonilefttheconfederationinthefirstplace*,随你怎么说。不过说清楚，“大鱼才算数、小人物被牺牲”这种事，正是我当初离开邦联的原因之一。
 ifyousayso*illputherupontheviewscreensoshecanspeakherpeace*newlinenewlinehereshopingwedontwindupregrettingthis*,如果你这么想。我会把她放在屏幕上 ， 这样她就可以删除消息。\n\n希望我们不要后悔。
 ifyousayso^commander*newlinenewlineimestablishingcontactwiththe300-year-oldweaponsplatform*bucklein^everyoneshitsabouttogetweird*,如果你说，指挥官。\n\n我正在接触300年历史的武器平台。扣上，人。这会很疯狂。
@@ -9477,7 +9477,7 @@ itspartofthehardenedbunker^andwecantdisableituntiltheorbitalstrikecompletes*so^i
 itspayback^morgan*newlinenewlinewhenyoudecidedtogooffonyourlittlespiritualretreat^youshitcannednearlytwothirdsofus*wepledgedourlivestoyou^andyoucastusasidewithoutawordofexplanation*andwhilemostofussurvivedyourbetrayal^mysisterbrynndidnt*thegriefswallowedherlikeawhirlpool^andyouretoblame*,是时候了，你该为你的所作所为赎罪了，摩根。\n\n当初你决定去搞你那套小小的精神静修，你把我们近三分之二的人一脚踢开。我们曾把自己的性命都献给了你，你却一句话都不解释就把我们丢在一边。我们大多数人都在你的背叛中活了下来，但我姐姐 Brynn 没有。悲伤像暗流一样吞没了她，而你要为此负责。
 itspossiblethatyoucould*ifyougonorth^throughthedesert^icanleadyouto[[dm*basedescriptiondefs[lorelindsay]^lindsaysonlymilitarysensorarray*newlinenewlineifyougetdr*muradinside^sheshouldbeabletobreakleesstargetlock^andyoullbeabletomakegoodonyourescape*,你们或许能做到。如果你们向北穿过沙漠，我可以带你们去 [[DM.BaseDescriptionDefs[LoreLindsay]Lindsays]] 唯一的军用感应器阵列。\n\n如果穆拉德医生能进入那里，她应该可以干扰利斯的锁定，这样你们就能顺利逃脱。
 itspossiblethatyoureright^{commander*callsign}thiscouldallbesuperstitiousnonsense*but***icannothelpseeingthehandoffateatworkhere*newlinenewlinemastifftaughtmetopayheedtomyintuition^andthatiswhatiintendtodo*,也许你说得对，{COMMANDER.Callsign}……也许这只是无聊的迷信。但是……我无法不把这看作是命运的安排。\n\n獒犬教过我要听从自己的直觉，我打算就这么做。
-itspossibletohireskilledmechwarriorsinthehiringhallsofthesystemswevisit^buttheyllhavehighersalaryrequirementsthanmechwarriorsyouvetrainedyourself*,， 可以在我们旅行的系统的招聘大厅中聘请有才华的机甲战士。但他们比你自己训练的机甲勇士 ， 收费更高。
+itspossibletohireskilledmechwarriorsinthehiringhallsofthesystemswevisit^buttheyllhavehighersalaryrequirementsthanmechwarriorsyouvetrainedyourself*,， 可以在我们旅行的系统的招聘大厅中聘请有才华的机甲战士。但他们比你自己训练的机甲战士 ， 收费更高。
 itsprettysimple^really*every30days^wehavetopaythecrewandcoverourregularoperatingexpensesupkeepforthemechswehavereadyinourmechbays^upgradestoourequipment^thingslikethat*,这其实很简单。每30天，我们得给船员发薪，并支付日常运营开销……机甲库中待命机甲的维护费、装备升级之类的。
 itsreachedapointwherewecannolongeroperatein{tgt_system*name}^commander^anditsallthankstoaparticular{team_tar*factiondef*demonym}mechwarriortaskedwithtrackingdownouractivitiesinthisregion*weretiredoflettinghimpickthetimeandplaceofbattle^sowedlikeyoutogivehimalittlesurprisevisitwhilehesonpatrol*hellbedefendedandgivenhisparanoiahellprobablyhavebackupwaitingnearby^sowatchforanambush*,指挥官，我们已经到了无法再在{TGT_SYSTEM.name}行动的地步，这一切都要归功于一个{TEAM_TAR.FactionDef.Demonym}机甲战士，他被派来追查我们在这个区域的活动。我们受够了他挑选战斗的时间和地点，所以希望你在他巡逻时给他一个小小的惊喜拜访。他会有人保护，而且以他的多疑，附近很可能还等着后援，所以要当心埋伏。
 itsrightontopofus*youdbettergetinhere^commander*wallowantstotalk*,它就在我们头顶上。你最好进来，指挥官。瓦洛想谈谈。
@@ -9960,7 +9960,7 @@ knockdown:pilotincapacitated!,击倒: 驾驶员失能!
 knockdown:pilotinjured,击倒: 驾驶员受伤
 knockeddownbyanenemy{killedby_unit*description*name},被一部敌方{KILLEDBY_UNIT.Description.Name}击倒
 knownasabrillianttactician^graysondeathcarlyleisthecommanderofthegraydeathlegion^arisingstaramonginnerspheremercenarycompanies*freshfromhisunconventionalinsurgencyagainstthedraconiscombineoccupiersontheworldofverthandi^carlyleusesinnovativetacticsandcombinedarms^whicharechangingthefaceofwarfareinthe31stcentury*,格雷森·""死神""·卡莱尔作为一名卓越的战术家而闻名，他是灰色死亡军团的指挥官，内天体雇佣兵部队中正在崛起的新星。他刚在薇儿丹蒂星上对天龙联合体占领军发动了一场非常规叛乱，如今他运用创新的战术和联合兵种，正在改变31世纪战争的形态。
-knownastheatlasii^thed-htmodelcarriesmoreenergyweaponryandusuallyalighter^moreflexibleautocannon*itstillhasunbelievableprotectionandthesamecrushingmeleeabilityasotheratlasmodels*,被称作""宇宙神II""的D-HT型携带了更多的能量武器， 以及一门通常更为轻便， 灵活的自动炮。 它依然有着难以置信的防护， 并且和其它型号的""宇宙神""一样具有毁灭性的肉搏能力。
+knownastheatlasii^thed-htmodelcarriesmoreenergyweaponryandusuallyalighter^moreflexibleautocannon*itstillhasunbelievableprotectionandthesamecrushingmeleeabilityasotheratlasmodels*,被称作""宇宙神II""的D-HT型携带了更多的能量武器， 以及一门通常更为轻便， 灵活的自动炮。 它依然有着难以置信的防护， 并且和其它型号的""宇宙神""一样具有毁灭性的近战能力。
 knownforitsdazzlingaridexpansesandbilledasthethegalaxysbestgetawayyouveneverbeento^leamingtonisfilledwiththousandsofartificialsprings^bothhotandcold*unsurprisingly^leamingtonsmostvitalimportiswater*touristsflocktothisplanetfromallwalksoflifebecauseofitsmauve-and-cerulean-streakedsunsetsand^ofcourse^itsrangeofaffordableaccommodations*,利明顿以耀眼干旱的广袤大地闻名，还拥有数以千计的人工冷热温泉，并被盛赞为""银河系有史以来最好的度假胜地"".因此，水成了这里最抢手的进口商品，这丝毫不令人意外。各路游客涌向这颗星球，欣赏紫红与天蓝交织的日落——当然，也是为了尽情享受这里价格亲民的各式住宿。
 knownforitssuperbheatmanagement^thethunderbolt5sshitshardatlongrangewithitsppcandthenclosestodisableordestroyitstargetwithclose-rangeweaponry*,""雷电5SS""以其出众的热量管理能力而闻名， 它使用自身的粒子炮在远距离进行强力攻击， 然后接近敌人使用近程武器来摧毁或瘫痪目标。
 koga,古贺
@@ -10624,7 +10624,7 @@ lopt,OPT-L
 lord,领主
 lordalexandermadeira,亚历山大·马德拉领主
 lordangus,安格斯领主
-lordcommandermason,军阀梅森
+lordcommandermason,领主指挥官梅森
 lordjesper,杰斯珀领主
 lordjesperandhislanceareontheirwaytochallengeyou*holdthefactoryandsendhimhomeinhisejectionpod^defeatedandashamed!leavehispreciousancestralbattlemechasmolderingruin!,杰斯珀勋爵和他的小队正在赶来。守住工厂，把他塞进逃生舱送回家——让他带着惨败和耻辱离开!只留下他家族珍爱的战斗机甲化作冒烟的残骸!
 lordkarosaschallengedmyauthority^andhewasrighttodoso*hisdaughterdiedinmyname*weregoingtodowhatwecantoearnhishelpandsupport*thatmeansdestroyingthenewgrange^asmugglingshipthathasbeenrunningweaponstothedirectorate*illbeyourvoiceonthecommsforthisdrop^{commander*callsign}letsgetthisdone*,卡罗萨斯大人挑战了我的权威，而他这么做是对的。他的女儿是为我而死。我们会尽力争取他的帮助和支持。这意味着要摧毁<i>新格兰奇号</i>，一艘一直向理事会输送武器的走私船。这次空投我会在通讯频道里替你发声，{COMMANDER.Callsign}…让我们把这件事了结吧。
@@ -10923,7 +10923,7 @@ martiansunset,类火星·日落
 martianworld,火星世界
 martinique,马提尼克
 maskirovka,欺敌局
-masonsmarauders,MasonsMarauders
+masonsmarauders,梅森的掠夺者
 masonsmaraudersco,梅森掠夺者指挥官
 masonsmarauderslanceleader,梅森掠夺者小队领队
 massiveclusterrounds^designedfordevastatingimpact^tobeusedinanlb20-x*,重型集束弹，专为毁灭性打击设计，供LB 20-X使用。
@@ -11213,30 +11213,30 @@ medusasfamilymatters,梅杜萨的家事
 meetingarchangel,会见""大天使""
 meetingtest9,会见""测试9号""
 megacity,巨型城市
-melee,肉搏
-melee/small:,肉搏/小型：
-meleeattack,肉搏攻击
-meleeattacksattemptedhavetheirhitimprovedby[amt]*,试图肉搏攻击时命中会提高[AMT]。
-meleeattackscancompletelyremoveatargetsevasion^makingiteasierforyourothermechstofireonthattarget*,肉搏攻击可以完全消除目标的""闪避""， 使你的其它机甲容易击中目标。
-meleeattacksdeal[amt]moredamage*,肉搏攻击多造成[AMT]伤害。
-meleeattacksdeal[amt]morestabilitydamage*,肉搏攻击多造成[AMT]失衡伤害。
-meleeattacksdodoubledamagetoturrets*,肉搏攻击对炮台造成双倍伤害。
-meleeattacksdodoubledamagetovehicles*,肉搏攻击对车辆造成双倍伤害。
-meleeattackusingpilotingskilltohit*ignoresevasive*hitremovesguarded^dealsdamageandstabilitydamage*,肉搏攻击依赖""驾驶""技能来命中。 攻击无视""闪避"". 命中时消除""戒备""状态， 造成伤害和失衡伤害。
-meleecinematics,肉搏动画
-meleedamage,肉搏伤害
-meleedamageincreased,肉搏伤害增加
-meleedamageistheamountofdamagedealtspecificallybymeleeattacks^basedoffoftheinherentdesignoftheattackingmechschassis*,肉搏伤害特指肉搏攻击造成的伤害数量， 它取决于发动攻击的机甲机体的固有设计。
+melee,近战攻击
+melee/small:,近战/小型：
+meleeattack,近战攻击
+meleeattacksattemptedhavetheirhitimprovedby[amt]*,试图近战攻击时命中会提高[AMT]。
+meleeattackscancompletelyremoveatargetsevasion^makingiteasierforyourothermechstofireonthattarget*,近战攻击可以完全消除目标的""闪避""， 使你的其它机甲容易击中目标。
+meleeattacksdeal[amt]moredamage*,近战攻击多造成[AMT]伤害。
+meleeattacksdeal[amt]morestabilitydamage*,近战攻击多造成[AMT]失衡伤害。
+meleeattacksdodoubledamagetoturrets*,近战攻击对炮台造成双倍伤害。
+meleeattacksdodoubledamagetovehicles*,近战攻击对车辆造成双倍伤害。
+meleeattackusingpilotingskilltohit*ignoresevasive*hitremovesguarded^dealsdamageandstabilitydamage*,近战攻击依赖""驾驶""技能来命中。 攻击无视""闪避"". 命中时消除""戒备""状态， 造成伤害和失衡伤害。
+meleecinematics,近战动画
+meleedamage,近战伤害
+meleedamageincreased,近战伤害增加
+meleedamageistheamountofdamagedealtspecificallybymeleeattacks^basedoffoftheinherentdesignoftheattackingmechschassis*,近战伤害特指近战攻击造成的伤害数量， 它取决于发动攻击的机甲机体的固有设计。
 meleedefense,近战防御
-meleedmg,肉搏伤害
-meleehit,肉搏命中
-meleehitchanceimproved,肉搏命中率提高
-meleehitistheoverallaccuracyofallmeleeattacks^relativetotheircurrentactionsdifficulty*,""肉搏命中""是所有肉搏攻击的总体精度， 它和它们当前的动作难度有关。
+meleedmg,近战伤害
+meleehit,近战命中
+meleehitchanceimproved,近战命中率提高
+meleehitistheoverallaccuracyofallmeleeattacks^relativetotheircurrentactionsdifficulty*,""近战命中""是所有近战攻击的总体精度， 它和它们当前的动作难度有关。
 meleeinthemechbay,机甲库中的斗殴
-meleestabilitydamage,肉搏失衡伤害
-meleestabilitydamageincreased,肉搏失衡伤害增加
-meleestabilitydamageistheamountofstabilitydamagedealtspecificallybymeleeattacks^basedoffoftheinherentdesignoftheattackingmechschassis*,肉搏失衡伤害特指肉搏攻击造成的失衡伤害数量， 它取决于发动攻击的机甲机体的固有设计。
-meleethetarget,用肉搏攻击目标
+meleestabilitydamage,近战失衡伤害
+meleestabilitydamageincreased,近战失衡伤害增加
+meleestabilitydamageistheamountofstabilitydamagedealtspecificallybymeleeattacks^basedoffoftheinherentdesignoftheattackingmechschassis*,近战失衡伤害特指近战攻击造成的失衡伤害数量， 它取决于发动攻击的机甲机体的固有设计。
+meleethetarget,用近战攻击目标
 membership,会员
 membersoftherulingclassofthefederatedsunsarecelebratedastheinheritorsoftheancientlineagesofeuropeannobility^theheroesofthefederatedsunsinternalmythology*,恒星联邦统治阶级的成员因为被人视为古代欧洲贵族世系的继承人， 恒星联邦内部神话的英雄人物而受人尊敬。
 memorialwall,纪念墙
@@ -11782,7 +11782,7 @@ mymaskirovkaliaisonwishesmetoconveyherthanks^commander*werecognizethatthisismaki
 mymasterswould-beassassinhasfallen^butstillshelives!herejectionpodhassavedherbutforhowlong?,寻找我主人生命，的女人，被打败了，但她还活着！她的逃生舱对她很有用……但是<i>还能撑多久</i>?
 mymercenarieswillpunishyouforthebutcheryyoucommittedonshaulkhala^lees*youwilldieindisgrace*,您将为绍尔哈拉 ， 利斯造成的大屠杀 ， 付出代价。我的雇佣兵会注意的。你会羞愧地死去。
 mymotherwasrightyoucannomoretrustasinghthanyoucanaserpent!thisattackonmyholdingswillnotstand^doyouhearme?!iwilldestroyyouforwhatyouvedonetoday!,我母亲说得对:你信不过辛格，就像信不过毒蛇!这次袭击我的领地，我绝不会罢休，你听见了吗?!为了你今天所做的一切，我会<i>毁掉你</i>!
-mynameisdariusoliveira^andimthexoofmarkhamsmarauders*newlinenewlinewereamercenaryoutfitwithtiestohousearanowedidsomeworkfor[[dm*basedescriptiondefs[lorehighlordtamatiarano]^highlordtamatiwaybackwhen*,我叫达吕斯·奥利维拉，是马卡姆's Marauders的副舰长。\n\n我们是一支和阿拉诺家族有联系的雇佣兵部队...很久以前，我们曾为[[DM.BaseDescriptionDefs[LoreHighLordTamatiArano]最高领主塔马蒂]]效力，那时他还活着。
+mynameisdariusoliveira^andimthexoofmarkhamsmarauders*newlinenewlinewereamercenaryoutfitwithtiestohousearanowedidsomeworkfor[[dm*basedescriptiondefs[lorehighlordtamatiarano]^highlordtamatiwaybackwhen*,我叫达吕斯·奥利维拉，是马卡姆的掠夺者佣兵团的副舰长。\n\n我们是一支和阿拉诺家族有联系的雇佣兵部队...很久以前，我们曾为[[DM.BaseDescriptionDefs[LoreHighLordTamatiArano]最高领主塔马蒂]]效力，那时他还活着。
 myoldfriend^ihopethismessagefindsyouwell*ifyouhavethetime^thecapellanconfederationwouldonceagainliketoretainyourservices*,我的老朋友， 我希望收到这个消息的时候你一切顺利身体安康。 如果你有时间， 御夫星邦联希望能再一次得到你的服务。
 myorganizationtradesininformation*weknowalotofthings*newlinenewlineandwhenanopportunitypresentsitself^weknowhowtoexploitit*,我的组织处理信息。我们知道很多。\n\n当机会出现时， 我们知道如何利用它。
 mypeopleareforwardingyouasetofcoordinatesontheplanetssurface*travelthereandyouwillfindthestratfordnarwhal^anoldmilitarybunkerthathasbeenrepurposedintoadivebar^anotorioushangoutforpiratesandkillers*newlinenewlinegarrilacspendshisdaysdrinkingatthenarwhal*destroythebarandyoullputanendtotheman*,我的人会把一组行星表面的坐标发给你。到那里去，你会找到斯特拉特福独角鲸——一座被改建成臭名昭著的低档酒吧的旧军事掩体，各种海盗和杀手都在那里出没。\n\n加瑞拉克整天都泡在Narwhal里喝酒。毁了那家酒吧，就等于了结了他。
@@ -11940,7 +11940,7 @@ newvulci,新武尔奇
 newwallandmarsh,新沃兰德沼泽
 newzealand,新西兰
 next,下一个
-nextmeleetarget,下一个肉搏目标
+nextmeleetarget,下一个近战目标
 nextmonthsbudget,下月预算
 nextmonthsexpenseleveloptions,下个月的支出选项
 nextquarterexpenseleveloptions,下个季度的支出选项
@@ -12004,7 +12004,7 @@ no^im--wait^thereitis*shit^thatsbig*howthehellarewesupposedtokeepthatfromblowing
 no^itdoesnt*andevenaswespeak^myagentsarediggingforinformationthatwillopenariftbetweenourenemies*forwhatitsworth^iamconfidentthattheywillfindit*newlinenewlinebutnoneofthiswillmeananythingifyouletostergaardgoadyouintoasuicidalcharge*soibegyou:ignorehim*stayaway*,不。 而且就在我们说话的此刻， 我的特工正在拼命搜集能让我们敌人之间产生裂痕的情报。 不管怎样， 我<i>有信心</i>他们会找到的。\n\n但如果你让奥斯特加德激得你发动自杀式冲锋， 这一切就都<i>毫无意义</i>了。 所以我求你:别理他。 <i>保持距离</i>。
 no^itisnt*butyangsright^meyer*thisiscommander{commander*lastname}sdecisiontomake^endofstory*,不。但杨是对的 ，迈耶。决定取决于指挥官{COMMANDER.LastName} ， 就是这样。
 no^itisnt*butyoushouldholdontothatanger^mechwarriors*youllneeditsoonenough*newlinenewlinecommander^youvedoneasuperbjobofrallyingourtroops*nowineedyoutoleadthem*destroytheziegelhaus^eliminatedobrescu^andliftthesiege*illbeincontactwhenthejobisdone*,事实上不是。 但你应该留住那份怒火， 机甲战士。 你很快就会需要它。\n\n指挥官， 你把我们的部队集结得非常出色。 现在我需要你带领他们。 摧毁 Ziegelhaus， 干掉多布雷斯库， 解除围攻。 任务完成后我会联系你。
-no^itwont*soletsquittalkingandgoexploreournewship!theresanabsolutelyenormousmechbayinthere^anditsgotmynamewrittenalloverit!,我也害怕。所以让我们停止聊天，<i>让我们看看我们的新船</i>！有一个 <i>巨大的</i> 机库 ， 是为我打造的！
+no^itwont*soletsquittalkingandgoexploreournewship!theresanabsolutelyenormousmechbayinthere^anditsgotmynamewrittenalloverit!,我也害怕。所以让我们停止聊天，<i>让我们看看我们的新船</i>！有一个 <i>巨大的</i> 机甲库 ， 是为我打造的！
 no^iwasthinkingwedjustsitonitforawhile*youknow^reallysavorthemystery*,不 ， 我想 ， 我们可以在上面坐一会儿。这样我们才能真正享受其中的秘密。
 no^iwouldnt*newlinenewlineyoureplayingadangerousgame^commander*ihopeitdoesntwindupbitingyou*,如果我是你，我就不会那样做。\n\n你在玩火，指挥官。我希望 ， 你的手指不会被烫伤。
 no^maam*itmostdefinitelyisnot*newlinenewlineonthatnote^itsprobablytimeforustosaygoodbye*thanksagain^commander*youreallysavedmybaconbackthere*,没有，想念。绝对不是。\n\n所以可能是时候说再见了。再次谢谢你，指挥官。你真的救了我的屁股。
@@ -12047,7 +12047,7 @@ nocontractsavailable,没有可用的合约
 nocrazierthantheirhavinggottenintoitinthefirstplace*newlinenewlineiswear^mannobleambitionsandmean-spiritedpowerplaysaregonnabethedeathofusallsomeday*,再疯狂也比不上他们当初一头栽进来的样子。\n\n我跟你说，老兄……高尚的抱负和恶毒的权力游戏，总有一天会把我们全害死。
 noeffect,没有效果
 noeffects^fansdontapprove,无效果，粉丝不满意
-noemptybays,没有空闲的机库位
+noemptybays,没有空闲的机甲库位
 noexistingmodsfound*,未找到已经存在的模组。
 noexistingsavegames*,没有已保存游戏存在。
 nofaction,无派系
@@ -12073,7 +12073,7 @@ nolocalsupplywillmakedefendingthisplanetahugepaininthebutt*logisticallyspeaking^
 nomechchassis,无机甲机体
 nomechselected,没有选择机甲
 nomechtech,没有机甲技师
-nomechtechnewlinetasksscheduled,没有 MechTech 任务 \n 计划
+nomechtechnewlinetasksscheduled,没有技师\n任务安排
 nomechwarrior,没有机甲战士
 nomechwarriorsareavailableforhireinthissystem*,这个星系中没有可以雇佣的机甲战士。
 nominal,极小
@@ -12243,8 +12243,8 @@ notyet^butkeeptalking*maybewellgetthere*,还没有，不过你继续说。也许
 nounitdeployed,未部署单位
 nourbancars,无城市车辆
 novolunteers,没有志愿者
-now*accordingtotheinfoonyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^yourrootsarerighthere^intherimwardperiphery*thatputsyouandmeinthesameboatourhomesaretooclosetothedirectorateforcomfort*newlinenewlinesothewayiseeit^youvegotacoupleofoptions*,好的。根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血牌]]， 你的根就在此地， 在缘向外围。所以我们俩在同一条船上， 我们的家园都离理事会太近， 无法安心。\n\n依我看， 你有几个选择。
-now*accordingtotheinfoonyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyinthedeepperiphery*imafraidthatsgoingtomakegettingyoubacktheredifficulttherearentmanyfreightercaptainswhorewillingtotravelthatfarfromthe[[dm*basedescriptiondefs[loreinnersphere]^innersphere*newlinenewlinesothewayiseeit^youvegotacoupleofoptions*,好的。根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血牌]]， 你有家人住在深空外围。我担心这会让你回去变得很困难， 没有多少货船船长愿意远离[[DM.BaseDescriptionDefs[LoreInnerSphere]内天体]]跑那么远。\n\n依我看， 你有几个选择。
+now*accordingtotheinfoonyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^yourrootsarerighthere^intherimwardperiphery*thatputsyouandmeinthesameboatourhomesaretooclosetothedirectorateforcomfort*newlinenewlinesothewayiseeit^youvegotacoupleofoptions*,好的。根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]， 你的根就在此地， 在缘向外围。所以我们俩在同一条船上， 我们的家园都离理事会太近， 无法安心。\n\n依我看， 你有几个选择。
+now*accordingtotheinfoonyour[[dm*basedescriptiondefs[lorebloodchit]^bloodchit^youvegotfamilyinthedeepperiphery*imafraidthatsgoingtomakegettingyoubacktheredifficulttherearentmanyfreightercaptainswhorewillingtotravelthatfarfromthe[[dm*basedescriptiondefs[loreinnersphere]^innersphere*newlinenewlinesothewayiseeit^youvegotacoupleofoptions*,好的。根据你的[[DM.BaseDescriptionDefs[LoreBloodChit]血幅]]， 你有家人住在深空外围。我担心这会让你回去变得很困难， 没有多少货船船长愿意远离[[DM.BaseDescriptionDefs[LoreInnerSphere]内天体]]跑那么远。\n\n依我看， 你有几个选择。
 now*itwilltaketimeandexpertisetogetwhateverbattlemechswefindinthecastlesarmoryupandrunningagain*lordkarosassentusarecoveryteam^andiwantourbestmechtechonthegroundleadingthem*newlinenewlinethatsyou^mr*virtanen*youllberidingwithme*,好的。如果我们在堡垒军械库里找到任何战斗机甲， 要让它们重新运转起来， 需要时间和专业技术。卡罗萨斯勋爵给我们派来了一支打捞队， 我希望由我们最好的机甲技师在地面带领他们。\n\n我说的就是你， 维尔塔宁先生。你跟我一起去。
 now*therestorationsnextmovewillbetheliberationofpanzyr^butwewontbereadytolaunchanotherattackuntilwevereplacedthelossesweincurredonweldry*youllhavetimetobreaktheargoinbeforeladyaranorequiresyourservice*newlinenewlineyouhaveamobilecommandcenterworthyofthetitle^andthefreedomtopursuewhatevermercenaryworkyoulike*isuggestthatyouputthemtogooduse*,好的。光复运动的下一步是解放潘济尔， 但我们必须先弥补在韦尔德里遭受的损失， 才能再次发起进攻。在阿拉诺夫人需要你的效力之前， 你有时间<i>适应</i>阿尔戈号。\n\n你拥有一座名副其实的移动指挥中心， 还有自由去接任何你想接的雇佣兵工作。我建议你好好利用这两样。
 now^asforwhatwedofromherethatswhereimgonnastartgettingopinionated*newlinenewlineiwantnewmechchassistowrenchon*weirdmechchassis*ifyoucanfindmeacustomjob^iwanttoplaywithit*,说到我们接下来<i>要做什么</i>，我会开始有点固执。\n\n我想摆弄一具新的机甲机体。一具<i>不寻常的</i>机甲机体。如果你能弄到一具定制机体，我想好好玩玩它。
@@ -13035,14 +13035,14 @@ passive:calledshotstakenbythismechwarriorarealmostguaranteedtohittheirlocation(m
 passive:calledshotstakenbythismechwarrioraretwiceaslikelytohitthetargetedlocation*,被动: 该名机甲战士打出的""精准射击""有双倍的几率命中目标部位。
 passive:coverandguardedstatesbothprovide40%damagereductionratherthan20%damagereduction*coverandguardedtogetherprovide60%damagereduction*,被动: ""掩护""和""戒备""状态都会减少40%的伤害， 而不是原本的减少20%伤害。 ""掩护""和""戒备""一起作用时会减少60%的伤害。
 passive:mechspilotedbythismechwarriorareextremelydifficulttohitwithattacks*,被动: 要命中该名机甲战士驾驶的机甲非常难。
-passive:mechspilotedbythismechwarriorareextremelydifficulttohitwithmeleeattacks*,被动：由该机甲战士驾驶的机甲极难被肉搏攻击命中。
+passive:mechspilotedbythismechwarriorareextremelydifficulttohitwithmeleeattacks*,被动：由该机甲战士驾驶的机甲极难被近战攻击命中。
 passive:mechspilotedbythismechwarriorarehardertohitwithattacks*,被动: 要命中该名机甲战士驾驶的机甲比较难。
-passive:mechspilotedbythismechwarriorarehardertohitwithmeleeattacks*,被动：由该机甲战士驾驶的机甲更难被肉搏攻击命中。
+passive:mechspilotedbythismechwarriorarehardertohitwithmeleeattacks*,被动：由该机甲战士驾驶的机甲更难被近战攻击命中。
 passive:mechspilotedbythismechwarriorcangain10morepointsofheatbeforeoverheating*,被动: 该名机甲战士驾驶的机甲在过热前能多承受10点热量。
 passive:mechspilotedbythismechwarriorgain+1initiative^andremoveonebarofstabilitydamagewhenreserving*,被动: 该名机甲战士驾驶的机甲主动权+1， 并在""保留""时减少一格失衡伤害。
 passive:mechspilotedbythismechwarriorgain10%sprintdistance*,被动: 该名机甲战士驾驶的机甲另外获得10%冲刺距离。
 passive:mechspilotedbythismechwarriorgain20%sprintdistance*,被动: 该名机甲战士驾驶的机甲另外获得20%冲刺距离。
-passive:mechspilotedbythismechwarriorgainonebonusevasionchargeaftermoving(canexceedtheunitsmaximum)*ifthemoveisnotasprint^jump^orchargetomelee^themechalsogainsentrenched(50%stabilitydamagereduction)*,被动技能: 该名机甲战士驾驶的机甲移动后会再获得1格闪避加成(可以超出该单位的最大值). 如果该次移动不是冲刺， 跳跃， 或者冲撞肉搏， 那该机甲还会获得稳固状态(减少50%的稳定性伤害)。
+passive:mechspilotedbythismechwarriorgainonebonusevasionchargeaftermoving(canexceedtheunitsmaximum)*ifthemoveisnotasprint^jump^orchargetomelee^themechalsogainsentrenched(50%stabilitydamagereduction)*,被动技能: 该名机甲战士驾驶的机甲移动后会再获得1格闪避加成(可以超出该单位的最大值). 如果该次移动不是冲刺， 跳跃， 或者冲撞近战， 那该机甲还会获得稳固状态(减少50%的稳定性伤害)。
 passive:mechspilotedbythismechwarriorhavetheirballisticrecoilpenaltiesreducedby1*,被动: 该名机甲战士驾驶的机甲， 其弹道武器的后坐惩罚减少1。
 passive:mechspilotedbythismechwarriorhavetheirevasivechargecapincreasedby1*,被动: 该名机甲战士驾驶的机甲， 其闪避加成上限增加1。
 passive:mechspilotedbythismechwarriorhavetheirindirectfirepenaltiesreducedby1*,被动: 该名机甲战士驾驶的机甲， 其间瞄射击的惩罚减少1。
@@ -13137,7 +13137,7 @@ performance,性能
 performance:durability,性能: 耐久
 performance:firepower,性能: 火力
 performance:heat,性能: 热量
-performance:melee,性能: 肉搏
+performance:melee,性能: 近战
 performance:movement,性能: 移动
 performance:range,性能: 射程
 performancewarning,性能警报
@@ -13214,9 +13214,9 @@ piloting,驾驶
 pilotingabattlemechforapiratecrewrequiresonlyacompletedisregardforpersonalsafety*withoutthemaintenancefacilitiesofanestablishedmilitaryormercenarycompany^allthatapiratemechwarriorcancountonisthatnomatterwhat^somethingaboardthemechwillbreakdowninbattle*,为海盗驾驶一部机甲只需要完全不顾个人安危就行。 没有成熟的军队或雇佣军公司的维护设施， 一个海盗机甲战士能指望的就是无论如何， 机甲上的某些东西不要在战斗中突然坏掉。
 pilotingamechisntforeverybody*ifyourehavingdoubts^youneedsometimeaway^becauseobsessingaboutyourfailuresinthecockpitisjustgoingtogetyoukilled*illarrangeforyoutohavethattimeatournextport*newlinenewlinenewline[[tgt_mw^{tgt_mw*callsign}looksstartled*commander?ididntreally***newlinenewlineyoufrownathim*andyouarent*youregoingtogetyourheadscrewedonstraightandgetbackhere*amiright?newlinenewlinenewlineyes^commander!newlinenewlinenewlineyousurveydekkerandfeelconfidenthellreturnabettermechwarrior*,驾驶机甲并不适合所有人。 如果你心中有疑虑， 你需要离开一段时间。 因为一味纠结于自己在驾驶舱里的失败， 只会让你送命。 我会安排你在我们抵达下一个港口时休这段时间。\n\n[[TGT_MW{TGT_MW.Callsign}]]看起来很吃惊。 指挥官? 我并不是真的...\n\n\n你对他面容一沉。 你也不是。 你会把头脑调整清楚， 然后回到这里。 我说得对吗?\n\n\n是的， 指挥官！\n\n\n你打量着德克尔， 确信他会作为一名更好的机甲战士回来。
 pilotingapiratedropshiprequiresnerveandguts^andalittleinsanity*regularuseofpiratejumppointsaboardjumpshipsofdubiousquality^aswellasthehazardsoftravelwelloutsideoftheusualclearedshippinglanes^meanthatskilledpilotsareinhighdemandamongpiratecrews*,驾驶海盗空投艇需要勇气和胆量， 还要有点疯狂。 经常登上质量可疑的远航舰使用海盗跃迁点， 以及在普通的安全航道之外航行的危险， 意味着海盗船员对熟练飞行员的需求很大。
-pilotingcontrolsstabilityandmeleeaccuracy*,""驾驶""控制着稳定性和肉搏精度。
-pilotingincreasesmeleehitchanceandbasesprintdistance*italsoimprovesthethresholdofstabilitythattriggersunsteady*,""驾驶""技能增加肉搏命中率和基础""冲刺""距离。 它还提高了触发""失衡""状态的稳定性阈值。
-pilotingincreasesmeleehitchanceandbasesprintdistance*italsoimprovesthethresholdofstabilitythattriggersunsteadyandincreasethemaximumlevelofevasionpossiblefrommovement*,""驾驶""技能增加肉搏命中率和基础""冲刺""距离。 它还提高了触发""失衡""状态的稳定性阈值， 并提高了移动时的""闪避""最大等级。
+pilotingcontrolsstabilityandmeleeaccuracy*,""驾驶""控制着稳定性和近战精度。
+pilotingincreasesmeleehitchanceandbasesprintdistance*italsoimprovesthethresholdofstabilitythattriggersunsteady*,""驾驶""技能增加近战命中率和基础""冲刺""距离。 它还提高了触发""失衡""状态的稳定性阈值。
+pilotingincreasesmeleehitchanceandbasesprintdistance*italsoimprovesthethresholdofstabilitythattriggersunsteadyandincreasethemaximumlevelofevasionpossiblefrommovement*,""驾驶""技能增加近战命中率和基础""冲刺""距离。 它还提高了触发""失衡""状态的稳定性阈值， 并提高了移动时的""闪避""最大等级。
 pilotinjured,驾驶员受伤
 pilotlowmorale,驾驶员士气低下
 pilotname,驾驶员名称
@@ -13672,12 +13672,12 @@ provide{tgt_mw*callsign}fundstobuytheequipment*,为{TGT_MW.Callsign}提供资金
 providegenerousmechbaysupportfor¢100^000*,保证以 ¢100，000 提供慷慨的机甲机库支持。
 providegenerousmedbaysupportfor¢100^000*,保证以 ¢100，000 提供慷慨的医务室支持。
 providegeneroussupportbutaskfortheholovidsinpayment*,提供慷慨的支持但要求用全息影视作为酬劳。
-provideminimalmechbaysupportfor¢20^000*,以¢20，000提供机甲机库的最低支援。
+provideminimalmechbaysupportfor¢20^000*,以¢20，000提供机甲库的最低支援。
 provideminimalmedbaysupportfor¢25^000*,保证以 ¢25，000 提供最低限度的医务室支持。
 providesa[amt]bonustoactionsthatgeneratemorale*,提供[AMT]的奖励给生成士气的行为。
-providesa[amt]bonustoactionsthatgenerateresolve*,提供额外[AMT]点给生成决心的行为。
+providesa[amt]bonustoactionsthatgenerateresolve*,提供额外[AMT]点给生成战斗决心的行为。
 providesa[amt]penaltytoallattacksagainstthisunit*,向所有对该单位的攻击提供[AMT]的惩罚。
-providesa[amt]penaltytoallmeleeattacksagainstthisunit*,向所有对该单位发动的肉搏攻击施加[AMT]惩罚。
+providesa[amt]penaltytoallmeleeattacksagainstthisunit*,向所有对该单位发动的近战攻击施加[AMT]惩罚。
 providesa[inverse_amt]bonustolanceinitiative*,提供额外[INVERSE_AMT]点小队主动权。
 providesa[inverse_amt]bonustounitinitiative*,提供额外[INVERSE_AMT]点单位主动权。
 providesomesupportbutalsouseofthegymfor¢100^000*,保证以 ¢100，000 提供部分支持， 并可使用健身室。
@@ -14063,7 +14063,7 @@ repairlocation,维修位置
 repairmech?,修理机甲?
 repairmech-{0},修理机甲 - {0}
 repairmedbaywithoutashipwidepowershutdown*,修理医务室但不关闭全船电力。
-repairrefit,修复改造
+repairrefit,维修与改装
 repairscaffolding,维修脚手架
 repairstothemechbayhaveunearthedamuchmoreextensivesystemofmechmaintenanceautomationthanyangpreviouslysuspected*onceitsbackonline^manycommontaskswillbecometrivial*,对机甲库的修理工作使一套比杨先前所怀疑的要更加庞大的自动化机甲维护系统被发掘了出来。 一旦它重新上线， 许多常规工作都会变得微不足道。
 repbonus,声望加成
@@ -14138,13 +14138,13 @@ reservetheprivatescreeningroomfortheseniorstaff*,为高级成员保留一个私�
 reset,重置
 resetdefault,恢复标准
 resignation,辞职
-resistingtheurgetorandomlyturnoffindividualsystems^yougivethesingleemergencyshut-offadecisivepull*theemergencybreakerkicksinwithanaudiblepop*newlinenewlineadisquietingsilencefillsthemechbay*yangcastsadiscerningeyeoverthe{scn_unit*chassis*description*name}andtheothermechsinthisbay^thencallsdowntoyou*sorryboss^butourcurrentprojectsaregoingtobeintheshoplongerthanplanned*,您压住了随手关掉某个单独系统的冲动 ， 而是果断地拉下了那一个紧急关闭闸。伴随着一声脆响 ， 紧急断路器启动了。\n\n机甲库里弥漫着令人不安的沉寂。杨用审视的目光扫过 {SCN_UNIT.Chassis.Description.Name} 和机库里其他的""机甲"" ， 然后示意你过去。 ""抱歉 ， 老板 ， 但我们手上的项目在机库里待的时间要比计划的长一点了。""
+resistingtheurgetorandomlyturnoffindividualsystems^yougivethesingleemergencyshut-offadecisivepull*theemergencybreakerkicksinwithanaudiblepop*newlinenewlineadisquietingsilencefillsthemechbay*yangcastsadiscerningeyeoverthe{scn_unit*chassis*description*name}andtheothermechsinthisbay^thencallsdowntoyou*sorryboss^butourcurrentprojectsaregoingtobeintheshoplongerthanplanned*,您压住了随手关掉某个单独系统的冲动 ， 而是果断地拉下了那一个紧急关闭闸。伴随着一声脆响 ， 紧急断路器启动了。\n\n机甲库里弥漫着令人不安的沉寂。杨用审视的目光扫过 {SCN_UNIT.Chassis.Description.Name} 和机甲库里其他的""机甲"" ， 然后示意你过去。 ""抱歉 ， 老板 ， 但我们手上的项目在机甲库里待的时间要比计划的长一点了。""
 resistthelureofagromechs*,抵抗农业机甲的引诱。
 resolute,坚决
 resolution,分辨率
-resolve,决心
-resolve{0},决心{0}
-resolvegenerationincreased,生成的决心增加
+resolve,战斗决心
+resolve{0},战斗决心{0}
+resolvegenerationincreased,生成的战斗决心增加
 respectfully^dr*murad^icouldntcarelesshowcleantheshipis*ilostafriendtoday*,恕我直言， ， 博士。 穆拉德 ， 我不在乎 ， 这艘船有多干净。我今天失去了一个朋友。
 respectfully^youreoffyourgourd*newlinenewlineimserious*ifyouthinkthefoolswhofollowedkerenskyintothegreatbeyondarestillouttheresomewhere^ivegotabridgetosellyou*,恕我直言，你脑子进水了。\n\n我是认真的。如果你真以为那些跟着克伦斯基去了大彼岸的傻瓜还在什么地方，那我这儿有座桥想卖给你。
 restandrecreation,休整并进行娱乐活动
@@ -14359,7 +14359,7 @@ rotate,旋转
 rotunda,圆形大厅
 rotundareconvehicle,Rotunda侦察车
 roughterrain,崎岖地形
-roughterrainreducesmovementspeedandcausesunitstotake150%stabilitydamagefromallattacks*+4difficultytohitunitswithinroughterrainwithmeleeattacks*,崎岖地形会降低移动速度， 使单位在所有攻击下蒙受150%的失衡伤害。 使用肉搏攻击崎岖地形中的单位命中难度+4。
+roughterrainreducesmovementspeedandcausesunitstotake150%stabilitydamagefromallattacks*+4difficultytohitunitswithinroughterrainwithmeleeattacks*,崎岖地形会降低移动速度， 使单位在所有攻击下蒙受150%的失衡伤害。 使用近战攻击崎岖地形中的单位命中难度+4。
 round,回合
 round(s),回合
 round{0},回合{0}
@@ -14630,7 +14630,7 @@ select{0}items,选择 {0} 件物品
 selectadeath-from-aboveattackposition*,选择使用死神天降攻击的位置。
 selectamechforstorage,选择要入库的机甲
 selectamechtostoreorscrap,选择要入库或拆解的机甲
-selectameleeattackposition*,选择一处肉搏攻击的位置。
+selectameleeattackposition*,选择一处近战攻击的位置。
 selectaskirmishtoresumeplay,选择一场遭遇战以继续游戏
 selectatargetwithyourmouse^orpresstabtocyclebetweentargets*clickfirewhenready*,用你的鼠标选择目标， 或按TAB键切换目标。 准备好了就点击开火。
 selectaunit^orbraceallremainingmechs*,选择一个单位， 或让所有剩下的机甲抵御冲击。
@@ -15271,7 +15271,7 @@ specialization,特长
 specialization:gunnerynewlinenewlineadeptattheuseofrangedweaponryincombatandabletotacklemultipleopponentsatonceviamulti-target*,<b><color=#85DBF6>专长:</color> 枪炮</b>\n\n作战时擅长使用远程武器， 能够通过""多目标攻击""同时应付多个对手。
 specialization:gutsnewlinenewlinecapableofstandingtheirgroundmoreeffectivelythroughbulwarkandabletosufferadditionalinjuriesbeforebeingincapacitated*canalsobettercontrolrecoileffectsfromweapons*,<b><color=#85DBF6>特长:</color> 勇气</b>\n\n能通过""固若金汤""更有效地坚守阵地， 在失能之前能承受更多伤害。 也能更好地控制武器的后坐效应。
 specialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofevasivemoveandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>特长:</color>驾驶</b>\n\n技术娴熟的机甲驾驶员，能通过闪避移动避免伤害，近战攻击也更准。由他驾驶的机甲更难陷入失衡。
-specialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>特长:</color> 驾驶</b>\n\n擅长控制机甲， 通过""步伐沉稳""躲避伤害， 并且更长于肉搏攻击。 所驾驶的机甲要进入""失稳""状态有着更高的阈值。
+specialization:pilotingnewlinenewlineskilledinhandlingamechandavoidingdamagethroughtheuseofsurefootingandbetterathittingwithmeleeattacks*hasanincreasedthresholdatwhichpilotedmechsbecomeunsteady*,<b><color=#85DBF6>特长:</color> 驾驶</b>\n\n擅长控制机甲， 通过""步伐沉稳""躲避伤害， 并且更长于近战攻击。 所驾驶的机甲要进入""失稳""状态有着更高的阈值。
 specialization:tacticsnewlinenewlineeffectiveatspottingtargetsviasensorlockandtakingbetteradvantageofindirectfireopportunities*weaponminimumrangesarealsoimproved*,<b><color=#85DBF6>特长:</color> 战术</b>\n\n通过""感应器锁定""高效地发现目标， 更好地利用间瞄火力机会。 也会改善武器的最小射程。
 specializationscripthere,SpecializationScriptHere
 specialoperator,特殊操作符
@@ -15589,7 +15589,7 @@ strikernarc,前锋Narc
 striparmor,拆除装甲
 stripequip,拆除装备
 strollingdownthehall^youcollidewith[[tgt_mw^{tgt_mw*callsign}^whoseemstobeinahurry*oh^commander!iwaslookingfordariusbutyoulldo[[scn_mw^{scn_mw*callsign}isonthevergeofabrawlwith[[trt_mw^{trt_mw*callsign}*weneedsomeoneinauthoritytobreakthisup*newlinenewlineyouraiseyoureyebrows*youhavecommandexperience^dontyou^{tgt_mw*callsign}?newlinenewline{tgt_mw*callsign}blinks*well^yeah*butonboardyourship^imjustapilot*idontwanttooverstepmyrank*,你走在走廊上， 撞见了[[TGT_MW{TGT_MW.Callsign}]]， 他好像有急事。 ""哦， 指挥官！我正想找达吕斯， 不过找您也行。 [[SCN_MW{SCN_MW.Callsign}]]眼看就要和[[TRT_MW{TRT_MW.Callsign}]]打起来了。我们需要一个有权威的人来制止。"" ""\n\n你挑起眼毛。 ""你有指挥经验， 不是吗， {TGT_MW.Callsign}?""\n\n{TGT_MW.Callsign}迟疑了一下。 ""嗯， 是的。但在您的舰上， 我只是一名飞行员。我不想越权。""
-struckbyameleeattack,被肉搏攻击撞击
+struckbyameleeattack,被近战攻击撞击
 struckbyanenemy{killedby_unit*displayname},被一部敌方{KILLEDBY_UNIT.DisplayName}击中
 struckintheheadbyanenemy{killedby_unit*description*name},被一部敌方{KILLEDBY_UNIT.Description.Name}击中头部
 struckoutonown^disgustedwithnobility,自行出局， 厌恶贵族
@@ -16226,7 +16226,7 @@ thatremindsme^bossthegalleysoutofpopcorn*illstockupthenexttimewereinport*,这让
 thatsabiggun*,那可是门大炮。
 thatsabigmech*,那可是部大机甲.
 thatsabouttheshapeofit*andyouretoofarawaytostopus*,差不多就是这样。而你离得太远，拦不住我们。
-thatsaboutwhatidexpectfromadrunklikegarrilac*newlinenewlinethankyou^commander*youveremovedaparticularlyirritatingthornfrommyside^andiwontforgetit*,这就是我对加里拉克这样的酒鬼的期望。\n\n谢谢你， 指挥官。你从我的爪子里拔了一根特别刺激的刺。我不会忘记你。
+thatsaboutwhatidexpectfromadrunklikegarrilac*newlinenewlinethankyou^commander*youveremovedaparticularlyirritatingthornfrommyside^andiwontforgetit*,这就是我对加瑞拉克这样的酒鬼的期望。\n\n谢谢你， 指挥官。你从我的爪子里拔了一根特别刺激的刺。我不会忘记你。
 thatsaboutwhatiexpected*wellneedtoremainwaryofherwhenwetakethefieldshesadangerouswomanwithsomethingtoprove*,跟我预料的差不多。上场时我们得提防她。这女人很危险，而且急于证明自己。
 thatsabsolutelytrue*butitsalsotruethatreturningtheyachtwillworkwondersforourrepwithhousedavion*theydprobablygivenuponeverseeingitagain*newlinenewlinemyadvice?letsputallofthisbehindusandfindanotherjob*illbehappiestifweneverhavetothinkaboutayashahadleyagain*,这完全没错。不过把游艇还回去， 也确实会让我们在达维恩家族那边名声大涨。他们大概早就不指望能再见到它了。\n\n我的建议?把这件事放下， 再去找份新差事。要是我们永远不用再想起阿亚沙哈德利， 我就最高兴了。
 thatsacompletesuccess^commander*wevedoneit*thisworldisreadytocracklikeanegg*,这是彻底的成功，指挥官。我们做到了。这颗星球已经像鸡蛋一样等着被敲开了。
@@ -16682,15 +16682,15 @@ theauriganreachisaspecificgroupofabouttwodozensystemsintherimwardperipheryborder
 theavengingangelonlyhas4*5tonsofarmor^andtriestomakeupforthatwithgreaterspeedandjumpcapability*imnotsureitstestpilotswereallthathappywiththeresults^butthevnd-1aaisstillafastwaytomoveappcandafewlrmsaroundtheedgeofafight*,""复仇天使""只有4.5吨装甲， 并试图用更高的速度和跳跃能力来弥补这一点。 我不确定它的试机员是不是对此结果感到高兴， 但VND-1AA依然是一条在战斗边缘带着一门粒子炮和几套长程导弹机动的捷径。
 theaveragecoststhisupgradewillincurpermonth,此升级的平均每月成本
 theaveragedifficultyofcontractsfoundinthissystem,本星系合约的平均难度
-theawesome8tisasuperbfiresupportmech^thoughitsheavyarmorisabitwastedinthatrole*itcanstillputupagoodfightatmediumranges^anditcancrushsmallerunitsoutrightwithmeleeattacks*,""可畏8T""是一种极佳的火力支援机甲， 不过它厚重的装甲用在那种角色上有点浪费。 它依然擅长在中距离作战， 也能用肉搏攻击彻底碾碎较小的单位。
+theawesome8tisasuperbfiresupportmech^thoughitsheavyarmorisabitwastedinthatrole*itcanstillputupagoodfightatmediumranges^anditcancrushsmallerunitsoutrightwithmeleeattacks*,""可畏8T""是一种极佳的火力支援机甲， 不过它厚重的装甲用在那种角色上有点浪费。 它依然擅长在中距离作战， 也能用近战攻击彻底碾碎较小的单位。
 thebadlandsareagoldmineofrare-earthmetalsandandfissilematerials*thedirectoratehasseizedcontrolofhousegallasslargestprocessorandrefinery^andtheyregettingreadytomoveayearssupplyofexoticmaterialsoffworld*,这片劣地是一处稀土金属和裂变材料的金矿。 理事会已经占据了加拉斯家族最大的处理精炼厂， 他们正准备将一年供应量的异种材料运离这里。
 thebadlandsareagoldmineofrare-earthmetalsandfissilematerials*thedirectoratehasseizedcontrolofhousegallasslargestprocessorandrefinery^andtheyregettingreadytomoveayearssupplyofexoticmaterialsoffworld*,这片劣地是一处稀土金属和裂变材料的金矿。 理事会已经占据了加拉斯家族最大的处理精炼厂， 他们正准备将一年供应量的异种材料运离这里。
 thebadlandsbiomeisawind-scouredwastelandwithlittlevegetationandlittlewater*theextremeheatmakesitmoredifficultformechstosinkheat*fieldsofcrystallinemineraldepositsinterferewithtargetingsystems^makingithardertoshootintothem^aswellastoshootoutofthem*,劣地生物群系是一片狂风肆虐的废土， 植物与水都很稀少。 极端高温让机甲更加难以散热。 成片的结晶矿化沉积物会干扰瞄准系统， 使得射入其中与从中射出都更为困难。
 thebanksareholdingourjumpshipaccesshostageuntilwerepayourdebts*fornow^wecanonlygobetweenúrcruinneandthenearbysystemsofalloway^bellerophon^anddetroit*,银行把我们的远航舰许可作为结清账款前的抵押。 从现在开始， 我们只能在乌尔克鲁讷， 和附近的阿洛韦， 柏勒洛丰， 底特律星系之间航行。
-thebanshee3ewasoriginallydesignedforclosecombat^withbetterspeedthanmostotherassaultmechs*whileithasheavyarmorandpowerfulmeleeattackcapability^itsfirepowerisseverelylackinganditcanstillbeflankedbylighterunits*,""女妖3E""起初被设计用于近战， 速度比其它绝大多数的突击型机甲都快。 尽管它有着厚重的装甲以及强大的肉搏攻击能力， 但它严重缺乏火力， 也会被轻型单位袭击侧面。
-thebanshee3mmountsrespectableweaponrywithbetter-than-averagespeedandarmor*thiscomesatthecostofverypoorheatmanagement*itsgoodathuntinglighterunits^especiallyifitcanclosetomeleerange*,""女妖3M""装备了相当好的武器， 有着超出平均的速度和装甲。 带来的代价是十分差劲的热量管理。 它长于猎杀轻型单位， 特别是接近到肉搏距离上的时候。
+thebanshee3ewasoriginallydesignedforclosecombat^withbetterspeedthanmostotherassaultmechs*whileithasheavyarmorandpowerfulmeleeattackcapability^itsfirepowerisseverelylackinganditcanstillbeflankedbylighterunits*,""女妖3E""起初被设计用于近战， 速度比其它绝大多数的突击型机甲都快。 尽管它有着厚重的装甲以及强大的近战攻击能力， 但它严重缺乏火力， 也会被轻型单位袭击侧面。
+thebanshee3mmountsrespectableweaponrywithbetter-than-averagespeedandarmor*thiscomesatthecostofverypoorheatmanagement*itsgoodathuntinglighterunits^especiallyifitcanclosetomeleerange*,""女妖3M""装备了相当好的武器， 有着超出平均的速度和装甲。 带来的代价是十分差劲的热量管理。 它长于猎杀轻型单位， 特别是接近到近战距离上的时候。
 thebanshee3sisslowerthanthestockdesign^butitcantakeapunchwhilepummelinganenemytotheground*ifyoureunsatisfiedwiththestockbansheeslackoffirepower^thisisthevariantyouvebeenwaitingfor^commander*,""女妖3S""比常备型号要慢， 可它能把敌人打趴下。 如果你不满意常备型""女妖""缺乏火力， 那这就是你所等待的变型机， 指挥官。
-thebanshee3ssacrificesitstrademarkspeedforalargeexpansioninfirepower*the3sfillstheroleofawellarmoredsniper^sportingtwoppcsandanac10whilestillbeingcapableofinflictingheavymeleedamage*,""女妖3S""牺牲了自己招牌式的速度， 换来火力上的极大扩展。 3S型填补了一个防护良好的狙击手角色， 装备了两门粒子炮和1门AC/10自动炮， 同时依然可以造成巨大的肉搏伤害。
+thebanshee3ssacrificesitstrademarkspeedforalargeexpansioninfirepower*the3sfillstheroleofawellarmoredsniper^sportingtwoppcsandanac10whilestillbeingcapableofinflictingheavymeleedamage*,""女妖3S""牺牲了自己招牌式的速度， 换来火力上的极大扩展。 3S型填补了一个防护良好的狙击手角色， 装备了两门粒子炮和1门AC/10自动炮， 同时依然可以造成巨大的近战伤害。
 thebarrackssupportupto{res_value*tostring}mechwarriors,营房支持多达{RES_VALUE.ToString}名机甲战士
 thebarracksworkout,营房健身
 thebarrenrockofaomenwasaviablesourceofgermanium^acriticalelementfork-fdrives*withfewerdrivesinproduction^andmoreeasilyextractedsourcesoftheraremineralavailable^theleagueultimatelyabandonedtheminingfacility*,奥蒙光秃秃的岩石可以切实提供锗这种K-F驱动器的重要元素。 随着驱动器产量日益减少， 以及这种稀有矿物有了更多易于开采的来源， 联盟最终放弃了这座矿业设施。
@@ -16875,7 +16875,7 @@ thedraconiscombine(kurita),天龙联合体(栗田)
 thedraconiscombineisoneofthefivesuccessorstatesofthestarleague^locatedcorewardandspinwardofterra*ruledbyhousekurita^thecombinehasalwaysbeenaggressivelyexpansionisttheheadofthecombinewasthefirstofthecouncillordstodeclarehimselfthenewrulerofthecollapsingstarleague*regularlyinconflictsalongitsborderswithallitsneighbors^thecombineisahighlystructured^militaristicsociety^withrulershipinthehandsofthecoordinator^thecommander-in-chiefofthedraconismilitary*thecombinescultureisheavilyinfluencedbythejapaneserootsoftherulingfamilydespitetheminoritystatusofthosewithjapaneseancestryasthisculturalheritageisimposedfromabovebythepredominantlyjapaneserulingclass*thecurrentleaderofthecombineiscoordinatortakashikurita*,天龙联合体是星际联盟五大继承国家之一，位于地球的(银河)核向(即北方)和旋向(即东方)。栗田家族统治的联合体一向热衷于侵略扩张——联合体元首是议会领主中第一个自封为崩溃中的星际联盟新统治者的人。联合体常年与所有邻国在边界上冲突不断，它是一个高度组织化的军国主义社会，统治权掌握在协调人手中，也就是天龙军队的最高指挥官。联合体的文化深受统治家族日本源流的巨大影响——尽管日本血统的人在人口中只占少数——因为这种文化遗产是由占主流的日本统治阶级自上而下强加的。联合体现任统治者是协调人栗田孝。
 thedraconiscombineispleasedwithyourfervor^commander*yourskillsinbattlearepreciselythesortthatyoungcadetscouldlearnfrom*,天龙联合体对你的热情很是满意， 指挥官。 你的作战技艺恰恰是年轻的军校生应当学习的那种。
 thedraconiscombinemusteredsoldiery^ordcms^isthemilitaryofthedraconiscombine*theyarethecentralpillarofdraconissociety^andfollowabushido-inspiredcodeofhonor*,天龙联合体召集军团， 即天龙联合军(DCMS)， 是天龙联合体的军队。 他们是天龙社会的中坚， 所遵循的荣誉准则深受<i>武士道</i>影响。
-thedragon1nisabeefymachinethatcantakeaseriousbeatingbuttendstobeabitlightonweaponry*itmovesfastforaheavymech^though^whichmakesitwellsuitedtoclosingformeleeattacksagainstslowertargets*,""龙1N""是台粗壮的机器， 能承受重击， 但是武装有点弱。 不过， 对重型机甲而言它相当快， 适合接近缓慢的目标进行肉搏攻击。
+thedragon1nisabeefymachinethatcantakeaseriousbeatingbuttendstobeabitlightonweaponry*itmovesfastforaheavymech^though^whichmakesitwellsuitedtoclosingformeleeattacksagainstslowertargets*,""龙1N""是台粗壮的机器， 能承受重击， 但是武装有点弱。 不过， 对重型机甲而言它相当快， 适合接近缓慢的目标进行近战攻击。
 thedropshipcontrolcentermustbedownbeforetheadvcoronacharrives,在<i>挽歌号飞船</i>抵达前， 必须摧毁空投艇管制中心
 theduchyofandurien,安杜瑞恩公国
 theeaglehaslanded^boss*wereintheshowroom^surroundedbyawholebunchofreallyprettybattlemechs*newlinenewlinerealtalk^thesebeautiesareaspolishedasabodybuildersbiceps*ifyoutoldmethatgravesspent10hoursadayrubbingbabyoilonem^idbelieveit*,老鹰已降落，Boss。我们在展厅里，周围是一排<i>极其漂亮的</i>BattleMechs。\n\n不骗你，这些美人亮得像抹了油的健美运动员。就像格雷夫斯每天花10小时给它们抹宝宝油一样。
@@ -16993,7 +16993,7 @@ theguykeepssayingthathadleyhasamessageforyou^thatsheneedstotalk*newlinenewlineid
 thehangarisdefenseless^anditlookslikegravesistakingthebait*long-rangesensorsarepickingupactivityoutbyhisshowroom*,机库不再防御，格雷夫斯似乎上钩了。我们的远程感应器在他的展览大楼中显示活动。
 thehangarsjustahead^commander*impickingupalotofbattlemechactivityoutfront*,机库就在前方， 指挥官。我看到它前面有很多战斗机甲活动。
 thehatchetisameleeweaponequippedtothehatchetmanasaprototypetotestforcemultiplicationbenefitsinclosecombat*thisstarbladeprototypeisaffixedpermanentlytothemechsrightarm*itmaybedamageanddisabled^butitcanberepaired*,短斧是一种近战武器，作为原型装在 ""斧王"" 上，用来测试近战中力量倍增的效果。这台 Starblade 原型机被永久固定在机甲右臂上。它可能受损失效，但也可以修复。
-thehatchetisameleeweaponequippedtothehatchetmanasaprototypetotestforcemultiplicationbenefitsinclosecombat*thisstarbladeprototypeisaffixedpermanentlytothemechsrightarm*itmaybedamagedanddisabled^butitcanberepaired*,短斧是一种肉搏武器， 装备在""斧王""上作为原型来测试近战中的力量倍增优势。 这种""星刃""原型被永久性地结合在机甲的右臂上。 它可能会受损直至无法使用， 但可以进行修复。
+thehatchetisameleeweaponequippedtothehatchetmanasaprototypetotestforcemultiplicationbenefitsinclosecombat*thisstarbladeprototypeisaffixedpermanentlytothemechsrightarm*itmaybedamagedanddisabled^butitcanberepaired*,短斧是一种近战武器， 装备在""斧王""上作为原型来测试近战中的力量倍增优势。 这种""星刃""原型被永久性地结合在机甲的右臂上。 它可能会受损直至无法使用， 但可以进行修复。
 thehatchetman3kfurtherindexesonthestockdesignsclosecombatrole^addingmorearmorandreplacingitsac10foranarrayofsrms^lasers^andanti-personnelweapons*thistheultimatemeleebrawler*,""斧王"" 3K 延续了标准型号的近战定位:更多装甲，并用多具短程导弹发射器、激光和反人员武器取代了 AC/10，使这台机甲成为终极近战格斗手。
 thehatchetman3xfurtherindexesonthestockdesignsclosecombatrole^addingmorearmorandreplacingitsac10foranarrayofsrms^lasers^andanti-personnelweapons*thisistheultimatemeleebrawler*,""斧王"" 3X 延续了标准型号的近战定位:更多装甲，并用多具短程导弹发射器、激光和反人员武器取代了 AC/10，使这台机甲成为终极近战格斗手。
 thehatchetman-3xfurtherindexesonthestockdesignsclosecombatrole^addingmorearmorandreplacingitsac10foranarrayofsrms^lasers^andanti-personnelweapons*thisistheultimatemeleebrawler*,""斧王"" -3X 延续了标准型号的近战定位:更多装甲，并用多具短程导弹发射器、激光和反人员武器取代了 AC/10，使这台机甲成为终极近战格斗手。
@@ -17207,8 +17207,8 @@ thenewholovidchipsprovesoenjoyablethatthecrewvoluntarilysetsupawaitlistasanalter
 thenewholovidchipsprovesoenjoyablethatthecrewvoluntarilysetsupawaitlistasanalternativetocrowdinginfrontofatinybarracksviewscreen*newlinenewlinelaterintheweek^[[scn_mw^{scn_mw*callsign}findsyouinthemess*commander^thanksforallthenewholovids*ijustcantgetenoughof[[dm*basedescriptiondefs[loreholovidminormajor]^minormajor*idswearthewritershavealisteningdeviceaboardtheargo*itsuncanny!,新的全息视频芯片很受欢迎，船员们主动排出一份等候名单，而不是挤在小小的营房屏幕前。\n\n几天后，[[SCN_MW{SCN_MW.Callsign}]]在食堂找到你。""指挥官，谢谢你带来的所有新全息视频。我对<i>[[DM.BaseDescriptionDefs[LoreHolovidMinorMajor]未成年少校]]</i>怎么也看不够。我敢说编剧在<i>阿尔戈号</i>上装了窃听装置。真是不可思议!""
 thenewholovidchipsprovesoenjoyablethatthecrewvoluntarilysetsupawaitlistasanalternativetocrowdinginfrontofatinybarracksviewscreen*newlinenewlinelaterintheweek^[[scn_mw^{scn_mw*callsign}findsyouinthemess*commander^thanksforallthenewholovids*ijustlovethenewepisodesof[[dm*basedescriptiondefs[loreholovidroughriders]^roughriders!theyreallycapturelifeintheperiphery*,新的全息视频芯片很受欢迎，船员们主动排出一份等候名单，而不是挤在小小的营房屏幕前。\n\n几天后，[[SCN_MW{SCN_MW.Callsign}]]在食堂找到你。""指挥官，谢谢你带来的所有新全息视频。我很喜欢<i>[[DM.BaseDescriptionDefs[LoreHolovidRoughRiders]狂野骑士]]</i>的新剧集!它们真的把外围的生活拍出来了。""
 thenewholovidchipsprovesoenjoyablethatthecrewvoluntarilysetsupawaitlistasanalternativetocrowdinginfrontofatinybarracksviewscreen*newlinenewlinelaterintheweek^[[scn_mw^{scn_mw*callsign}findsyouinthemess*commander^thanksforallthenewholovids*ireallyenjoyedwatching[[dm*basedescriptiondefs[loreholovidundercover]^undercoveragain*itssuchafascinatingviewintothepoliticsoftheperiod*andthefashions^wow!,新的全息视频芯片很受欢迎，船员们主动排出一份等候名单，而不是挤在小小的营房屏幕前。\n\n几天后，[[SCN_MW{SCN_MW.Callsign}]]在食堂找到你。""指挥官，谢谢你带来的所有新全息视频。再次观看<i>[[DM.BaseDescriptionDefs[LoreHolovidUnderCover]卧底娇娃]]</i>真的很有意思。这部剧很好地展现了那个时代的政治。还有那时的时装，真棒!""
-thenextday^dariusreportsin*asperyourorders^yanghasbeenputting[[tgt_mw^{tgt_mw*callsign}stechbackgroundtouseinthemechbay*itlookslikethismayevenboostproductivityforawhile*{tgt_mw*callsign}isntfightingwiththetechniciananymore^either^butthatsprobablybecauseyangskeeping{tgt_mw*obj}toobusy*,第二天，达吕斯来报告。""按照您的命令，杨已经在机库中利用[[TGT_MW{TGT_MW.Callsign}]]的技术背景。看起来这甚至能在一段时间内提高产量。{TGT_MW.Callsign}也不再和技术人员争吵了，但那大概是因为杨让{TGT_MW.OBJ}太忙了。""
-thenextday^dariusreportsin*asperyourorders^yanghasbeentryingtoput[[tgt_mw^{tgt_mw*callsign}stechbackgroundtouseinthemechbay*itisntwhatidcallanunqualifiedsuccess^but{tgt_mw*callsign}isntfightingwiththetechniciananymore^either*idguessthatsbecausetheyvedecidedthatyangistheircommonenemy*,第二天，达吕斯来报告。""按照您的命令，杨一直在机库中尝试利用[[TGT_MW{TGT_MW.Callsign}]]的技术背景。我不会说这完全成功，但至少{TGT_MW.Callsign}不再和技术人员争吵了。我猜是因为他们认定杨是他们共同的敌人。""
+thenextday^dariusreportsin*asperyourorders^yanghasbeenputting[[tgt_mw^{tgt_mw*callsign}stechbackgroundtouseinthemechbay*itlookslikethismayevenboostproductivityforawhile*{tgt_mw*callsign}isntfightingwiththetechniciananymore^either^butthatsprobablybecauseyangskeeping{tgt_mw*obj}toobusy*,第二天，达吕斯来报告。""按照您的命令，杨已经在机甲库中利用[[TGT_MW{TGT_MW.Callsign}]]的技术背景。看起来这甚至能在一段时间内提高产量。{TGT_MW.Callsign}也不再和技术人员争吵了，但那大概是因为杨让{TGT_MW.OBJ}太忙了。""
+thenextday^dariusreportsin*asperyourorders^yanghasbeentryingtoput[[tgt_mw^{tgt_mw*callsign}stechbackgroundtouseinthemechbay*itisntwhatidcallanunqualifiedsuccess^but{tgt_mw*callsign}isntfightingwiththetechniciananymore^either*idguessthatsbecausetheyvedecidedthatyangistheircommonenemy*,第二天，达吕斯来报告。""按照您的命令，杨一直在机甲库中尝试利用[[TGT_MW{TGT_MW.Callsign}]]的技术背景。我不会说这完全成功，但至少{TGT_MW.Callsign}不再和技术人员争吵了。我猜是因为他们认定杨是他们共同的敌人。""
 thenextday^mechwarriorsandcrewcrowdintoanarrowbarrackshallwaytowatch[[tgt_mw^{tgt_mw*callsign}faceoffagainst[[scn_mw^{scn_mw*callsign}inonefinalgameofcorridorbocce*newlinenewlineinthewinningplay^{tgt_mw*callsign}bounces{tgt_mw*det}lastballoffthecorridorwalltwicetosend{scn_mw*callsign}sspinningawaytowardtheaudience*newlinenewlinethecreweruptsincheers^andcontinuetotalkaboutthematchfordaysafterward*,第二天，机甲战士和船员们挤进一条狭窄的营房过道，观看[[TGT_MW{TGT_MW.Callsign}]]与[[SCN_MW{SCN_MW.Callsign}]]最后一场过道地掷球的对决。\n\n在决胜的一投中，{TGT_MW.Callsign}让{TGT_MW.DET}最后一球在过道墙上反弹了两次，把{SCN_MW.Callsign}的球送得打着转飞向观众。\n\n船员们爆发出欢呼，之后好几天都在谈论这场比赛。
 thenextday^mechwarriorsandcrewcrowdintoanarrowbarrackshallwaytowatch[[tgt_mw^{tgt_mw*callsign}faceoffagainst[[scn_mw^{scn_mw*callsign}inonefinalgameofcorridorbocce*newlinenewlineinwhatturnsouttobethelastplay^{tgt_mw*callsign}makesanunfortunatethrowthatcauses{tgt_mw*det}balltoricochetoffaprotrudingservicepanel^bounceup^andhit{scn_mw*callsign}squareinthenose*{scn_mw*subj_c}{scn_mw*gender?nonbinary:collapse|default:colllapses}tothefloorinaheap*newlinenewlinedespitetheoutcome^thecrewcontinuetotalkaboutthematchfordaysafterward^andvisit{scn_mw*callsign}inthemedbayforsomelight-heartedribbing*,第二天，机甲战士和船员们挤进一条狭窄的营房过道，观看[[TGT_MW{TGT_MW.Callsign}]]与[[SCN_MW{SCN_MW.Callsign}]]最后一场过道地掷球的对决。\n\n这最后一投实在不幸，{TGT_MW.Callsign}让{TGT_MW.DET}球从一块突出的维护面板上弹开，又弹了起来，正中{SCN_MW.Callsign}的鼻子。{SCN_MW.SUBJ_C}{SCN_MW.Gender?NonBinary:瘫倒|Default:瘫倒}在地上缩成一团。\n\n尽管结果是这样，之后好几天船员们都还在谈论这场比赛，还去医务室看望{SCN_MW.Callsign}，说些轻松的玩笑话。
 thenexthitagainstthistargetfromtherearquadrantwillbeareararmorhit*,从后半球对该目标的下一击会打击背面装甲。
@@ -17291,8 +17291,8 @@ theothercadetsinmyclasswerentespeciallyhappysharingairwithacivvy^buttheycouldnts
 theotherenemyleopardjustmadeitsdropoff*lookslikemore{team_tar*factiondef*demonym}mechsonthefield*itsgettingcrowdeddownthere*,敌人的另一艘豹式空投艇刚刚降落。 看来战场上会有更多的{TEAM_TAR.FactionDef.Demonym}机甲。 那儿要变得拥挤起来了。
 theoutpostisours^commander*ouremployerhasagentsinboundtotakepossessionofthedataarchives*,这个哨所是我们的了， 指挥官。 我们的雇主派特工过来接手数据档案了。
 theoutpostisunderourcontrol^commander*,哨所在我们控制之下了， 指挥官。
-theoverallmoraleofyourcrewandmechwarriors^outofamaximumpossible50points*moralecanberaisedbymorelavishspendingonsalariesandluxuries^aswellasbyconstructingrecreationalupgradesinthedropship*becareful:ifyourmoraleistoolow^youmayencounternegativeevents*newlinenewlinehighermoralealsogeneratesmoreresolveperturnincombat^whichyoucanusetriggercertainspecialabilities*,你的船员和机甲战士的总体士气，最高为50点。士气可以通过在薪水与奢侈品上更慷慨的花费，以及在空投艇内建造休闲设施来提升。注意:如果你的士气太低，可能会遭遇负面事件。\n\n更高的士气也会在战斗中每回合产生更多<color=#F79B26>决心</color>，你可以用它来触发某些特殊技能。
-theownerofthetaverncalledtheblackjacksbeerunsurprisinglyresistssellingthepainting*butbetweenyourpassionateappealsanddariusspersuasivenegotiatingstyle^youeventuallywearherdown*newlinenewlinethenextday^backontheargo^youleadapairoftechniciansalloverthemechbay^tryingtofindtheperfectspottohangit*newlinenewlineyanglooksonappreciatively*shesafinemech^commander*thatpaintingreallycapturesherspirit*andisitmyimagination?butitseemslikethoseautocannonsarefollowingme^nomatterwhereimove,那家叫""The ""海盗旗""'s Beer的酒馆老板""不肯卖这幅画，这并不奇怪。但在你充满激情的请求和达吕斯有说服力的谈判之下，她最终还是被说动了。\n\n第二天回到<i>阿尔戈号</i>上，你带着两名技师在机库里转来转去，想找一个最合适的地方把它挂起来。\n\n杨看得很有兴致。""她是一台好机甲，指挥官。这幅画真的画出了她的精神。还有，是我多想了吗?那些自动炮好像一直跟着我，不管我走到哪里。""
+theoverallmoraleofyourcrewandmechwarriors^outofamaximumpossible50points*moralecanberaisedbymorelavishspendingonsalariesandluxuries^aswellasbyconstructingrecreationalupgradesinthedropship*becareful:ifyourmoraleistoolow^youmayencounternegativeevents*newlinenewlinehighermoralealsogeneratesmoreresolveperturnincombat^whichyoucanusetriggercertainspecialabilities*,你的船员和机甲战士的总体士气，最高为50点。士气可以通过在薪水与奢侈品上更慷慨的花费，以及在空投艇内建造休闲设施来提升。注意:如果你的士气太低，可能会遭遇负面事件。\n\n更高的士气也会在战斗中每回合产生更多<color=#F79B26>战斗决心</color>，你可以用它来触发某些特殊技能。
+theownerofthetaverncalledtheblackjacksbeerunsurprisinglyresistssellingthepainting*butbetweenyourpassionateappealsanddariusspersuasivenegotiatingstyle^youeventuallywearherdown*newlinenewlinethenextday^backontheargo^youleadapairoftechniciansalloverthemechbay^tryingtofindtheperfectspottohangit*newlinenewlineyanglooksonappreciatively*shesafinemech^commander*thatpaintingreallycapturesherspirit*andisitmyimagination?butitseemslikethoseautocannonsarefollowingme^nomatterwhereimove,那家叫""The ""海盗旗""'s Beer的酒馆老板""不肯卖这幅画，这并不奇怪。但在你充满激情的请求和达吕斯有说服力的谈判之下，她最终还是被说动了。\n\n第二天回到<i>阿尔戈号</i>上，你带着两名技师在机甲库里转来转去，想找一个最合适的地方把它挂起来。\n\n杨看得很有兴致。""她是一台好机甲，指挥官。这幅画真的画出了她的精神。还有，是我多想了吗?那些自动炮好像一直跟着我，不管我走到哪里。""
 thepackagehasbeendelivered^shugoyamaguchi*wellbetransferringthebutcherofshaulkhalaintoyourcustodydirectly*whenyougethimbacktothedraconiscombine^yourpeoplecandispensewhateverjusticetheyseefit*,包裹已送达，山口守护。我们会把绍尔哈拉的屠夫直接交给你处置。等你带他回到天龙联合体，你的人可以按他们认为合适的方式处置他，以伸张正义。
 thepackageisdelivered^xo*imtakingtheleopardtoasafedistancebeforethepiratescangettheirgunsrunningagain*,包裹已经送出， 副舰长。 在海盗们重新操起大炮前， 我得把豹式开到安全距离。
 thepastdoesntmatterrightnow;itsthefuturethatweneedtobeconcernedwith*keepyourcommsopen*ladymarinawillbeincontactsoontodiscussournextsteps*,过去现在不重要， 我们必须担心未来。敬请关注。 玛丽娜女士将很快与您联系， 讨论我们的下一步行动。
@@ -17323,7 +17323,7 @@ thepopulationofshaunavonismostlyconfinedtodomesandsubterraneanfacilities*deepfis
 theportablefansmostlywork,便携式风扇大多正常运作
 theportablefanswork,便携式风扇正常运作
 thepostgoesfullyofftherailswhenmr*juiceevokesthemovingimageofthejuicelessmasses^thosewhoneedjuicerotoenhancetheirfracturedmodernlives:,当 Juice 先生唤起那些需要 Juicero 来改善他们支离破碎的现代生活的无果汁群众的动态形象时，帖子完全出乎意料:
-thepowersbackontotherestofthemechbay^andwecanstartrepairsonthelastsixcubicles*evenifyoudontwanttofillthemwithmechs^believeme^icanputtheextraspacetogooduse*itsgonnatakeashitloadofwork^though*,电力回到了剩下的机甲库， 我们可以开始修复最后的6间隔舱。 相信我， 哪怕你不想用机甲填满它们， 我也能善用额外的空间。 只是还有好多工作要做。
+thepowersbackontotherestofthemechbay^andwecanstartrepairsonthelastsixcubicles*evenifyoudontwanttofillthemwithmechs^believeme^icanputtheextraspacetogooduse*itsgonnatakeashitloadofwork^though*,机甲库其余部分的电力恢复了，我们可以开始修复最后6个机甲隔舱。就算你不想用机甲把它们填满，相信我，多出来的空间我也能派上大用场。不过，这活儿可不轻松。
 thepreacherismomentarilytakenabackbyyouradmission^andthenoneofhisfollowersshoutsmurderers!andlevelsherrifle*newlinenewline[[tgt_mw^{tgt_mw*callsign}leapsinthewayasashotringsout^and{tgt_mw*subj}{tgt_mw*gender?nonbinary:spin|default:spins}totheground^clutching{tgt_mw*det}arm*afterthat^allhellbreaksloose*newlinenewlinebythetimetheauthoritiesarriveonthescene^youandyourteamarelonggone^nursingyourinjuriesontheshuttleridebacktotheargo*newlinenewlinedariusbreathesasighoffrustration*commander^thesevolkovitesareladyliaosproblemnow^notours*ifwemustpickafightwiththem^perhapsweshouldbeinourmechs*,那名传教士一时被你的坦白弄得不知所措。接着，他的一个女信徒大叫凶手！并把步枪对准了你。\n\n[[TGT_MW{TGT_MW.Callsign}]]扑到弹道前面，痛苦地倒在地上，手臂上裂开一道伤口。随后整个场面彻底乱成一团。\n\n等当局赶到时，你和你的队伍早已不见踪影。在返回<i>阿尔戈号</i>的穿梭机上，你们一边舔着自己的伤口，一边互相打量。\n\n达吕斯沮丧地叹了口气。指挥官，这些沃尔科维特人现在是廖女士的麻烦，不再是我们的了。如果我们非得跟他们动手，也许该坐在我们的机甲里。
 thepreacherismomentarilytakenabackbyyouradmission^buttherestofthecrowdbeginstohumwithanticipatedviolence*newlinenewline[[tgt_mw^{tgt_mw*callsign}leapsintothebriefpause^punchingthepreacherinthejawandtheoldmandropslikeasackofpotatoes*afterthat^allhellbreaksloose*newlinenewlinebythetimetheauthoritiesarriveonthescene^youandyourteamarelonggone^nursingyourinjuriesontheshuttleridebacktotheargo*newlinenewlinedariusbreathesasighoffrustration*commander^thesevolkovitesareladyliaosproblemnow^notours*ifwemustpickafightwiththem^perhapsweshouldbeinourmechs*,传教士被你的坦白暂时弄糊涂了，但人群开始低声议论，期待着暴力。\n\n[[TGT_MW{TGT_MW.Callsign}]]趁这短暂的停顿冲了上去，一拳打在传教士的下巴上，老人像一袋谷子一样倒了下去。在那之后，彻底乱成一团。\n\n等当局赶到现场时，你和你的团队早已离开，在返回<i>阿尔戈号</i>的穿梭艇上处理着伤势。\n\n达吕斯沮丧地叹了一口气。""指挥官，这些沃尔科维特人现在是廖夫人的麻烦，不是我们的。如果我们非要和他们交手，也许该坐在我们的机甲里。""
 thepreacherseemsconfusedandputsuparaucousinsistenceastoyouridentity*thenoneofhisfollowersshoutsmurderers!andlevelsherrifle*newlinenewline[[tgt_mw^{tgt_mw*callsign}leapsinthewayasashotringsout^and{tgt_mw*subj}{tgt_mw*gender?nonbinary:spin|default:spins}totheground^clutching{tgt_mw*det}arm*afterthat^allhellbreaksloose*newlinenewlinebythetimetheauthoritiesarriveonthescene^youandyourteamarelonggone^nursingyourinjuriesontheshuttleridebacktotheargo*newlinenewlinedariusbreathesasighoffrustration*commander^thesevolkovitesareladyliaosproblemnow^notours*ifwemustpickafightwiththem^perhapsweshouldbeinourmechs*,那名传教士十分困惑，大声坚持要你表明身份。接着，他的一个女信徒大叫凶手！并把步枪对准了你。\n\n[[TGT_MW{TGT_MW.Callsign}]]扑到弹道前面，痛苦地倒在地上，手臂上裂开一道伤口。随后整个场面彻底乱成一团。\n\n等当局赶到时，你和你的队伍早已不见踪影。在返回<i>阿尔戈号</i>的穿梭机上，你们一边舔着自己的伤口，一边互相打量。\n\n达吕斯沮丧地叹了口气。指挥官，这些沃尔科维特人现在是廖女士的麻烦，不再是我们的了。如果我们非得跟他们动手，也许该坐在我们的机甲里。
@@ -17352,7 +17352,7 @@ there*aproper^respectfulkilling*newlinenewlineyourcompanydeservesnoless*,所以�
 thereareafewkeythingstolookforinacontract*newlinenewlinefirst^youneedtounderstandwhattypeofmissionitis*next^youshouldtakeaccountoftheclimateconditionsintheareaofoperation*finally^itsimportanttoknowtheexpectedstrengthoftheopposingforce^oropforvital^even*,在每一份合约里，都有几个关键的地方需要留意。\n\n首先，你需要弄清楚这是哪种类型的任务。其次，你应该考虑行动区域的气候条件。最后，了解敌方部队的预期实力也很重要，甚至可以说是至关重要的。
 therearedifferentkindsofpower^{commander*callsign}*thefoundinghousesmaybeanemicintermsofmartialstrength^buttheirwordsstillcarryweightintheauriganreach*newlinenewlineiftheyrallybehindus^thepeoplewholovethemwillfollow*governmentshavebeentoppledwithless*,权力有很多种，{COMMANDER.Callsign}。创始家族也许军力虚弱，但他们的话在奥里根远邦仍有分量。\n\n如果他们站到我们身后，爱戴他们的民众就会跟随。政府被推翻的理由比这还少。
 therearefewmercenarieshouseliaotrustswithtaskslikethis^commander*makecertainourfaithisnotmisplaced*wecanbothprofitfromthis*,指挥官， 能让廖氏家族信任地托付这种任务的佣兵可不多。 确保我们的信任没有错误地托付。 我们都能从中获益。
-therearefourtypesofhardpoints:ballistic^energy^missile^andsupport*ballisticweaponsgeneratelittleheatbutrequireammothatcanexplodeifhitincombat*energyweaponsrequirenoammobutgeneratelargeamountsofheat*missileweaponsrequireammoandgeneratemoderateheat^buttheycandestabilizeanenemy*supportweaponsautomaticallyfireafterameleeattack*,挂点有四种类型: 弹道，能量，导弹和支援。弹道武器产生的热量很少，但需要弹药，而弹药在战斗中被命中可能会爆炸。能量武器不需要弹药，但会产生大量热量。导弹武器需要弹药并产生中等热量，但它们可以破坏敌人的稳定性。支援武器在肉搏攻击后自动开火。
+therearefourtypesofhardpoints:ballistic^energy^missile^andsupport*ballisticweaponsgeneratelittleheatbutrequireammothatcanexplodeifhitincombat*energyweaponsrequirenoammobutgeneratelargeamountsofheat*missileweaponsrequireammoandgeneratemoderateheat^buttheycandestabilizeanenemy*supportweaponsautomaticallyfireafterameleeattack*,挂点有四种类型: 弹道，能量，导弹和支援。弹道武器产生的热量很少，但需要弹药，而弹药在战斗中被命中可能会爆炸。能量武器不需要弹药，但会产生大量热量。导弹武器需要弹药并产生中等热量，但它们可以破坏敌人的稳定性。支援武器在近战攻击后自动开火。
 therearelogisticalbenefitsaswell^ofcourse*thetraditionalseatofhousedecimisispanzyr^butitssphereofinfluenceextendsintoryansfate^bringdam^andmechdur*andnowthathousedecimisisourally^wecanstartturningthepeople^facilities^andindustrialbasesofthosesystemsagainstthedirectorate*newlinenewlineanarmylivesordiesbyitssupplytrain^andourshasjustgottenstrongeratthedirectoratesexpense*andthisisonlythebeginning*,当然也有后勤上的好处。德西米斯家族的传统所在地是潘济尔，但它的影响范围延伸到Ryan's Fate，布灵丹和梅卡杜。既然德西米斯家族现在是我们的盟友，我们就可以着手让这些星系的居民、设施和工业基地转而反对理事会。\n\n一支军队的生死取决于它的供应链，而我们的供应链刚刚得到了加强，代价是理事会付出的。而这只是开始。
 therearemanyhazardsoutherethatcandamageabattlemech:radioactivesandstorms^corrosivevapors^riversofhydrofluoricacidandoverthecourseoftheircampaign^thetaurianshavebeenexposedtothemall*,这儿有许多危险源都可以损坏一部战斗机甲: 放射性沙尘暴， 腐蚀性蒸汽， 氢氟酸河水\u2026还有在战役过程中， 金牛人一直暴露在所有这些东西面前。
 thereareneveranyguaranteesinthislife^doctor*justdoyourbest*,这辈子没有什么是保证的， 医生。尽力而为吧。
@@ -17383,7 +17383,7 @@ thereisnogwydioncompanynotanymore*thesteinerkillteamcompletelywipedthemout*,格�
 thereisnojusticeterribleenoughforthatman*,对这个人来说，没有什么正义是太残酷的。
 thereisnotreasure!,没有宝藏！
 thereisnotreasure!itsstaplers!juststaplers!,<i>没有</i>宝藏！那些只是订书机！全都是订书机！
-thereisntanytimetogetyourjetsreplaced^soweregonnahavetomakedowithoutem*goaheadandtakethatmechdownwithameleeattack*iwannabesurenothingelseisgonnabreakdownonyourblackjackbeforewetakeitoutonthecormorantroad*,没时间更换你的跃进喷射器了， 我们得扔掉它们做事。 继续走， 用肉搏攻击击倒那部机甲。 我要确保你的""海盗旗""在我们去鸬鹚大道前不会再掉东西。
+thereisntanytimetogetyourjetsreplaced^soweregonnahavetomakedowithoutem*goaheadandtakethatmechdownwithameleeattack*iwannabesurenothingelseisgonnabreakdownonyourblackjackbeforewetakeitoutonthecormorantroad*,没时间更换你的跃进喷射器了， 我们得扔掉它们做事。 继续走， 用近战攻击击倒那部机甲。 我要确保你的""海盗旗""在我们去鸬鹚大道前不会再掉东西。
 thereisntanytreasure^pal*itsjustabunchofstaplersanddesklamps*thatswhatyourpeoplewerefightingover^bytheway*,没什么财宝，朋友。只有一堆订书机和台灯。你们就是为这个自相残杀的。
 thereisntenoughtime*itwonttakelongfortheccaftonoticethattheirobservationposthasbeencompromised*,SKKC 时间不够。 SKKC 很快就会， 意识到 ， 他们的观察站已被攻破。
 thereisprobablymoretothisthan{team_emp*factiondef*shortname}aresaying^butourrolewouldbelimitedtoescortingaconvoyofpersonnelcarrierstoanevacpoint*theremainderofthissituationissomeoneelsesproblem*,这可能比{TEAM_EMP.FactionDef.ShortName}说的还要复杂， 但我们的角色仅限于护送一队运兵车到撤离点。 剩下的局面是别人的问题。
@@ -17398,7 +17398,7 @@ thereitis^bosswevefoundtheblackcalderaarmory*thisiswherewellfindtheravenassuming
 therelativedurabilityofamechisdeterminedbytotalingthearmorandstructureforallitslocations*,机甲的相对耐久是由其所有部位的装甲和结构总和决定的。
 therelativefirepowerofamechisdeterminedbytotalingthepossibledamageofallitsweapons*,机甲的相对火力是由其所有武器可能造成的伤害决定的。
 therelativeheatefficiencyofamechisdeterminedbyitstotalabilitytosinkheat^comparedtothetotalheatgeneratedeachroundbyitsweaponsandjumpcapability*,机甲的相对热效率是由其发散热量的总能力， 相较每一轮由它的武器和跳跃能力产生的总热量决定的。
-therelativemeleestrengthofamechisdeterminedbyitstonnageandanymeleemodifiersthechassismighthave*,机甲的相对肉搏强度是由其吨位和机体可能具备的任何肉搏修正因子所决定的。
+therelativemeleestrengthofamechisdeterminedbyitstonnageandanymeleemodifiersthechassismighthave*,机甲的相对近战强度是由其吨位和机体可能具备的任何近战修正因子所决定的。
 therelativemovementcapabilityofamechisdeterminedbytotalingitsmovementspeedand^toalesserdegree^itsjumpcapability*,机甲的相对机动能力是由它的移动速度以及， 较为次要的方面上， 加上它的跳跃能力来决定的。
 therelativerangeofamechisdeterminedbycalculatingtheaveragerangeofallitsweaponsystems*,机甲的相对射程是计算其所有武器系统所得的平均射程来决定的。
 thereligiouszealoutshavegottentheirpoundoffleshtoday^onewayoranother*,无论如何， 狂信徒们今天受到了严惩。
@@ -17445,7 +17445,7 @@ theresonlyoneofthemleft!takeitoutandthisfacilityisours!,他们就剩最后一个
 theresonlyonepathforawarorphanraisedinagrouphomeinanationwherethesamewaryetrages*bjornhummel^ofthelyrancommonwealth^joinedthelcafassoonashewasofage^alongsidemanyofhisfostersiblings*newlinenewlinetheirgrouphomehadbeenagoodone^andheandhisfostersiblingskeptinclosecontactaftertheirdifferentassignments*untilhispromotiontospecialops^hesharedalmosteverythingwiththem*after^hisletterscloseddown^andhesawthesameslowwithdrawalfromthemasthewarpulledthemawayfromeachother*eventually^fortoomanyofthem^hedgetonefinalletteraboutthem^fromthepersonwhodraisedthem^informinghimoftheirdeath*andonce^throughshadymeans^hereceivedaletterfullofsecrets^sentbyafosterbrotherwhosubsequentlydied*newlinenewlinethesewerentsecretstoshakeanation^ordestroyacompany*notinagalaxyatwar*buttheyweresecretstoshatterasoul^andtheycametooclosetosomeofbjornsownexperiencesforhimtolockaway*ayearofpoorsleeprenderedhimunfitforduty^andhewasdischargedfromthelcaf*newlinenewlinethenightmareseasedalittle^then*buthesoonfoundtheonlywayhecouldreallysleepatnightwasifhewasengagedinacausehecouldreallybelievein*hespickyabouthiscontracts^now*hesgoingtomakethingsbetter*,对于一个在孤儿之家长大的战争孤儿，在一个同样的战争仍在肆虐的国度里，道路只有一条。天琴共和国的比约恩·胡梅尔一到年龄，就和许多义兄弟姐妹一起加入了天琴共和军。\n\n他们的孤儿之家一直很好，他和义兄弟姐妹在被派往不同岗位后仍保持着密切联系。在他晋升至特种部队之前，他几乎什么都和他们分享。之后，他的信越来越少，他也看到他们同样慢慢疏远，战争把他们彼此推开。最终，对太多人来说，他收到的最后一封关于他们的信，是养育他们的人写来的，告知他们的死讯。而有一次，通过见不得光的渠道，他收到一封写满秘密的信，是一位义兄弟送来的，那人随后也死了。\n\n这些秘密不足以动摇一个国家，或摧毁一家公司。在战火中的星河里，它们不算什么。可它们足以击碎一个灵魂，而且和他自己的某些经历太接近，他无法将其锁起来。整整一年夜里不得安宁，让他不再适合服役，于是他从天琴共和军退了伍。\n\n那时噩梦稍有好转。但他很快发现，唯一能让他在夜里安心的办法，就是投身于一件他真心相信的事业。现在，他挑合约很谨慎。他要让事情变得更好。
 theresonlyonetargetthatmattersonthisdrop^commander*,这次空投只有一个目标很重要， 指挥官。
 theresourtarget^boss*remember^hesasniper^andhismechisoutfittedwithstarleagueeraweaponry*ifyoutrytoengagehimatlongrange^thingscouldgetmessy*,那就是我们的目标，老大。记住，他是个狙击手，他的机甲装了星际联盟时代的武器。如果你试图在远距离上对付他，事情可能会变得很棘手。
-theresourtarget^boss*remember^shesabrawler^andhermechisoutfittedwithstarleagueeraweaponry*ifsheclosesintocqc-range^thingscouldgetmessy*,那就是我们的目标，老大。别忘了，她是个缠斗手，她的机甲装了星际联盟时代的武器。如果她逼近到肉搏距离，事情可能会变得很棘手。
+theresourtarget^boss*remember^shesabrawler^andhermechisoutfittedwithstarleagueeraweaponry*ifsheclosesintocqc-range^thingscouldgetmessy*,那就是我们的目标，老大。别忘了，她是个缠斗手，她的机甲装了星际联盟时代的武器。如果她逼近到近战距离，事情可能会变得很棘手。
 theresourtarget^commander*proceedwithcautionshadowhawkscanbedangerousatanyrange*,那就是我们的目标， 指挥官。 请小心\u2014""影鹰""在任何距离都很危险。
 theressomethingistilldontget^xo*whydidtheyabandonthisplaceifitsfullofstuffvaluableenoughthattheyrewillingtoflattentheplacetokeepitoutof{team_emp*factiondef*demonym}hands?,副舰长， 我还是有些事情没明白。 如果这个地方满是有价值的物资， 宁愿夷平也不能让{TEAM_EMP.FactionDef.Demonym}染指， 那为什么他们要放弃这里呢?
 theresthatstrongopposition^commander*watchyourpositionanddontgetflanked*,那就是那个强大的对手， 指挥官。 注意你的位置， 不要被迂回。
@@ -17663,7 +17663,7 @@ theunknownenemyforcewaslastseenhere*,这里就是最后看到不明敌军的地�
 theunsettledandabandonedsystemsoftherimwardfrontierareahavenforpiratesbothin-systempredatorsandrenegadejumpshipcaptainswhotransportpiratedropshipsfromonesystemtoanother^takingacutofanyillicitprofits*,缘向边地的无人星系和废弃星系是海盗们的天堂\u2014既是对星系内的掠夺者而言， 也是对在星系间运输海盗空投艇， 抽取非法所得的变节远航舰舰长而言。
 theurbanmechr60wasdesignedforexactlywhatthenameimplies:combatindenseurbanareas*assuch^ther60isveryheavilyarmored^butisextremelyslowdespiteitsintegratedjumpjets*armedwithasmalllaserandanac/10^ther60isadeadlyopponentagainstsimilarly-sizedmechs-ifitcangetcloseenoughtofightthem*,""都市战甲""R60的设计目的正如它的名字所暗示的：在人口密集的城市地区作战。因此R60重铠厚甲，虽然装有跳跃喷射器，速度却依然极其缓慢。它装备一门小型激光和一门AC/10自动炮，在对抗体量相近的机甲时，R60是个致命对手——前提是它能靠得足够近去交战。
 thevaluableturinbeefisgrownonthevastgrasslandsoftheplanetssinglecontinent^althoughmaintainingthealien-terranhybridisexpensive*inrecentyears^theranchershavebegunbranchingoutintohorsebreeding*,宝贵的都灵菜牛就出产在行星唯一大陆的大草原上， 不过维持外星-地球杂交品种很昂贵。 最近几年， 牧场主们已经开始把业务扩大到了马的育种。
-thevalueofabattlemechisdeterminedbyacombinationoffixedconstructioncostsforitschassis;itsenginesizeandmovementspeed;thearmoritmounts;andthenumberandtypeofhardpointsandweaponsinstalled*valueisfurthermodifiedbyequippedjumpjetsandbonusesorpenaltiestomeleeattacksinherenttothemechschassis*,战斗机甲的价值由多项因素共同决定：机体的固定建造成本；引擎大小与移动速度；所配的装甲；以及所安装挂点和武器的数量与类型。此外，装配的跳跃喷射器，以及机体本身对肉搏攻击的加成或惩罚，也会进一步影响其价值。
+thevalueofabattlemechisdeterminedbyacombinationoffixedconstructioncostsforitschassis;itsenginesizeandmovementspeed;thearmoritmounts;andthenumberandtypeofhardpointsandweaponsinstalled*valueisfurthermodifiedbyequippedjumpjetsandbonusesorpenaltiestomeleeattacksinherenttothemechschassis*,战斗机甲的价值由多项因素共同决定：机体的固定建造成本；引擎大小与移动速度；所配的装甲；以及所安装挂点和武器的数量与类型。此外，装配的跳跃喷射器，以及机体本身对近战攻击的加成或惩罚，也会进一步影响其价值。
 thevegetationofthisworldreleaseshallucinogensintotheatmosphere^leadingtodangerfromintoxicatednativefauna*,这颗星球的植物会向大气中释放致幻物质，被麻醉的本地动物会变得十分危险。
 thevehiclesseemtobeastandardsupplyconvoy^withanescortinglance*itwassimplebadluckthattheyhappenedtobescheduledtoarrivejustafterweneutralizedthebase*weneedtoeliminatethembeforetheyarrivehereandseeleaguesalvageandintelteamsallovertheirfacility*iwouldntexpectmorethanasinglelanceasanescort^butitspossiblethevehiclesthemselvesmayposeasignificantthreat^giventherestrictionsacovertoperationplacesonyourdroptonnage*,这些车辆看起来是一支带护卫小队的标准补给车队。他们偏偏安排在我们刚把基地清理干净的时候抵达，只能说是运气不好。我们必须在他们到达这里、看到联盟的打捞队和特工队正在拆解他们的设施之前，把他们解决掉。我估计护卫最多只有一个小队，但车辆本身也可能构成重大威胁，毕竟这次秘密行动限制了你的部署吨位。
 thevictor9stradessomeofitsalreadysubpararmortomountmoreweaponry*itsterrifyingforenemyforcestoseethismechrocketingoverahilltounleashitsconsiderablefirepower^butitalsoneedstoreallyworryaboutanyreturnfire*,""胜利者9S""用一部分本身就较弱的装甲换来装备更多的武器。 对敌军来说， 看到这个机甲飞过山丘， 宣泄它可观的火力是十分可怕的， 但它也真的需要好好担心回击。
@@ -18484,7 +18484,7 @@ tradeforsupplies*,换取补给物资.
 tradenegotiationsbetween{team_emp*factiondef*name}and{team_tar*factiondef*name}havebrokendown*webelievethatifwecaptureandholda{team_tar*factiondef*demonym}militarybaseinthe{tgt_system*name}system^wewillbeabletoforcethembacktothenegotiatingtable*yourjobistotakethebaseandholdituntilourforcescanoccupyit*,{TEAM_EMP.FactionDef.Name}和{TEAM_TAR.FactionDef.Name}之间的贸易谈判破裂了。我们相信，如果我们夺取并守住{TGT_SYSTEM.Name}星系里的一座{TEAM_TAR.FactionDef.Demonym}军事基地，就能逼他们回到谈判桌上。你的任务是拿下基地并守住它，直到我们的部队前来接管。
 trade-offscanbemade^butyouvegottabecareful*wehavetheabilitytoremovearmorfromindividuallocationsinordertosqueezemoreorbiggerweaponson^butlessarmorislessarmor*newlinenewlineyoudontwannawindupwithsomethingthatllblowoverinastrongbreezetrustmeonthat*iveseenithappenoftenenoughtoknow*,可以做取舍，但你得小心。我们有能力从个别部位移除装甲，以便塞进更多或更大的武器 - 但装甲少就是装甲少。\n\n你不会想要一台一阵强风就能吹翻的机甲，相信我。这种事我见得多了。
 trainer,教练
-training,训练
+training,训练模块
 trainingday,训练日
 trainingmodule1,1号训练模块
 trainingmodule2,2号训练模块
@@ -18880,7 +18880,7 @@ urbanartpassmap,城市艺术通行地图
 urbanbiome,城市生物群系
 urbandaysmoggy,城市，白天，雾霾
 urbandebris,城市废墟
-urbandebrisreducesmovementspeedandcausesunitstotake150%stabilitydamagefromallattacks*+4difficultytohitunitswithinroughterrainwithmeleeattacks*,城市废墟会减少移动速度， 导致单位在所有攻击下都会蒙受150%的稳定性伤害。 使用肉搏攻击崎岖地形中的单位命中难度+4。
+urbandebrisreducesmovementspeedandcausesunitstotake150%stabilitydamagefromallattacks*+4difficultytohitunitswithinroughterrainwithmeleeattacks*,城市废墟会减少移动速度， 导致单位在所有攻击下都会蒙受150%的稳定性伤害。 使用近战攻击崎岖地形中的单位命中难度+4。
 urbanfoggynight,城市，夜晚，雾
 urbanovercast,城市，阴天
 urbanprototype2,城市原型 2
@@ -18947,7 +18947,7 @@ vehicle^{0}t,车辆， {0}吨
 vehicledestroyed,车辆被摧毁
 vehicledisabled,车辆失能
 vehicles:,车辆：
-vehiclestakeextradamagefrommeleeattacks*,车辆受肉搏攻击时会受到额外伤害。
+vehiclestakeextradamagefrommeleeattacks*,车辆受近战攻击时会受到额外伤害。
 velazquez,委拉斯开兹
 vendetta,""宿怨""
 venezuela(bolivarianrepublicof),委内瑞拉
@@ -19142,7 +19142,7 @@ waterworld,丰水星球
 weagreedtomyuncle[[dm*basedescriptiondefs[lorerepmarik]^davindersdealbecausedamecatherinesactionsareputtingtheandurienpeopleatrisk*wearethegoddamneddefendersofandurien*wesworeanoathtoprotectthissystem^andweregonnadoit^evenifitmeanskicking[[dm*basedescriptiondefs[lorehousehumphreys]^househumphreysrightintheass*newlinenewlineourlancescanhelpeachanotheraccomplishtheirgoals^ortheycangoitaloneandfail*itsyourchoice^commander*,我们接受了我叔叔[[DM.BaseDescriptionDefs[LoreRepMarik]Davinder]]的提议，因为凯瑟琳夫人的所作所为正在危及安杜瑞恩的人民。<i>我们</i>就是他妈的<i>安杜瑞恩捍卫者</i>。我们<i>发誓</i>要保护这个星系，哪怕这意味着要往[[DM.BaseDescriptionDefs[LoreHouseHumphreys]Humphreys家族]]的屁股上狠狠踢一脚。\n\n我们的小队可以互相帮助，达成各自的目标，也可以单干然后失败。决定权在您，指挥官。
 weagreedtomyuncle[[dm*basedescriptiondefs[lorerepmarik]^davindersdealbecausedamecatherinesactionsareputtingtheandurienpeopleatrisk*wearethegoddamneddefendersofandurien*wesworeanoathtoprotectthissystem^andweregonnadoit^evenifitmeanskicking[[dm*basedescriptiondefs[lorehousehumphreys]^househumphreysrightintheass*newlinenewlineourlancescanhelponeanothertoaccomplishtheirgoals^ortheycangoitaloneandfail*itsyourchoice^commander*,我们接受了我叔叔[[DM.BaseDescriptionDefs[LoreRepMarik]Davinder]]的提议，因为凯瑟琳夫人的行径对整个安杜瑞恩的人口构成了威胁。<i>我们</i>就是他妈的<i>安杜瑞恩捍卫者</i>。我们<i>发誓</i>要保护这个星系，哪怕这意味着要往[[DM.BaseDescriptionDefs[LoreHouseHumphreys]Humphreys家族]]的屁股上狠狠踢一脚。\n\n我们的小队可以互相帮助，达成各自的目标，也可以单干然后失败。决定权在您，指挥官。
 weaimtoplease^ladysuiko*,我们只想让您满意，翠子女士。
-weakagainstmelee,面对肉搏时不利
+weakagainstmelee,面对近战时不利
 weakenedlargecivilianbuilding,遭削弱的大型民用建筑
 weakenedlargecivilianbuilding*,遭削弱的大型民用建筑。
 weakenedlargecorporatebuilding,遭削弱的大型企业建筑
@@ -19345,7 +19345,7 @@ welcomecommander,欢迎，指挥官
 welcomecommander!useyourparadoxaccounttologin*,<b>欢迎，指挥官！</b>请使用你的Paradox账户登录。
 welcomecommander_,欢迎，指挥官_
 welcomethecatonboardtheargo*,欢迎登上了<i>阿尔戈号</i>的猫。
-welcometo[[dm*basedescriptiondefs[loreadrar]^adrar^commander{commander*lastname}*ithankyouforyourpromptness^asalways*newlinenewline[[dm*basedescriptiondefs[lorehousesteiner]^housesteinerneedsyoutoescortanunarmedconvoytoareinforcedmechbayonthewesterntipof[[dm*basedescriptiondefs[loreblackearth]^blackearthplateau*thesafetyofthisconvoyisofparamountimportance;itscargoisbothpreciousandrare*,欢迎来到[[DM.BaseDescriptionDefs[LoreAdrar]阿德拉尔]]，指挥官{COMMANDER.LastName}。一如既往，感谢您迅速响应。\n\n[[DM.BaseDescriptionDefs[LoreHouseSteiner]施泰纳家族]]希望您护送一支无武装车队，前往黑土高原西端的加固机库。这支车队的安全至关重要，因为它的货物既珍贵又稀有。
+welcometo[[dm*basedescriptiondefs[loreadrar]^adrar^commander{commander*lastname}*ithankyouforyourpromptness^asalways*newlinenewline[[dm*basedescriptiondefs[lorehousesteiner]^housesteinerneedsyoutoescortanunarmedconvoytoareinforcedmechbayonthewesterntipof[[dm*basedescriptiondefs[loreblackearth]^blackearthplateau*thesafetyofthisconvoyisofparamountimportance;itscargoisbothpreciousandrare*,欢迎来到[[DM.BaseDescriptionDefs[LoreAdrar]阿德拉尔]]，指挥官{COMMANDER.LastName}。一如既往，感谢您迅速响应。\n\n[[DM.BaseDescriptionDefs[LoreHouseSteiner]施泰纳家族]]希望您护送一支无武装车队，前往黑土高原西端的加固机甲库。这支车队的安全至关重要，因为它的货物既珍贵又稀有。
 welcometo[[dm*basedescriptiondefs[lorebrockway]^brockway^commander{commander*lastname}*impleasedthatyouveansweredmysummons;notallmercenarycommandsareboldenoughtoattackdavioninterestsinsidethefederatedsunsownborders*,欢迎来到[[DM.BaseDescriptionDefs[LoreBrockway]布罗克维]]，指挥官{COMMANDER.LastName}。很高兴您响应了我的召唤。并非每支雇佣兵部队都有胆量在恒星联邦自己的疆域内攻击达维恩家族的产业。
 welcometo[[dm*basedescriptiondefs[lorecavalor]^cavalor^commander{commander*lastname}*newlinenewlineiappreciateyourtimelinessinrespondingtomysummons*thetaskthatihaveforyouisasensitivematterthatrequiresaswiftresponse*,欢迎来到[[DM.BaseDescriptionDefs[LoreCavalor]卡瓦罗尔]]，指挥官{COMMANDER.LastName}。\n\n感谢您及时回应我的召唤。我有一件敏感的任务要交给您，需要尽快办妥。
 welcometo[[dm*basedescriptiondefs[loremendham]^mendham^commander{commander*lastname}*imladysuikoofhousenakano*newlinenewlinewereaminorhouse^butwerehighlyregardedforoursenseofhonoratleast^inthe[[dm*factions[faction_kurita]^combine*butnow^ourgoodnameisthreatenedbyoutsiderswhoaresowingdivision*,欢迎来到[[DM.BaseDescriptionDefs[LoreMendham]门德姆]]，指挥官{COMMANDER.LastName}。我是中野家的水子夫人。\n\n我们只是个小家族，但凭我们的荣誉感，还算受人敬重...至少在[[DM.Factions[faction_Kurita]天龙联合体]]里是这样。可现在，我们的名声正被外人抹黑，他们在我们内部散播分歧。
@@ -19413,7 +19413,7 @@ well^shesaspleasantasever*andherecomesladycunninghamsdropship^rightoncue*,嗯，
 well^sheseemedhappy*,嗯，她看起来很开心。
 well^sheseemsnice*alittlesaccharineformytaste^butnice*newlinenewlineidontknowwhatyamaguchiwastalkingaboutearliersheseemedplentylucidtome*,嗯， 她看起来不错。有点影响我的口味 ， 但很好。\n\n我不知道 ， 山口之前的意思。她对我来说似乎很理智。
 well^shesoundsconfident*,嗯，她有自信.
-well^shit*,哦，狗屎。
+well^shit*,我操！
 well^shit*iguessimadeadman^then*newlinenewlineenjoyyourofficesupplies^youcolossalasshole*ihopeyouchokeonem*,废话。我想我是个死人了。\n\n享受官僚主义的乐趣， 你他妈的混蛋。我希望，你哽咽吧。
 well^shit*thatisntgood*,哦，狗屎。这可不太妙。
 well^shit*youcouldvetoldmethatupfrontandsavedusbothabunchoftime*newlinenewlineyousureyouwanttoturnthisofferdown?ireally^reallywantedyouforthisgig*,好吧，见鬼。你早说就能给我们俩省下不少时间。\n\n你<i>真的</i>要拒绝这个提议吗?我<i>真的很想让你</i>接这活。
@@ -20481,7 +20481,7 @@ yeah^sure*inthesamewaythateveryonenamedpatelisrelatedtoalltheotherpatels^andallt
 yeah^sure*itwasagoodwin*butwewouldnthaveanythingtobragaboutifthe[[dm*basedescriptiondefs[loremoderbjorn]^moderbjörnsdistractionhadntworked*newlinenewlinetheblackwidowisthemostdangerousmechwarrioralive^fullstop*ifshedmadeittothatfight^everyoneofuswouldbedead*,是的，当然。这是一场漂亮的胜利。但如果[[DM.BaseDescriptionDefs[LoreModerbjorn]Moderbjorn]]的牵制行动没成功，我们就没什么可吹的了。\n\n黑寡妇是当今最危险的机甲战士，句号。要是她赶上了那场战斗，我们全都得死。
 yeah^sure*itwasagoodwin*butwewouldnthaveanythingtobragaboutifthe[[dm*basedescriptiondefs[loremoderbjorn]^moderbjrnsdistractionhadntworked*newlinenewlinetheblackwidowisthemostdangerousmechwarrioralive^fullstop*ifshedmadeittothatfight^everyoneofuswouldbedead*,是的，当然。这是一场漂亮的胜利。但如果[[DM.BaseDescriptionDefs[LoreModerbjorn]Moderbjorn]]的牵制行动没成功，我们就没什么可吹的了。\n\n黑寡妇是当今最危险的机甲战士，句号。要是她赶上了那场战斗，我们全都得死。
 yeah^sure*ivegottimetotalk*,是，当然。我有时间聊。
-yeah^sure*sowheresthetwist?imean^imassumingyoudidntpullmeoutofthemechbaysoicouldlistentoalectureaboutastandardassassinationcontract*,是，当然。但它有什么特别之处呢?我假设 ， 你没有把我拉出机库 ， 教我一个关于完全正常的谋杀任务的课。
+yeah^sure*sowheresthetwist?imean^imassumingyoudidntpullmeoutofthemechbaysoicouldlistentoalectureaboutastandardassassinationcontract*,是，当然。但它有什么特别之处呢?我假设 ， 你没有把我拉出机甲库 ， 教我一个关于完全正常的谋杀任务的课。
 yeah^sure*wellgotoyourcoordinates^andwalkrightintowhateverhalf-assedtrapyouvesetforus*soundslikeagreatplan*,是，当然。我们向您的坐标进军并直接进入您为我们布置的业余陷阱，。听起来是个很棒的计划。
 yeah^sure^anytime*commandermarkhamneverreallypaidmuchattentiontothiskindofstuff^soyourinterestisawelcomechange*,但当然， 任何时候。马克姆指挥官从不关心， 所以你的兴趣是一个可喜的变化。
 yeah^sure^butistillcantbelievewepaidthatgarrilacidiotoff*weshouldvetakenhimoutandkeptallofthemoneyforourselves*,是的，当然，但我还是不敢相信我们付钱给了加瑞拉克那个蠢货。\n\n我们本该干掉他，把钱全留下。
@@ -20568,7 +20568,7 @@ yes^mr*oliveira*butitwontbeyouorme*newlinenewlineilltakemyleaveofyou^friends*img
 yes^mr*virtanen^ofcourse*yourerightithadtobedone*,是的， 维尔塔宁先生， 当然。 你是对的\u2014非得这么做。
 yes^obviously^commander*thereisaterrorist^isuppose^isthecorrectterm?heistheleaderofanextensivenetworkofanarchistsand[[dm*basedescriptiondefs[lorerasalhague]^rasalhagueseparatists*hisnameisnephrite*newlinenewlineitsacodename;apparentlyallofthemusedifferentgemstonesastheirnames*isupposeitmakesthemfeelimportant*inanycase:ineedthismankilled*,是的，显然，指挥官。有个……恐怖分子，我想这个词最合适。他领导着一个庞大的网络，成员是无政府主义者和罗萨利格分离主义者。他叫""青玉"".\n\n这是个代号。显然他们每个人都拿不同的宝石当名字。大概这样能让他们觉得自己很重要吧。总之:我要这个人死。
 yes^ofcourse*letusdiscussyourrecompense*newlinenewlineyourchiefengineertellsmethatshesfoundahiddendataarchiveonyourship^andthatyouneedmyhelptoopenit*itsoundstobequitethemystery*,是的，当然。我们来谈谈你的报酬。\n\n你的首席工程师告诉我，她在你的船上发现了一个隐藏的数据档案，而你需要我帮忙打开它。听起来是件相当神秘的事。
-yes^please*asswiftlyandefficientlyaspossible*newlinenewlineihavesquanderedenoughofmytimeonlordcommandermasongarrilacandhisbandofmaraudersalready*,是， 请。尽可能快速有效。\n\n我已经在""指挥官大人""梅森加里拉克和他的掠夺者身上浪费了足够多的时间。
+yes^please*asswiftlyandefficientlyaspossible*newlinenewlineihavesquanderedenoughofmytimeonlordcommandermasongarrilacandhisbandofmaraudersalready*,是， 请。尽可能快速有效。\n\n我已经在""指挥官大人""梅森·加瑞拉克和他的掠夺者身上浪费了足够多的时间。
 yes^thankyou*wegetit*,是的， 谢谢。我们已经明白了。
 yes^wedo*weregoingtodefeatyou^kerensky*{company*companyname}willsendyourunningwithyourtailbetweenyourlegs*,是， 绝对。我们会打败你 ， 克伦斯基。 {COMPANY.CompanyName} 会夹着尾巴送你回家。
 yes^wedo^ladyarano*werekeepingbusy^justasyouaskedusto*newlinenewlineyouallheardherwevegotsometimebeforethenextlegoftherestorationsoffensive^andourclientwantsustomakethemostofit*timeismoney^soletsgetbacktowork*,是的，我们确实在忙，阿拉诺夫人，就像你要求的那样。\n\n你们都听到了...距离光复运动下一次攻势还有一点时间，我们的客户希望我们充分利用它。时间就是金钱，所以回去工作吧。
@@ -20585,7 +20585,7 @@ yikes*ifshewasanyangrier^theredbesmokepouringoutofherears*,天啊，如果她再
 yikes*ifthisvolkovladyhascaughtthechancellorsattention^shesinforaworldofhurt*,天啊。如果这位沃尔科夫女士引起了总理大臣的注意，她就要倒大霉了。
 yknow^bossevenifyoumanagetodisabletheblackwidowsmechsomehow^shelljustejectandgetinanotherone*itsonlyamatteroftimebeforeshemakesittothedobrev*newlinenewlineidunnoaboutyou^doc^butidontwannabearoundwhenshegetshere*,你知道，老大，就算你想办法瘫痪了黑寡妇的机甲，她也会直接弹射出去，爬进另一台。她赶到<i>多布雷夫号</i>只是时间问题。\n\n我不知道你怎么想，医生，但等她到的时候，我可不想在场。
 yknow^fortherecord^thecommandermadetherightdecisionbackthere*ifwedsentbattlemechsafterhironaka^wedhavebeenpickingafightwithhousekurita*newlinenewlinewedontneedthatkindofheat*,要知道，说句公道话，指挥官当时做出了正确的决定。如果我们派战斗机甲去追广中，我们就是在跟栗田家族开战。\n\n我们不需要那种麻烦。
-yknow^iactuallyfeelalittlebadaboutthis*mostofthepeoplehavenothingtodowithmasongarrilac*plus^wereblowingupalotofgoodbooze*,你知道吗，我其实对这事有点过意不去。那里大多数人跟梅森·加里拉克毫无关系。而且我们还要炸掉<i>一大堆</i>好酒。
+yknow^iactuallyfeelalittlebadaboutthis*mostofthepeoplehavenothingtodowithmasongarrilac*plus^wereblowingupalotofgoodbooze*,你知道吗，我其实对这事有点过意不去。那里大多数人跟梅森·加瑞拉克毫无关系。而且我们还要炸掉<i>一大堆</i>好酒。
 yknow^ivealwayshadasuspicionthateveryoneofour[[dm*basedescriptiondefs[loregreathouses]^greathouseliaisonsiswildlyincompetentonsomeleveloranother*itsrefreshingtalkingtoonewhojustwearsitrightoutonthesurface*,你知道，我一直怀疑，我们派去[[DM.BaseDescriptionDefs[LoreGreatHouses]大家族]]的所有联络人，无论在哪方面都无能。难得碰到一个把这一点明明白白写在表面的人，倒叫人耳目一新。
 yknow^iwasreallyhopingthattherewasmoretoyouthanyourreputationsuggested*guessnot*newlinenewlinecatchyouonthebattlefield^{commander*lastname}*,你知道吗，我本来真的希望你身上有比名声更多的东西。看来没有。\n\n战场上见，{COMMANDER.LastName}。
 yknow^justonceidliketotakeoneofthesegigsandnothaveitwindupwithagreathousescrewingussomehow*itdbeareallyrefreshingchangeofpace*,我希望看到一个单一的订单 ，，其中 <i>没有</i> 的大房子想要搞砸我们。那将是一个受欢迎的变化。
@@ -20679,7 +20679,7 @@ youcanreviewthisinformationatanytimebyclickingthehelpbuttonintheupperleft*youcan
 youcansaythatagain*imtakingalookinside*wallosgotsomethingbiginthere^buticantquitemakeoutoh*oh^wooooow!,这话你可得再说一遍。我正往里面看。瓦罗在这儿藏了个大东西，但我看不清是什么...哦。哦，<i>天哪</i>！
 youcansetthechallengelevelofyourgamehere*onceselected^theseoptionscannotbechangedforthisplaythrough*thereareotherdifficultyoptionsinsettingsthatcanbeadjustedduringplay*newline,你可以在这里设置游戏的挑战等级。选定后，本次通关过程中这些选项无法更改。设置里还有其它难度选项，可以在游玩过程中调整。 \n
 youcanspeedupanymoveorattackanimationbypressingthespacebar*,你可以通过按空格键来加速任何移动或攻击动画。
-youcanspendresolvetouseeitheroftheresolveabilities^{0}and{1}^locatedwiththerestoftheactionbuttons*,你可以花费决心来使用两种决心技能中的任意一种， {0}和{1}， 它们位于行动按钮的末尾。
+youcanspendresolvetouseeitheroftheresolveabilities^{0}and{1}^locatedwiththerestoftheactionbuttons*,你可以花费战斗决心来使用两种战斗决心技能中的任意一种， {0}和{1}， 它们位于行动按钮的末尾。
 youcantfindpeaceinabottle*onlyjusticecangiveyouthat*,在酒瓶里找不到平静。只有正义能给你平静。
 youcantfoolme*youreyuetu^themercenary*theonewhoterrorizedmyangus^forcedhimtohideintheredroost*newlinenewlineyoushouldbedead*itold{commander*firstname}tokillyou*,你骗不了我。你就是月兔，那个佣兵。那个恐吓我的安格斯、逼他躲进红窝的人。\n\n你本该死了。我曾让{COMMANDER.FirstName}去杀你。
 youcantgodownthereinperson^kameaandcertainlynotbeforeweresureitssafe*newlinenewlineyouretheleaderoftherestoration*wecantaffordtoloseyouonasalvageoperation*,你不能亲自下去，卡梅娅...在我们确定安全之前更不行。\n\n你是光复运动的领袖。我们不能冒在打捞行动中失去你的风险。
@@ -20797,7 +20797,7 @@ yougrababroomleaningagainstabenchandthrustitinto[[tgt_mw^{tgt_mw*callsign}shands
 yougrewuponthesmallbackwaterplanetoftbdintheauriganfrontier*youweretheoldest^heirtothefamilystitles*thisiswhereyoumetyourmentor^raju“mastiff”montgomery;hewasaroamingfreelancerwhoworkedforyourfamilyforayear^hewashiredontotrainyou^theheir^asamechwarrior*thisiswhereyougotyourfamilyheirloommech*,你在奥里根边境一个叫TBD的死气沉沉的小星球上长大。你是家中最年长的孩子，是家族头衔的继承人。你也是在这里遇到了你的导师——拉朱“獒犬”蒙哥马利。这位游历四方的自由佣兵为你家效力了一年，受雇来把你这位继承人训练成一名机甲战士。也是在这里，你得到了家族世代相传的机甲。
 youhadcentrellasendusaftertheargo*idliketoknowwhy*,您已安排 ， 琴特雷拉将我们送到 <i>阿尔戈号</i>。我想知道， 为什么。
 youhandlesnakes^yougetbit*,常与蛇打交道，难免被咬。
-youhappentobeinthemechbaywhen[[tgt_mw^{tgt_mw*callsign}approachesyangwithaquestion*uh^chief?iwaswonderingifyouhadanybaelevenhundrednsinstock*idreallyliketogetoneinstalledonmymech*newlinenewlineyanglooksatyoutomakesureyourehearingthis^thenturnsbackto{tgt_mw*callsign}andreplieswithadmirablegravity^youdontseethoseoftenonthefield*areyousureyouwantustoinstallabaelevenhundrednonyourbattlemech?newlinenewlineyessir*[[scn_mw^{scn_mw*callsign}saysitllreallyimprovethemechsstability*,你在机库时，[[TGT_MW{TGT_MW.Callsign}]] 走到杨面前问道:“呃，老大?我想问问你还有没有 B-A-110-N 的库存。我真的很想给我的机甲装一台。”\n\n杨看了你一眼，确认你也听到了这番话，然后转回 {TGT_MW.Callsign}，用令人钦佩的严肃语气回答:“战场上可不常见那种东西。你确定要我们在你的战斗机甲上装一台 B-A-110-N 吗?”\n\n“是的，先生。[[SCN_MW{SCN_MW.Callsign}]] 说这能大幅提升我机甲的稳定性。”
+youhappentobeinthemechbaywhen[[tgt_mw^{tgt_mw*callsign}approachesyangwithaquestion*uh^chief?iwaswonderingifyouhadanybaelevenhundrednsinstock*idreallyliketogetoneinstalledonmymech*newlinenewlineyanglooksatyoutomakesureyourehearingthis^thenturnsbackto{tgt_mw*callsign}andreplieswithadmirablegravity^youdontseethoseoftenonthefield*areyousureyouwantustoinstallabaelevenhundrednonyourbattlemech?newlinenewlineyessir*[[scn_mw^{scn_mw*callsign}saysitllreallyimprovethemechsstability*,你在机甲库时，[[TGT_MW{TGT_MW.Callsign}]] 走到杨面前问道:“呃，老大?我想问问你还有没有 B-A-110-N 的库存。我真的很想给我的机甲装一台。”\n\n杨看了你一眼，确认你也听到了这番话，然后转回 {TGT_MW.Callsign}，用令人钦佩的严肃语气回答:“战场上可不常见那种东西。你确定要我们在你的战斗机甲上装一台 B-A-110-N 吗?”\n\n“是的，先生。[[SCN_MW{SCN_MW.Callsign}]] 说这能大幅提升我机甲的稳定性。”
 youhave:,你拥有:
 youhaveaccesstothefactionquartermasterinthissystem*,你可以造访该星系的派系军需部门。
 youhaveaccesstotheundergroundblackmarketinthissystem*,你可以造访该星系的地下黑市。
@@ -20862,7 +20862,7 @@ youinclineyourheadtoward[[tgt_mw^{tgt_mw*callsign}*ifanyonecouldpulloffwhatyoure
 youinclineyourheadtoward[[tgt_mw^{tgt_mw*callsign}andpointafingeratthemedtech*goaheadwiththeneurostimulator*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:arent|default:isnt}goingoutwithoutafight*newlinenewlineaftersurgery^youfind{tgt_mw*callsign}inarecoveryroomtriumphantlytossingdownastraightflushagainstamedtechstwo-pair*youpattheedgeof{tgt_mw*det}bed*howdoyoufeel^mechwarrior?newlinenewlineitsallcomingback^commander*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:tap|default:taps}lightlyon{tgt_mw*det}bandagedhead*ifeellikemyselfagain*newlinenewlinegood*letsdoatest*yougrabthephotoof{tgt_mw*callsign}smotheroffanearbytableandholditup*doyouknowwhothisis?newlinenewline{tgt_mw*callsign}cocks{tgt_mw*det}head^archinganeyebrow*thatoldhag?howcouldiforgetthatface?shesthereasonimherekickedmeoutwheniwas15*newlinenewlineyousmile*thatsthe{tgt_mw*callsign}iremember*,你朝 [[TGT_MW{TGT_MW.Callsign}]] 点了点头，伸手指向医疗技师。“马上给她植入神经刺激器。{TGT_MW.Subj_C}{TGT_MW.Gender?NonBinary:不会|Default:不会}就这么认命。”\n\n手术后，你在恢复室找到了{TGT_MW.Callsign}，那人正得意地把一手同花顺亮到医疗技师的两对上。你拍了拍{TGT_MW.Det}床沿。“你感觉怎么样，机甲战士?”\n\n“全都回来了，指挥官。”{TGT_MW.Subj_C}{TGT_MW.Gender?NonBinary:碰了碰|Default:碰了碰}{TGT_MW.Det}缠着绷带的头。“我感觉又变回我自己了。”\n\n“很好。来做个测试吧。”你从旁边的桌上抓起{TGT_MW.Callsign}母亲的照片举起来。“你知道这是谁吗?”\n\n{TGT_MW.Callsign}偏了偏{TGT_MW.Det}头，挑了挑眼。“那个老女巫?我怎么会忘记那张面孔?就是因为她我才落到这步田地——我15岁那年，她把我赶出了家门。”\n\n你笑了。“这才是我记得的{TGT_MW.Callsign}。”
 youinclineyourheadtoward[[tgt_mw^{tgt_mw*callsign}andpointafingeratthemedtech*goaheadwiththeneurostimulator*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:arent|default:isnt}goingoutwithoutafight*newlinenewlineaftersurgery^youfind{tgt_mw*callsign}inarecoveryroomtriumphantlytossingdownastraightflushagainstamedtechstwo-pair*youpattheedgeof{tgt_mw*det}bed*howdoyoufeel^mechwarrior?newlinenewlineitsallcomingback^commander*{tgt_mw*subj_c}{tgt_mw*gender?nonbinary:tap|default:taps}lightlyon{tgt_mw*det}bandagedhead*ifeellikemyselfagain*newlinenewlinegood*letstryatest*yougrabthephotoof{tgt_mw*callsign}smotheroffanearbytableandholditup*doyouknowwhothisis?newlinenewline{tgt_mw*callsign}cocks{tgt_mw*det}head^archinganeyebrow*thatoldhag?howcouldiforgetthatface?shesthereasonimherekickedmeoutatfifteen*newlinenewlineyousmile*thatsthe{tgt_mw*callsign}iremember*,你朝 [[TGT_MW{TGT_MW.Callsign}]] 点了点头，伸手指向医疗技师。“马上植入神经刺激器。{TGT_MW.SUBJ_C}不会束手等死。”\n\n手术后，你在恢复室找到了{TGT_MW.Callsign}，{TGT_MW.SUBJ}正得意地把一手同花顺亮到医疗技师的两对上。你靠在{TGT_MW.DET}的床边。“感觉怎么样，机甲战士?”\n\n“全都回来了，指挥官。”{TGT_MW.SUBJ_C}轻轻碰了碰缠着绷带的头。“我感觉又变回我自己了。”\n\n“很好。来做个测试吧。”你从旁边的桌上抓起 {TGT_MW.Callsign} 母亲的照片举起来。“你知道这是谁吗?”\n\n{TGT_MW.Callsign} 偏着头，挑了挑眼。“那个老女巫?我怎么会忘记那张面孔?就是因为她我才落到这步田地——我15岁那年，她把我赶出了家门。”\n\n你笑了。“这才是我记得的你。”
 youinclineyourheadtowardthexo*darius^youlltakethepointonthisone*useyourbestjudgement*newlinenewlinehoursafterthexosendsaresponse^hecallsthecommandstaffbacktothecommandcenter*goodnews^commander*thecapellansappreciatedourcooperation^eventhoughiprovidedaheavilyredactedaccountofourmission*therewontbeanyfurtherinquiriesfromthem*newlinenewlinewhatabout[[dm*basedescriptiondefs[loregakuhironaka]^hironaka^xo?yangasks*newlinenewlineicouldntriskgivinguphisname^dariussays*weneedtomaintainplausibledeniability^sowedontriskdrawingtheireofthedraconiscombine*newlinenewlineyanggruntsdismissively*whenthecrewbreaksafterthemeeting^youcanseethatthechieftechanddr*muradarevisiblytense*theyspeakquietlyandgrumbletooneanother^butoffernodirectcomplaints*,你朝副舰长点了点头。“达吕斯，这件事你来负责。用你最好的判断。”\n\n几个小时后，副舰长回了话，把指挥人员都叫回了指挥中心。“好消息，指挥官。御夫星人对我们的配合很满意，尽管我把任务报告删得只剩个大概。他们不会再追查了。”\n\n“那 [[DM.BaseDescriptionDefs[LoreGakuHironaka]广中]] 呢?”杨问道。\n\n“我不能冒险供出他的名字，”达吕斯说。“我们得留一条可信的退路，免得招来天龙联合体的怒火。”\n\n杨轻蔑地笑了一声。会议散场后，你能看出首席技师和穆拉德博士明显很紧张。他们低声交谈，互相发着牢骚，但谁都没有明着抱怨。
-youinsertyourselfintotheconversation*extrastabilityissomethingicanthaveenoughof^chief*putsomeofthoseonmymechtoo*newlinenewlinethatbringsyangupshort*hismouthopens^shuts^andopensagain*oneeyebeginstwitchinguntilhefinallysettlesonwhattosay*surething^boss*twosetsofbaelevenhundrednscomingrightup*illgetthecrewgoingonthatrightaway^sir*yessir*newlinenewline[[tgt_mw^{tgt_mw*callsign}beamswithsatisfactionandthetwoofyouwalkoutofthemechbaytogether^tradingwarstoriesfromrecentsuccessfulcontracts*later^youfindyourbattlemechlovinglydecoratedwithshinyredballoons*,你插进这场对话。“稳定性这东西多多益善，老大。也给我的机甲装上几套。”\n\n这话让杨一时语塞。他张了张嘴，合上，又张开。一只眼睛开始抽动，直到他终于想好了要说什么。“没问题，老板。两套 B-A-110-N，马上安排。我这就让维修组动手，长官。是，长官。”\n\n[[TGT_MW{TGT_MW.Callsign}]] 满面欢喜，你们一起走出机库，互相讲着最近几份成功合同里的战地故事。后来，你发现自己的战斗机甲被精心装点了一番，挂满了亮红色的气球。
+youinsertyourselfintotheconversation*extrastabilityissomethingicanthaveenoughof^chief*putsomeofthoseonmymechtoo*newlinenewlinethatbringsyangupshort*hismouthopens^shuts^andopensagain*oneeyebeginstwitchinguntilhefinallysettlesonwhattosay*surething^boss*twosetsofbaelevenhundrednscomingrightup*illgetthecrewgoingonthatrightaway^sir*yessir*newlinenewline[[tgt_mw^{tgt_mw*callsign}beamswithsatisfactionandthetwoofyouwalkoutofthemechbaytogether^tradingwarstoriesfromrecentsuccessfulcontracts*later^youfindyourbattlemechlovinglydecoratedwithshinyredballoons*,你插进这场对话。“稳定性这东西多多益善，老大。也给我的机甲装上几套。”\n\n这话让杨一时语塞。他张了张嘴，合上，又张开。一只眼睛开始抽动，直到他终于想好了要说什么。“没问题，老板。两套 B-A-110-N，马上安排。我这就让维修组动手，长官。是，长官。”\n\n[[TGT_MW{TGT_MW.Callsign}]] 满面欢喜，你们一起走出机甲库，互相讲着最近几份成功合同里的战地故事。后来，你发现自己的战斗机甲被精心装点了一番，挂满了亮红色的气球。
 youjerkyourthumboveryourshoulder^pointingtotheleopard*getin^mechwarrior*ivegothalfamindtoleaveyouwithyournewacquaintances^butyoureworthafortuneonthebattlefield*newlinenewlineas[[tgt_mw^{tgt_mw*callsign}scramblesintotheleopard^youkeepaneyeonthestranger*hewavesnonchalantly^flashingbrightwhiteteeth*onceyoureallinsidetheleopard^newlinenewline{tgt_mw*callsign}dropsintoaseat*ihalf-expectedthatcreeptopulloutagun*newlinenewlinedariusshakeshisheadasheadjustshisshoulderstraps*theywouldntbethatsloppy*apublicshootoutisntgoodforbusiness*theseguysareprofessionals*theyllspreadthewordacrosstheirnetworks*kissanyfavorwehadwithpiratesgoodbye*newlinenewlineandyourprivileges^youadd*look{tgt_mw*callsign}^youshouldknowbetterbynow*youkeepchoosingtoputyourselfandtherestofusatriskbyextension*thatsunacceptable*newlinenewline{tgt_mw*callsign}mumblesanexcuse^butdariuscuts{tgt_mw*obj}off*forgetaboutshoreleaveprivileges*youllbeonprobationuntilyoucanproveyourselftrustworthy*,你竖起大指朝肩后一指，指向豹式。“上船，机甲战士。我差点就想把你留给你的新朋友了，可你在战场上值一大笔钱。”\n\n[[TGT_MW{TGT_MW.Callsign}]] 爬进豹式时，你一直盯着那个生人。他只是若无其事地挥了挥手，露出一口亮白的牙齿。等你们全都进了船舱，\n\n{TGT_MW.Callsign} 一屁股坐进座位。“我差点以为那怪人会拔枪。”\n\n达吕斯一边系肩带一边摇头。“他们不会那么胡来。当众开枪对生意没好处。这帮人是专业的。他们会把消息传遍自己的圈子。以后我们就别想再让海盗帮我们任何忙了。”\n\n“你的特权也一样，”你补充道。“听着，{TGT_MW.Callsign}，你早该明白这一点了。你总是选择把自己和我们其他人一起置于险境。这我不能接受。”\n\n{TGT_MW.Callsign} 低声说了句抱歉，但达吕斯打断了{TGT_MW.Obj}。“上岸假就别想了。在你能证明自己值得信任之前，你都要接受察看。”
 youjoinedaninnerspheremercenaryunit^whereyougraduallyprovedyourworth*,您已经加入了 Inner Sphere ， 的雇佣兵部队，在那里您逐渐证明了自己的价值。
 youjoinedtheaurigancoalitionmilitary^eventuallyrisinginranktocommandalanceofmechwarriors*,你加入了奥里根同盟军队，一路晋升，最终指挥一支机甲战士小队。
@@ -21195,9 +21195,9 @@ yourhiredgunshavefailed^singh!takethemandleavethisplace^andknowthatmyownmercenar
 yourhirelingsperformedwell^shugoyamaguchi*nowcomeforme*letsputyourmercenariestothetest*,你的雇佣兵干得不错，山口守护，现在冲我来吧。让我试试你的雇佣兵有多大本事。
 yourinstinctsareassharpasever^{commander*callsign}*youregoingtobringdowntheiberia*,你的直觉一如既往地敏锐，{COMMANDER.Callsign}。你要去干掉伊贝里亚号。
 yourlance,你的小队
-yourlancegains{0}resolveeachroundofcombat*whenthebarisat50%^yourmechwarriorsbecomeinspired^gaininga+1bonustoaccuracyforallattacks*,你的小队在战斗中的每一轮都会获得<color=#F79B26>{0}</color>点决心。 当决心槽达到50%时， 你的机甲战士将受到鼓舞， 在所有攻击中获得+1的精度加成。
+yourlancegains{0}resolveeachroundofcombat*whenthebarisat50%^yourmechwarriorsbecomeinspired^gaininga+1bonustoaccuracyforallattacks*,你的小队在战斗中的每一轮都会获得<color=#F79B26>{0}</color>点战斗决心。 当战斗决心槽达到50%时， 你的机甲战士将受到鼓舞， 在所有攻击中获得+1的精度加成。
 yourlancegainsfuryasbadthingshappentoit*newlinewhenthebarfills^youcanuseittoperformaprecisionstrikewithonemechwarrior*,你的小队在受创时会获得怒气。\n当怒气槽充满时， 你可以让一个机甲战士用它发动""精确打击""。
-yourlancesresolve(thebluebarnexttoyourpilots)increasesineachroundofcombat*whenitishalffull^yourpilotswillbeinspired(+1accuracytoallattacks)*,你的小队在战斗中的每一轮都会增加决心(驾驶员旁边的蓝条). 当它半满时， 你的驾驶员将受到鼓舞(所有攻击+1精度)。
+yourlancesresolve(thebluebarnexttoyourpilots)increasesineachroundofcombat*whenitishalffull^yourpilotswillbeinspired(+1accuracytoallattacks)*,你的小队在战斗中的每一轮都会增加战斗决心(驾驶员旁边的蓝条). 当它半满时， 你的驾驶员将受到鼓舞(所有攻击+1精度)。
 yourlancewillbedroppingdirectlyinthepathofyoshitookadasconvoy*smashitflattherecanbenosurvivors*whenthedefectorsdeathhasbeenconfirmed^youwillreceiveyourreward*,我们以这样的方式放下你的小队， 你可以毫无问题地拦截 Yoshito Okada 的车队。摧毁每辆车，不要让任何人活着。当叛逃者的死亡被确认 ， 收到你的奖励。
 yourloyalistshavefallenbacktothemarketdistrictthatswheretheyremakingtheirstand*whatsleftoftheroyalguardaredoingtheirbest^buttheressomethingwrongwiththeirbattlemechswait^whatsthatsound?oh^gods!,忠于你的人撤到了市集区\u2014他们在那里坚守。 王家卫队剩下的人拼尽全力， 但他们的机甲都出了毛病\u2014等等， 那是什么声音? <i>啊， 天呐!</i>
 yourmainobjectiveisthedefenseofthefacilitysprimaryrefinery*ifthetauriansmanagetodestroyit^itsonlyamatteroftimebeforeitromsentirepowergridgoesdown*andifthathappens^peoplewilldie*,你的首要目标是防御该设施的主精炼厂。 如果金牛人成功摧毁了它， 那伊特罗姆的整个电网瘫痪就只是时间问题。 如果发生了这种情况， 人民会死。
@@ -21459,7 +21459,7 @@ youwillbepaidaspromised^{commander*callsign}*mywordismybond*,你会按承诺拿�
 youwilldonothingbutrotinyourcage*newlinenewlineyourstoryisover^victoria*youvelost*,你什么也做不了，只能在笼子里烂掉。\n\n你的故事结束了，维多利亚。你输了。
 youwilldothis^andyouwillapproachyourtaskwiththeskillandefficiencythatidexpectfromaccafveteran*compileamanifest^andleaveeverythingelseuntouched*tianyuout*,<i>没有</i>商量的余地。你要以我期待御夫星邦联武装部队老兵应有的技巧和效率完成这项任务。编制一份清单，其他一切都别碰。天宇通话结束。
 youwillforfeitthematchifyouquit,如果你退出就会放弃比赛
-youwillgenerate{company*curresolveperturn}resolve/turnincombat,你在战斗中每回合会产生{COMPANY.CurResolvePerTurn}点决心
+youwillgenerate{company*curresolveperturn}resolve/turnincombat,你在战斗中每回合会产生{COMPANY.CurResolvePerTurn}点战斗决心
 youwillloseallunsavedprogresssinceyourlastmanualsaveorautosave,你会丢失上一次手动或自动保存之后所有未保存的进度
 youwillnotdefeatus!iwillbreakyou^mercenaryscum*,你<i>无法</i>击败我们! 而我会<i>击碎</i>你， 佣兵鬼。
 youwin^commander{commander*lastname}ironwoodproductionsisofficiallycryinguncle*theholo-distributionfacilityisyoursforaslongasyouneedit*ifyouwanttocalloutthesteelbeast^wecanhelpyoudothat!infact^wedbehappyto*,你赢了，指挥官 {COMMANDER.LastName} - 艾恩伍德制片公司正式认输。全息发行设施随你用多久都行。如果你想挑战钢铁猛兽，我们可以帮你，事实上，我们乐意之至。
