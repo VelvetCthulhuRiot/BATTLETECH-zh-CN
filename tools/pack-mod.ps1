@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
+﻿﻿﻿﻿﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
 # 用法: powershell -ExecutionPolicy Bypass -File pack-mod.ps1
 #
 # 注意: 本文件必须带 UTF-8 BOM。Windows PowerShell 5.1 读 .ps1 需要 BOM,
@@ -68,34 +68,21 @@ BATTLETECH 简体中文汉化 —— 迁移说明
   照这样做即可: 勾选「模组启用」-> 保存 -> 完全重启游戏。
   重启后列表里会出现 BTHANHUA 与 BTHANHUA FONT, 状态「已启用」。
 
-【重要: 原版 ModLoader 的 bug —— 别在游戏里禁用"系统模组"】
-  游戏自带的 ModLoader 有个缺陷: 在游戏内的「模组」界面里禁用**系统模组**
-  (systemMod.json + DLL 的那种) 会把状态写错表, 之后:
-    * 保存游戏永远卡在「正在保存中」
-    * 模组界面列表填不出来
-    * 存档校验异常
-  而且每次启动都会复现 —— 这是游戏的 bug, 与汉化本身无关。
-  本汉化的两个模组都是普通游戏模组(mod.json), 在 MODS 界面勾选 / 取消勾选都是安全的;
-  危险的是【别的系统模组】: 你还装了这类模组的话, 别在游戏里禁用它们,
-  要关就关掉游戏再把文件夹移出 mods\。
+【开关 / 卸载汉化 (都安全)】
+  * 想临时关掉汉化: 在 MODS 界面取消勾选这两个模组 -> 保存 -> 完全重启游戏。
+    重启后界面回到英文 (字形图集也不再注入), 不会损坏模组状态, 也不会锁住存档。
+  * 想彻底卸载: 退出游戏后删掉 BTHanHua 与 BTHanHuaFont 两个文件夹即可。
+  * 本版起装的档不依赖汉化 (两个模组都标了 "IsSaveAffecting": false) ——
+    把模组关掉或移走, 那些存档照样能读。
 
-  万一已经踩到了 (游戏内禁用过模组, 之后出现上面的症状), 关掉游戏后这样恢复:
-    1. 把出问题的模组文件夹移出 mods\
-    2. 删掉这几个文件 (游戏会自己重建):
-         mods\HBS\Cache\mod_status.json
-         mods\HBS\Cache\system_mod_status.json
-         mods\HBS\Cache\merge_cache.json
-         mods\HBS\Cache\type_cache.json
-         mods\load_order.json
-    3. 保留 mods\HBS\Database\MetadataDatabase.db
-    4. 启动游戏, 缓存自动重建
+  (历史遗留, v1.2.1 及更早: 那时字体模组是"系统模组", 而游戏自带 ModLoader 有个缺陷,
+   在游戏里禁用系统模组会写坏模组状态, 症状是保存卡住 / 模组界面空白 / 存档校验异常。
+   本版已把字体模组改成普通游戏模组, 这个问题不存在了。若你从旧版升级并遇到过,
+   关掉游戏后删掉 mods\HBS\Cache 下的 mod_status.json / system_mod_status.json /
+   merge_cache.json / type_cache.json 以及 mods\load_order.json 即可(保留 MetadataDatabase.db);
+   另外用 v1.2.1 及更早版本玩过的档记着"需要汉化", 想读回来就把两个 mod.json 里的
+   "IsSaveAffecting": false 那一行删掉再重启 —— 该判定每次读档现算, 可逆、不会弄坏档。)
 
-【存档说明 (重要)】
-  两个模组的描述文件里都写了 "IsSaveAffecting": false, 意思是:
-    * 装了汉化之后新存的档不再依赖汉化 —— 以后把这两个文件夹移走, 档照样能读。
-    * 但用 v1.2.1 及更早版本玩过的档记着"需要汉化", 装本版会显示
-      「未安装/激活所需的模组」而读不了。想读回来: 把两个 mod.json 里的
-      "IsSaveAffecting": false 这一行删掉再重启即可 (该判定每次读档现算, 不会弄坏档)。
 【前提】
   * 游戏版本需为 1.9.1 (build 686R)。BTHanHuaFont.dll 是针对该版本的游戏程序集编译的。
   * 本汉化不修改游戏任何原文件: 游戏安装目录零改动, Steam「验证游戏文件完整性」不受影响。

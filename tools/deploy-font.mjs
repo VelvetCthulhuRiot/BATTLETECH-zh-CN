@@ -25,7 +25,7 @@ const DEST = path.join(process.env.USERPROFILE, 'Documents', 'My Games', 'Battle
 // 就不会去动 atlas.a8 / DLL 那些文件 (DLL 自己按 DLL 所在目录读图集)。
 // ⚠️ 存档世代开关, 定下来就别再改 (两个方向都会让另一侧的存档读不了) —— 见 HANDOFF.md §12。
 const MOD_NAME = 'BTHanHuaFont';
-const VERSION = '1.2.2';
+const VERSION = '1.2.3';
 const modJson = {
   Name: MOD_NAME,
   Enabled: true,

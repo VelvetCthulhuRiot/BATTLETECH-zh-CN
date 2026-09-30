@@ -55,24 +55,33 @@
 第 3、4 步不能省：模组启用开关和语言选择存在**游戏自己的设置**里，不在 mod 文件夹内，
 所以换电脑时要重新做一次。
 
-### ⚠️ 不要在游戏内用「取消勾选」来关汉化
+### 开关 / 卸载汉化都是安全的
 
-游戏自带的 ModLoader 有个缺陷：在**游戏内的模组界面**里禁用**系统模组**
-（`systemMod.json` + DLL 那一种）会把状态写错表，之后保存会永久卡在「正在保存中」、
-模组界面列表填不出来、存档校验异常，而且每次启动复现。
+本版（v1.2.2 起）的两个模组都是**普通游戏模组**，并且标记为**不影响存档**，所以：
 
-本汉化的两个模组现在都是**普通游戏模组**（`mod.json`），所以取消勾选不会再触发它；
-但要彻底关掉汉化，请**退出游戏后把文件夹移出 `mods\`**，不要一边禁用一边存档。
+- **想在 MODS 界面里取消勾选就取消勾选**（临时关掉汉化），重启后界面回到英文，**不会损坏模组状态**；
+- **想彻底卸载**：退出游戏，把 `mods\BTHanHua\` 与 `mods\BTHanHuaFont\` 删掉即可；
+- 两种做法**都不会锁住存档** —— 装了本版之后新存的档不依赖汉化，把模组移走照样能读。
 
-万一已经踩到，关掉游戏后按[故障恢复](#原版-modloader-的-bug)一节清一次缓存即可。
+> **历史遗留（v1.2.1 及更早，可跳过）**
+>
+> 那些版本的字体模组是「系统模组（System Mod）」，而游戏自带 ModLoader 有个缺陷：
+> 在游戏内的模组界面**禁用系统模组**会写坏模组状态（保存卡在「正在保存中」、模组界面列不出东西、
+> 存档校验异常）。v1.2.2 已把字体模组改成普通游戏模组、并补上不影响存档的标记，
+> **这条路径不再存在**。若你从旧版升级、并且以前遇到过上述症状，清一次
+> `mods\HBS\Cache\`（保留 `HBS\Database\MetadataDatabase.db`）即可，游戏会自己重建。
+>
+> 另外，**用 v1.2.1 及更早版本玩过的存档**记着「需要汉化」，装 v1.2.2 后会显示
+> 「未安装/激活所需的模组」。想读回来：把两个 `mod.json` 里 `"IsSaveAffecting": false`
+> 那一行删掉再重启（该判定每次读档时现算，可逆）。
 
 ### 从旧版本升级
 
-旧版的 `BTHanHuaFont` 用的是 `systemMod.json`。如果升级后那个文件还在，
-**请删掉它**，并删掉 `mods\HBS\Cache\` 下的 `mod_status.json`、`system_mod_status.json`、
-`merge_cache.json`、`type_cache.json` 与 `mods\load_order.json`（游戏会自己重建，
-`HBS\Database\MetadataDatabase.db` 要保留）。原因同上：同一个模组名不能同时出现在
-「系统模组」和「游戏模组」两张表里。
+1. 删掉 `mods\BTHanHuaFont\systemMod.json`（如果还在）—— 同一个文件夹里同时有
+   `systemMod.json` 和 `mod.json` 会让同一个模组名进两张表，触发上面说的那个缺陷；
+2. 删掉 `mods\HBS\Cache\` 下的 `mod_status.json`、`system_mod_status.json`、
+   `merge_cache.json`、`type_cache.json` 与 `mods\load_order.json`（游戏会自己重建，
+   `HBS\Database\MetadataDatabase.db` 要保留）。
 
 ### 卸载
 
@@ -86,7 +95,7 @@ mods\BTHanHuaFont\
 游戏安装目录零改动，**Steam「验证游戏文件完整性」不受影响**
 （它只校验 depot 清单内的文件，不会删除未知文件，也不会因为我们而判定文件损坏）。
 
-### ⚠️ 第一次打开 MODS 界面可能会提示「检测不到模组」——这是正常的
+### 第一次打开 MODS 界面可能会提示「检测不到模组」——这是正常的
 
 装好之后第一次进 MODS 界面，**可能会有个小窗口提示检测不到模组**，或者模组列表是空的。
 **这不是装错了，是正常现象**，原因有两个：
@@ -148,60 +157,30 @@ BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说�
 
 ---
 
-## 原版 ModLoader 的 bug
+## 关于模组状态与存档
 
-在游戏内**禁用系统模组**会永久损坏模组状态。这是游戏自带 ModLoader 的缺陷，
-和汉化无关，但本汉化的字体模组以前正好是系统模组，所以踩得到。
+**v1.2.2 起，在 MODS 界面里勾选 / 取消勾选本汉化的两个模组都是安全的，也不会锁住存档。**
+两个模组都是普通游戏模组（`mod.json`），并且都标了 `"IsSaveAffecting": false`
+（装了本版之后新存的档不依赖汉化，把模组移走照样能读）。
 
-**症状**（每次启动都复现）：
+<details>
+<summary><b>历史：v1.2.1 及更早版本踩过的原版 ModLoader 缺陷（点开看细节）</b></summary>
 
-- 保存游戏永远卡在「正在保存中」
-- 模组界面列表填不出来
-- 存档校验异常
+**症状**（每次启动都复现）：保存游戏永远卡在「正在保存中」、模组界面列表填不出来、存档校验异常。
 
 **原因**（反编译 `Assembly-CSharp.dll` 实证）：
-`BattleTech.ModSupport.ModLoader.InitSystemModsLoop` 里"该模组被禁用"那个分支写的是
+`BattleTech.ModSupport.ModLoader.InitSystemModsLoop` 里「该模组被禁用」那个分支写的是
 `loadedGameModStatus[modDef.Name].enabled = false;` —— 写错表了：系统模组的状态在
 `loadedSystemModStatus` 里，游戏模组表里没有它，于是 `KeyNotFoundException`。
 异常被 catch → `FailToLoadModDef` → `UpdateModStatus` 把失败的 def 注入两个状态文件 →
-此后 `GetCombinedModStatus()` 用 `Dictionary.Add` 合并两张表就撞重复键 →
-保存、模组界面、存档校验全挂。同位置的 `InitGameModsLoop` 写的是自己那张表，所以
-**禁用游戏模组不会崩，禁用系统模组必崩**。触发条件是"在游戏内禁用任何
-`systemMod.json` + DLL 的模组"。
+此后 `GetCombinedModStatus()` 用 `Dictionary.Add` 合并两张表就撞重复键。
+同位置的 `InitGameModsLoop` 写的是自己那张表，所以**禁用游戏模组不会崩，禁用系统模组必崩**。
 
-**本项目的对策**：
+**v1.2.2 的对策**：字体模组从系统模组改成普通游戏模组（`systemMod.json` → `mod.json` +
+空 `Manifest`）。DLL 不是系统模组的专利：官方 Mod Support PDF §2.3.4 写明 `DLL` 字段
+对游戏模组是可选的，只有系统模组才必需。
 
-1. 字体模组改成普通游戏模组 —— 把 `systemMod.json` 换成 `mod.json`，补一个空的
-   `"Manifest": []`。DLL 不是系统模组的专利：官方 Mod Support PDF §2.3.4 写明
-   `DLL` 字段**对游戏模组是可选的**，只有系统模组才必需。
-2. 随包说明里加了警告与故障恢复步骤。
-
-3. 两个模组都标成 `"IsSaveAffecting": false` —— **存档世代开关**，见下。
-
-> ⚠️ **关于 `IsSaveAffecting`（请读完再决定要不要动它）**
->
-> 这个字段决定"装了模组之后存的档，以后还需不需要这些模组"。它是**一次性选择**，
-> 两个方向都会让"另一侧"的存档读不了：
->
-> | 设置 | 新存的档 | 已有的档 |
-> |---|---|---|
-> | `false`（**v1.2.2 起**） | **不再依赖汉化** —— 卸载汉化后照样能读 ✓ | 用 **v1.2.1 及更早**版本玩过的档记着旧汉化的必需项，装本版会显示"未安装/激活所需的模组" ✗ |
-> | 不写 / `true`（v1.2.1 及更早） | 依赖汉化 —— 卸载后读不了（官方 PDF §1.5.2 的原版设计） | 装汉化前后都能读 ✓ |
->
-> 机制：反编译 `GameInstanceSave.AreNecessaryModsInstalled()` 可以看到，它拿存档里记的
-> `RequiredModIDs`（存这份档时的"影响存档"模组名单）去对**当前**
-> `ModLoader.GetSaveAffectingModDefs()`（该函数读的就是 `BaseModDef.IsSaveAffecting`，见其 IL）。
-> 两边必须对得上，否则读档界面显示"未安装/激活所需的模组"、读档按钮变灰。
->
-> **升级用户看这里**：如果你用 v1.2.1 或更早版本玩过存档，装 v1.2.2 后那些档会读不了。
-> 想读回来，把两个 `mod.json` 里的 `"IsSaveAffecting": false` 这行**删掉**（恢复旧行为）
-> 再重启即可；代价是新档又会重新依赖汉化。这个判定是**每次读档时现算**的，
-> 不写进存档文件，所以来回切换不会损坏任何东西。
->
-> 我们选 `false` 是因为它是纯文本/字体汉化：不改变存档数据，本就不该让存档反过来依赖它。
-> 全新安装的玩家从此不受"卸了汉化就读不了档"的困扰。
-
-**故障恢复**（关掉游戏后）：
+**故障恢复**（若你从旧版升级、且以前踩到过）：
 
 1. 把出问题的模组文件夹移出 `mods\`
 2. 删掉 `mods\HBS\Cache\` 下的 `mod_status.json`、`system_mod_status.json`、
@@ -209,8 +188,14 @@ BTHanHua-mod.zip        打包好的便携版 (两个 mod 文件夹 + 迁移说�
 3. **保留** `mods\HBS\Database\MetadataDatabase.db`
 4. 启动游戏，缓存会自动重建
 
-> 顺带一提：游戏官方 Mod Support PDF §1.5.2 说明"装了模组之后产生的存档需要这些模组
-> 才能读"是**原版设计**，不是 bug。
+**存档世代**：`IsSaveAffecting` 是单向选择，两个方向都会让「另一侧」的存档读不了 ——
+`false`（v1.2.2 起）让**新档**不依赖汉化，代价是**用 v1.2.1 及更早版本玩过的档**在升级后
+显示「未安装/激活所需的模组」；想读回来就把那行删掉（判定每次读档现算，可逆）。
+机制见 `GameInstanceSave.AreNecessaryModsInstalled()`：它拿存档记的 `RequiredModIDs`
+去对当前的 `ModLoader.GetSaveAffectingModDefs()`。官方 Mod Support PDF §1.5.2
+说明「装了模组之后产生的存档需要这些模组才能读」是**原版设计**，不是 bug。
+
+</details>
 
 ---
 
