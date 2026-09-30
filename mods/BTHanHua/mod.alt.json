@@ -10,5 +10,6 @@
             "Type": "CSV",
             "Path": "data/localization/strings_zh-CN.csv"
         }
-    ]
+    ],
+    "IsSaveAffecting": false
 }

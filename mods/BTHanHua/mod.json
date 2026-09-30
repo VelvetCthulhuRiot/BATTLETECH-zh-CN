@@ -10,5 +10,6 @@
             "Type": "CSV",
             "Path": "strings_zh-CN.csv"
         }
-    ]
+    ],
+    "IsSaveAffecting": false
 }

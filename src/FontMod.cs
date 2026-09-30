@@ -1,4 +1,4 @@
-// BATTLETECH 中文字体注入 - System Mod (Harmony)  v0.3
+// BATTLETECH 中文字体注入 - Game Mod (Harmony)  v0.3
 // 设计:
 //  1) 不修改游戏任何文件; 字体包放在 mod 目录, 运行期加载
 //  2) 字体切换是双向的: 文本含 CJK -> 用中文字体; 不含 -> 还原成原字体
@@ -665,7 +665,7 @@ namespace BTHanHua
             return null;
         }
 
-        // mod 目录: 优先 DLL 所在目录 (System Mod 的 DLL 就放在 mod 文件夹里)
+        // mod 目录: 优先 DLL 所在目录 (不论 Game Mod 还是 System Mod, DLL 都放在 mod 文件夹里)
         static string FindModDir()
         {
             try

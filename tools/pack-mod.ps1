@@ -1,4 +1,4 @@
-﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
+﻿﻿﻿﻿# 把当前汉化 mod 打包成一个可整包搬走的 zip
 # 用法: powershell -ExecutionPolicy Bypass -File pack-mod.ps1
 #
 # 注意: 本文件必须带 UTF-8 BOM。Windows PowerShell 5.1 读 .ps1 需要 BOM,
@@ -42,10 +42,13 @@ BATTLETECH 简体中文汉化 —— 迁移说明
 
 【包含内容】
   mods\BTHanHua\        文本汉化   (mod.json + strings_zh-CN.csv 共 21,875 条)
-  mods\BTHanHuaFont\    字体注入   (systemMod.json + BTHanHuaFont.dll + atlas 字形图集)
+  mods\BTHanHuaFont\    字体注入   (mod.json + BTHanHuaFont.dll + atlas 字形图集)
     atlas\atlas.a8      8192x8192 中文字形位图, 8,352 个字形 (原始 64 MB)
     atlas\atlas.bin     字形记录与字体度量
     LICENSE-OFL.txt     字体的 SIL OFL 1.1 许可 (随包必须带, 请勿删除)
+
+  * 两个模组都是普通「游戏模组」(mod.json)。字体模组以前用的是 systemMod.json,
+    现已改掉 —— 原因见下面【重要: 原版 ModLoader 的 bug】。
 
 【安装到另一台 Windows 电脑】
   1. 把 mods 里的两个文件夹整体复制到:
@@ -54,6 +57,10 @@ BATTLETECH 简体中文汉化 —— 迁移说明
   2. 启动游戏 -> 主菜单左下角 MODS -> 勾选右上角「模组启用」-> 点 SAVE
   3. 完全退出并重启游戏 -> 设置 -> LANGUAGE 选「中文」
 
+  从旧版本升级过来的话: 如果 mods\BTHanHuaFont\ 里还有 systemMod.json, 请删掉它 ——
+  同一个文件夹里同时存在 systemMod.json 和 mod.json, 会让游戏把同一个模组名算进
+  "系统模组"和"游戏模组"两张表, 正好触发下面那个 bug。
+
 【重要: 第一次进 MODS 界面可能提示「检测不到模组」】
   这是正常现象, 不是装错了。原因:
     * 游戏的模组功能默认是关闭的 (右上角「模组启用」未勾选)
@@ -61,6 +68,34 @@ BATTLETECH 简体中文汉化 —— 迁移说明
   照这样做即可: 勾选「模组启用」-> 保存 -> 完全重启游戏。
   重启后列表里会出现 BTHANHUA 与 BTHANHUA FONT, 状态「已启用」。
 
+【重要: 原版 ModLoader 的 bug —— 别在游戏里禁用"系统模组"】
+  游戏自带的 ModLoader 有个缺陷: 在游戏内的「模组」界面里禁用**系统模组**
+  (systemMod.json + DLL 的那种) 会把状态写错表, 之后:
+    * 保存游戏永远卡在「正在保存中」
+    * 模组界面列表填不出来
+    * 存档校验异常
+  而且每次启动都会复现 —— 这是游戏的 bug, 与汉化本身无关。
+  本汉化的两个模组都是普通游戏模组(mod.json), 在 MODS 界面勾选 / 取消勾选都是安全的;
+  危险的是【别的系统模组】: 你还装了这类模组的话, 别在游戏里禁用它们,
+  要关就关掉游戏再把文件夹移出 mods\。
+
+  万一已经踩到了 (游戏内禁用过模组, 之后出现上面的症状), 关掉游戏后这样恢复:
+    1. 把出问题的模组文件夹移出 mods\
+    2. 删掉这几个文件 (游戏会自己重建):
+         mods\HBS\Cache\mod_status.json
+         mods\HBS\Cache\system_mod_status.json
+         mods\HBS\Cache\merge_cache.json
+         mods\HBS\Cache\type_cache.json
+         mods\load_order.json
+    3. 保留 mods\HBS\Database\MetadataDatabase.db
+    4. 启动游戏, 缓存自动重建
+
+【存档说明 (重要)】
+  两个模组的描述文件里都写了 "IsSaveAffecting": false, 意思是:
+    * 装了汉化之后新存的档不再依赖汉化 —— 以后把这两个文件夹移走, 档照样能读。
+    * 但用 v1.2.1 及更早版本玩过的档记着"需要汉化", 装本版会显示
+      「未安装/激活所需的模组」而读不了。想读回来: 把两个 mod.json 里的
+      "IsSaveAffecting": false 这一行删掉再重启即可 (该判定每次读档现算, 不会弄坏档)。
 【前提】
   * 游戏版本需为 1.9.1 (build 686R)。BTHanHuaFont.dll 是针对该版本的游戏程序集编译的。
   * 本汉化不修改游戏任何原文件: 游戏安装目录零改动, Steam「验证游戏文件完整性」不受影响。
