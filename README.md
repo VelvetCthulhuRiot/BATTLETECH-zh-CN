@@ -1,6 +1,6 @@
 # BATTLETECH 简体中文汉化 (BTHanHua)
 
-[![release](https://img.shields.io/github/v/release/VelvetCthulhuRiot/BATTLETECH-zh-CN?label=release&color=blue)](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN/releases/latest) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE) ![game](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-1.9.1%20%28686R%29-orange)
+[![release](https://img.shields.io/github/v/release/VelvetCthulhuRiot/BATTLETECH-zh-CN?label=release&color=blue)](https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN/releases/latest) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![游戏版本 1.9.1 (686R)](https://img.shields.io/badge/%E6%B8%B8%E6%88%8F%E7%89%88%E6%9C%AC-1.9.1%20%28686R%29-orange?logo=steam)](https://store.steampowered.com/app/637090/BATTLETECH/) [![GOG.com](https://img.shields.io/badge/GOG.com-BATTLETECH-a855f7?logo=gogdotcom)](https://www.gog.com/zh/game/battletech_game)
 
 给 **BATTLETECH (2018, Harebrained Schemes)** 做的简体中文汉化，通过游戏**官方 ModLoader** 注入，
 **不修改游戏安装目录里的任何文件**。
@@ -11,7 +11,9 @@
 - 引用键顺序与官方 `strings_de-DE.csv` 完全一致
 - 自带全量不变量自检脚本，可自行复核
 
-> 游戏版本要求：**1.9.1 (build 686R)**，Steam AppID `637090`。
+> 游戏版本要求：**1.9.1 (build 686R)**，Steam AppID `637090`
+> （官方销售渠道：[Steam](https://store.steampowered.com/app/637090/BATTLETECH/) ·
+> [GOG](https://www.gog.com/zh/game/battletech_game)）。
 > `BTHanHuaFont.dll` 是针对该版本的游戏程序集编译的，换版本需要重新编译。
 
 ---
