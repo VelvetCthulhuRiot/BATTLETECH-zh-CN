@@ -1335,6 +1335,50 @@ const PILOT_PROSE = [
   console.log(`常备角色译名: 覆盖 ${set} 条, 新增 key ${add} 条 (共 ${ROLE_ZH.length} 条)`);
 }
 
+// ---- 机甲部件"制造商"译名 (用户人工翻译, corpus/manufacturers-zh.tsv) ----
+// 同一个机制: 数据文件 Description.Manufacturer 的英文字符串规范化后当 key 查 CSV, 缺 key 显示英文。
+// 与常备角色一样, 一部分 key 已在官方列表里(早期机翻, 要覆盖), 一部分要新追加。
+{
+  // >>> MFR-ZH BEGIN (由 tools/gen-manufacturer-keys.mjs 生成, 勿手改)
+  // 机甲部件"制造商"(数据文件 Description.Manufacturer) 译名 —— 用户人工翻译,
+  // 权威来源 corpus/manufacturers-zh.tsv (三种策略的原稿留档在 corpus/manufacturers-src/)。
+  // 注意: 已存在的 key 会被这里的值覆盖; 不在官方列表里的 key 由应用段追加。
+  // 未列入的纯缩写厂商 (RCA / SCI / VMI) 按用户要求保留英文, 不给 key。
+  const MFR_ZH = [
+    ['blankenburg25', '布兰肯堡 25'], ['blazefire', '烈焰军工'], ['brigadier', '准将防务'],
+    ['brightbloom', '耀光科技'], ['ceresarms', '谷神星军械'], ['ceresmetals', '谷神金属'],
+    ['coventry', '考文垂'], ['defiance', '挑战者工业'], ['delta', '德尔塔'],
+    ['diverseoptics', '万象光学'], ['donal', '多纳尔'], ['exostar', '异星工业'],
+    ['federated', '联邦工业'], ['firmir', '弗米尔'], ['friedhof', '弗里德霍夫'],
+    ['generic', '通用组件'], ['gm', '通用机械'], ['hartford', '哈特福德'],
+    ['hellion', '狱火工业'], ['hermes', '赫尔墨斯'], ['holly', '霍利'],
+    ['hotshot', '王牌军工'], ['imperator', '帝王工业'], ['intek', '因泰克'],
+    ['irian', '伊瑞恩'], ['jackson', '杰克逊'], ['kaliyama', '迦梨·夜摩'],
+    ['kallon', '卡隆'], ['konginterstellar', '金刚星际'], ['krupp', '克虏伯'],
+    ['longfire', '远火军工'], ['magna', '玛格纳'], ['magna400p', '玛格纳 400P'],
+    ['magnavi', '玛格纳 VI'], ['majestymm', '威严金属制造'], ['martell', '马特尔'],
+    ['maxellmetals', '麦克赛尔金属'], ['mydron', '迈德隆'], ['olympus', '奥林匹斯'],
+    ['pitban', '皮特班'], ['rakeriv', '雷克 IV'], ['rawlings', '罗林斯'],
+    ['robinsonstandardbattleworks', '罗宾逊标准战斗工业'], ['skylight', '曙光科技'], ['sperrybrowning', '斯佩里·勃朗宁'],
+    ['starcorps', '星团工业'], ['telos', '泰洛斯'], ['tharhes', '塔尔赫斯'],
+    ['thunderbolt12', '霹雳 12'], ['tiegart', '蒂加特'], ['valiant', '英勇工业'],
+    ['western', '西部工业'], ['zeus', '宙斯'],
+  ];
+  // >>> MFR-ZH END
+  let set = 0, add = 0;
+  for (const [k, v] of MFR_ZH) {
+    const had = merged.has(k) || keyOrder.indexOf(k) >= 0;
+    if (had) {
+      if (merged.get(k) !== v) { merged.set(k, v); set++; }
+    } else {
+      merged.set(k, v);
+      keyOrder.push(k);        // 追加在末尾, 官方 key 的相对顺序不受影响
+      add++;
+    }
+  }
+  console.log(`制造商译名: 覆盖 ${set} 条, 新增 key ${add} 条 (共 ${MFR_ZH.length} 条)`);
+}
+
 // ---- 写出 ----
 const out = ['KEY,zh-CN'];
 let emptyOfficial = 0;

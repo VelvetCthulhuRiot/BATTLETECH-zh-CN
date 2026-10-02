@@ -1,7 +1,7 @@
 {
     "Name": "BTHanHuaFont",
     "Enabled": true,
-    "Version": "1.2.3",
+    "Version": "1.2.4",
     "Description": "中文字体注入 - 双向字体切换 + 字形缺失/漏译诊断日志",
     "Author": "VelvetCthulhuRiot",
     "Website": "https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN",

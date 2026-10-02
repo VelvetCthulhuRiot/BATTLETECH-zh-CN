@@ -50,7 +50,7 @@ for (const L of outLines.slice(1)) { const i = L.indexOf(','); if (L.slice(i + 1
 
 const MOD_NAME = 'BTHanHua';
 // 版本号: 发新版时改这里 (会写进 mod.json 与 说明.txt, 并随 sync-repo 同步到仓库)
-const VERSION = '1.2.3';
+const VERSION = '1.2.4';
 const modJson = {
   Name: MOD_NAME,
   Enabled: true,

@@ -263,6 +263,41 @@ const CUSTOM = [
     '注意英文源串 strings_dev-WWW.csv 里是 "<color=""red"">", 官方本地化都去掉了引号, 这里跟官方'],
   ['customid:none', '自定义 ID: <color=red>无</color>',
     '同 currentprofile:none(官方 de="Benutzerdefinierte ID: <color=red>KEINE</color>")'],
+  // ================= 用户反馈 (第五轮: 任务进度显示不出百分比 / 制造商名) =================
+  // --- ⑥ 任务目标进度: 显示成字面"[完成百分比]" ---
+  ['[percentagecomplete]', '[percentageComplete]',
+    '用户反馈: 战斗界面左上角任务目标下面显示的是字面"[完成百分比]", 没有数值。' +
+    '这是一条【标记串】: 任务数据里的原文就是 "[percentageComplete]", 游戏先本地化、' +
+    '再在结果里找这个 token 替换成真实百分比 —— 译掉就找不到, 于是原样显示。' +
+    '官方 de/fr 都保持 "[percentageComplete]" 不译(这就是证据)。已改回与官方完全一致的写法'],
+  ['[durationremaining]', '[durationRemaining]',
+    '同 ⑥: 同一家族的另一条标记串("剩余时间"型目标)。旧值"[剩余时间]"一样会让游戏找不到 token;' +
+    '官方 de/fr 都保持 "[durationRemaining]" 不译 -> 改回'],
+  // --- ⑦ "复数后缀"占位符: en 的 {N} 是给 "s" 用的, 中文必须丢掉 ---
+  ['{0}component{1}', '{0}部件',
+    '顺带扫出来的同类坏值(截图里机甲库"拆除"处显示"0部件 S")。en="{0} component{1}", {1} 是复数后缀 s;' +
+    '官方 de 硬写 "{0} KOMPONENTE(N)" 不接 {1} -> 中文丢掉 {1}'],
+  ['{0}day{1}', '{0}天',
+    '同 ⑦: en="{0} day{1}"({1}=s), 官方 de="{0} Tag(e)" -> 丢掉 {1}'],
+  ['-{0}/{1}day{2}newlinemechtechrating:{3}',
+    '<color=#DE6729> - {0}</color> / {1}天\\n机甲技师评级: {3}',
+    '同 ⑦: 时间线"工期 / 机甲技师评级"那行, en="{1} day{2}" 的 {2} 是复数后缀;' +
+    '官方 de="{1} Tag(e)" -> 丢掉 {2}(旧值会显示成"3天s")'],
+  ['gamestartingin:{0}second{1}', '游戏开始时间: {0}秒',
+    '同 ⑦: en="{0} second{1}"({1}=s)。官方 de/fr 保留了 {1}(会显示成"5 SEKUNDEs", 是他们的问题),' +
+    '中文没有复数 -> 丢掉'],
+  ['thischassisrequires{0}morepart{1}beforeitcanbereadiedforcombat*',
+    '在该机体能进入战备之前，还需要{0}个部件。',
+    '同 ⑦: en="{0} more part{1}"({1}=s)。旧值写成"{0}个{1}部件" —— 顺序错了,' +
+    '实际显示会是"还需要2个s部件"; 官方 de="{0} weiteres Teil{1}" 也是照抄源串。中文写"还需要{0}个部件"'],
+  // --- ⑧ 制造商那一行的标签 "制造商:" ---
+  ['manufacturer:', '\u200b',
+    '用户反馈: "制造商：通用工业"这种写法不对 —— 用 Generic 的都是弹药/推进器/散热器,' +
+    '它表达的是"通用零部件"而非厂商, 译名已改成"通用组件"(见 corpus/manufacturers-zh.tsv)。' +
+    '这个 "制造商:" 前缀是**所有部件共用**的标签 key(官方 de="Hersteller:"), 没法只对通用件去掉,' +
+    '所以整行标签置为一个零宽空格 U+200B: 界面上不再出现"制造商:"三个字, 只显示名字。' +
+    '注意: 这同时影响那 52 个真实厂商(变成裸名字); 想恢复就把本行删掉。' +
+    '(U+200B 是格式符, 不需要字形, 也不触发 verify-csv 的控制字符闸门)'],
 ];
 
 const out = [];

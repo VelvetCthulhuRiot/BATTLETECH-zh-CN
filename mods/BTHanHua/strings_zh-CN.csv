@@ -461,7 +461,7 @@ KEY,zh-CN
 [damestroirsimagewinksout^followedbyjailbirds*],[第一个达姆斯托瓦尔的照片消失 ， 然后是 Jailbirds.]
 [dariuscutstheline^severingyourconnectionwithchevalandjailbird*],[达吕斯切断了线路，与舍瓦尔和Jailbird的连接中断。]
 [discoverthattheforwardbaseisactuallyasecretprison^andthatthedetaineesarecanopianintelligenceagentsthatarebeingheldforinterrogation;theyhaveoperationalknowledgeofcrimescommittedbybothhousedavion*and*houseliao*],[你意识到，""高级基地""实际上是一个秘密监狱，囚犯是在那里接受审讯的老人星的秘密特工。他们知道 ， 达维恩家族 * 和廖家族犯下的罪行。]
-[durationremaining],[剩余时间]
+[durationremaining],[durationRemaining]
 [durationremaining][pluraldurationtype],[durationRemaining] [pluralDurationType]
 [durationremaining][pluraldurationtype]remaining,[durationRemaining] [pluralDurationType] 剩余
 [flashpointdecision:abandontheelementofsurpriseanddropaheavylance*]stealthgotusthisfar^butwehavetoexpectheavierresistancefromhereonward*timetobringoutthebigguns*,<color=#85DBF6FF> [闪点决定:放弃出其不意的时刻并使用重型小队。] </color> 到目前为止，隐形对我们的帮助很好， 但从这里开始，我们必须考虑更大的抵抗力。现在是大炮的时候了。
@@ -660,7 +660,7 @@ KEY,zh-CN
 [origin:loner]ifiwereafraidoftakingrisks^ineverwouldveleftthatgildedcagemyparentscalledahome*weregonnahavetobejustasbold*,<color=#85DBF6FF> [背景:孤独者] </color> 如果我害怕 ， 冒险 ， 我永远不会离开我父母的金笼子。我们必须同样大胆。
 [origin:loner]lordmadeiraishisownman^ladyarano*thisshouldbehisdecision*,<color=#85DBF6FF>[出身:独行者]</color>马德拉领主有自己的主见，阿拉诺女士。这该由他决定。
 [origin:loner]necessaryornot^weredoingthis*ilefthometoseekmyfortune^nottohidefromit*,<color=#85DBF6FF> [背景:孤独者] </color> 必要与否， 我们会做的。我离开我父母的家， 寻找我的幸福， 不是为了躲避它。
-[percentagecomplete],[完成百分比]
+[percentagecomplete],[percentageComplete]
 [poxantivirals],[天花抗病毒药]
 [primary],[主要]
 [primaryrequirement],[主要需求]
@@ -802,7 +802,7 @@ KEY,zh-CN
 {0}%priceincrease,{0}%加价
 {0}(x{1}),{0} (x{1})
 {0}/{1}berths,{0} / {1}舱位
--{0}/{1}day{2}newlinemechtechrating:{3},<color=#DE6729> - {0}</color> / {1}天{2}\n机甲技师评级: {3}
+-{0}/{1}day{2}newlinemechtechrating:{3},<color=#DE6729> - {0}</color> / {1}天\n机甲技师评级: {3}
 {0}/mo,{0} / Mo
 {0}:{1}newline,{0}: {1}\n
 {0}:careerscore,{0}: 生涯分数
@@ -833,13 +833,13 @@ KEY,zh-CN
 {0}{1}weightof0willneveroccur,{0}{1}重量不可为0
 {0}{1}x{2},{0}{1} x {2}
 {0}complete,{0}完成
-{0}component{1},{0}部件{1}
+{0}component{1},{0}部件
 {0}-copy,{0}--收到
 {0}crit,{0}受到致命一击
 {0}d,{0}日
 {0}damaged,{0}受损
 {0}day(s),{0}天
-{0}day{1},{0}天{1}
+{0}day{1},{0}天
 {0}days,{0}天
 {0}daysuntilalliancecanbemadeafterbroken,解除同盟后距离可以结盟还有{0}天
 {0}destroyed,{0}被摧毁
@@ -3068,10 +3068,10 @@ blackwidowcommandlance,黑寡妇指挥小队
 blackwidowcompany,BlackWidowCompany
 blackwidowcompanyunitshavebonusmovementspeedandavastlyincreasedcriticalhitchance^andtheytake[amt]lessdamage*,黑寡妇连队的单位拥有移动速度的奖励， 大大增加的致命一击几率， 还减少[AMT]的伤害。
 blaine,布莱恩
-blankenburg25,布兰肯伯格 25
+blankenburg25,布兰肯堡 25
 blaringklaxonsinterruptanotherwisequietmorningroutineasseveralfast-movingshipsappear^pacingtheargo*dariusbroadcaststheirhailtothebridge*newlinenewlineyoureflyingthroughourspace^strangers*itsawfullydangerousouthere*justawful^especiallyforaragged-lookingshipliketheargo^isit?tellyouwhat^wellprovideyouwithasafepassage*foraprice^ofcourse*newlinenewlinewhileyouconsideryouroptions^sumirepipesup*commander^ifyoucanbuymesometime^icoulddoarapidfire-upoftheleopard*thatllteachthemnottomesswithus*,刺耳的警笛打断了原本平静的晨间例行工作。几艘高速飞船出现在<i>阿尔戈号</i>周围并与之并行，达吕斯把他们的呼叫转接到舰桥。\n\n""生人，你们正飞过我们的地盘。这一带可危险得很。糟糕透顶，尤其对<i>阿尔戈号</i>这种破破烂烂的船来说，不是吗？这样吧，我们为你们提供安全通行——当然，得付钱。""\n\n就在你权衡选择时，纯丽插话道：""指挥官，你要是能帮我争取点时间，我可以让豹级迅速做好出击准备。那就能教教他们别来惹我们。""
 blast*theymusthavecaughthimuploadingthedataontheirfacilities*isthereanythingelse^lieutenant?,该死。他们肯定是在他上传数据时抓住了他。还有别的吗，中尉？
-blazefire,闪火
+blazefire,烈焰军工
 bleakridge,荒瘠山脊
 bleem,bleem
 blessedsilence*newlinenewlinewell*formypart^imlookingforwardtogettingmyhandsonthisbaumanngroupscomputersystems*anyonefeellikeplacingbetsonwhatillfindinthere?,舒缓的沉默。\n\n哦。无论如何，我很期待 ， 最终可以使用鲍曼犯罪集团的计算机系统。我们应该下注 ， 我会发现什么吗?
@@ -3218,7 +3218,7 @@ b-reward,B-报酬
 bribeandnootherloss,行贿并免受其它损失
 bribefails,贿赂失败
 bribetheinspectors*,贿赂检查人员.
-brightbloom,布赖特布卢姆
+brightbloom,耀光科技
 brilliant^friend!absolutelygods-damnedbrilliant*newlinenewlineillbeintouchwhenyouvegotthegoods*untilthen^youdoyourthingdontletmestandinyourway*,精彩，朋友!绝对是绝顶的<i>精彩</i>!\n\n你拿到货之后我会联系你。在那之前，你干你的事，别让我挡你的路。
 brilliantminds,卓越的头脑
 brilliantwork^commander*weshouldhavenotroublemoppingupattheotherplatformsnowthattheirdefensesaredown*,做得漂亮， 指挥官。 既然他们的防御力量完了， 那我们吃下其它平台应该就没有问题了。
@@ -3629,7 +3629,7 @@ centralbigmountainsideplace,中部大山坡地
 centralmound,中央土丘
 centralpond,中央池塘
 centrella,琴特雷拉
-ceresmetals,谷神金属公司
+ceresmetals,谷神金属
 ceresmetalsbracedcockpitmod,谷神金属支撑式驾驶舱模块
 ceresmetalshardenedcockpitmod,谷神金属硬化式驾驶舱模块
 ceresmetalsreinforcedcockpitmod,谷神金属加固式驾驶舱模块
@@ -4924,7 +4924,7 @@ defense:panzyr,防守: 潘济尔
 defense:smithon,防守: 史密森
 defensesaresupposedtobelight^butthebasescommanderisaretiredofficerfromthefirstregulanhussars*hesexperiencedanddangerous^sokeepyoureyesopen*,据说防御力相对较弱， 但基地指挥官是第一轩辕骠队的前军官。他是有经验的和危险的， 所以要小心。
 deferactionclearsunsteady,推迟行动消除失衡
-defiance,违命
+defiance,挑战者工业
 definelightbattlemechactivity*whatarewetalkingabout^exactly?,定义""几乎没有任何BattleMechs"".你能不能再精确一点?
 deifenbaker,迪芬贝克
 dekkerinthemedbay,医务室中的德克尔
@@ -6328,7 +6328,7 @@ exitmenu,退出菜单
 exitsettings?,退出设置?
 exittomenu,回到菜单
 exodus,迁徙
-exostar,外星
+exostar,异星工业
 expandhydroponicstogrowmorevegetables*,扩大无土栽培室种植更多的蔬菜。
 expectalongandhazardousroadaheadofyou*thenondizbadlandsarerifewithbanditry^andatransportevenaprisontransportcouldmakeforanenticingtarget*newlinenewlineyoullfindanarmoredrepairbayatthemidpointofyourjourney*irecommendthatyoumakeuseofit*,前方等着你的是一段漫长而危险的旅程。诺恩迪兹荒地上盗匪横行，一支运输队——哪怕是一支<i>囚犯</i>运输队——对他们来说都是诱人的目标。\n\n在旅程的中点，你会找到一座装甲维修湾。我建议你加以利用。
 expectedmessage{0}{1}newline,预期消息{0} {1}\n
@@ -6497,7 +6497,7 @@ faststrikercavalry,快速突击骑兵
 fasttalk,花言巧语
 fdel,前删
 federal,联邦
-federated,联邦
+federated,联邦工业
 federatedsuns,恒星联邦
 federatedsunsliaison,恒星联邦联络人
 federatedsunsmiiooperative,恒星联邦信息情报行动部(MIIO)特工
@@ -6579,7 +6579,7 @@ fireweaponsatuptothreeseparatetargetswithinthismechscurrentfiringarc*,在机甲�
 fireworks,烟花
 firing,开火
 firingweaponssuppressesstealthonthisunitfor1round*,使用武器射击将压制该单位的隐形效果1回合。
-firmir,菲尔米尔
+firmir,弗米尔
 firmly^yousay^wearenotacharity*wellselltheserumforapremium^andwhatthecompanydoeswithitwillbeitsownbusiness*newlinenewlineoverthenextweek^therestofthecrewhearsofyourdecision^andnumerousargumentseruptthroughouttheargo*thosewhopersonallysufferedfromperipherypoxareparticularlyaghastatyourcolddecision*newlinenewlineontheplanet^newsoftheserumraisesspiritsuntilyourbusinesspartnerannouncestheplannedcostofthecure*publicopinionsoonturnsextremelysour*youdogetpaidquiteabit^though*itllhavetodo*,<i>我们</i>不是慈善机构”，你坚定地说。“我们会以高价出售血清，至于公司拿它做什么，那是他们自己的事。”\n\n接下来的一周里，船员们听说了你的决定，整艘<i>阿尔戈号</i>上爆发了无数争论。那些亲身受过外围天花之苦的人，对你冷酷的决定尤其震惊。\n\n在行星上，血清的消息让人们重燃希望，直到你的商业伙伴公布治愈方法的<i>预定费用</i>。民众的情绪很快变得极为不满。不过你确实赚了不少。也只能这样了。
 firmly^yousay^wecanhelpanentireplanetsufferingfromthisplague^butwealsohavetokeepthisshipflying*wellsplitthedifferencebygoingthroughtheconsortiumofdrugcompanies*newlinenewlineaswordspreads^yourcrewtakesprideincontributingtotherescueofanentireplanet*newlinenewlinetheplanetsleadershipcouncilisalsoappreciative*whiletheywouldhavepreferredthatyoudreleasedtheserumtothecharity^theyrestilldelightedthatanyreprievefromthediseaseisonthehorizon*,“我们可以帮助整个深受这场瘟疫之苦的行星，”你坚定地说，“但我们也得让这艘船继续飞下去。折中的办法，就是通过制药财团来做。”\n\n消息传开后，你的船员为能参与拯救一整个行星而自豪。\n\n行星的领导委员会也很感激。虽然他们更希望你把血清交给慈善机构，但任何能缓解这种疾病的机会都让他们欣喜不已。
 firmly^yousay^wemaybemercenaries^butwecanhelpanentireplanetsufferingfromthisplague*weregoingtomakethemostofthisopportunity*newlinenewlineaswordspreads^yourcrewisbothimpressedandproudofcontributingtotherescueofanentireplanet*newlinenewlinetheplanetisalsomateriallyappreciative*somegiftsaresimplecashtransfers^andothersaremoreesoteric*newlinenewlineyangstrugglestowearanelaborateheaddress^whiledariusheftsabottleofamberliquorappreciatively*isupposebeingthegoodguysoccasionallyhasitsperks*,“我们也许是雇佣兵，”你坚定地说，“但我们能帮助一整个深受这场瘟疫之苦的行星。我们要充分利用这个机会。”\n\n消息传开后，你的船员既佩服又自豪，因为自己参与拯救了一整个行星。\n\n这颗行星在物质上也很慷慨。有些礼物是简单的现金转账，另一些则更为奇特。\n\n杨费力地戴着一顶精致的头饰，达吕斯则满意地举起一瓶金色的烈酒。我想，偶尔当一回好人还是有好处的。
@@ -6927,7 +6927,7 @@ gamesettingpreferences,游戏设置偏好
 gamesettings,游戏设置
 gamesshown:{0},已展示游戏: {0}
 gamesshown:999^999,显示的游戏：<color=#D7D7D7FF>999，999</color>
-gamestartingin:{0}second{1},游戏开始时间: {0}秒{1}
+gamestartingin:{0}second{1},游戏开始时间: {0}秒
 gamestartingnow,游戏现在开始
 gametip,游戏提示
 gamma,伽玛值
@@ -6967,7 +6967,7 @@ generatoralpha,阿尔法发电机
 generatorbravo,布拉沃发电机
 generatorcharlie,查理发电机
 generatorsdown^commander!thatshouldtaketheirturretsoff-line*,发电站完了， 指挥官! 那应该可以让他们的炮台掉线。
-generic,普通
+generic,通用组件
 generous,慷慨
 generous%newline,慷慨%\n
 genevieve,热纳维耶夫
@@ -8769,7 +8769,7 @@ imournourfriendshipofold^commander*idontknowwhatledyouawayfromus^butforthesakeof
 impactin[durationremaining][pluraldurationtype],[durationRemaining] [pluralDurationType] 中的标记。
 impactquality,冲击质量
 impassable,不可通行
-imperator,皇帝
+imperator,帝王工业
 impickingupalotofenemymovementonmysensors^commander*wemaynotbehuntingcolonelleesanymore^butitdoesntlooklikehesgivenuponhuntingus*,我收到了很多敌人的信号 ， 指挥官。即使我们不再追捕利斯上校 ， 看起来也不会 ， 好像他会放过我们一样。
 impickingupanewsensortracelookslikeenemyreinforcements*,我收到新的感应器痕迹——看来像是敌人的援军。
 impickingupanotherinbounddropship^commander*keepyoureyesopen*,我正在注册 <i>另一个</i> 空投艇接近 ， Commander.保持警惕。
@@ -9215,7 +9215,7 @@ irememberyourteachingswellenough^uncle*ifourpositionswerereversed^youwouldattack
 irequireyourassistancewithapersonalmatter^commander*meetmeatthespecifiedlocation^andcomequickmyfamilyneedsyourhelp*,我需要你帮忙处理个人私事， 指挥官。在指定的地方与我会面并快点来， 我的家人需要你。
 irequireyourhelponapersonalmatter^commander*noothermercenarycompanywilldo*ifyouaccept^furtherdetailswillbeprovideduponyourarrivalatbrockway*,我需要你帮忙处理个人私事， 指挥官。我绝对需要你的雇佣兵部队。如果您接受 ， 您将在抵达布罗克威时收到更多详细信息。
 irespectyourhonesty^commander{commander*lastname}*newlinenewlineamercenarytotheend*,我很欣赏你的坦诚，指挥官{COMMANDER.LastName}。\n\n一个彻头彻尾的雇佣兵。
-irian,伊里安
+irian,伊瑞恩
 irnooff,IRNOOFF
 ironman,铁人模式
 ironmanmode,铁人模式
@@ -9793,7 +9793,7 @@ justwaituntilyouveseenitinaction*tothatpoint^commander:eliminatetheenemyandkeepo
 justwannagetthisstraight*toyou^thefalloutfromknifingthetauriansinthebackwouldqualifyasaninconvenience*,我把话说清楚:在你眼里，在背后捅金牛人一刀的后果只算""不便""。
 k,K
 kaiju,怪兽
-kallon,卡伦
+kallon,卡隆
 kallona-c1000tts,卡伦A-C 1000型瞄准追踪系统
 kallona-c1500tts,卡伦A-C 1500型瞄准追踪系统
 kallona-cp150+tts,卡伦A-C P150+型瞄准追踪系统
@@ -10787,9 +10787,9 @@ magistracyheadquarters,自治区总部
 magistracyintelligenceministry,自治区情报部
 magistracyofcanopus,MagistracyOfCanopus
 magistracyofcanopusliaison,船底自治区联络人
-magna,马格纳
-magna400p,马格纳400P型
-magnavi,马格纳VI型
+magna,玛格纳
+magna400p,玛格纳 400P
+magnavi,玛格纳 VI
 magneticcannon,电磁炮
 magorian,马戈里安
 maia,迈亚
@@ -10805,7 +10805,7 @@ majestymetals,威严金属公司
 majestymetals&manufacturing,威严金属与制造公司
 majestymetalsheraldrydefinition,威严金属公司纹章定义
 majestymetalsistheoldestmilitarymanufacturerinthemagistracyofcanopus*withfacilitiesonthecapitalworldofcanopus^aswellasdunianshire^majestyisthesoledomesticproviderofheavyarmstothemagistracyarmedforces*,威严金属公司是船底自治区最古老的军工制造商。 威严公司在船底国首都， 以及邓尼亚郡都有工厂， 它是自治区武装部队本国重型武器的独家供应商。
-majestymm,威严金属公司
+majestymm,威严金属制造
 majestymm120klrangefinder,威严金属120KL型测距仪
 majestymm180klrangefinder,威严金属180KL型测距仪
 majestymm60klrangefinder,威严金属60KL型测距仪
@@ -10871,7 +10871,7 @@ manual:{0},手动: {0}
 manualsave,手动保存
 manufacturer,制造商
 manufacturer%,MANUFACTURER%
-manufacturer:,制造商:
+manufacturer:,​
 manufacturing,制造业
 manufacturing(adv*),制造业(高级)
 manufacturingfacility,制造设施
@@ -10962,7 +10962,7 @@ maxdmg,最大伤害
 maxdmgally:{0:p}|,盟友最大伤害: {0:P} | 
 maxdmgopp:{0:p}|,敌方最大伤害: {0:P} | 
 maxdmgpossible:,最大可能伤害:
-maxellmetals,麦克赛尔金属公司
+maxellmetals,麦克赛尔金属
 maxhealth,最大生命值
 maxheatincreased,最大热量增加
 maximum{0}tons,最大{0}吨
@@ -13249,7 +13249,7 @@ piratesambushtheargo,海盗伏击<i>阿尔戈号</i>
 piratesareanever-presentthreatinthissystem^usingunregisteredjumpshipsandpiratejumppointstopreyoncommerce*,海盗是这个系统中无处不在的威胁。从他们的海盗跳跃点，他们使用未注册的远航舰对商船进行突袭。
 piratesarentknownforcompetentplanning^commander*still^theirscrew-upisourpayday*,指挥官， 海盗并不以合格的策划而闻名。 尽管如此， 他们搞砸了就该我们收钱了。
 piriapolis,皮里亚波利斯
-pitban,匹特班
+pitban,皮特班
 pitbanjackrabbitlegmod,匹特班""长耳野兔""腿部模块
 pitbankangaroolegmod,匹特班""袋鼠""腿部模块
 pitbanwallabylegmod,匹特班""沙袋鼠""腿部模块
@@ -13780,7 +13780,7 @@ raisingyourhand^yousilencethemechwarriors*yourebothabouttoloseapaycheck*thexoput
 raisingyourvoice^yousay^well^thatlastcontractwasbrutal*ididntthinkwedmakeitback*newlinenewlinedariusstifleshisconfusionandplaysalong*yeah^thatwasaroughone*wehadtohosegoodmechwarriorsoutoftheircockpits*newlinenewlineyouglanceatyourcaptive^silentaudience*newlinenewlinewellneedfreshmeat*thosekidslookliketheyknowtheirwayaroundabattlemech*hey!wanttojoinourmercenarycompany?youllgotointerestingplanets^meetinterestingpeople^andshootthem*newlinenewlinethenoblesfalloverthemselvestopaythetabandfleethebar*newlinenewlinedariusfinallyletslooselaughterhedbeenholdingin*{commander*firstname}^noteverynobleiscutoutforalifeofexcitement*probablyforthebest*,你提高声音说:""嗯， 上次那份合约相当<i>残酷</i>。我没想到我们能活着回来。""\n\n达吕斯压下自己的困惑， 配合着演下去。 ""是啊， 那次真艰难。那天我们损失了不少优秀的机甲战士。""\n\n你看了你的俘虏一眼， 沉默的观众。\n\n""我们需要<i>新鲜血肉</i>。那些小子的样子像是懂战斗机甲的。嘿！想加入我们的雇佣兵部队吗?你会去有趣的星球， 遇到有趣的人， 然后朝他们开枪。""\n\n贵族们争先恐后地付清账单逃离酒吧。\n\n达吕斯终于开怀大笑。 ""{COMMANDER.FirstName}， 不是每个贵族都适合过那种刺激的生活。或许这样最好。""
 raju,拉朱
 rajumastiffmontgomery,拉朱·""獒犬""·蒙哥马利
-rakeriv,雷克4号
+rakeriv,雷克 IV
 rally,集结
 ralt,RALT
 ramshackle,摇摇欲坠
@@ -14989,7 +14989,7 @@ skirmisher&cavalry,游击与骑兵
 skirmisher&sniper,游击与狙击
 skirmishes,遭遇战
 skirmishmechbay,遭遇战机甲库
-skylight,天光
+skylight,曙光科技
 skyros,斯基罗斯
 slaser,小型激光
 slaser+,小型激光 +
@@ -15375,7 +15375,7 @@ standtall^mechwarrior!newlinenewline[[tgt_mw^{tgt_mw*callsign}instinctivelysnaps
 standup,起立
 standyourgroundandfight*,坚守阵地奋战.
 starblade,星刃
-starcorps,星公司
+starcorps,星团工业
 starcorpsadvancedcommssystem,星公司高级型通讯系统
 starcorpsdalbancommssystem,星公司""达尔班""通讯系统
 starcorpsenhancedcommssystem,星公司增强型通讯系统
@@ -16142,7 +16142,7 @@ thankyouforyourcandor^yang*oh^anddariusimsorryaboutalloftheshoutingbackonaxylus*
 thankyouforyourdiligence^commander*youvedonehousenakanoagreatservicetothedetrimentofyourownbottomline^noless*newlinenewlineperhapsmydaughterwilllearnfromyourefforts*regardless^withluthendorffdead^ourhonorremainsunsullied*,谢谢你的费心，指挥官。您为中野家族帮了大忙......同时也损害了您自己的收益 ， 我想。\n\n也许我的女儿会从您的努力中学到东西。无论如何 ， 既然 Luthendorf 死了 ， 我们的荣誉依然未受损。
 thankyouforyourpromptandprofessionalservice*illbeonmyway*,感谢你<i>迅速专业</i>的服务。 我要上路了。
 thankyouforyourvoteofconfidence^mr*virtanen*commander^illtransmitthedetailsofthemissiontoyourcommandcenter*contactmewhenyourereadytoproceed*andhurry^commandermypeopleareintremendousdangerrightnow*,谢谢你的信任，维尔塔宁先生。指挥官，我会把任务细节传送到你的指挥中心。准备好继续时通知我。请快一点，指挥官，我的人正处在极大的危险中。
-tharhes,沙赫斯
+tharhes,塔尔赫斯
 tharkad,沙卡德
 that***wastherealthing*,那...<i>是</i>真家伙。
 that{team_tar*factiondef*demonym}leopardsarriving^commander*morefriendscomingtotheparty^ibet*,那艘{TEAM_TAR.FactionDef.Demonym}豹式空投艇到了， 指挥官。 我打赌要有更多的朋友来参加派对了。
@@ -17834,7 +17834,7 @@ thiscertainlydoesnthaveunexpectedtwistwrittenalloverit*,这可完全没有“意
 thischannelopengames:{0},本频道开放的游戏: {0}
 thischannelopengames:999^999,本频道开放游戏：<color=#D7D7D7FF>999.999</color>
 thischaractercantbecustomized,此角色无法自定义。
-thischassisrequires{0}morepart{1}beforeitcanbereadiedforcombat*,在该机体能进入战备之前， 还需要{0}个{1}部件。
+thischassisrequires{0}morepart{1}beforeitcanbereadiedforcombat*,在该机体能进入战备之前，还需要{0}个部件。
 thiscodeisalreadyinuse,此代码已被使用。
 thiscodeisinvalid,此代码无效
 thiscoldandrockyworldischokedbysiltandashintheairfromtheconstantvolcanicactivity*inhabitantsliveinhab-spheres^emergingonlytoworkintheextensiveminesorresearchthelocalsilicon-basedlifeforms*,这个寒冷的岩质星球塞满了持续性火山活动带来的泥沙和火山灰。 居民在球型居住舱中生活， 只在广阔的矿山中工作， 或研究当地的硅基生命时出现。
@@ -18347,7 +18347,7 @@ throwaparty*,举行一场派对.
 throwapartyinthelounge*,在休息室举行一场派对。
 thumpercannon,重击炮
 thumperfire,重击炮开火
-thunderbolt12,""雷电"" 12
+thunderbolt12,霹雳 12
 thunderboltsemodelslosealittleoftheirfirepowerinexchangeformountingjumpjets*thegreatermobilityisintendedtoallowformoreprecisionattackingmaneuvers^thoughitalldependsonthebattlefieldterrain*,""雷电SE""型牺牲了一点火力来换取加装跃进喷射器。 更好机动性的目的是为了更为精准的进攻性机动， 但这一点全有赖于战场地形。
 thurrock,瑟罗克
 tianyu,天宇
@@ -19768,7 +19768,7 @@ weshouldntlaunchuntilwevelearnedmoreabouttheopfor*iwanttoknowwhatweredroppingint
 weshouldntletanyofthemgetaway^ifwecanhelpit*,如果可以避免的话， 我们就不该让他们任何一人逃脱。
 weshouldntletthisdistractus*superstitionisntavalidleadershipstrategy*,我们不应该让这分散我们的注意力。迷信不是可行的领导策略。
 westandunited*thefreeworldsleague^theoldestofallsuccessorstates^haslongbeenruledbyhousemarik*theleagueisanopen^multiculturalstate^consistingofmanygreatandsmallrealmslooselyjoinedtogether*politicallyfragileandfrequentlyrivenwithinstability;housemarikhasreliedheavilyonfreetradeandtechnologicaladvancementtokeeppacewithitsrivals*,我们团结一致。""自由世界联盟是最古老的继承国，长期由马里克家族统治。联盟是个开放、多元文化的国家，由许多大大小小的地区松散地联合而成。政治上脆弱，经常陷入动荡，马里克家族一直严重依赖自由贸易与技术进步来跟上对手的步伐。
-western,西部
+western,西部工业
 westernsahara,西撒哈拉
 westillmaybeabletocatchupwithherejectionpodifyouhurry*,如果我们快点，也许还能追上她的逃生舱。
 wetravelfromsystemtosystem^pickingupjobsandmakingendsmeet*newlinenewlinesure^spacetravelcostsc-bills^butsomeemployersaredesperateenoughtopaytravelexpensesformercenarieswillingtomakeafewjumpsforagig*,我们从一个星系前往另一个星系，接活糊口。\n\n当然，太空旅行要花C币，但有些雇主绝望到愿意为愿意跳几站的雇佣兵出旅费。
@@ -21874,3 +21874,27 @@ zebak,泽巴克
 zhou,周
 zin,津
 juggernaut,重装
+brigadier,准将防务
+ceresarms,谷神星军械
+delta,德尔塔
+diverseoptics,万象光学
+donal,多纳尔
+friedhof,弗里德霍夫
+gm,通用机械
+hellion,狱火工业
+holly,霍利
+hotshot,王牌军工
+intek,因泰克
+jackson,杰克逊
+kaliyama,迦梨·夜摩
+konginterstellar,金刚星际
+krupp,克虏伯
+longfire,远火军工
+martell,马特尔
+mydron,迈德隆
+rawlings,罗林斯
+robinsonstandardbattleworks,罗宾逊标准战斗工业
+sperrybrowning,斯佩里·勃朗宁
+telos,泰洛斯
+tiegart,蒂加特
+valiant,英勇工业
