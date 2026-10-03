@@ -1,7 +1,7 @@
 {
     "Name": "BTHanHua",
     "Enabled": true,
-    "Version": "1.2.4",
+    "Version": "1.2.5",
     "Description": "简体中文汉化 - 通过官方 ModLoader 注入, 不修改游戏原文件 (GitHub: VelvetCthulhuRiot/BATTLETECH-zh-CN)",
     "Author": "VelvetCthulhuRiot",
     "Website": "https://github.com/VelvetCthulhuRiot/BATTLETECH-zh-CN",
