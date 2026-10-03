@@ -7,6 +7,7 @@ tools/
 ├── verify-csv.mjs        全量不变量自检 (最常用)
 ├── build-mod.mjs         把文本包部署到游戏的 mods 目录
 ├── deploy-font.mjs       把 DLL + 字形图集 + 许可部署到 mods 目录
+├── build-font.ps1        编译 FontMod 源码 -> mod-src\BTHanHuaFont.new.dll (改了 C# 才需要)
 ├── pack-mod.ps1          打包便携 zip
 ├── merge-final.mjs       数据管线 (需要自备上游语料)
 ├── make-overrides.mjs    生成人工裁决表

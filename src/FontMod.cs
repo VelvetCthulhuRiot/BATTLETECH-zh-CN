@@ -288,13 +288,15 @@ namespace BTHanHua
             try
             {
                 if (Time.realtimeSinceStartup < s_nextSweep) return;
-                s_nextSweep = Time.realtimeSinceStartup + 2.5f;
+                s_nextSweep = Time.realtimeSinceStartup + 1.0f;   // 1 秒一轮: 兼顾"画质下拉改写"的及时性与开销
                 UnityEngine.Object[] all = Resources.FindObjectsOfTypeAll(typeof(TMP_Text));
                 if (all == null) return;
                 for (int i = 0; i < all.Length; i++)
                 {
                     TMP_Text t = all[i] as TMP_Text;
                     if (t == null) continue;
+                    // 兜底: 游戏重新本地化/下拉项复用时会把"中"写回"中型", 这里再改一遍
+                    if (t.isActiveAndEnabled) FixMedium(t);
                     string s = t.text;
                     if (string.IsNullOrEmpty(s) || s.Length > 8) continue;
                     if (s.IndexOf('\u5723') < 0 && s.IndexOf('\u9E23') < 0) continue;   // 圣 / 鸣
@@ -326,11 +328,68 @@ namespace BTHanHua
             catch { return "?"; }
         }
 
+        // ---------- "按界面分派"特例: medium 这条 key 被两个界面共用 ----------
+        // ① 机甲吨位级别: chassisdef 的 weightClass="MEDIUM" (与 轻型/重型/突击 同族) -> 需要"中型"
+        // ② 视频设置的"画质"下拉: Unity 画质名 "Medium" (与 低/高/超高/自定义 同族) -> 需要"中"
+        // CSV 一条 key 只能有一个值, 所以 CSV 取"中型"(出现频率更高的机甲侧天然正确),
+        // 只在【设置界面可见时】把屏幕上的"中型"改写为"中"。
+        // 判据: 游戏是互斥的全屏界面 —— 设置界面可见时, 屏幕上的"中型"只可能来自画质下拉。
+        // 探针文本都只可能出现在设置界面(标题/滑块/复选项), 不会在机甲库出现。
+        static readonly string[] s_settingsProbe = { "设置菜单", "伽玛值", "按键绑定", "启用不支持的分辨率" };
+        static bool s_inSettings;
+        static float s_settingsNext;
+        static readonly HashSet<string> s_mediumFixed = new HashSet<string>();
+
+        static bool InSettingsScreen()
+        {
+            float now = Time.realtimeSinceStartup;
+            if (now < s_settingsNext) return s_inSettings;      // 1 秒内复用上次判定
+            s_settingsNext = now + 1.0f;
+            try
+            {
+                UnityEngine.Object[] all = Resources.FindObjectsOfTypeAll(typeof(TMP_Text));
+                if (all != null)
+                {
+                    for (int i = 0; i < all.Length; i++)
+                    {
+                        TMP_Text t = all[i] as TMP_Text;
+                        if (t == null || !t.isActiveAndEnabled) continue;
+                        string s = t.text;
+                        if (string.IsNullOrEmpty(s)) continue;
+                        for (int k = 0; k < s_settingsProbe.Length; k++)
+                        {
+                            if (s == s_settingsProbe[k]) { s_inSettings = true; return true; }
+                        }
+                    }
+                }
+            }
+            catch { }
+            s_inSettings = false;
+            return false;
+        }
+
+        // 设置界面里的"中型" -> "中"; 其它界面(机甲库/机甲详情/商店)不动, 保持 CSV 的"中型"
+        static void FixMedium(TMP_Text t)
+        {
+            if (t == null) return;
+            if (t.text != "中型") return;
+            if (!InSettingsScreen()) return;
+            try
+            {
+                t.text = "中";
+                string nm = ((UnityEngine.Object)t).name;
+                if (s_mediumFixed.Count < 20 && s_mediumFixed.Add(nm))
+                    Log("MEDIUM '" + nm + "' 设置界面: 中型 -> 中");
+            }
+            catch { }
+        }
+
         static void PostfixLoadFontAsset(TMP_Text __instance)
         {
             try
             {
                 if (__instance == null) return;
+                FixMedium(__instance);
                 EnsureFallback(__instance.font);
                 // 诊断: 记录很短的 CJK 文本 (<=4 字) 及其原始字体, 用于定位图标字体上的怪字符(如"圣")
                 string s = __instance.text;
@@ -408,6 +467,7 @@ namespace BTHanHua
             if (target == null || s_busy || instance == null) return;
             TMP_Text t = instance as TMP_Text;
             if (t == null) return;
+            FixMedium(t);                       // 设置界面里把"中型"改成"中"(见 FixMedium)
             try
             {
                 EnsureFallback(t.font);
