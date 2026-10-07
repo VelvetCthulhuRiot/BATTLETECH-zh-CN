@@ -10,7 +10,7 @@ KEY,zh-CN
 (bkt_allyunit-damaged)analliedunitistakingdamage!,(Bkt_AllyUnit-Damaged)一个友军单位正受到攻击!
 (bkt_allyunit-destroyed)alliedunitdown^commander*,(Bkt_AllyUnit-Destroyed)友军倒下了， 指挥官。
 (bkt_allyunit-onearrived)analliedunithasreacheditsdestination!makesurethattherestgettheresafelyaswell!,(Bkt_AllyUnit-OneArrived)一个友军单位已经到达目的地! 请保障剩下的单位安全到达!
-(class:{0}),( Class: {0} )
+(class:{0}),( 类别: {0} )
 (currentfactionreputation={0}),(当前派系声望 = {0})
 (currentfactionreputation=19),(当前派系声望 = 19)
 (custom),  (Custom)
@@ -5567,7 +5567,7 @@ dontknowifidgothatfar^xo*meandthedoc^wehitthemotherlodeinthatshipyard*newlinenew
 dontknowifidgothatfar^xo*meandthedoc^wehitthemotherlodeinthatshipyard*newlinenewlinewiththemoderbjrnshelp^ithinkwemightbeabletomakesomethingofthosepartsthe[[dm*basedescriptiondefs[lorebountyhunter]^bountyhuntersentus*andbysomething^imeananabsolutebeastofabattlemech*,我不知道我会不会走到那一步，副官。我和医生在那座船坞里挖到了一条富矿脉。\n\n有 Moderbjorn 帮忙，我想我们也许能用从 [[DM.BaseDescriptionDefs[LoreBountyHunter]赏金猎人]] 那儿弄到的零件，造出点战斗机甲来。
 dontleaveusinsuspense^meyer*whatareyoulookingatinthere?,让我们不要坐立不安， 迈耶。你看到了什么?
 dontletthemgetaheadofyou^commanderkeepthatvehicleprotected!,不要让他们跑到你前面去， 指挥官\u2014保护好车辆!
-dontletthestubbyurbiefoolyouitmaylooklikeawalkingtrashcan^butitcanmountheavyarmorandagrown-up-sizedautocannon*r60sarentknownfortheirspeed^buttheyareveryusefulifyoucandrawtheenemyintotheirfiringrange*,不要被粗短的""市区""给欺骗了\u2014也许它看起来像个行走的垃圾罐， 但它能安装厚重的装甲和一门大口径自动炮。 R60的速度并不出众， 但如果你能把敌人引入它们射程的话， 那它们会很有用。
+dontletthestubbyurbiefoolyouitmaylooklikeawalkingtrashcan^butitcanmountheavyarmorandagrown-up-sizedautocannon*r60sarentknownfortheirspeed^buttheyareveryusefulifyoucandrawtheenemyintotheirfiringrange*,""不要被粗短的""都市战甲""给欺骗了\u2014也许它看起来像个行走的垃圾罐，但它能安装厚重的装甲和一门大口径自动炮。R60的速度并不出众，但如果你能把敌人引入它们射程的话，那它们会很有用。
 dontrelaxjustyet^though*assoonaswehavethelocation^weneedtodeployimmediately^beforetheyrealizewhatwevedoneandevacuatethebunker*,但不要高兴得太早。一旦我们有了位置 ， 我们必须立即开始行动 ， 在他们听到它之前 ， 我们做了什么并撤离了掩体。
 dontrisktheleopardandmechwarriors*,不拿豹式和机甲战士来冒险。
 dontsendanyone*,不派遣任何人.
@@ -11486,9 +11486,9 @@ montgomery,蒙哥马利
 month,月
 months,月
 montserrat,蒙特塞拉特
-mood,情绪
-mood:,情绪：
-moods,情绪
+mood,天候
+mood:,天候：
+moods,天候
 moonlightingwithalrm,LRM的私活
 moonlightingwithamediumlaser,中型激光的私活
 moonlightingwithanautocannon,自动炮的私活
@@ -12993,7 +12993,7 @@ paladinprotectionllc,PaladinProtectionLLC
 paladinprotectionllcisaparamilitarysecurityteam*,圣骑士的守护有限公司是一支准军事安保小组。
 palau,帕劳
 palestine^stateof,巴勒斯坦国
-panther9rsaresolidall-aroundmechs^ifabitontheslowside*theymakeupforitwithjumpjets^considerablearmor^andaheftypunchfromtheirtrademarkppc*theyveevenbeenusedinphysicalsluggingmatchestogoodeffect*,""黑豹9R""是一种坚固的全能机甲， 就是有点慢。 它们靠跃进喷射器， 可观的装甲和标志性的粒子炮发出的可观攻击弥补了这点。 甚至为了产生良好的效果， 它们还被用于拳击比赛。
+panther9rsaresolidall-aroundmechs^ifabitontheslowside*theymakeupforitwithjumpjets^considerablearmor^andaheftypunchfromtheirtrademarkppc*theyveevenbeenusedinphysicalsluggingmatchestogoodeffect*,""黑豹9R""是一种坚固的全能机甲，就是有点慢。它们靠跃进喷射器、可观的装甲，以及标志性粒子炮的强力一击弥补了这点。甚至为了物尽其用，它们还被用于拳击比赛。
 panzyr,潘济尔
 panzyrattack,进攻潘济尔
 panzyrdefense,防守潘济尔
@@ -16921,7 +16921,7 @@ thefedsunsaregoingtoassumewerestillbackatthebasegettingthingsloadedupandreadytog
 thefeelingismutual^lordmadeira*wellmisshavingyouaboardtheargo*,我也有同感，马德拉领主。我们会想念你在<i>阿尔戈号</i>上的日子。
 thefireiscontainedbutthepodisdamaged*,火势得到控制， 但舱室受损。
 thefireiscontainedwithnosignificantdamage,火势得到控制， 没有造成太大伤害
-thefirestarterisadangerousmechforitstonnagecarefullytimedattackswithitsflamerscanshutdownanymechandleaveitopentopunishmentfromyourotherforces*thefs9-halsomakesadecentlightmechhunter-killer*,""纵火犯""就它那个吨位而言是一种危险的机甲—时机恰当的喷火器攻击能关闭任何机甲， 让它敞开迎接来自你其它部队的惩罚。 FS9-H也是一种相当好的轻型""机甲猎手""。
+thefirestarterisadangerousmechforitstonnagecarefullytimedattackswithitsflamerscanshutdownanymechandleaveitopentopunishmentfromyourotherforces*thefs9-halsomakesadecentlightmechhunter-killer*,""纵火犯""就它那个吨位而言是一种危险的机甲—时机恰当的喷火器攻击能让任何机甲过热关机，让它们毫无防御地承受来袭的攻击。FS9-H也是一种相当好的轻型""机甲猎手""。
 thefirstabilityisthemechwarriorsspecialization*mechwarriorscanhaveonlytwospecializationstotal^sopayattentionwhenyouretrainingthem*thefirsttwotheyacquirearetheonlytwotheyllhave*,第一项是机甲战士的特长。机甲战士总共只能拥有两项特长，所以训练时要留神——他们最初获得的那两项，就是他们唯一能拥有的。
 thefirstbattlemech^themackie^wasdevelopedbythescientistsandmilitaryoftheterranhegemonyin2439*,第一部战斗机甲: ""麦基""， 是在2439年由地球霸权的科学家和军队开发的。
 thefirstcomponentisecm^shortforelectroniccountermeasures*ecmcreatesafieldaroundthecarrierthatimpedesenemyweaponlocks*newline,第一个部件是 <color=#F79B26FF>ECM</color>，即“电子对抗”的缩写。 ECM 会在载具周围形成一个力场，使敌人难以将其锁定为目标。\n
@@ -17010,7 +17010,7 @@ theholdfullofcontrabandwejustliftedsaysotherwise*idbehappytochataboutitafterwere
 theholo-distributionfacilityshouldbejustaheadofyou^commander*,全息分发设施应该就在你面前，指挥官。
 thehonorwasmine^mr*oliveira*newlinenewlinegoodfortunetoyouandyourcompany^commander{commander*lastname}*isaluteyou*,荣幸之至，奥利维拉先生。\n\n祝你和你的部队前程顺利，指挥官{COMMANDER.LastName}。我向您致敬。
 thehot^dry^high-gravityworldofshibaisacenterforminingandmanufacturing^anditstwobillioninhabitantsliveinanendlessurbansprawlthatsurroundsthefactoriesthatdrivetheworldseconomy*,炎热， 干燥， 高引力的希巴星是矿业和制造业中心， 它的20亿人口住在无尽延伸的城市里， 这些城市围绕着工厂， 而工厂又驱动着星球的经济。
-thehunchback4gisatriedandtestedjuggernautonthefield*oneofthelightestmechstomountsuchamassiveautocannon^itiscapableofdestroyingsomelighterunitsinasinglevolley*ittendstomountheavyarmortoboot*,""驼背4G""是在战场上久经考验的重锤机。 它是安装了此等巨大自动炮的机甲中最轻的一种， 能一次齐射干掉几个轻型单位。 一般都会在它的足部安装重甲。
+thehunchback4gisatriedandtestedjuggernautonthefield*oneofthelightestmechstomountsuchamassiveautocannon^itiscapableofdestroyingsomelighterunitsinasinglevolley*ittendstomountheavyarmortoboot*,""驼背4G""是在战场上久经考验的重装机甲。它是安装了此等巨大自动炮的机甲中最轻的一种，能一次齐射干掉几个轻型单位。而且通常还会加装重甲。
 thehyperpulsegenerator^orhpg^isadevicecapableofsendingterabytesofcompressedinformationfromonepointtoanotheratfaster-than-lightspeeds*allmodernhpgarraysareownedandoperatedbycomstar*,超脉冲发生器， 又称HPG， 是一种能够将数以TB的压缩信息从一点以超光速发送到另一点的装置。 所有的现代HPG阵列都由通讯之星所拥有与运行。
 theiberiaisgone^uncle*ostergaardcanthelpyou^andyouhavenomorecardstoplay*forthegoodofourpeople^youmustendthis*newlinenewlineorderyourtroopstostanddown*,<i>伊贝里亚</i> 已被摧毁，叔叔。奥斯特加德帮不了你，你手里也没有牌可打了。为了我们的人民，你必须结束这一切。\n\n命令你的部队投降吧。
 theiberiamayoutclassus^butwecanstillattack*newlinenewlineweregoingtousethe[[dm*basedescriptiondefs[lorelocura]^locura*,<i>伊贝里亚</i> 或许比我们强，但我们仍然可以进攻。\n\n我们要动用 [[DM.BaseDescriptionDefs[LoreLocura]Locura]]。
