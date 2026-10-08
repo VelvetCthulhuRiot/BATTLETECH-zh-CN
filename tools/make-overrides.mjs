@@ -340,6 +340,27 @@ const CUSTOM = [
     '顺带扫出来的英文残留: 用户截图里机甲提示框顶部显示"30吨 (CLASS: 轻型)" —— 标签来自这条模板, ' +
     'en="( Class: {0} )" / de="( Klasse: {0} )", 我们只译了 {0} 没译标签。' +
     '"类别"与已有的 class:light/medium/heavy/assault 四条("类别: 轻型"…)保持一致'],
+  // ================= 用户反馈 (第十轮: 设备名与描述不一致 / 术语 / 战斗电脑) =================
+  // --- ⑮ 近战装备: 描述里写"近战模块", 与设备名对不上; 还有个"，，" -------------------
+  ['theclose-quarterscombatsuiteprovidesthevulcanwitharangebonustoitssupportweaponryforincreasedengagementdistance*thisequipmentalsoprovidesasubstantialdefenseagainstreprisalmeleeattacks*',
+    '近战装备为火神的辅助武器提供了射程加成，让它能从更远的距离发动攻击。该装备还能很好地防御敌方的报复性近战攻击。',
+    '用户反馈: 设备名是"近战装备"(key cqcsuite = CQC Suite), 描述里却写"近战模块"(官方 de 也是 ' +
+    'Nahkampfmodul) -> 统一到设备名"近战装备"。顺带修旧值里的"，，"(重复逗号)与读不通的句子 ' +
+    '(en="...provides the Vulcan with a range bonus to its support weaponry for increased engagement distance. ' +
+    'This equipment also provides good defense against retaliatory close-quarters attacks.")'],
+  // --- ⑯ 独眼巨人的作战电脑: "指挥几打单位" + 句末半角句号 -------------------------
+  ['allowsthepilotofthecyclopstoeffectivelycommanddozensofunits*thisallowsforaexceptionalleveloflancecohesionduringcombat^increasingtheinitiativefortheentirelance*thisstackswiththemastertacticianability*',
+    '使得""独眼巨人""的驾驶员可以有效地指挥数十个单位。这使小队在战斗中拥有非凡的凝聚力，增加了整个小队的""主动权""。这一效果可以和""战术大师""技能叠加。',
+    '用户反馈: "指挥几打单位"读不通。en="Allows the pilot of the Cyclops to effectively command dozens of units." / ' +
+    'de="...den gleichzeitigen Befehl über Dutzende von Einheiten." -> dozens=数十个。' +
+    '顺带修旧值句末的半角句号(其他句都是全角)与"凝聚力提到了特别高的水平"这种直译腔'],
+  // --- ⑰ myomer 的旧音译"麦约摩尔"由 FLAT 统一成"肌动器"; 这两条还要把"三倍"改成"三重" ---
+  ['prototypetriplemyomer', '原型三重肌动器',
+    '同 ⑰: FLAT 规则已把"麦约摩尔"换成"肌动器", 这里再把"三倍"统一成用户用词"三重"' +
+    '(de="PROTOTYP DREIFACH-MYOMER")'],
+  ['prototypetriplestrengthmyomer', '原型三重强度肌动器',
+    '同 ⑰: 由"原型三倍强度麦约摩尔"改为"原型三重强度肌动器"; 这是渡鸦 RVN-3X 那套实验性肌动器的 ' +
+    '状态/能力名(de="Prototyp Myomere Dreifachstärke"), 不是可购买的装备部件'],
 ];
 
 const out = [];

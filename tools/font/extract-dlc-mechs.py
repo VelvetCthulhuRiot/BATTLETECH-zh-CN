@@ -1,6 +1,9 @@
 # 从 asset bundle 里抽出 DLC 内容, 供汉化 key 生成器使用:
 #   1) 机甲定义 (Name / UIName)  -> corpus/font-atlas/dlc-mechs.json
 #   2) 底盘的角色 (StockRole)     -> corpus/font-atlas/stock-roles.json
+#   3) 机甲简介 (Description.Details) -> corpus/font-atlas/dlc-descriptions.json
+#      (第九轮加的: 官方本地化完全没有覆盖 DLC 机甲的简介, 游戏里一直显示英文,
+#       要按"英文字符串规范化后当 key"的机制补 key, 就得先把这些英文抽出来)
 # 为什么需要: DLC 的 mechdef / chassisdef 不在 StreamingAssets\data 磁盘上, 而在
 # flashpoint / heavymetal / urbanwarfare / shadowhawkdlc 这几个 asset bundle 里,
 # 只能靠 UnityPy 读。而机甲名与"常备角色"都是"把数据里的英文字符串规范化后当 key 查 CSV",
@@ -41,7 +44,7 @@ AB = os.path.join(GAME, 'BattleTech_Data', 'StreamingAssets', 'data', 'assetbund
 OUT = os.path.dirname(os.path.abspath(__file__))
 BUNDLES = ['flashpoint', 'heavymetal', 'urbanwarfare', 'shadowhawkdlc']
 
-mechs, roles = {}, {}
+mechs, roles, descs = {}, {}, {}
 for b in BUNDLES:
     p = os.path.join(AB, b)
     if not os.path.exists(p):
@@ -76,10 +79,21 @@ for b in BUNDLES:
             if de.get('Id') and j.get('StockRole'):
                 roles[de['Id']] = {'StockRole': j['StockRole'], 'bundle': b}
                 n_role += 1
+        # 简介 (Description.Details): mechdef 与 chassisdef 都收, 文本相同的后面去重
+        if de.get('Id') and (de.get('Details') or '').strip():
+            descs[de['Id']] = {'Name': de.get('Name'), 'UIName': de.get('UIName'),
+                               'Details': de['Details'],
+                               'kind': 'mechdef' if 'mechdef' in low else 'chassisdef',
+                               'bundle': b}
     print(f'  {b}: mechdef {n_mech}, chassisdef(带 StockRole) {n_role}')
 
 json.dump(mechs, open(os.path.join(OUT, 'dlc-mechs.json'), 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
 json.dump(roles, open(os.path.join(OUT, 'stock-roles.json'), 'w', encoding='utf-8'),
           ensure_ascii=False, indent=1)
+json.dump(descs, open(os.path.join(OUT, 'dlc-descriptions.json'), 'w', encoding='utf-8'),
+          ensure_ascii=False, indent=1)
+# 简介按文本去重后的条数 (同一条简介常被 mechdef 与 chassisdef 各存一份)
+uniq_desc = len({v['Details'] for v in descs.values()})
 print(f'\n写出 dlc-mechs.json ({len(mechs)} 个) 与 stock-roles.json ({len(roles)} 个)')
+print(f'写出 dlc-descriptions.json ({len(descs)} 条, 按文本去重 {uniq_desc} 条)')
