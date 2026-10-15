@@ -496,15 +496,81 @@ namespace BTHanHua
                         CheckGlyphs(txt);
                     }
                 }
-                else if (t.font == target && s_origFont.ContainsKey(id))
+                // 注意条件只要求"当前用的是我们的图集", 不要求之前登记过。
+                // 有些文本实例是别的路径设成我们图集的 (或登记被清了), 若不处理,
+                // 切到俄语时它们会一直是方块 (用户报的正是"满屏方块", 而不是零星几个)。
+                else if (t.font == target)
                 {
-                    s_busy = true;
-                    try { t.font = s_origFont[id]; }
-                    finally { s_busy = false; }
+                    TMP_FontAsset o = s_origFont.ContainsKey(id) ? s_origFont[id] : null;
+                    // 只在"原字体确实能渲染当前文本"时才还原。
+                    //
+                    // 为什么: 记忆里的"原字体"是【我们换掉它那一刻】的字体 —— 中文时期游戏用的是
+                    // 拉丁字体 (UnitedSans* / ProximaNova*, 没有西里尔字母)。切到俄语后游戏会把
+                    // 字体换成俄语专用的 (日志里见过 'Proxima Nova Semibold SDF RU'), 但我们这个
+                    // 无条件还原会把它盖回拉丁字体 -> 整个界面变成方块。实测用户报的"切俄语后满屏方块"。
+                    TMP_FontAsset pick = null;
+                    if (Covers(o, txt))
+                    {
+                        pick = o;
+                    }
+                    else if (!Covers(target, txt))
+                    {
+                        // 原字体盖不住、我们图集也盖不住 (例如西里尔/希腊文) -> 在游戏现役字体里
+                        // 找一个盖得住的用 (俄语那套 '... SDF RU' 就会被找到), 绝不硬留着方块。
+                        pick = FindCoveringFont(txt, target);
+                        if (pick != null && s_altLog < 40)
+                        {
+                            s_altLog++;
+                            Log("改用可渲染字体 '" + pick.name + "' (记忆中的原字体 '" + (o != null ? o.name : "?")
+                                + "' 盖不住) 文本=" + Trunc(txt, 40));
+                        }
+                    }
+                    if (pick != null)
+                    {
+                        s_busy = true;
+                        try { t.font = pick; }
+                        finally { s_busy = false; }
+                    }
                 }
             }
             catch (Exception ex) { Log("Sync 失败: " + ex.Message); }
         }
+
+        // 字体能否渲染整串 (跳过空白)。用于判断"还原成原字体"是否安全。
+        static bool Covers(TMP_FontAsset f, string s)
+        {
+            if (f == null || string.IsNullOrEmpty(s)) return false;
+            for (int i = 0; i < s.Length; i++)
+            {
+                char c = s[i];
+                if (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\u3000') continue;
+                bool has;
+                try { has = f.HasCharacter(c, false); } catch { has = false; }
+                if (!has) return false;
+            }
+            return true;
+        }
+
+        // 在游戏现役字体资产里找一个能渲染 s 的 (跳过我们自己的图集)。
+        // 用途: 别的语言 (俄语/希腊语...) 的文本落到我们图集上时, 图集没有那些字形,
+        // 而游戏自带的对应语言字体 (名字形如 '... SDF RU') 有 —— 找出来用。
+        static TMP_FontAsset FindCoveringFont(string s, TMP_FontAsset skip)
+        {
+            try
+            {
+                UnityEngine.Object[] all = Resources.FindObjectsOfTypeAll(typeof(TMP_FontAsset));
+                if (all == null) return null;
+                for (int i = 0; i < all.Length; i++)
+                {
+                    TMP_FontAsset f = all[i] as TMP_FontAsset;
+                    if (f == null || f == skip) continue;
+                    if (Covers(f, s)) return f;
+                }
+            }
+            catch { }
+            return null;
+        }
+        static int s_altLog;
 
         // 像中文: >=2 个 CJK, 或 1 个 CJK 且总长>=3 (排除单字符图标)
         static bool LooksChinese(string s)
