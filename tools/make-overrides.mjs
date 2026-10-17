@@ -361,6 +361,42 @@ const CUSTOM = [
   ['prototypetriplestrengthmyomer', '原型三重强度肌动器',
     '同 ⑰: 由"原型三倍强度麦约摩尔"改为"原型三重强度肌动器"; 这是渡鸦 RVN-3X 那套实验性肌动器的 ' +
     '状态/能力名(de="Prototyp Myomere Dreifachstärke"), 不是可购买的装备部件'],
+  // ================= 用户反馈 (第十一轮: 人名头衔 / 选项用词 / 电力系统那句话) =================
+  // --- ⑱ 穆拉德博士的名字: 头衔不能夹在名和姓中间 ---
+  ['dr*farah', '法拉赫',
+    '用户反馈(截图2): 对话头像那行显示成"法拉赫博士 穆拉德"。游戏把这个 pilot 的名字按 ' +
+    '"FirstName LastName" 拆开分别查表(FirstName="Dr. Farah" -> key dr*farah), 旧值把头衔塞在名后面、' +
+    '又接上姓, 就成了"法拉赫博士 穆拉德"。这里只留本名; 完整称谓由 key dr*farahmurad' +
+    '("法拉赫·穆拉德博士")承担, 任务目标等处用的就是那一条'],
+  // --- ⑲ 结束对话的选项: doc 在这里是"博士"(她有双博士学位), 不是医生; 还有个半角句号 ---
+  ['talktoyoulater^doc*', '回头见，博士。',
+    '用户反馈(截图2): 选项写作"回头见，医生." —— 两处问题: ① en="Talk to you later, doc." 里的 doc ' +
+    '指博士(她是物理学+机械工程双博士), 全语料其它地方也都叫"穆拉德博士"; ② 句末用了半角句号'],
+  // --- ⑳ 阿尔戈号电力系统那句读不通 ---
+  ['theargospowersystemisawreck^andgettingaminimallevelofpowertotheshipssystemswithoutconstanttrippedbreakersandbrownoutsisaminormiracle*',
+    '<i>阿尔戈号</i>的电力系统已是一片废墟，还能勉强维持全船系统的最低供电、不再频繁跳闸和断电，已经算是个不小的奇迹了。',
+    '用户反馈(截图1): 旧值"能够供应船上诸系统以最低水平的电力而不发生经常性的跳闸和低电压， ' +
+    '已是一项不小的奇迹了"是照英文语序硬搬的。en="The Argo\'s power system is a wreck, and getting a ' +
+    'minimal level of power to the ship\'s systems without constant tripped breakers and brownouts is ' +
+    'a minor miracle." / de="...grenzt an ein kleines Wunder" —— 字面是"小小的奇迹", 但这是英语的' +
+    '克制说法(等于"相当了不起"), 中文里"不小的奇迹"才是地道对应, 用户也这么认为'],
+  // --- ㉑ 两处"法拉赫穆拉德"没被 FLAT 改到: 该值里的专名是"专名汉化"阶段才生成的, 而术语统一段跑在那之前 ---
+  ['////{company*companyname}*seniorstaffconsistsofthefollowing:newline>>{commander*firstname}{commander*callsign}{commander*lastname}^commander*newline>>dariusoliveira^executiveofficer*newline>>dr*farahmurad^engineer*newline>>yangvirtanen^chiefmechtech*newline>>sumiremeyer^pilotandnavigator*newlineisthismanifestcorrect^commander{commander*lastname}?////',
+    '////{COMPANY.CompanyName}。管理层：\\n     >>{COMMANDER.FirstName} ""{COMMANDER.Callsign}"" {COMMANDER.LastName}，指挥官。\\n     >>达吕斯·奥利维拉，副舰长。\\n     >>法拉赫·穆拉德博士，技术总监。\\n     >>杨·维尔塔宁，首席机甲技师。\\n     >>纯丽·梅耶尔，飞行员兼领航员。\\n这个清单是否正确，指挥官{COMMANDER.LastName}？////',
+    '用户反馈(截图2): 这一行的名字漏了间隔号、还把 Dr. 兜在名字前面 -> "法拉赫·穆拉德博士"。' +
+    '走人工裁决而不是术语统一段, 是因为这条里的"法拉赫穆拉德"要到"专名汉化"阶段才成形'],
+  ['relax^mr*virtanen*ihaveengineeringstaffonhandtoattendtotheargo*newlinenewlinetheirleader^dr*farahmurad^hasbuiltquiteareputationforherselfinthefrontier*',
+    '别紧张，维尔塔宁先生。我手边有工程师来照料阿尔戈号。\\n\\n他们的负责人法拉赫·穆拉德博士在边地一带已经小有名气。',
+    '同 ㉑: "法拉赫穆拉德博士" -> "法拉赫·穆拉德博士"'],
+  // --- ㉒ 结束按钮: 用户觉得"拿起盒子"太直 ---
+  ['takethecrate', '收下货物',
+    '用户反馈(截图13): "拿起盒子"翻译腔太重 -> 用户建议的"收下货物"' + '(de="KISTE NEHMEN", en="Take the crate")'],
+  // ================= 用户反馈 (第十二轮) =================
+  // --- ㉓ 追问细节的选项: "好，那是简短的版本。现在我想要所有的细节。" 翻译腔 ---
+  ['okay^ivegottheelevatorpitch*nowgivemethelongversion*',
+    '行，简略版我懂了。现在把完整的都说给我听。',
+    '用户反馈(截图1): 旧值"好 ， 那是简短的版本。现在我想要所有的细节。"是照 ' +
+    'en="Okay, I\'ve got the elevator pitch. Now give me the long version." 逐词搬的, 不像中文口语'],
 ];
 
 const out = [];

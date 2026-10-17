@@ -377,6 +377,59 @@ console.log(`一致性修正: DropShip→空投艇 ${fixDrop}, C钞→星币 ${f
     // myomer 的旧译是音译"麦约摩尔"(6 处), 而用户精修的渡鸦 RVN-3X 简介里用的是"肌动器" ->
     // 统一成"肌动器"(用户口径)。两个"原型三倍…"的短 key 走人工裁决改成"三重"。
     ['麦约摩尔', '肌动器'],
+    // ---- 用户反馈 (第十一轮: 人名/地名/异域词残留) ----
+    // 迈耶 -> 梅耶尔: 同一人物在全语料里有"梅耶尔"(职员表)与"迈耶"(对话)两种写法, 统一到职员表那种
+    ['迈耶', '梅耶尔'],
+    // 波斯语称呼 Baba Joon (爷爷) 的三种写法 "Baba Joon"/"巴巴君"/"巴巴秀" 统一音译为"巴巴琼"
+    ['Baba Joon', '巴巴琼'], ['巴巴君', '巴巴琼'], ['巴巴秀', '巴巴琼'],
+    // 船名 Ferdowsi: 一处未译、一处写作"费尔多西号" -> 统一成波斯诗人 Ferdowsi 的通用译名"菲尔多西"
+    ['Ferdowsi', '菲尔多西'], ['费尔多西号', '菲尔多西号'],
+    // 波斯炖菜 fesenjan
+    ['fesenjan', '费森詹'],
+    // 铝热剂 (thermite) 与 STEM 的英文残留
+    ['thermite', '铝热剂'], ['STEM科普', '理工科普'],
+    // 人名 Heiner -> 海纳 (同一段剧情里已有"海纳叔叔"的译法)
+    ['Heiner', '海纳'],
+    // 地名 Lompoc -> 隆波克; TMI 两义: Taurian Naval Institute=金牛海军学院 / Taurian Ministry of Intelligence=金牛情报部
+    ['Lompoc', '隆波克'],
+    ['TMI的飞行训练', '海军学院的飞行训练'],
+    ['TMI特工', '金牛情报部特工'],
+    ['\u001fKND]]', '\u001f金牛情报部]]'],
+    // 波姆德泰尔 (Pomme De Terre = 法语"土豆") 那则笑话里的法/英文残留
+    ['Pomme De Terre', '波姆德泰尔'], ['potato', '土豆'],
+    // 人名分隔号: 职员表里写成"Dr. 法拉赫穆拉德"(漏了间隔号且头衔兜在前面)
+    ['Dr. 法拉赫穆拉德', '法拉赫·穆拉德博士'], ['法拉赫穆拉德博士', '法拉赫·穆拉德博士'],
+    // 台词润色 (用户改稿)
+    ['生活把你带到的地方真是有趣', '人生的际遇真是奇妙'],
+    // ---- 用户反馈 (第十一轮补充: COIL 线圈) ----
+    // 英文原名 COIL Beam, COIL = Contained Overflow Inertia Linkage; 德语意译成 SPULE-Strahl(Spule=线圈)。
+    // 中文原来混着四套叫法(科尔约射束/科尔约-L/轻型线圈喷射/线圈射线), 用户定稿: 统一叫"线圈"。
+    // 先处理两处长句里的缩写展开, 再全局把音译"科尔约"换成"线圈"。
+    ['""收容超载联动""—科尔约—是一种射束武器系统', '线圈（COIL）光束武器系统'],
+    ['""通过连接能量降低潜在不动性""（COIL）光束武器系统', '线圈（COIL）光束武器系统'],
+    ['科尔约', '线圈'], ['线圈射束', '线圈光束'], ['线圈喷射', '线圈光束'],
+    // "a minor/small miracle" 的同类表达: 中文地道说法是"不小的奇迹"(见 make-overrides 里阿尔戈号电力系统那条)
+    ['已是一项小小的奇迹了', '已是一项不小的奇迹了'],    ['已经是个小小的奇迹了', '已经是个不小的奇迹了'],
+    // 阿尔戈号驱动器那句里的半角括号与句号 (标点统一段没管到)
+    ['照明(大部分情况下). ', '照明（大部分情况下）。'],
+    // ---- 用户反馈 (第十二轮: LRM/SRM 泛称要用中文全称 / 巴巴琼与"爷爷"对不上) ----
+    // 规则(用户定): 有具体型号时写"LRM-10长程导弹"这种"型号+种类"; 只泛称时一律用中文全称。
+    // 带型号的 74 处本来就合规, 下面只处理"裸 LRM/SRM"(不带型号)的可见文本。
+    ['LRM的私活', '长程导弹私活'],
+    ['LRM 载具', '长程导弹载具'],
+    ['LRM 运载车', '长程导弹运载车'],
+    ['LRM 平台', '长程导弹平台'],
+    ['LRM发射器', '长程导弹发射器'],
+    ['LRM潜行者', '装长程导弹的潜行者'],
+    ['你妈和LRM', '你妈和长程导弹'],
+    ['LRM武器', '长程导弹武器'],
+    ['LRM弹药箱', '长程导弹弹药箱'],
+    ['SRM弹药箱', '短程导弹弹药箱'],
+    ['SRM的稳定伤害', '短程导弹的稳定伤害'],
+    // 巴巴琼: 底下选项问"你的巴巴琼？那是谁？", 而上面的陈述只写了"爷爷" -> 陈述里也用"巴巴琼"
+    ['我爷爷就住在那艘登陆艇上', '我的巴巴琼就住在那艘登陆艇上'],
+    // 同一句里的半角句号 (自由世界联盟]]. -> 。)
+    ['联盟]].我父母', '联盟]]。我父母'],
     // ---- 用户反馈 (第二轮: 深玩后逐条截图) ----
     // ⚠️ 这里只能放"不依赖后面几个阶段"的短语: 本段跑在"专名汉化"(Markham->马卡姆)之前,
     //    含英文专名或半角句号的整句改不动, 那几条走 make-overrides.mjs 的人工裁决(最后才跑)。
@@ -1570,7 +1623,7 @@ const PILOT_PROSE = [
     ['thezeu-6tzeusvariantisrelativelyfastandsturdy^withanenergy-focusedweaponloadoutandaddedheatsinks*',
      '""宙斯""6T变型机相对而言又快又坚固，还有一套专注于能量攻击的武器装备，以及额外的散热器。'],
     ['theannihilatorisanextremelyraremechthatisessentiallyamobilesiegetower*itcankickoutmoredamagethanalmostanyotherunitonthefield*itsunbelievablyslow^though^andpoorlyarmoredforitssize*',
-     '""歼灭者""是一种极其稀有的机甲，本质上就是一座移动的防御塔。它能造成的伤害比战场上几乎任何单位都多。但它慢得难以置信，以体型而言装甲也很单薄。'],
+     '""歼灭者""是一种极其稀有的机甲，本质上就是一座移动的攻城塔。它能造成的伤害比战场上几乎任何单位都多。但它慢得难以置信，以体型而言装甲也很单薄。'],
     ['thewell-knownarcheristheepitomeofthe"missileboat"concept*itiscommonlyfoundhurlingdeadlyswarmsoflrmsattargetsfrombehindthesafetyofahill*itsnottooshabbyincloser-rangefights^either*itsonlyrealweaknessisterribleheatmanagement*',
      '大名鼎鼎的""弓箭手""正是""导弹艇""概念的典型代表。它通常从山后隐蔽位置向目标发射致命的长程导弹群，近距离交战时表现也不差。其唯一真正的弱点是糟糕的热量管理。'],
     ['thearchers2svarianttradessomeofitslong-rangepunchtobecomeevendeadlierwhenitgetsupclose^mountingsrmstofollowupwhatitslrmshavebattered*itsheatmanagementstillposesahugeproblem^though^soitspilotshavetostayverywaryofoverheating*',
@@ -1643,6 +1696,10 @@ const PILOT_PROSE = [
      '""百夫长""A型被设计为直射型机甲，兼具强大性能和多功能性。除了良好的装甲外，CN9-A通常配备一个AC/10自动炮、两门中型激光炮以及一个LRM-10机架。不过，这款简化版的机甲仅配备了一门中型激光炮。'],
     ['the2dshadowhawkisaninterestingmodel*itsdefaultpayloadsacrifcesalotofarmortomountabitmorefirepower^thoughsomearguethetradeoffisntworthit*itsalphastrikes*are*betterthoughso***iguessyoucanbethejudge*',
      '""影鹰""2D是种有趣的型号。它默认的载荷牺牲了大量装甲，以换取更强的火力，不过也有人认为这种权衡并不值得。不过它的全弹打击能力确实更优，所以……你来判断吧。'],
+    ['thewell-knownarcheristheepitomeofthemissileboatconcept*itiscommonlyfoundhurlingdeadlyswarmsoflrmsattargetsfrombehindthesafetyofahill*itsnottooshabbyincloser-rangefights^either*itsonlyrealweaknessisterribleheatmanagement*',
+     '大名鼎鼎的""弓箭手""正是""导弹艇""概念的典型代表。它通常从山后隐蔽位置向目标发射致命的长程导弹群，近距离交战时表现也不差。其唯一真正的弱点是糟糕的热量管理。'],
+    ['afedsunsfavorite^thevulcans5tvariantdumpsthestandardmodelsac/2andbeefsupitsmedium-to-closefirepoweranddefenses*itsgenerallyconsideredtobebetterthanthe2t^butitsalsohardertocomeby*',
+     '作为恒星联邦的宠儿，""火神""5T型拆掉了标准型号的AC/2自动炮，全面加强了中近距离的火力与防护。它通常被认为比2T型""更好""，但也更难弄到手。'],
   ];
   // >>> CHASSIS-DESC END
   let set = 0, add = 0;
