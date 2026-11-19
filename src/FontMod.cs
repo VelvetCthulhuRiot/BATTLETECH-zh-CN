@@ -33,6 +33,27 @@ namespace BTHanHua
         static readonly HashSet<string> s_swapped = new HashSet<string>();
         static readonly HashSet<string> s_shortSeen = new HashSet<string>();
 
+        // ---------- 运行期开销控制 (v1.3 性能版) ----------
+        // 病根: 机库/商店这类文字密集界面里, 同一个文本会被反复 RefreshText,
+        // 每次都要重算"要不要换字体"(逐字 HasCharacter) + 必要时 SetFont(TMP 重建网格)。
+        // 这里加三层缓存, 并且只在 PERF_ON 文件存在时统计各项耗时。
+        static readonly Dictionary<int, string> s_lastText = new Dictionary<int, string>();   // 文本实例 -> 上次文本
+        static readonly Dictionary<int, int> s_lastFont = new Dictionary<int, int>();       // 文本实例 -> 上次字体 id
+        static readonly Dictionary<long, bool> s_hasChar = new Dictionary<long, bool>();    // (字体,字符) -> 是否有字形
+        static UnityEngine.Object[] s_textScan;     // 1 秒内复用的"全场景 TMP_Text"扫描结果
+        static float s_textScanAt;
+        static bool s_perf;                          // 只在 PERF_ON 时统计, 普通用户零开销
+        static float s_pLastTick, s_pNextTick, s_pMaxDt, s_pSyncMs, s_pScanMs, s_pSwapMs;
+        static int s_pFrames, s_pHitch50, s_pHitch100, s_pSync, s_pSwap, s_pFull;
+        static readonly Dictionary<Type, MethodInfo> s_setFontCache = new Dictionary<Type, MethodInfo>();   // 换字体用的反射结果
+        // 诊断: 快路径/慢路径分段计时 + 抓最慢的几次单次调用
+        static bool s_early;
+        static float s_pEarlyMs, s_pLateMs;
+        static int s_pEarly, s_pLate, s_slowLog;
+        static TMP_Text s_curText;
+        static string s_curFontName;
+
+
         // 注: 曾经想在这里做"字形探针"(靠 ATLAS_TEST 把几个界面 key 换成含缺字的串),
         // 但实测不生效 —— 主菜单按钮走的是游戏自己的 Localize.* 系统
         // (dump 里有 Localize.FontLocTable / Localize.Text / Localize.FontLocalizationManager),
@@ -175,6 +196,23 @@ namespace BTHanHua
                 DumpGlyphs();
 
                 Log("Init 结束");
+
+                // 运行期计数: 只有放了 PERF_ON 文件才启用 (排查卡顿用), 普通用户没有这个组件
+                try
+                {
+                    bool perfOn = modDir != null && File.Exists(Path.Combine(modDir, "PERF_ON"));
+                    if (perfOn)
+                    {
+                        s_perf = true;
+                        s_pLastTick = Time.realtimeSinceStartup;
+                        s_pNextTick = s_pLastTick + 1.0f;
+                        GameObject go = new GameObject("BTHanHuaPerfProbe");
+                        UnityEngine.Object.DontDestroyOnLoad(go);
+                        go.AddComponent<PerfProbe>();
+                        Log("PERF_ON: 已启用运行期计数 (每秒一行 PERF: 帧时间/卡顿次数/sync 次数与耗时/扫描耗时)");
+                    }
+                }
+                catch (Exception ex) { Log("PERF_ON 初始化失败: " + ex.Message); }
             }
             catch (Exception ex) { Log("Init 异常: " + ex); }
         }
@@ -288,8 +326,8 @@ namespace BTHanHua
             try
             {
                 if (Time.realtimeSinceStartup < s_nextSweep) return;
-                s_nextSweep = Time.realtimeSinceStartup + 1.0f;   // 1 秒一轮: 兼顾"画质下拉改写"的及时性与开销
-                UnityEngine.Object[] all = Resources.FindObjectsOfTypeAll(typeof(TMP_Text));
+                s_nextSweep = Time.realtimeSinceStartup + 2.0f;   // 2 秒一轮: 全场景扫描在文字密集界面要 ~10 ms, 没必要每秒一次
+                UnityEngine.Object[] all = GetTexts();
                 if (all == null) return;
                 for (int i = 0; i < all.Length; i++)
                 {
@@ -297,6 +335,8 @@ namespace BTHanHua
                     if (t == null) continue;
                     // 兜底: 游戏重新本地化/下拉项复用时会把"中"写回"中型", 这里再改一遍
                     if (t.isActiveAndEnabled) FixMedium(t);
+                    // 语言切换的收尾也放在这里 (每 2 秒一次): 用着我们的图集、但图集盖不住的文本 -> 还原
+                    SweepRevertOne(t);
                     string s = t.text;
                     if (string.IsNullOrEmpty(s) || s.Length > 8) continue;
                     if (s.IndexOf('\u5723') < 0 && s.IndexOf('\u9E23') < 0) continue;   // 圣 / 鸣
@@ -328,6 +368,48 @@ namespace BTHanHua
             catch { return "?"; }
         }
 
+        // 语言切换的收尾 (由 2 秒一次的 SweepFor 巡检调用):
+        // 文本用着我们的图集, 但图集盖不住这段文本 (俄语/希腊文等) -> 还原原字体, 或改用游戏自带的可渲染字体。
+        // 这个判断以前放在 Sync 的热路径里, 每次 RefreshText 都跑一遍逐字覆盖检查 (实测 2.5 ms/次),
+        // 而真正需要它的只有"切到别的官方语言"这一种情况, 所以挪进低频巡检。
+        static void SweepRevertOne(TMP_Text t)
+        {
+            try
+            {
+                TMP_FontAsset target = (s_full != null) ? s_full : s_cjk;
+                if (target == null || t == null) return;
+                if (t.font != target) return;                     // 绝大多数文本在这里就出去了
+                string s = t.text;
+                if (string.IsNullOrEmpty(s)) return;
+                if (LooksChinese(s)) return;                      // 中文由我们负责
+                if (Covers(target, s)) return;                    // 我们图集盖得住 (拉丁/标点) -> 保持不动
+                int id = ((UnityEngine.Object)t).GetInstanceID();
+                TMP_FontAsset o = s_origFont.ContainsKey(id) ? s_origFont[id] : null;
+                TMP_FontAsset pick = null;
+                if (Covers(o, s))
+                {
+                    pick = o;
+                }
+                else
+                {
+                    pick = FindCoveringFont(s, target);
+                    if (pick != null && s_altLog < 40)
+                    {
+                        s_altLog++;
+                        Log("改用可渲染字体 '" + pick.name + "' (记忆中的原字体 '" + (o != null ? o.name : "?")
+                            + "' 盖不住) 文本=" + Trunc(s, 40));
+                    }
+                }
+                if (pick != null)
+                {
+                    s_busy = true;
+                    try { t.font = pick; }
+                    finally { s_busy = false; }
+                }
+            }
+            catch { }
+        }
+
         // ---------- "按界面分派"特例: medium 这条 key 被两个界面共用 ----------
         // ① 机甲吨位级别: chassisdef 的 weightClass="MEDIUM" (与 轻型/重型/突击 同族) -> 需要"中型"
         // ② 视频设置的"画质"下拉: Unity 画质名 "Medium" (与 低/高/超高/自定义 同族) -> 需要"中"
@@ -343,11 +425,11 @@ namespace BTHanHua
         static bool InSettingsScreen()
         {
             float now = Time.realtimeSinceStartup;
-            if (now < s_settingsNext) return s_inSettings;      // 1 秒内复用上次判定
-            s_settingsNext = now + 1.0f;
+            if (now < s_settingsNext) return s_inSettings;      // 2 秒内复用上次判定
+            s_settingsNext = now + 2.0f;
             try
             {
-                UnityEngine.Object[] all = Resources.FindObjectsOfTypeAll(typeof(TMP_Text));
+                UnityEngine.Object[] all = GetTexts();
                 if (all != null)
                 {
                     for (int i = 0; i < all.Length; i++)
@@ -460,80 +542,164 @@ namespace BTHanHua
         }
         static int s_fmtFixed;
 
-        // 双向切换
+        // 双向切换 (外层只负责计时统计; 真正逻辑在 SyncInner)
         static void Sync(object instance)
+        {
+            float t0 = s_perf ? Time.realtimeSinceStartup : 0f;
+            s_early = false;
+            s_curText = null;
+            SyncInner(instance);
+            if (!s_perf) return;
+            float ms = (Time.realtimeSinceStartup - t0) * 1000f;
+            s_pSync++;
+            s_pSyncMs += ms;
+            if (s_early) { s_pEarly++; s_pEarlyMs += ms; }
+            else { s_pLate++; s_pLateMs += ms; }
+            // 抓慢调用: 超过 20 ms 的单次调用把对象名/文本/字体记下来 (最多 40 条)
+            if (ms > 20f && s_slowLog < 40)
+            {
+                s_slowLog++;
+                string tx = (s_curText != null) ? Trunc(s_curText.text, 40) : "?";
+                Log("SLOWSYNC " + ms.ToString("0.0") + "ms early=" + s_early
+                    + " name='" + ((s_curText != null) ? ((UnityEngine.Object)s_curText).name : "?")
+                    + "' font='" + (s_curFontName != null ? s_curFontName : "?")
+                    + "' text=" + tx);
+            }
+        }
+
+        static void SyncInner(object instance)
         {
             TMP_FontAsset target = (s_full != null) ? s_full : s_cjk;
             if (target == null || s_busy || instance == null) return;
             TMP_Text t = instance as TMP_Text;
             if (t == null) return;
+            if (s_perf) { s_curText = t; s_curFontName = (t.font != null) ? t.font.name : "null"; }
             FixMedium(t);                       // 设置界面里把"中型"改成"中"(见 FixMedium)
+
+            // 最热路径 (机库/商店里 3/4 以上的调用): 文本已经在用我们的图集 -> 没有任何事要做。
+            // 连 text 都不读, 只比一次 font 属性。实测这段 0.9 µs/次。
+            // "语言切换后该还原成原字体"的情形改由 2 秒一次的全场景巡检 SweepRevertOne() 兜底,
+            // 不再在这里逐次做逐字覆盖检查 —— 那正是之前 2.5 ms/次的来源。
+            if (t.font == target)
+            {
+                s_early = true;
+                return;
+            }
+
+            string txt = null;
+            int id = 0;
             try
             {
                 EnsureFallback(t.font);
-                string txt = t.text;
-                int id = ((UnityEngine.Object)t).GetInstanceID();
+                txt = t.text;
+                id = ((UnityEngine.Object)t).GetInstanceID();
+                if (s_perf) s_pFull++;
+
+                bool chinese = LooksChinese(txt);
                 TMP_FontAsset orig = s_origFont.ContainsKey(id) ? s_origFont[id] : t.font;
                 // 图标字体常把 CJK 码位当图标用: 若原字体对这些字符本来就有字形, 就不该换
-                bool want = LooksChinese(txt) && !OrigFontCovers(orig, txt);
-
-                if (want)
+                if (chinese && !OrigFontCovers(orig, txt))
                 {
-                    if (t.font != target)
+                    if (!s_origFont.ContainsKey(id)) s_origFont[id] = t.font;
+                    if (s_perf) s_pSwap++;
+                    float sw0 = s_perf ? Time.realtimeSinceStartup : 0f;
+                    s_busy = true;
+                    try
                     {
-                        if (!s_origFont.ContainsKey(id)) s_origFont[id] = t.font;
-                        s_busy = true;
-                        try
-                        {
-                            MethodInfo setter = instance.GetType().GetMethod("SetFont", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                            if (setter != null) setter.Invoke(instance, new object[] { target });
-                            else t.font = target;
-                        }
-                        finally { s_busy = false; }
-                        string key = ((UnityEngine.Object)t).name + "|" + (s_origFont[id] != null ? s_origFont[id].name : "?");
-                        if (s_swapped.Add(key) && s_swapped.Count <= 60)
-                            Log("切换 '" + ((UnityEngine.Object)t).name + "' 原字体='" + (s_origFont[id] != null ? s_origFont[id].name : "?") + "' 目标='" + target.name + "' 文本=" + Trunc(txt, 50));
-                        CheckGlyphs(txt);
+                        MethodInfo setter = SetFontMethod(instance.GetType());
+                        if (setter != null) setter.Invoke(instance, new object[] { target });
+                        else t.font = target;
                     }
-                }
-                // 注意条件只要求"当前用的是我们的图集", 不要求之前登记过。
-                // 有些文本实例是别的路径设成我们图集的 (或登记被清了), 若不处理,
-                // 切到俄语时它们会一直是方块 (用户报的正是"满屏方块", 而不是零星几个)。
-                else if (t.font == target)
-                {
-                    TMP_FontAsset o = s_origFont.ContainsKey(id) ? s_origFont[id] : null;
-                    // 只在"原字体确实能渲染当前文本"时才还原。
-                    //
-                    // 为什么: 记忆里的"原字体"是【我们换掉它那一刻】的字体 —— 中文时期游戏用的是
-                    // 拉丁字体 (UnitedSans* / ProximaNova*, 没有西里尔字母)。切到俄语后游戏会把
-                    // 字体换成俄语专用的 (日志里见过 'Proxima Nova Semibold SDF RU'), 但我们这个
-                    // 无条件还原会把它盖回拉丁字体 -> 整个界面变成方块。实测用户报的"切俄语后满屏方块"。
-                    TMP_FontAsset pick = null;
-                    if (Covers(o, txt))
-                    {
-                        pick = o;
-                    }
-                    else if (!Covers(target, txt))
-                    {
-                        // 原字体盖不住、我们图集也盖不住 (例如西里尔/希腊文) -> 在游戏现役字体里
-                        // 找一个盖得住的用 (俄语那套 '... SDF RU' 就会被找到), 绝不硬留着方块。
-                        pick = FindCoveringFont(txt, target);
-                        if (pick != null && s_altLog < 40)
-                        {
-                            s_altLog++;
-                            Log("改用可渲染字体 '" + pick.name + "' (记忆中的原字体 '" + (o != null ? o.name : "?")
-                                + "' 盖不住) 文本=" + Trunc(txt, 40));
-                        }
-                    }
-                    if (pick != null)
-                    {
-                        s_busy = true;
-                        try { t.font = pick; }
-                        finally { s_busy = false; }
-                    }
+                    finally { s_busy = false; }
+                    if (s_perf) s_pSwapMs += (Time.realtimeSinceStartup - sw0) * 1000f;
+                    string key = ((UnityEngine.Object)t).name + "|" + (s_origFont[id] != null ? s_origFont[id].name : "?");
+                    if (s_swapped.Add(key) && s_swapped.Count <= 60)
+                        Log("切换 '" + ((UnityEngine.Object)t).name + "' 原字体='" + (s_origFont[id] != null ? s_origFont[id].name : "?") + "' 目标='" + target.name + "' 文本=" + Trunc(txt, 50));
+                    CheckGlyphs(txt);
                 }
             }
             catch (Exception ex) { Log("Sync 失败: " + ex.Message); }
+        }
+
+        static int FontId(TMP_FontAsset f)
+        {
+            return (f == null) ? 0 : ((UnityEngine.Object)f).GetInstanceID();
+        }
+
+        // SetFont 的反射结果按类型缓存 (每次换字体都 GetMethod 一遍太贵)
+        static MethodInfo SetFontMethod(Type ty)
+        {
+            MethodInfo m;
+            if (s_setFontCache.TryGetValue(ty, out m)) return m;
+            try { m = ty.GetMethod("SetFont", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance); }
+            catch { m = null; }
+            if (s_setFontCache.Count < 200) s_setFontCache[ty] = m;
+            return m;
+        }
+
+        // 1 秒内复用的全场景 TMP_Text 扫描 (原来 SweepFor 与 InSettingsScreen 各自扫一次, 每秒两次)
+        static UnityEngine.Object[] GetTexts()
+        {
+            float now = Time.realtimeSinceStartup;
+            if (s_textScan != null && now - s_textScanAt < 2.0f) return s_textScan;
+            float t0 = s_perf ? now : 0f;
+            s_textScan = Resources.FindObjectsOfTypeAll(typeof(TMP_Text));
+            s_textScanAt = now;
+            if (s_perf) s_pScanMs += (Time.realtimeSinceStartup - t0) * 1000f;
+            return s_textScan;
+        }
+
+        // HasCharacter 结果缓存: (字体, 字符) -> 有无字形。逐字查 TMP 字典在文字密集界面里很可观。
+        static bool HasChar(TMP_FontAsset f, char c)
+        {
+            if (f == null) return false;
+            long k = ((long)FontId(f) << 32) | (uint)c;
+            bool r;
+            if (s_hasChar.TryGetValue(k, out r)) return r;
+            try { r = f.HasCharacter(c, false); } catch { r = false; }
+            if (s_hasChar.Count < 200000) s_hasChar[k] = r;
+            return r;
+        }
+
+        // ---------- 运行期计数 (只在 PERF_ON 时写日志) ----------
+        internal static void PerfFrame(float dt)
+        {
+            if (!s_perf) return;
+            try
+            {
+                float now = Time.realtimeSinceStartup;
+                s_pFrames++;
+                if (dt > s_pMaxDt) s_pMaxDt = dt;
+                if (dt > 0.05f) s_pHitch50++;
+                if (dt > 0.1f) s_pHitch100++;
+                if (now < s_pNextTick) return;
+                float span = now - s_pLastTick;
+                s_pLastTick = now;
+                s_pNextTick = now + 1.0f;
+                Log("PERF " + span.ToString("0.0") + "s frames=" + s_pFrames
+                    + " max=" + (s_pMaxDt * 1000f).ToString("0.0") + "ms"
+                    + " hitch>50ms=" + s_pHitch50 + " hitch>100ms=" + s_pHitch100
+                    + " | sync=" + s_pSync + " full=" + s_pFull + " sync_ms=" + s_pSyncMs.ToString("0.0")
+                    + " early=" + s_pEarly + " early_ms=" + s_pEarlyMs.ToString("0.0")
+                    + " late=" + s_pLate + " late_ms=" + s_pLateMs.ToString("0.0")
+                    + " swap=" + s_pSwap + " swap_ms=" + s_pSwapMs.ToString("0.0")
+                    + " scan_ms=" + s_pScanMs.ToString("0.0")
+                    + " | texts=" + ((s_textScan != null) ? s_textScan.Length : -1)
+                    + " haschar=" + s_hasChar.Count);
+                s_pFrames = 0; s_pHitch50 = 0; s_pHitch100 = 0; s_pMaxDt = 0f;
+                s_pSync = 0; s_pSyncMs = 0f; s_pSwap = 0; s_pScanMs = 0f; s_pFull = 0; s_pSwapMs = 0f;
+                s_pEarly = 0; s_pEarlyMs = 0f; s_pLate = 0; s_pLateMs = 0f;
+            }
+            catch { }
+        }
+
+        // 每帧采样; 只有放了 PERF_ON 才创建这个组件, 普通用户零开销
+        public class PerfProbe : MonoBehaviour
+        {
+            void Update()
+            {
+                try { FontMod.PerfFrame(Time.unscaledDeltaTime); } catch { }
+            }
         }
 
         // 字体能否渲染整串 (跳过空白)。用于判断"还原成原字体"是否安全。
@@ -544,9 +710,7 @@ namespace BTHanHua
             {
                 char c = s[i];
                 if (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\u3000') continue;
-                bool has;
-                try { has = f.HasCharacter(c, false); } catch { has = false; }
-                if (!has) return false;
+                if (!HasChar(f, c)) return false;
             }
             return true;
         }
@@ -598,9 +762,7 @@ namespace BTHanHua
                 char c = s[i];
                 if (!IsCjk(c)) continue;
                 cjk++;
-                bool has;
-                try { has = f.HasCharacter(c, false); } catch { has = false; }
-                if (has) cov++;
+                if (HasChar(f, c)) cov++;
             }
             return cjk > 0 && cov == cjk;
         }
@@ -621,9 +783,7 @@ namespace BTHanHua
                 char c = s[i];
                 if (!IsCjk(c)) continue;
                 if (s_noGlyph.Contains(c)) continue;
-                bool has;
-                try { has = af.HasCharacter(c, false); } catch { has = true; }
-                if (!has)
+                if (!HasChar(af, c))
                 {
                     if (s_noGlyph.Count < 800) { s_noGlyph.Add(c); Log("NOGLYPH '" + c + "' U+" + ((int)c).ToString("X4")); }
                 }
